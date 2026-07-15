@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type Status = "anticipation" | "fakeout" | "bpr" | "pool";
+type Status = "spring" | "anticipation" | "fakeout" | "bpr" | "pool";
 
 type Candidate = {
   rank: number;
@@ -39,9 +39,10 @@ const fallbackCandidates: Candidate[] = [
   { rank: 2, ticker: "BB", name: "BlackBerry", group: "Software", theme: "IGV", status: "bpr", base: 5, days: 8, stage: "active", close: 11.01, threeMonth: 184.5, adr: 7.98, tightness: 0, dollarVol: "339.1M", vs200: 109, line: 23.43, strong: true },
 ];
 
-const setupOptions: Status[] = ["fakeout", "bpr", "anticipation", "pool"];
+const setupOptions: Status[] = ["spring", "fakeout", "bpr", "anticipation", "pool"];
 const baseOptions = [2, 3, 4, 5];
 const setupLabels: Record<Status, string> = {
+  spring: "spring",
   fakeout: "fakeout",
   anticipation: "anticipation",
   bpr: "bpr",

@@ -141,7 +141,47 @@ function findBreakoutPullback(bars, closes, ema21Series) {
   return null;
 }
 
-function pickStatus({ breakoutPullback, close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr }) {
+function findSpringBurst(bars) {
+  const start = Math.max(30, bars.length - 28);
+  const avgVolume50 = average(bars.slice(-50).map((bar) => bar.volume));
+
+  for (let index = start; index < bars.length - 1; index += 1) {
+    const bar = bars[index];
+    const prior = bars.slice(Math.max(0, index - 30), index - 2);
+    if (prior.length < 12) continue;
+
+    const support = Math.min(...prior.map((item) => item.low));
+    const sweptSupport = bar.low < support * 0.99;
+    const reclaimedSupport = bar.close > support;
+    if (!sweptSupport || !reclaimedSupport) continue;
+
+    const followThrough = bars.slice(index + 1, Math.min(index + 6, bars.length));
+    const burst = followThrough.find((item, offset) => {
+      const previous = bars[index + offset];
+      const range = Math.max(item.high - item.low, 0.01);
+      const closePosition = (item.close - item.low) / range;
+      const dayChange = previous ? ((item.close / previous.close) - 1) * 100 : 0;
+      const reclaimedRange = item.close > Math.max(...bars.slice(Math.max(0, index - 10), index).map((priorBar) => priorBar.high));
+      const volumeBurst = avgVolume50 ? item.volume > avgVolume50 * 1.15 : true;
+      return volumeBurst && closePosition >= 0.6 && (dayChange >= 4 || reclaimedRange);
+    });
+
+    const last = bars.at(-1);
+    const stillValid = burst && last.close > support && last.close > bar.close;
+    if (stillValid) {
+      return {
+        springDate: bar.date,
+        burstDate: burst.date,
+        liquidityLevel: support,
+      };
+    }
+  }
+
+  return null;
+}
+
+function pickStatus({ springBurst, breakoutPullback, close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr }) {
+  if (springBurst) return "spring";
   if (breakoutPullback) return close < breakoutPullback.pivot ? "fakeout" : "bpr";
   const reclaimed20 = low5 < sma20 && close > sma20 && close > sma50 && threeMonth > 5;
   const failedBreakout = high5 > priorHigh50 * 1.01 && close < priorHigh50 && close > sma50;
@@ -192,8 +232,9 @@ function analyzeCandles(component, sectorLabel, candles) {
   const range15 = Math.max(...recent15.map((bar) => bar.high)) - Math.min(...recent15.map((bar) => bar.low));
   const tightness = Math.max(0, Math.min(100, 100 - ((range15 / last.close) * 280)));
   const avgDollar50 = average(recent50.map((bar) => bar.turnover || (bar.close * bar.volume)));
+  const springBurst = findSpringBurst(bars);
   const breakoutPullback = findBreakoutPullback(bars, closes, ema21Series);
-  const status = pickStatus({ breakoutPullback, close: last.close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr });
+  const status = pickStatus({ springBurst, breakoutPullback, close: last.close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr });
   const daysSinceHigh20 = Math.max(1, recent20.length - 1 - recent20.findLastIndex((bar) => bar.high === high20));
   const base = line < 4 && tightness > 70 ? 2 : line < 9 && tightness > 55 ? 3 : line < 16 ? 4 : 5;
   const ob = last.volume > average(bars.slice(-50, -1).map((bar) => bar.volume)) * 1.6 && last.close > last.open;
@@ -216,10 +257,13 @@ function analyzeCandles(component, sectorLabel, candles) {
     dollarVol: formatDollarVolume(avgDollar50),
     vs200: vs200 === null ? null : Math.round(vs200),
     line: Number(line.toFixed(2)),
-    alert: wedge && ob ? "wedge+OB" : undefined,
+    alert: springBurst ? "shakeout+MB" : wedge && ob ? "wedge+OB" : undefined,
     strong: true,
     weight: component.weight,
     breakoutDate: breakoutPullback?.breakoutDate,
+    springDate: springBurst?.springDate,
+    burstDate: springBurst?.burstDate,
+    liquidityLevel: springBurst?.liquidityLevel ? Number(springBurst.liquidityLevel.toFixed(2)) : undefined,
     ema21: breakoutPullback?.ema21 ? Number(breakoutPullback.ema21.toFixed(2)) : undefined,
     lastDate: last.date,
   };
@@ -238,7 +282,7 @@ async function scanCandidates(ctx, sectors, components) {
     }
   }
   candidates.sort((a, b) => {
-    const statusWeight = { fakeout: 0, bpr: 1, anticipation: 2, pool: 3 };
+    const statusWeight = { spring: 0, fakeout: 1, bpr: 2, anticipation: 3, pool: 4 };
     return statusWeight[a.status] - statusWeight[b.status] || a.line - b.line || b.threeMonth - a.threeMonth;
   });
   return candidates.map((candidate, index) => ({ ...candidate, rank: index + 1 }));

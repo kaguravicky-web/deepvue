@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T04:54:38.968Z",
+  "updatedAt": "2026-07-15T05:10:07.196Z",
   "sectors": [
     {
       "sector": "S&P  Insurance",
@@ -887,6 +887,83 @@
   "candidates": [
     {
       "rank": 1,
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "spring",
+      "base": 4,
+      "days": 8,
+      "stage": "active",
+      "close": 396.18,
+      "threeMonth": 12.4,
+      "adr": 4.22,
+      "tightness": 55,
+      "dollarVol": "19.9B",
+      "vs200": -5,
+      "line": 9.26,
+      "alert": "shakeout+MB",
+      "strong": true,
+      "weight": "🟡 同在: ARKK, LIT, VOO",
+      "springDate": "2026-06-26",
+      "burstDate": "2026-06-29",
+      "liquidityLevel": 379.06,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 2,
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "spring",
+      "base": 4,
+      "days": 8,
+      "stage": "active",
+      "close": 396.18,
+      "threeMonth": 12.4,
+      "adr": 4.22,
+      "tightness": 55,
+      "dollarVol": "19.9B",
+      "vs200": -5,
+      "line": 9.26,
+      "alert": "shakeout+MB",
+      "strong": true,
+      "weight": "🟡 同在: MAGS, LIT, VOO",
+      "springDate": "2026-06-26",
+      "burstDate": "2026-06-29",
+      "liquidityLevel": 379.06,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 3,
+      "ticker": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "spring",
+      "base": 4,
+      "days": 15,
+      "stage": "active",
+      "close": 161.5,
+      "threeMonth": -7.5,
+      "adr": 5.65,
+      "tightness": 41,
+      "dollarVol": "1.5B",
+      "vs200": -28,
+      "line": 9.28,
+      "alert": "shakeout+MB",
+      "strong": true,
+      "weight": "🟢 同在: WGMI",
+      "breakoutDate": "2026-07-01",
+      "springDate": "2026-06-26",
+      "burstDate": "2026-07-01",
+      "liquidityLevel": 147.88,
+      "ema21": 161.04,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 4,
       "ticker": "BPOP",
       "name": "Popular, Inc.",
       "group": "Regional Banking #5",
@@ -907,7 +984,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 2,
+      "rank": 5,
       "ticker": "CRM",
       "name": "Salesforce, Inc.",
       "group": "Software #17",
@@ -930,7 +1007,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 3,
+      "rank": 6,
       "ticker": "PDD",
       "name": "PDD Holdings (拼多多)",
       "group": "China Internet #15",
@@ -953,7 +1030,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 4,
+      "rank": 7,
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
       "group": "Magnificent 7 #11",
@@ -976,7 +1053,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 5,
+      "rank": 8,
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
       "group": "Software #17",
@@ -999,7 +1076,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 6,
+      "rank": 9,
       "ticker": "ADBE",
       "name": "Adobe Inc.",
       "group": "Software #17",
@@ -1022,7 +1099,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 7,
+      "rank": 10,
       "ticker": "AMGN",
       "name": "Amgen Inc.",
       "group": "Biotechnology #6",
@@ -1045,7 +1122,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 8,
+      "rank": 11,
       "ticker": "HD",
       "name": "The Home Depot, Inc.",
       "group": "S&P Retail #12",
@@ -1068,7 +1145,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 9,
+      "rank": 12,
       "ticker": "LLY",
       "name": "Eli Lilly and Company",
       "group": "Pharmaceutical #9",
@@ -1091,30 +1168,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 10,
-      "ticker": "COIN",
-      "name": "Coinbase Global, Inc.",
-      "group": "ARK Innovation #20",
-      "theme": "ARKK",
-      "status": "fakeout",
-      "base": 4,
-      "days": 15,
-      "stage": "active",
-      "close": 161.5,
-      "threeMonth": -7.5,
-      "adr": 5.65,
-      "tightness": 41,
-      "dollarVol": "1.5B",
-      "vs200": -28,
-      "line": 9.28,
-      "strong": true,
-      "weight": "🟢 同在: WGMI",
-      "breakoutDate": "2026-07-01",
-      "ema21": 161.04,
-      "lastDate": "2026-07-14"
-    },
-    {
-      "rank": 11,
+      "rank": 13,
       "ticker": "AMT",
       "name": "American Tower Corp",
       "group": "Real Estate #14",
@@ -1137,7 +1191,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 12,
+      "rank": 14,
       "ticker": "DAL",
       "name": "Delta Air Lines",
       "group": "Airlines #18",
@@ -1160,7 +1214,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 13,
+      "rank": 15,
       "ticker": "VRTX",
       "name": "Vertex Pharmaceuticals",
       "group": "Biotechnology #6",
@@ -1183,7 +1237,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 14,
+      "rank": 16,
       "ticker": "VRTX",
       "name": "Vertex Pharmaceuticals",
       "group": "S&P Biotech #8",
@@ -1206,7 +1260,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 15,
+      "rank": 17,
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
       "group": "Magnificent 7 #11",
@@ -1227,7 +1281,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 16,
+      "rank": 18,
       "ticker": "META",
       "name": "Meta Platforms, Inc.",
       "group": "Magnificent 7 #11",
@@ -1250,7 +1304,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 17,
+      "rank": 19,
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "group": "Magnificent 7 #11",
@@ -1273,7 +1327,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 18,
+      "rank": 20,
       "ticker": "BABA",
       "name": "Alibaba Group (阿里巴巴)",
       "group": "China Internet #15",
@@ -1296,7 +1350,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 19,
+      "rank": 21,
       "ticker": "BABA",
       "name": "Alibaba Group (阿里巴巴)",
       "group": "HK Large Cap #19",
@@ -1319,7 +1373,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 20,
+      "rank": 22,
       "ticker": "UMBF",
       "name": "UMB Financial Corp",
       "group": "Regional Banking #5",
@@ -1340,7 +1394,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 21,
+      "rank": 23,
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
       "group": "Pharmaceutical #9",
@@ -1363,7 +1417,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 22,
+      "rank": 24,
       "ticker": "REGN",
       "name": "Regeneron Pharmaceuticals",
       "group": "Biotechnology #6",
@@ -1384,7 +1438,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 23,
+      "rank": 25,
       "ticker": "TCEHY",
       "name": "Tencent (腾讯控股)",
       "group": "China Internet #15",
@@ -1405,7 +1459,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 24,
+      "rank": 26,
       "ticker": "TCEHY",
       "name": "Tencent (腾讯控股)",
       "group": "HK Large Cap #19",
@@ -1426,7 +1480,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 25,
+      "rank": 27,
       "ticker": "PLD",
       "name": "Prologis, Inc.",
       "group": "Real Estate #14",
@@ -1447,7 +1501,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 26,
+      "rank": 28,
       "ticker": "XOM",
       "name": "Exxon Mobil Corp",
       "group": "Oil & Gas Exploration #7",
@@ -1468,7 +1522,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 27,
+      "rank": 29,
       "ticker": "CVX",
       "name": "Chevron Corp",
       "group": "Oil & Gas Exploration #7",
@@ -1489,7 +1543,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 28,
+      "rank": 30,
       "ticker": "AMZN",
       "name": "Amazon.com, Inc.",
       "group": "Magnificent 7 #11",
@@ -1510,7 +1564,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 29,
+      "rank": 31,
       "ticker": "AMZN",
       "name": "Amazon.com, Inc.",
       "group": "S&P Retail #12",
@@ -1531,7 +1585,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 30,
+      "rank": 32,
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
       "group": "Magnificent 7 #11",
@@ -1552,7 +1606,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 31,
+      "rank": 33,
       "ticker": "SYK",
       "name": "Stryker Corporation",
       "group": "U.S. Medical Devices #10",
@@ -1573,7 +1627,7 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 32,
+      "rank": 34,
       "ticker": "MDT",
       "name": "Medtronic plc",
       "group": "U.S. Medical Devices #10",
@@ -1591,48 +1645,6 @@
       "line": 8.44,
       "strong": true,
       "weight": "🟢 同在: VOO",
-      "lastDate": "2026-07-14"
-    },
-    {
-      "rank": 33,
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "group": "Magnificent 7 #11",
-      "theme": "MAGS",
-      "status": "pool",
-      "base": 4,
-      "days": 8,
-      "stage": "watch",
-      "close": 396.18,
-      "threeMonth": 12.4,
-      "adr": 4.22,
-      "tightness": 55,
-      "dollarVol": "19.9B",
-      "vs200": -5,
-      "line": 9.26,
-      "strong": true,
-      "weight": "🟡 同在: ARKK, LIT, VOO",
-      "lastDate": "2026-07-14"
-    },
-    {
-      "rank": 34,
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "group": "ARK Innovation #20",
-      "theme": "ARKK",
-      "status": "pool",
-      "base": 4,
-      "days": 8,
-      "stage": "watch",
-      "close": 396.18,
-      "threeMonth": 12.4,
-      "adr": 4.22,
-      "tightness": 55,
-      "dollarVol": "19.9B",
-      "vs200": -5,
-      "line": 9.26,
-      "strong": true,
-      "weight": "🟡 同在: MAGS, LIT, VOO",
       "lastDate": "2026-07-14"
     },
     {
@@ -1705,7 +1717,7 @@
     },
     "XOP": {
       "lastDone": "165.850",
-      "timestamp": "2026-07-14T19:59:58.000Z"
+      "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "XBI": {
       "lastDone": "155.450",

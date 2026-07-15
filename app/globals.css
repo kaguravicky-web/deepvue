@@ -249,6 +249,11 @@ select {
   color: var(--pink);
 }
 
+.chip.tab-spring,
+.segmented .tab-spring {
+  color: #8f6b00;
+}
+
 .chip.tab-anticipation,
 .segmented .tab-anticipation {
   color: var(--blue);
@@ -401,6 +406,11 @@ tbody tr:hover,
 .fakeout {
   background: #f8dff0;
   color: var(--pink);
+}
+
+.spring {
+  background: #fff0bf;
+  color: #8f6b00;
 }
 
 .bpr {
