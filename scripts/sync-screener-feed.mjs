@@ -271,11 +271,29 @@ function analyzeCandles(component, sectorLabel, candles) {
 
 async function scanCandidates(ctx, sectors, components) {
   const sectorByTicker = new Map(sectors.map((sector, index) => [sector.ticker, `${sector.sector} #${index + 1}`]));
+  const mergedComponents = Array.from(components.reduce((map, component) => {
+    const existing = map.get(component.ticker);
+    if (!existing) {
+      map.set(component.ticker, { ...component, themes: [component.themeTicker], names: [sectorByTicker.get(component.themeTicker) ?? component.themeTicker], weights: [component.weight].filter(Boolean) });
+      return map;
+    }
+    if (!existing.themes.includes(component.themeTicker)) existing.themes.push(component.themeTicker);
+    const sectorName = sectorByTicker.get(component.themeTicker) ?? component.themeTicker;
+    if (!existing.names.includes(sectorName)) existing.names.push(sectorName);
+    if (component.weight) existing.weights.push(component.weight);
+    return map;
+  }, new Map()).values()).map((component) => ({
+    ...component,
+    themeTicker: component.themes.join("/"),
+    group: component.names.join(" / "),
+    weight: component.weights.join(" / "),
+  }));
+
   const candidates = [];
-  for (const component of components) {
+  for (const component of mergedComponents) {
     try {
       const candles = await ctx.candlesticks(`${component.ticker}.US`, 14, 260, 1, 0);
-      const analyzed = analyzeCandles(component, sectorByTicker.get(component.themeTicker) ?? component.themeTicker, candles);
+      const analyzed = analyzeCandles(component, component.group, candles);
       if (analyzed) candidates.push(analyzed);
     } catch (error) {
       console.warn(`skip ${component.ticker}: ${error.message}`);

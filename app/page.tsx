@@ -139,7 +139,7 @@ export default function Home() {
   }, [feed]);
 
   const themeOptions = useMemo(
-    () => Array.from(new Set(candidateRows.map((item) => item.theme))).sort(),
+    () => Array.from(new Set(candidateRows.flatMap((item) => item.theme.split("/")))).sort(),
     [candidateRows],
   );
 
@@ -157,7 +157,8 @@ export default function Home() {
   const visible = candidateRows.filter((item) => {
     const matchesQuery = item.ticker.toLowerCase().includes(query.toLowerCase());
     const matchesSetup = selectedSetups.length === 0 || selectedSetups.includes(item.status);
-    const matchesTheme = selectedThemes.length === 0 || selectedThemes.includes(item.theme);
+    const itemThemes = item.theme.split("/");
+    const matchesTheme = selectedThemes.length === 0 || selectedThemes.some((theme) => itemThemes.includes(theme));
     const matchesBase = selectedBases.length === 0 || selectedBases.includes(item.base);
     const matchesStrong = !strongOnly || item.strong;
     return matchesQuery && matchesSetup && matchesTheme && matchesBase && matchesStrong;
