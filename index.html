@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DeepVue Screener</title>
+    <style>
+      :root {
+        --bg: #f6f7f4;
+        --panel: #fff;
+        --line: #e5e7df;
+        --text: #2b3038;
+        --muted: #7d8490;
+        --green: #2f9e73;
+        --red: #c65062;
+        --blue: #526fd0;
+        --cyan: #45a9bb;
+        --pink: #cf4f97;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .shell { min-height: 100vh; padding: 20px; }
+      .workspace {
+        height: calc(100vh - 40px);
+        min-height: 720px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255,255,255,.9);
+        box-shadow: 0 18px 50px rgba(42,46,53,.08);
+      }
+      .titlebar, .toolbar, .base-note { border-bottom: 1px solid var(--line); }
+      .titlebar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 20px 12px;
+      }
+      h1 { margin: 0; font-size: 22px; }
+      p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+      .sync { color: var(--muted); font-size: 13px; white-space: nowrap; }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+      }
+      input, select, button {
+        height: 34px;
+        border: 1px solid #cfcfc8;
+        border-radius: 8px;
+        background: #fbfbf8;
+        color: #4d545e;
+        padding: 0 12px;
+        font: inherit;
+      }
+      button { cursor: pointer; font-weight: 740; }
+      .label { color: #8a929c; font-size: 12px; font-weight: 760; text-transform: uppercase; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+      .chip { border-radius: 999px; background: #f1f2ef; }
+      .chip.selected { background: #fff; box-shadow: inset 0 0 0 2px currentColor; }
+      .tab-spring { color: #8f6b00; }
+      .tab-fakeout { color: var(--pink); }
+      .tab-bpr { color: var(--cyan); }
+      .tab-anticipation { color: var(--blue); }
+      .tab-pool { color: #6d7580; }
+      .base-note { background: #fbfbf8; color: #7b838e; padding: 8px 16px; font-size: 12px; }
+      .count { margin-left: auto; color: #9aa0a9; font-size: 13px; }
+      .table-wrap { height: calc(100% - 146px); overflow: auto; }
+      table { width: 100%; min-width: 1040px; border-collapse: collapse; font-size: 14px; }
+      thead { position: sticky; top: 0; z-index: 2; background: #fbfbf8; }
+      th, td { border-bottom: 1px solid #ebece7; padding: 10px 9px; text-align: left; white-space: nowrap; }
+      th { color: #9aa0a9; font-size: 12px; }
+      td { color: #4d545e; font-weight: 620; }
+      tr:hover { background: #f6f8ff; }
+      .ticker { color: var(--blue); font-family: Consolas, monospace; font-weight: 800; }
+      .tv { display: inline-grid; min-width: 34px; height: 26px; place-items: center; border: 1px solid #d9dfef; border-radius: 7px; color: var(--blue); text-decoration: none; font-size: 12px; font-weight: 820; }
+      .pill { display: inline-flex; align-items: center; height: 25px; border-radius: 999px; padding: 0 10px; font-size: 12px; font-weight: 820; }
+      .spring { background: #fff0bf; color: #8f6b00; }
+      .fakeout { background: #f8dff0; color: var(--pink); }
+      .bpr { background: #dff5f8; color: var(--cyan); }
+      .anticipation { background: #e6ecff; color: var(--blue); }
+      .pool { background: #eceee9; color: #66707a; }
+      .base { display: inline-grid; width: 34px; height: 24px; place-items: center; border-radius: 7px; font-weight: 850; }
+      .base-2 { background: #dcefe6; color: #258164; }
+      .base-3 { background: #f6e6c7; color: #a36e1b; }
+      .base-4, .base-5 { background: #f4d8df; color: #bd4559; }
+      .gain { color: var(--green); }
+      .loss { color: var(--red); }
+      .vol { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 8px; min-width: 94px; padding-bottom: 7px; }
+      .vol em { color: #9aa0a9; font-size: 11px; font-style: normal; font-weight: 800; }
+      .vol i { position: absolute; left: 0; bottom: 0; height: 3px; border-radius: 99px; background: linear-gradient(90deg,#87c4a8,#2f9e73); }
+      .alert { border-radius: 999px; background: #f7e4c0; color: #aa7623; padding: 4px 9px; font-size: 12px; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace">
+        <div class="titlebar">
+          <div>
+            <h1>候选名单</h1>
+            <p>强势板块成分股 · 日K结构扫描 · GitHub Pages 静态版</p>
+          </div>
+          <div class="sync" id="sync">读取中</div>
+        </div>
+        <div class="toolbar">
+          <input id="q" placeholder="搜索代码" />
+          <span class="label">setup</span>
+          <div class="chips" id="setups"></div>
+          <span class="label">板块</span>
+          <select id="theme"><option value="">全部板块</option></select>
+          <span class="label">base</span>
+          <div class="chips" id="bases"></div>
+          <span class="count" id="count"></span>
+        </div>
+        <div class="base-note">base# 暂定规则：2 = 距高点 &lt; 4% 且紧密度 &gt; 70；3 = 距高点 &lt; 9% 且紧密度 &gt; 55；4 = 距高点 &lt; 16%；5 = 更松/更远。后续会改成真正的 Stockbee base count。</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th><th>代码</th><th>TV</th><th>板块</th><th>setup</th><th>base#</th><th>base日</th><th>状态</th><th>收盘</th><th>3月%</th><th>ADR%</th><th>紧密度%</th><th>$vol50</th><th>vs200MA</th><th>距高点%</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script>
+      const labels = { spring: "spring", fakeout: "fakeout", bpr: "bpr", anticipation: "anticipation", pool: "watch" };
+      const state = { data: [], setup: "", base: "", theme: "", q: "" };
+      const parseVol = (value) => {
+        const match = String(value || "").match(/^([\d.]+)([KMB])$/i);
+        if (!match) return 0;
+        const n = Number(match[1]);
+        return match[2].toUpperCase() === "B" ? n * 1e9 : match[2].toUpperCase() === "M" ? n * 1e6 : n * 1e3;
+      };
+      const pct = (value, signed = false) => value ? `${signed && value > 0 ? "+" : ""}${Number(value).toFixed(1)}%` : "-";
+      const key = (item) => `${item.theme}-${item.ticker}-${item.rank}`;
+      function renderControls() {
+        const setups = ["spring", "fakeout", "bpr", "anticipation", "pool"];
+        document.getElementById("setups").innerHTML = setups.map(s => `<button class="chip tab-${s} ${state.setup === s ? "selected" : ""}" data-setup="${s}">${labels[s]}</button>`).join("");
+        document.querySelectorAll("[data-setup]").forEach(btn => btn.onclick = () => { state.setup = state.setup === btn.dataset.setup ? "" : btn.dataset.setup; render(); });
+        document.getElementById("bases").innerHTML = [2,3,4,5].map(b => `<button class="chip ${String(state.base) === String(b) ? "selected" : ""}" data-base="${b}">${b}</button>`).join("");
+        document.querySelectorAll("[data-base]").forEach(btn => btn.onclick = () => { state.base = state.base === btn.dataset.base ? "" : btn.dataset.base; render(); });
+        const themes = [...new Set(state.data.flatMap(item => String(item.theme || "").split("/")))].sort();
+        document.getElementById("theme").innerHTML = `<option value="">全部板块</option>` + themes.map(t => `<option value="${t}" ${state.theme === t ? "selected" : ""}>${t}</option>`).join("");
+      }
+      function render() {
+        const ranked = state.data.map(item => ({ key: key(item), value: parseVol(item.dollarVol) })).filter(item => item.value).sort((a,b) => b.value - a.value);
+        const liq = new Map(ranked.map((item, index) => [item.key, { rank: index + 1, percentile: ranked.length <= 1 ? 100 : Math.round((1 - index / (ranked.length - 1)) * 100), total: ranked.length }]));
+        const visible = state.data.filter(item => {
+          const themes = String(item.theme || "").split("/");
+          return (!state.q || item.ticker.toLowerCase().includes(state.q.toLowerCase()))
+            && (!state.setup || item.status === state.setup)
+            && (!state.base || String(item.base) === String(state.base))
+            && (!state.theme || themes.includes(state.theme));
+        });
+        document.getElementById("count").textContent = `显示 ${visible.length} / ${state.data.length}`;
+        document.getElementById("rows").innerHTML = visible.map(item => {
+          const rank = liq.get(key(item));
+          return `<tr>
+            <td>${item.rank}</td>
+            <td class="ticker">${item.ticker}</td>
+            <td><a class="tv" target="_blank" rel="noreferrer" href="https://www.tradingview.com/chart/?symbol=NASDAQ:${item.ticker}">TV</a></td>
+            <td title="${item.group || ""}">${item.theme}</td>
+            <td><span class="pill ${item.status}">${labels[item.status] || item.status}</span></td>
+            <td>${item.base ? `<span class="base base-${item.base}">${item.base}</span>` : "-"}</td>
+            <td>${item.days || "-"}</td>
+            <td>${item.stage || "-"}</td>
+            <td>${item.close ? Number(item.close).toFixed(2) : "-"}</td>
+            <td class="${item.threeMonth > 0 ? "gain" : item.threeMonth < 0 ? "loss" : ""}">${pct(item.threeMonth, true)}</td>
+            <td>${item.adr ? Number(item.adr).toFixed(2) + "%" : "-"}</td>
+            <td>${item.tightness ? item.tightness + "%" : "-"}</td>
+            <td><div class="vol"><span>${item.dollarVol}</span><em>#${rank?.rank || "-"}</em><i style="width:${rank?.percentile || 0}%"></i></div></td>
+            <td class="${item.vs200 === null || item.vs200 < 0 ? "loss" : "gain"}">${item.vs200 === null ? "n/a" : `${item.vs200 > 0 ? "+" : ""}${item.vs200}%`}</td>
+            <td>${item.line ? Number(item.line).toFixed(2) + "%" : "-"}</td>
+            <td>${item.alert ? `<span class="alert">${item.alert}</span>` : ""}</td>
+          </tr>`;
+        }).join("");
+        renderControls();
+      }
+      document.getElementById("q").oninput = (event) => { state.q = event.target.value; render(); };
+      document.getElementById("theme").onchange = (event) => { state.theme = event.target.value; render(); };
+      fetch("public/screener-feed.json")
+        .then(res => res.json())
+        .then(feed => {
+          state.data = feed.candidates || [];
+          document.getElementById("sync").textContent = `已同步 ${state.data.length} 只`;
+          render();
+        })
+        .catch(() => {
+          document.getElementById("sync").textContent = "读取失败";
+        });
+    </script>
+  </body>
+</html>

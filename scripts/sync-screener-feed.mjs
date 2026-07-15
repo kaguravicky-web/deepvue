@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Config, QuoteContext } from "longport";
+import XLSX from "xlsx";
 
 function loadLocalEnv() {
   const text = readFileSync(".env.local", "utf8");
@@ -61,6 +62,37 @@ function parseComponents(csv) {
     name: (row[2] ?? "").trim(),
     weight: (row[3] ?? "").trim(),
   })).filter((row) => row.themeTicker && /^[A-Z][A-Z0-9.-]*$/.test(row.ticker));
+}
+
+function parseLocalComponentsFromWorkbook(path, allowedThemes, maxPerTheme) {
+  const workbook = XLSX.readFile(path, { cellDates: false });
+  const worksheet = workbook.Sheets.All_Holdings ?? workbook.Sheets[workbook.SheetNames[0]];
+  if (!worksheet) throw new Error(`No worksheet found in ${path}`);
+
+  const rows = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
+  const counts = new Map();
+  const components = [];
+
+  for (const row of rows) {
+    const themeTicker = String(row.ETF ?? "").trim().toUpperCase();
+    const ticker = String(row["Holding Ticker"] ?? "").trim().toUpperCase();
+    const name = String(row["Holding Name"] ?? "").trim();
+    const rawWeight = row["Weight (%)"];
+    const weightNumber = Number(rawWeight);
+    const weight = Number.isFinite(weightNumber) ? `${weightNumber.toFixed(2)}%` : String(rawWeight ?? "").trim();
+
+    if (!allowedThemes.has(themeTicker)) continue;
+    if (!/^[A-Z][A-Z0-9.-]*$/.test(ticker)) continue;
+    if (ticker.includes("CASH") || ticker.includes("USD")) continue;
+
+    const currentCount = counts.get(themeTicker) ?? 0;
+    if (maxPerTheme > 0 && currentCount >= maxPerTheme) continue;
+
+    components.push({ themeTicker, ticker, name, weight });
+    counts.set(themeTicker, currentCount + 1);
+  }
+
+  return components;
 }
 
 async function quoteSymbols(ctx, tickers) {
@@ -316,15 +348,11 @@ if (!sheetResponse.ok) {
 }
 
 const sectors = parseSectors(await sheetResponse.text()).slice(0, 20);
-const componentUrl = `https://docs.google.com/spreadsheets/d/${process.env.COMPONENTS_SHEET_ID}/export?format=csv&gid=${process.env.COMPONENTS_SHEET_GID ?? "0"}`;
-const componentResponse = await fetch(componentUrl);
-if (!componentResponse.ok) {
-  throw new Error(`Components Sheet read failed: ${componentResponse.status}`);
-}
-
-const components = parseComponents(await componentResponse.text());
 const strongThemeTickers = new Set(sectors.map((row) => row.ticker));
-const activeComponents = components.filter((row) => strongThemeTickers.has(row.themeTicker));
+const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_XLSX || String.raw`D:\交易为生\deepvue\ETF_holdings_full_37_etfs_corrected.xlsx`;
+const maxHoldingsPerEtf = Number(process.env.MAX_HOLDINGS_PER_ETF ?? 10);
+const components = parseLocalComponentsFromWorkbook(localHoldingsPath, strongThemeTickers, maxHoldingsPerEtf);
+const activeComponents = components;
 const ctx = QuoteContext.new(Config.fromApikeyEnv());
 const quotes = await quoteSymbols(ctx, sectors.map((row) => row.ticker));
 const stockQuotes = await quoteSymbols(ctx, activeComponents.map((row) => row.ticker));

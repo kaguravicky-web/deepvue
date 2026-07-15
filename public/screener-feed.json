@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T05:12:47.285Z",
+  "updatedAt": "2026-07-15T05:32:58.223Z",
   "sectors": [
     {
       "sector": "S&P  Insurance",
@@ -204,691 +204,2003 @@
   ],
   "components": [
     {
+      "themeTicker": "KIE",
+      "ticker": "LMND",
+      "name": "LEMONADE INC",
+      "weight": "2.14%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "PLMR",
+      "name": "PALOMAR HOLDINGS INC",
+      "weight": "2.09%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "SKWD",
+      "name": "SKYWARD SPECIALTY INSURANCE",
+      "weight": "2.07%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "KMPR",
+      "name": "KEMPER CORP",
+      "weight": "2.05%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "RYAN",
+      "name": "RYAN SPECIALTY HOLDINGS INC",
+      "weight": "2.04%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "AJG",
+      "name": "ARTHUR J GALLAGHER + CO",
+      "weight": "2.01%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "RGA",
+      "name": "REINSURANCE GROUP OF AMERICA",
+      "weight": "1.97%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "BRO",
+      "name": "BROWN + BROWN INC",
+      "weight": "1.95%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "PGR",
+      "name": "PROGRESSIVE CORP",
+      "weight": "1.95%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "ALL",
+      "name": "ALLSTATE CORP",
+      "weight": "1.95%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "PGR",
+      "name": "PROGRESSIVE CORP",
+      "weight": "13.92%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "CB",
+      "name": "CHUBB",
+      "weight": "13.00%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "TRV",
+      "name": "TRAVELERS COMPANIES INC",
+      "weight": "7.39%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "ALL",
+      "name": "ALLSTATE CORP",
+      "weight": "6.70%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "AFL",
+      "name": "AFLAC INC",
+      "weight": "4.55%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "MET",
+      "name": "METLIFE INC",
+      "weight": "4.43%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "AIG",
+      "name": "AMERICAN INTERNATIONAL GROUP INC",
+      "weight": "4.36%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "PRU",
+      "name": "PRUDENTIAL FINANCIAL INC",
+      "weight": "4.27%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "HIG",
+      "name": "HARTFORD INSURANCE GROUP INC",
+      "weight": "4.10%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "ACGL",
+      "name": "ARCH CAPITAL GROUP LTD",
+      "weight": "3.80%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "weight": "9.10%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "FTNT",
+      "name": "Fortinet, Inc.",
+      "weight": "9.03%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings, Inc. (Class A)",
+      "weight": "7.98%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "weight": "7.68%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "weight": "6.67%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "NET",
+      "name": "Cloudflare, Inc. (Class A)",
+      "weight": "4.32%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "OKTA",
+      "name": "Okta, Inc.",
+      "weight": "3.51%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "FFIV",
+      "name": "F5, Inc.",
+      "weight": "3.37%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "ZS",
+      "name": "Zscaler, Inc.",
+      "weight": "2.98%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "AKAM",
+      "name": "Akamai Technologies, Inc.",
+      "weight": "2.93%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "NTSK",
+      "name": "NETSKOPE INC CL A",
+      "weight": "1.06%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "TENB",
+      "name": "TENABLE HOLDINGS INC",
+      "weight": "1.03%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "PRCH",
+      "name": "PORCH GROUP INC",
+      "weight": "1.00%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "VRNS",
+      "name": "VARONIS SYSTEMS INC",
+      "weight": "0.97%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "QLYS",
+      "name": "QUALYS INC",
+      "weight": "0.97%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "YEXT",
+      "name": "YEXT INC",
+      "weight": "0.96%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "AMPL",
+      "name": "AMPLITUDE INC CLASS A",
+      "weight": "0.95%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "RBLX",
+      "name": "ROBLOX CORP  CLASS A",
+      "weight": "0.93%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "CCC",
+      "name": "CCC INTELLIGENT SOLUTIONS HO",
+      "weight": "0.93%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "BILL",
+      "name": "BILL HOLDINGS INC",
+      "weight": "0.93%"
+    },
+    {
       "themeTicker": "KRE",
-      "ticker": "UMBF",
-      "name": "UMB Financial Corp",
-      "weight": "（区域银行，重叠度低）"
+      "ticker": "CFR",
+      "name": "CULLEN/FROST BANKERS INC",
+      "weight": "1.38%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "RF",
+      "name": "REGIONS FINANCIAL CORP",
+      "weight": "1.38%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "MTB",
+      "name": "M + T BANK CORP",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "CFG",
+      "name": "CITIZENS FINANCIAL GROUP",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "GBCI",
+      "name": "GLACIER BANCORP INC",
+      "weight": "1.37%"
     },
     {
       "themeTicker": "KRE",
       "ticker": "BPOP",
-      "name": "Popular, Inc.",
-      "weight": "（区域银行，重叠度低）"
+      "name": "POPULAR INC",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "ONB",
+      "name": "OLD NATIONAL BANCORP",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "PNFP",
+      "name": "PINNACLE FINANCIAL PARTNERS",
+      "weight": "1.36%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "ASB",
+      "name": "ASSOCIATED BANC CORP",
+      "weight": "1.36%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "AUB",
+      "name": "ATLANTIC UNION BANKSHARES CO",
+      "weight": "1.36%"
     },
     {
       "themeTicker": "IBB",
       "ticker": "VRTX",
-      "name": "Vertex Pharmaceuticals",
-      "weight": "🟢 同在: XBI, VOO"
-    },
-    {
-      "themeTicker": "IBB",
-      "ticker": "REGN",
-      "name": "Regeneron Pharmaceuticals",
-      "weight": "🟢 同在: XBI, VOO"
+      "name": "VERTEX PHARMACEUTICALS INC",
+      "weight": "7.83%"
     },
     {
       "themeTicker": "IBB",
       "ticker": "AMGN",
-      "name": "Amgen Inc.",
-      "weight": "🟢 同在: VOO"
+      "name": "AMGEN INC",
+      "weight": "7.80%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "GILD",
+      "name": "GILEAD SCIENCES INC",
+      "weight": "7.13%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "REGN",
+      "name": "REGENERON PHARMACEUTICALS INC",
+      "weight": "5.23%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "ARGX",
+      "name": "ARGENX SE ADR",
+      "weight": "3.56%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "ALNY",
+      "name": "ALNYLAM PHARMACEUTICALS INC",
+      "weight": "2.99%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "NTRA",
+      "name": "NATERA INC",
+      "weight": "2.91%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "RVMD",
+      "name": "REVOLUTION MEDICINES INC",
+      "weight": "2.74%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "BIIB",
+      "name": "BIOGEN INC",
+      "weight": "2.39%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "ILMN",
+      "name": "ILLUMINA INC",
+      "weight": "2.24%"
     },
     {
       "themeTicker": "XOP",
-      "ticker": "XOM",
-      "name": "Exxon Mobil Corp",
-      "weight": "🟢 同在: OIH, VOO"
+      "ticker": "PARR",
+      "name": "PAR PACIFIC HOLDINGS INC",
+      "weight": "3.12%"
     },
     {
       "themeTicker": "XOP",
-      "ticker": "CVX",
-      "name": "Chevron Corp",
-      "weight": "🟢 同在: VOO"
+      "ticker": "DK",
+      "name": "DELEK US HOLDINGS INC",
+      "weight": "2.99%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "DINO",
+      "name": "HF SINCLAIR CORP",
+      "weight": "2.93%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "VLO",
+      "name": "VALERO ENERGY CORP",
+      "weight": "2.91%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "MPC",
+      "name": "MARATHON PETROLEUM CORP",
+      "weight": "2.86%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "PSX",
+      "name": "PHILLIPS 66",
+      "weight": "2.77%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "TPL",
+      "name": "TEXAS PACIFIC LAND CORP",
+      "weight": "2.77%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "VG",
+      "name": "VENTURE GLOBAL INC CL A",
+      "weight": "2.55%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "EOG",
+      "name": "EOG RESOURCES INC",
+      "weight": "2.53%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "PR",
+      "name": "PERMIAN RESOURCES CORP CL A",
+      "weight": "2.52%"
     },
     {
       "themeTicker": "XBI",
-      "ticker": "VRTX",
-      "name": "Vertex Pharmaceuticals",
-      "weight": "🟢 同在: IBB, VOO"
+      "ticker": "MRNA",
+      "name": "MODERNA INC",
+      "weight": "1.38%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "KYMR",
+      "name": "KYMERA THERAPEUTICS INC",
+      "weight": "1.33%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "VKTX",
+      "name": "VIKING THERAPEUTICS INC",
+      "weight": "1.30%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "ERAS",
+      "name": "ERASCA INC",
+      "weight": "1.27%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "TWST",
+      "name": "TWIST BIOSCIENCE CORP",
+      "weight": "1.26%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "ORKA",
+      "name": "ORUKA THERAPEUTICS INC",
+      "weight": "1.25%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "CGON",
+      "name": "CG ONCOLOGY INC",
+      "weight": "1.25%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "PRAX",
+      "name": "PRAXIS PRECISION MEDICINES I",
+      "weight": "1.24%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "DNTH",
+      "name": "DIANTHUS THERAPEUTICS INC",
+      "weight": "1.22%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "RVMD",
+      "name": "REVOLUTION MEDICINES INC",
+      "weight": "1.21%"
     },
     {
       "themeTicker": "PPH",
       "ticker": "LLY",
-      "name": "Eli Lilly and Company",
-      "weight": "🟢 同在: VOO"
+      "name": "Eli Lilly & Co",
+      "weight": "20.06%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "NVS",
+      "name": "Novartis Ag",
+      "weight": "10.47%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "MRK",
+      "name": "Merck & Co Inc",
+      "weight": "9.56%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "NVO",
+      "name": "Novo Nordisk A/S",
+      "weight": "5.55%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "BMY",
+      "name": "Bristol-Myers Squibb Co",
+      "weight": "4.63%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "PFE",
+      "name": "Pfizer Inc",
+      "weight": "4.61%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "ABBV",
+      "name": "Abbvie Inc",
+      "weight": "4.54%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "MCK",
+      "name": "Mckesson Corp",
+      "weight": "4.46%"
     },
     {
       "themeTicker": "PPH",
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
-      "weight": "🟢 同在: VOO"
+      "weight": "4.45%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "GSK",
+      "name": "Gsk Plc",
+      "weight": "4.44%"
     },
     {
       "themeTicker": "IHI",
-      "ticker": "SYK",
-      "name": "Stryker Corporation",
-      "weight": "🟢 同在: VOO"
-    },
-    {
-      "themeTicker": "IHI",
-      "ticker": "MDT",
-      "name": "Medtronic plc",
-      "weight": "🟢 同在: VOO"
+      "ticker": "ABT",
+      "name": "ABBOTT LABORATORIES",
+      "weight": "16.53%"
     },
     {
       "themeTicker": "IHI",
       "ticker": "ISRG",
-      "name": "Intuitive Surgical, Inc.",
-      "weight": "🟢 同在: BOTZ, VOO"
+      "name": "INTUITIVE SURGICAL INC",
+      "weight": "14.86%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "weight": "🔴 超级重叠: SMH, AIQ, QTUM, BOTZ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "SYK",
+      "name": "STRYKER CORP",
+      "weight": "11.79%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "weight": "🔴 超级重叠: IGV, AIQ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "EW",
+      "name": "EDWARDS LIFESCIENCES CORP",
+      "weight": "4.64%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "AAPL",
-      "name": "Apple Inc.",
-      "weight": "🟡 同在: AIQ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "MDT",
+      "name": "MEDTRONIC PLC",
+      "weight": "4.53%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "weight": "🟡 同在: XRT, VOO"
+      "themeTicker": "IHI",
+      "ticker": "BDX",
+      "name": "BECTON DICKINSON",
+      "weight": "4.52%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "weight": "🟡 同在: ARKK, LIT, VOO"
+      "themeTicker": "IHI",
+      "ticker": "GEHC",
+      "name": "GE HEALTHCARE TECHNOLOGIES INC",
+      "weight": "4.43%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "META",
-      "name": "Meta Platforms, Inc.",
-      "weight": "🟡 同在: AIQ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "IDXX",
+      "name": "IDEXX LABORATORIES INC",
+      "weight": "4.40%"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "DXCM",
+      "name": "DEXCOM INC",
+      "weight": "4.39%"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "RMD",
+      "name": "RESMED INC",
+      "weight": "4.29%"
     },
     {
       "themeTicker": "MAGS",
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
-      "weight": "🟡 同在: AIQ, VOO"
+      "weight": "14.29%"
     },
     {
-      "themeTicker": "XRT",
+      "themeTicker": "MAGS",
       "ticker": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "weight": "🟡 同在: MAGS, VOO"
+      "name": "Amazon.com Inc.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "META",
+      "name": "Meta Platforms Inc.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "MSFT",
+      "name": "Microsoft Corp.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "weight": "14.29%"
     },
     {
       "themeTicker": "XRT",
-      "ticker": "HD",
-      "name": "The Home Depot, Inc.",
-      "weight": "🟢 同在: XHB, VOO"
+      "ticker": "RVLV",
+      "name": "REVOLVE GROUP INC",
+      "weight": "1.61%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "CPNG",
+      "name": "COUPANG INC",
+      "weight": "1.60%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "ETSY",
+      "name": "ETSY INC",
+      "weight": "1.59%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "CART",
+      "name": "MAPLEBEAR INC",
+      "weight": "1.58%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "REAL",
+      "name": "REALREAL INC/THE",
+      "weight": "1.58%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "UPBD",
+      "name": "UPBOUND GROUP INC",
+      "weight": "1.58%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "DLTR",
+      "name": "DOLLAR TREE INC",
+      "weight": "1.55%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "KMX",
+      "name": "CARMAX INC",
+      "weight": "1.53%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "BBWI",
+      "name": "BATH + BODY WORKS INC",
+      "weight": "1.52%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "SBH",
+      "name": "SALLY BEAUTY HOLDINGS INC",
+      "weight": "1.52%"
     },
     {
       "themeTicker": "XLRE",
       "ticker": "PLD",
-      "name": "Prologis, Inc.",
-      "weight": "🟢 同在: VOO"
+      "name": "PROLOGIS INC",
+      "weight": "8.96%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "EQIX",
+      "name": "EQUINIX INC",
+      "weight": "6.93%"
     },
     {
       "themeTicker": "XLRE",
       "ticker": "AMT",
-      "name": "American Tower Corp",
-      "weight": "🟢 同在: VOO"
+      "name": "AMERICAN TOWER CORP",
+      "weight": "5.34%"
     },
     {
-      "themeTicker": "KWEB",
-      "ticker": "TCEHY",
-      "name": "Tencent (腾讯控股)",
-      "weight": "🟢 同在: FXI"
+      "themeTicker": "XLRE",
+      "ticker": "SPG",
+      "name": "SIMON PROPERTY GROUP INC",
+      "weight": "4.81%"
     },
     {
-      "themeTicker": "KWEB",
-      "ticker": "BABA",
-      "name": "Alibaba Group (阿里巴巴)",
-      "weight": "🟢 同在: FXI"
+      "themeTicker": "XLRE",
+      "ticker": "DLR",
+      "name": "DIGITAL REALTY TRUST INC",
+      "weight": "4.65%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "O",
+      "name": "REALTY INCOME CORP",
+      "weight": "4.64%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "VTR",
+      "name": "VENTAS INC",
+      "weight": "4.56%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "PSA",
+      "name": "PUBLIC STORAGE",
+      "weight": "4.46%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "CBRE",
+      "name": "CBRE GROUP INC   A",
+      "weight": "4.12%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "IRM",
+      "name": "IRON MOUNTAIN INC",
+      "weight": "3.71%"
     },
     {
       "themeTicker": "KWEB",
       "ticker": "PDD",
-      "name": "PDD Holdings (拼多多)",
-      "weight": "🟢 同在: FXI"
+      "name": "PDD HOLDINGS INC",
+      "weight": "8.09%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "YMM",
+      "name": "FULL TRUCK ALLIANCE -SPN ADR",
+      "weight": "4.10%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "TME",
+      "name": "TENCENT MUSIC ENTERTAINM-ADR",
+      "weight": "3.31%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "BZ",
+      "name": "KANZHUN LTD - ADR",
+      "weight": "3.29%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "TAL",
+      "name": "TAL EDUCATION GROUP- ADR",
+      "weight": "2.98%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "VIPS",
+      "name": "VIPSHOP HOLDINGS LTD - ADR",
+      "weight": "2.39%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "YY",
+      "name": "JOYY INC-ADR",
+      "weight": "1.26%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "ATHM",
+      "name": "AUTOHOME INC-ADR",
+      "weight": "0.86%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "QFIN",
+      "name": "QFIN HOLDINGS INC-ADR",
+      "weight": "0.70%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "WB",
+      "name": "WEIBO CORP-SPON ADR",
+      "weight": "0.45%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "PANW",
+      "name": "PALO ALTO NETWORKS INC",
+      "weight": "9.81%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "PLTR",
+      "name": "PALANTIR TECHNOLOGIES INC CLASS A",
+      "weight": "8.39%"
     },
     {
       "themeTicker": "IGV",
       "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "weight": "🔴 超级重叠: MAGS, AIQ, VOO"
+      "name": "MICROSOFT CORP",
+      "weight": "8.27%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "CRWD",
+      "name": "CROWDSTRIKE HOLDINGS INC CLASS A",
+      "weight": "7.01%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "ORCL",
+      "name": "ORACLE CORP",
+      "weight": "5.49%"
     },
     {
       "themeTicker": "IGV",
       "ticker": "CRM",
-      "name": "Salesforce, Inc.",
-      "weight": "🟢 同在: AIQ, VOO"
+      "name": "SALESFORCE INC",
+      "weight": "5.13%"
     },
     {
       "themeTicker": "IGV",
-      "ticker": "ADBE",
-      "name": "Adobe Inc.",
-      "weight": "🟢 同在: VOO"
+      "ticker": "NOW",
+      "name": "SERVICENOW INC",
+      "weight": "4.24%"
     },
     {
-      "themeTicker": "JETS",
-      "ticker": "DAL",
-      "name": "Delta Air Lines",
-      "weight": "🟢 同在: VOO"
+      "themeTicker": "IGV",
+      "ticker": "APP",
+      "name": "APPLOVIN CORP CLASS A",
+      "weight": "3.99%"
     },
     {
-      "themeTicker": "JETS",
-      "ticker": "UAL",
-      "name": "United Airlines",
-      "weight": "🟢 同在: VOO"
+      "themeTicker": "IGV",
+      "ticker": "CDNS",
+      "name": "CADENCE DESIGN SYSTEMS INC",
+      "weight": "3.85%"
     },
     {
-      "themeTicker": "FXI",
-      "ticker": "TCEHY",
-      "name": "Tencent (腾讯控股)",
-      "weight": "🟢 同在: KWEB"
-    },
-    {
-      "themeTicker": "FXI",
-      "ticker": "BABA",
-      "name": "Alibaba Group (阿里巴巴)",
-      "weight": "🟢 同在: KWEB"
+      "themeTicker": "IGV",
+      "ticker": "FTNT",
+      "name": "FORTINET INC",
+      "weight": "3.69%"
     },
     {
       "themeTicker": "ARKK",
       "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "weight": "🟡 同在: MAGS, LIT, VOO"
+      "name": "TESLA INC",
+      "weight": "10.06%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "TEM",
+      "name": "TEMPUS AI INC-CL A",
+      "weight": "5.43%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "HOOD",
+      "name": "ROBINHOOD MARKETS INC - A",
+      "weight": "4.67%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "SHOP",
+      "name": "SHOPIFY INC - CLASS A",
+      "weight": "4.60%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "CRSP",
+      "name": "CRISPR THERAPEUTICS AG",
+      "weight": "4.56%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "SPCX",
+      "name": "SPACE EXPLORATION TECHN-CL A",
+      "weight": "4.31%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "AMD",
+      "name": "ADVANCED MICRO DEVICES",
+      "weight": "4.20%"
     },
     {
       "themeTicker": "ARKK",
       "ticker": "COIN",
-      "name": "Coinbase Global, Inc.",
-      "weight": "🟢 同在: WGMI"
+      "name": "COINBASE GLOBAL INC -CLASS A",
+      "weight": "3.98%"
     },
     {
-      "themeTicker": "IYZ",
-      "ticker": "CSCO",
-      "name": "Cisco Systems, Inc.",
-      "weight": "🟢 同在: VOO"
+      "themeTicker": "ARKK",
+      "ticker": "RBLX",
+      "name": "ROBLOX CORP -CLASS A",
+      "weight": "3.37%"
     },
     {
-      "themeTicker": "ITA",
-      "ticker": "LMT",
-      "name": "Lockheed Martin Corp",
-      "weight": "🟡 同在: XAR, UFO, VOO"
-    },
-    {
-      "themeTicker": "ITA",
-      "ticker": "RTX",
-      "name": "RTX Corporation",
-      "weight": "🟢 同在: XAR, VOO"
-    },
-    {
-      "themeTicker": "ITA",
-      "ticker": "BA",
-      "name": "The Boeing Company",
-      "weight": "🟢 同在: XAR, VOO"
-    },
-    {
-      "themeTicker": "SMH",
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "weight": "🔴 超级重叠: MAGS, AIQ, QTUM, BOTZ, VOO"
-    },
-    {
-      "themeTicker": "SMH",
-      "ticker": "TSM",
-      "name": "Taiwan Semiconductor",
-      "weight": "🟢 同在: AIQ"
-    },
-    {
-      "themeTicker": "SMH",
-      "ticker": "AVGO",
-      "name": "Broadcom Inc.",
-      "weight": "🟢 同在: VOO"
-    },
-    {
-      "themeTicker": "SMH",
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices",
-      "weight": "🟢 同在: AIQ, QTUM, VOO"
-    },
-    {
-      "themeTicker": "XHB",
-      "ticker": "LEN",
-      "name": "Lennar Corporation",
-      "weight": "🟢 同在: ITB, VOO"
-    },
-    {
-      "themeTicker": "XHB",
-      "ticker": "DHI",
-      "name": "D.R. Horton, Inc.",
-      "weight": "🟢 同在: ITB, VOO"
-    },
-    {
-      "themeTicker": "XHB",
-      "ticker": "HD",
-      "name": "The Home Depot, Inc.",
-      "weight": "🟢 同在: XRT, VOO"
-    },
-    {
-      "themeTicker": "OIH",
-      "ticker": "SLB",
-      "name": "Schlumberger N.V.",
-      "weight": "🟢 同在: XOP, VOO"
-    },
-    {
-      "themeTicker": "OIH",
-      "ticker": "HAL",
-      "name": "Halliburton Company",
-      "weight": "🟢 同在: XOP, VOO"
-    },
-    {
-      "themeTicker": "ITB",
-      "ticker": "DHI",
-      "name": "D.R. Horton, Inc.",
-      "weight": "🟢 同在: XHB, VOO"
-    },
-    {
-      "themeTicker": "ITB",
-      "ticker": "LEN",
-      "name": "Lennar Corporation",
-      "weight": "🟢 同在: XHB, VOO"
-    },
-    {
-      "themeTicker": "PAVE",
-      "ticker": "CAT",
-      "name": "Caterpillar Inc.",
-      "weight": "🟢 同在: AIRR, VOO"
-    },
-    {
-      "themeTicker": "PAVE",
-      "ticker": "PWR",
-      "name": "Quanta Services, Inc.",
-      "weight": "🟢 同在: VOO"
-    },
-    {
-      "themeTicker": "IBIT",
-      "ticker": "BTC",
-      "name": "Bitcoin (现货比特币)",
-      "weight": "⚠️ 无股票成分，计价为美元 (USD)"
-    },
-    {
-      "themeTicker": "AIQ",
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "weight": "🔴 超级重叠: MAGS, SMH, QTUM, BOTZ"
-    },
-    {
-      "themeTicker": "AIQ",
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "weight": "🔴 超级重叠: MAGS, IGV, VOO"
-    },
-    {
-      "themeTicker": "AIQ",
-      "ticker": "META",
-      "name": "Meta Platforms, Inc.",
-      "weight": "🟡 同在: MAGS, VOO"
-    },
-    {
-      "themeTicker": "SLX",
-      "ticker": "NUE",
-      "name": "Nucor Corporation",
-      "weight": "🟢 同在: VOO"
-    },
-    {
-      "themeTicker": "QTUM",
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "weight": "🔴 超级重叠: MAGS, SMH, AIQ, BOTZ"
-    },
-    {
-      "themeTicker": "QTUM",
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices",
-      "weight": "🟢 同在: SMH, AIQ, VOO"
-    },
-    {
-      "themeTicker": "COPX",
-      "ticker": "FCX",
-      "name": "Freeport-McMoRan Inc.",
-      "weight": "🟢 同在: VOO"
-    },
-    {
-      "themeTicker": "BOTZ",
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "weight": "🔴 超级重叠: MAGS, SMH, AIQ, QTUM"
-    },
-    {
-      "themeTicker": "BOTZ",
-      "ticker": "ISRG",
-      "name": "Intuitive Surgical, Inc.",
-      "weight": "🟢 同在: IHI, VOO"
-    },
-    {
-      "themeTicker": "AIRR",
-      "ticker": "CAT",
-      "name": "Caterpillar Inc.",
-      "weight": "🟢 同在: PAVE, VOO"
-    },
-    {
-      "themeTicker": "AIRR",
-      "ticker": "DE",
-      "name": "Deere & Company",
-      "weight": "🟢 同在: PAVE, VOO"
-    },
-    {
-      "themeTicker": "XAR",
-      "ticker": "LMT",
-      "name": "Lockheed Martin Corp",
-      "weight": "🟡 同在: ITA, UFO, VOO"
-    },
-    {
-      "themeTicker": "XAR",
-      "ticker": "RTX",
-      "name": "RTX Corporation",
-      "weight": "🟢 同在: ITA, VOO"
-    },
-    {
-      "themeTicker": "WGMI",
-      "ticker": "COIN",
-      "name": "Coinbase Global, Inc.",
-      "weight": "🟢 同在: ARKK"
-    },
-    {
-      "themeTicker": "WGMI",
-      "ticker": "MSTR",
-      "name": "MicroStrategy Inc.",
-      "weight": "（比特币概念股）"
-    },
-    {
-      "themeTicker": "GLD",
-      "ticker": "GOLD",
-      "name": "Physical Gold (现货黄金)",
-      "weight": "⚠️ 实体贵金属，无股票成分"
-    },
-    {
-      "themeTicker": "SLV",
-      "ticker": "SILVER",
-      "name": "Physical Silver (现货白银)",
-      "weight": "⚠️ 实体贵金属，无股票成分"
-    },
-    {
-      "themeTicker": "UFO",
-      "ticker": "LMT",
-      "name": "Lockheed Martin Corp",
-      "weight": "🟡 同在: ITA, XAR, VOO"
-    },
-    {
-      "themeTicker": "TAN",
-      "ticker": "FSLR",
-      "name": "First Solar, Inc.",
-      "weight": "🟢 同在: VOO"
-    },
-    {
-      "themeTicker": "URA",
-      "ticker": "CCJ",
-      "name": "Cameco Corporation",
-      "weight": "（铀矿石企业，重叠度低）"
-    },
-    {
-      "themeTicker": "LIT",
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "weight": "🟡 同在: MAGS, ARKK, VOO"
-    },
-    {
-      "themeTicker": "LIT",
-      "ticker": "BYD",
-      "name": "BYD Company (比亚迪)",
-      "weight": "🟢 同在: ASHR"
-    },
-    {
-      "themeTicker": "REMX",
-      "ticker": "LYSCF",
-      "name": "Lynas Rare Earths",
-      "weight": "（稀土矿业，重叠度低）"
+      "themeTicker": "ARKK",
+      "ticker": "TWST",
+      "name": "TWIST BIOSCIENCE CORP",
+      "weight": "3.18%"
     }
   ],
   "activeComponents": [
     {
+      "themeTicker": "KIE",
+      "ticker": "LMND",
+      "name": "LEMONADE INC",
+      "weight": "2.14%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "PLMR",
+      "name": "PALOMAR HOLDINGS INC",
+      "weight": "2.09%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "SKWD",
+      "name": "SKYWARD SPECIALTY INSURANCE",
+      "weight": "2.07%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "KMPR",
+      "name": "KEMPER CORP",
+      "weight": "2.05%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "RYAN",
+      "name": "RYAN SPECIALTY HOLDINGS INC",
+      "weight": "2.04%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "AJG",
+      "name": "ARTHUR J GALLAGHER + CO",
+      "weight": "2.01%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "RGA",
+      "name": "REINSURANCE GROUP OF AMERICA",
+      "weight": "1.97%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "BRO",
+      "name": "BROWN + BROWN INC",
+      "weight": "1.95%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "PGR",
+      "name": "PROGRESSIVE CORP",
+      "weight": "1.95%"
+    },
+    {
+      "themeTicker": "KIE",
+      "ticker": "ALL",
+      "name": "ALLSTATE CORP",
+      "weight": "1.95%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "PGR",
+      "name": "PROGRESSIVE CORP",
+      "weight": "13.92%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "CB",
+      "name": "CHUBB",
+      "weight": "13.00%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "TRV",
+      "name": "TRAVELERS COMPANIES INC",
+      "weight": "7.39%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "ALL",
+      "name": "ALLSTATE CORP",
+      "weight": "6.70%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "AFL",
+      "name": "AFLAC INC",
+      "weight": "4.55%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "MET",
+      "name": "METLIFE INC",
+      "weight": "4.43%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "AIG",
+      "name": "AMERICAN INTERNATIONAL GROUP INC",
+      "weight": "4.36%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "PRU",
+      "name": "PRUDENTIAL FINANCIAL INC",
+      "weight": "4.27%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "HIG",
+      "name": "HARTFORD INSURANCE GROUP INC",
+      "weight": "4.10%"
+    },
+    {
+      "themeTicker": "IAK",
+      "ticker": "ACGL",
+      "name": "ARCH CAPITAL GROUP LTD",
+      "weight": "3.80%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "weight": "9.10%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "FTNT",
+      "name": "Fortinet, Inc.",
+      "weight": "9.03%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings, Inc. (Class A)",
+      "weight": "7.98%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "weight": "7.68%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "weight": "6.67%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "NET",
+      "name": "Cloudflare, Inc. (Class A)",
+      "weight": "4.32%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "OKTA",
+      "name": "Okta, Inc.",
+      "weight": "3.51%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "FFIV",
+      "name": "F5, Inc.",
+      "weight": "3.37%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "ZS",
+      "name": "Zscaler, Inc.",
+      "weight": "2.98%"
+    },
+    {
+      "themeTicker": "CIBR",
+      "ticker": "AKAM",
+      "name": "Akamai Technologies, Inc.",
+      "weight": "2.93%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "NTSK",
+      "name": "NETSKOPE INC CL A",
+      "weight": "1.06%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "TENB",
+      "name": "TENABLE HOLDINGS INC",
+      "weight": "1.03%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "PRCH",
+      "name": "PORCH GROUP INC",
+      "weight": "1.00%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "VRNS",
+      "name": "VARONIS SYSTEMS INC",
+      "weight": "0.97%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "QLYS",
+      "name": "QUALYS INC",
+      "weight": "0.97%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "YEXT",
+      "name": "YEXT INC",
+      "weight": "0.96%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "AMPL",
+      "name": "AMPLITUDE INC CLASS A",
+      "weight": "0.95%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "RBLX",
+      "name": "ROBLOX CORP  CLASS A",
+      "weight": "0.93%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "CCC",
+      "name": "CCC INTELLIGENT SOLUTIONS HO",
+      "weight": "0.93%"
+    },
+    {
+      "themeTicker": "XSW",
+      "ticker": "BILL",
+      "name": "BILL HOLDINGS INC",
+      "weight": "0.93%"
+    },
+    {
       "themeTicker": "KRE",
-      "ticker": "UMBF",
-      "name": "UMB Financial Corp",
-      "weight": "（区域银行，重叠度低）"
+      "ticker": "CFR",
+      "name": "CULLEN/FROST BANKERS INC",
+      "weight": "1.38%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "RF",
+      "name": "REGIONS FINANCIAL CORP",
+      "weight": "1.38%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "MTB",
+      "name": "M + T BANK CORP",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "CFG",
+      "name": "CITIZENS FINANCIAL GROUP",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "GBCI",
+      "name": "GLACIER BANCORP INC",
+      "weight": "1.37%"
     },
     {
       "themeTicker": "KRE",
       "ticker": "BPOP",
-      "name": "Popular, Inc.",
-      "weight": "（区域银行，重叠度低）"
+      "name": "POPULAR INC",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "ONB",
+      "name": "OLD NATIONAL BANCORP",
+      "weight": "1.37%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "PNFP",
+      "name": "PINNACLE FINANCIAL PARTNERS",
+      "weight": "1.36%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "ASB",
+      "name": "ASSOCIATED BANC CORP",
+      "weight": "1.36%"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "AUB",
+      "name": "ATLANTIC UNION BANKSHARES CO",
+      "weight": "1.36%"
     },
     {
       "themeTicker": "IBB",
       "ticker": "VRTX",
-      "name": "Vertex Pharmaceuticals",
-      "weight": "🟢 同在: XBI, VOO"
-    },
-    {
-      "themeTicker": "IBB",
-      "ticker": "REGN",
-      "name": "Regeneron Pharmaceuticals",
-      "weight": "🟢 同在: XBI, VOO"
+      "name": "VERTEX PHARMACEUTICALS INC",
+      "weight": "7.83%"
     },
     {
       "themeTicker": "IBB",
       "ticker": "AMGN",
-      "name": "Amgen Inc.",
-      "weight": "🟢 同在: VOO"
+      "name": "AMGEN INC",
+      "weight": "7.80%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "GILD",
+      "name": "GILEAD SCIENCES INC",
+      "weight": "7.13%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "REGN",
+      "name": "REGENERON PHARMACEUTICALS INC",
+      "weight": "5.23%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "ARGX",
+      "name": "ARGENX SE ADR",
+      "weight": "3.56%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "ALNY",
+      "name": "ALNYLAM PHARMACEUTICALS INC",
+      "weight": "2.99%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "NTRA",
+      "name": "NATERA INC",
+      "weight": "2.91%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "RVMD",
+      "name": "REVOLUTION MEDICINES INC",
+      "weight": "2.74%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "BIIB",
+      "name": "BIOGEN INC",
+      "weight": "2.39%"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "ILMN",
+      "name": "ILLUMINA INC",
+      "weight": "2.24%"
     },
     {
       "themeTicker": "XOP",
-      "ticker": "XOM",
-      "name": "Exxon Mobil Corp",
-      "weight": "🟢 同在: OIH, VOO"
+      "ticker": "PARR",
+      "name": "PAR PACIFIC HOLDINGS INC",
+      "weight": "3.12%"
     },
     {
       "themeTicker": "XOP",
-      "ticker": "CVX",
-      "name": "Chevron Corp",
-      "weight": "🟢 同在: VOO"
+      "ticker": "DK",
+      "name": "DELEK US HOLDINGS INC",
+      "weight": "2.99%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "DINO",
+      "name": "HF SINCLAIR CORP",
+      "weight": "2.93%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "VLO",
+      "name": "VALERO ENERGY CORP",
+      "weight": "2.91%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "MPC",
+      "name": "MARATHON PETROLEUM CORP",
+      "weight": "2.86%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "PSX",
+      "name": "PHILLIPS 66",
+      "weight": "2.77%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "TPL",
+      "name": "TEXAS PACIFIC LAND CORP",
+      "weight": "2.77%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "VG",
+      "name": "VENTURE GLOBAL INC CL A",
+      "weight": "2.55%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "EOG",
+      "name": "EOG RESOURCES INC",
+      "weight": "2.53%"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "PR",
+      "name": "PERMIAN RESOURCES CORP CL A",
+      "weight": "2.52%"
     },
     {
       "themeTicker": "XBI",
-      "ticker": "VRTX",
-      "name": "Vertex Pharmaceuticals",
-      "weight": "🟢 同在: IBB, VOO"
+      "ticker": "MRNA",
+      "name": "MODERNA INC",
+      "weight": "1.38%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "KYMR",
+      "name": "KYMERA THERAPEUTICS INC",
+      "weight": "1.33%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "VKTX",
+      "name": "VIKING THERAPEUTICS INC",
+      "weight": "1.30%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "ERAS",
+      "name": "ERASCA INC",
+      "weight": "1.27%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "TWST",
+      "name": "TWIST BIOSCIENCE CORP",
+      "weight": "1.26%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "ORKA",
+      "name": "ORUKA THERAPEUTICS INC",
+      "weight": "1.25%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "CGON",
+      "name": "CG ONCOLOGY INC",
+      "weight": "1.25%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "PRAX",
+      "name": "PRAXIS PRECISION MEDICINES I",
+      "weight": "1.24%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "DNTH",
+      "name": "DIANTHUS THERAPEUTICS INC",
+      "weight": "1.22%"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "RVMD",
+      "name": "REVOLUTION MEDICINES INC",
+      "weight": "1.21%"
     },
     {
       "themeTicker": "PPH",
       "ticker": "LLY",
-      "name": "Eli Lilly and Company",
-      "weight": "🟢 同在: VOO"
+      "name": "Eli Lilly & Co",
+      "weight": "20.06%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "NVS",
+      "name": "Novartis Ag",
+      "weight": "10.47%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "MRK",
+      "name": "Merck & Co Inc",
+      "weight": "9.56%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "NVO",
+      "name": "Novo Nordisk A/S",
+      "weight": "5.55%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "BMY",
+      "name": "Bristol-Myers Squibb Co",
+      "weight": "4.63%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "PFE",
+      "name": "Pfizer Inc",
+      "weight": "4.61%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "ABBV",
+      "name": "Abbvie Inc",
+      "weight": "4.54%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "MCK",
+      "name": "Mckesson Corp",
+      "weight": "4.46%"
     },
     {
       "themeTicker": "PPH",
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
-      "weight": "🟢 同在: VOO"
+      "weight": "4.45%"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "GSK",
+      "name": "Gsk Plc",
+      "weight": "4.44%"
     },
     {
       "themeTicker": "IHI",
-      "ticker": "SYK",
-      "name": "Stryker Corporation",
-      "weight": "🟢 同在: VOO"
-    },
-    {
-      "themeTicker": "IHI",
-      "ticker": "MDT",
-      "name": "Medtronic plc",
-      "weight": "🟢 同在: VOO"
+      "ticker": "ABT",
+      "name": "ABBOTT LABORATORIES",
+      "weight": "16.53%"
     },
     {
       "themeTicker": "IHI",
       "ticker": "ISRG",
-      "name": "Intuitive Surgical, Inc.",
-      "weight": "🟢 同在: BOTZ, VOO"
+      "name": "INTUITIVE SURGICAL INC",
+      "weight": "14.86%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "weight": "🔴 超级重叠: SMH, AIQ, QTUM, BOTZ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "SYK",
+      "name": "STRYKER CORP",
+      "weight": "11.79%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "weight": "🔴 超级重叠: IGV, AIQ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "EW",
+      "name": "EDWARDS LIFESCIENCES CORP",
+      "weight": "4.64%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "AAPL",
-      "name": "Apple Inc.",
-      "weight": "🟡 同在: AIQ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "MDT",
+      "name": "MEDTRONIC PLC",
+      "weight": "4.53%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "weight": "🟡 同在: XRT, VOO"
+      "themeTicker": "IHI",
+      "ticker": "BDX",
+      "name": "BECTON DICKINSON",
+      "weight": "4.52%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "weight": "🟡 同在: ARKK, LIT, VOO"
+      "themeTicker": "IHI",
+      "ticker": "GEHC",
+      "name": "GE HEALTHCARE TECHNOLOGIES INC",
+      "weight": "4.43%"
     },
     {
-      "themeTicker": "MAGS",
-      "ticker": "META",
-      "name": "Meta Platforms, Inc.",
-      "weight": "🟡 同在: AIQ, VOO"
+      "themeTicker": "IHI",
+      "ticker": "IDXX",
+      "name": "IDEXX LABORATORIES INC",
+      "weight": "4.40%"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "DXCM",
+      "name": "DEXCOM INC",
+      "weight": "4.39%"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "RMD",
+      "name": "RESMED INC",
+      "weight": "4.29%"
     },
     {
       "themeTicker": "MAGS",
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
-      "weight": "🟡 同在: AIQ, VOO"
+      "weight": "14.29%"
     },
     {
-      "themeTicker": "XRT",
+      "themeTicker": "MAGS",
       "ticker": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "weight": "🟡 同在: MAGS, VOO"
+      "name": "Amazon.com Inc.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "META",
+      "name": "Meta Platforms Inc.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "MSFT",
+      "name": "Microsoft Corp.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp.",
+      "weight": "14.29%"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "weight": "14.29%"
     },
     {
       "themeTicker": "XRT",
-      "ticker": "HD",
-      "name": "The Home Depot, Inc.",
-      "weight": "🟢 同在: XHB, VOO"
+      "ticker": "RVLV",
+      "name": "REVOLVE GROUP INC",
+      "weight": "1.61%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "CPNG",
+      "name": "COUPANG INC",
+      "weight": "1.60%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "ETSY",
+      "name": "ETSY INC",
+      "weight": "1.59%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "CART",
+      "name": "MAPLEBEAR INC",
+      "weight": "1.58%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "REAL",
+      "name": "REALREAL INC/THE",
+      "weight": "1.58%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "UPBD",
+      "name": "UPBOUND GROUP INC",
+      "weight": "1.58%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "DLTR",
+      "name": "DOLLAR TREE INC",
+      "weight": "1.55%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "KMX",
+      "name": "CARMAX INC",
+      "weight": "1.53%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "BBWI",
+      "name": "BATH + BODY WORKS INC",
+      "weight": "1.52%"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "SBH",
+      "name": "SALLY BEAUTY HOLDINGS INC",
+      "weight": "1.52%"
     },
     {
       "themeTicker": "XLRE",
       "ticker": "PLD",
-      "name": "Prologis, Inc.",
-      "weight": "🟢 同在: VOO"
+      "name": "PROLOGIS INC",
+      "weight": "8.96%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "EQIX",
+      "name": "EQUINIX INC",
+      "weight": "6.93%"
     },
     {
       "themeTicker": "XLRE",
       "ticker": "AMT",
-      "name": "American Tower Corp",
-      "weight": "🟢 同在: VOO"
+      "name": "AMERICAN TOWER CORP",
+      "weight": "5.34%"
     },
     {
-      "themeTicker": "KWEB",
-      "ticker": "TCEHY",
-      "name": "Tencent (腾讯控股)",
-      "weight": "🟢 同在: FXI"
+      "themeTicker": "XLRE",
+      "ticker": "SPG",
+      "name": "SIMON PROPERTY GROUP INC",
+      "weight": "4.81%"
     },
     {
-      "themeTicker": "KWEB",
-      "ticker": "BABA",
-      "name": "Alibaba Group (阿里巴巴)",
-      "weight": "🟢 同在: FXI"
+      "themeTicker": "XLRE",
+      "ticker": "DLR",
+      "name": "DIGITAL REALTY TRUST INC",
+      "weight": "4.65%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "O",
+      "name": "REALTY INCOME CORP",
+      "weight": "4.64%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "VTR",
+      "name": "VENTAS INC",
+      "weight": "4.56%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "PSA",
+      "name": "PUBLIC STORAGE",
+      "weight": "4.46%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "CBRE",
+      "name": "CBRE GROUP INC   A",
+      "weight": "4.12%"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "IRM",
+      "name": "IRON MOUNTAIN INC",
+      "weight": "3.71%"
     },
     {
       "themeTicker": "KWEB",
       "ticker": "PDD",
-      "name": "PDD Holdings (拼多多)",
-      "weight": "🟢 同在: FXI"
+      "name": "PDD HOLDINGS INC",
+      "weight": "8.09%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "YMM",
+      "name": "FULL TRUCK ALLIANCE -SPN ADR",
+      "weight": "4.10%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "TME",
+      "name": "TENCENT MUSIC ENTERTAINM-ADR",
+      "weight": "3.31%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "BZ",
+      "name": "KANZHUN LTD - ADR",
+      "weight": "3.29%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "TAL",
+      "name": "TAL EDUCATION GROUP- ADR",
+      "weight": "2.98%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "VIPS",
+      "name": "VIPSHOP HOLDINGS LTD - ADR",
+      "weight": "2.39%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "YY",
+      "name": "JOYY INC-ADR",
+      "weight": "1.26%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "ATHM",
+      "name": "AUTOHOME INC-ADR",
+      "weight": "0.86%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "QFIN",
+      "name": "QFIN HOLDINGS INC-ADR",
+      "weight": "0.70%"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "WB",
+      "name": "WEIBO CORP-SPON ADR",
+      "weight": "0.45%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "PANW",
+      "name": "PALO ALTO NETWORKS INC",
+      "weight": "9.81%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "PLTR",
+      "name": "PALANTIR TECHNOLOGIES INC CLASS A",
+      "weight": "8.39%"
     },
     {
       "themeTicker": "IGV",
       "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "weight": "🔴 超级重叠: MAGS, AIQ, VOO"
+      "name": "MICROSOFT CORP",
+      "weight": "8.27%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "CRWD",
+      "name": "CROWDSTRIKE HOLDINGS INC CLASS A",
+      "weight": "7.01%"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "ORCL",
+      "name": "ORACLE CORP",
+      "weight": "5.49%"
     },
     {
       "themeTicker": "IGV",
       "ticker": "CRM",
-      "name": "Salesforce, Inc.",
-      "weight": "🟢 同在: AIQ, VOO"
+      "name": "SALESFORCE INC",
+      "weight": "5.13%"
     },
     {
       "themeTicker": "IGV",
-      "ticker": "ADBE",
-      "name": "Adobe Inc.",
-      "weight": "🟢 同在: VOO"
+      "ticker": "NOW",
+      "name": "SERVICENOW INC",
+      "weight": "4.24%"
     },
     {
-      "themeTicker": "JETS",
-      "ticker": "DAL",
-      "name": "Delta Air Lines",
-      "weight": "🟢 同在: VOO"
+      "themeTicker": "IGV",
+      "ticker": "APP",
+      "name": "APPLOVIN CORP CLASS A",
+      "weight": "3.99%"
     },
     {
-      "themeTicker": "JETS",
-      "ticker": "UAL",
-      "name": "United Airlines",
-      "weight": "🟢 同在: VOO"
+      "themeTicker": "IGV",
+      "ticker": "CDNS",
+      "name": "CADENCE DESIGN SYSTEMS INC",
+      "weight": "3.85%"
     },
     {
-      "themeTicker": "FXI",
-      "ticker": "TCEHY",
-      "name": "Tencent (腾讯控股)",
-      "weight": "🟢 同在: KWEB"
-    },
-    {
-      "themeTicker": "FXI",
-      "ticker": "BABA",
-      "name": "Alibaba Group (阿里巴巴)",
-      "weight": "🟢 同在: KWEB"
+      "themeTicker": "IGV",
+      "ticker": "FTNT",
+      "name": "FORTINET INC",
+      "weight": "3.69%"
     },
     {
       "themeTicker": "ARKK",
       "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "weight": "🟡 同在: MAGS, LIT, VOO"
+      "name": "TESLA INC",
+      "weight": "10.06%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "TEM",
+      "name": "TEMPUS AI INC-CL A",
+      "weight": "5.43%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "HOOD",
+      "name": "ROBINHOOD MARKETS INC - A",
+      "weight": "4.67%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "SHOP",
+      "name": "SHOPIFY INC - CLASS A",
+      "weight": "4.60%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "CRSP",
+      "name": "CRISPR THERAPEUTICS AG",
+      "weight": "4.56%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "SPCX",
+      "name": "SPACE EXPLORATION TECHN-CL A",
+      "weight": "4.31%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "AMD",
+      "name": "ADVANCED MICRO DEVICES",
+      "weight": "4.20%"
     },
     {
       "themeTicker": "ARKK",
       "ticker": "COIN",
-      "name": "Coinbase Global, Inc.",
-      "weight": "🟢 同在: WGMI"
+      "name": "COINBASE GLOBAL INC -CLASS A",
+      "weight": "3.98%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "RBLX",
+      "name": "ROBLOX CORP -CLASS A",
+      "weight": "3.37%"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "TWST",
+      "name": "TWIST BIOSCIENCE CORP",
+      "weight": "3.18%"
     }
   ],
   "candidates": [
     {
       "rank": 1,
+      "ticker": "DNTH",
+      "name": "DIANTHUS THERAPEUTICS INC",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "spring",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 101.28,
+      "threeMonth": 12.5,
+      "adr": 5.6,
+      "tightness": 51,
+      "dollarVol": "91.3M",
+      "vs200": 63,
+      "line": 1.08,
+      "alert": "shakeout+MB",
+      "strong": true,
+      "weight": "1.22%",
+      "breakoutDate": "2026-06-22",
+      "springDate": "2026-06-09",
+      "burstDate": "2026-06-12",
+      "liquidityLevel": 80.32,
+      "ema21": 93.32,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 2,
+      "ticker": "PLTR",
+      "name": "PALANTIR TECHNOLOGIES INC CLASS A",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "spring",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 133.72,
+      "threeMonth": 1,
+      "adr": 5.02,
+      "tightness": 32,
+      "dollarVol": "5.9B",
+      "vs200": -14,
+      "line": 3.87,
+      "alert": "shakeout+MB",
+      "strong": true,
+      "weight": "8.39%",
+      "breakoutDate": "2026-06-26",
+      "springDate": "2026-06-18",
+      "burstDate": "2026-06-26",
+      "liquidityLevel": 126.65,
+      "ema21": 128.38,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 3,
+      "ticker": "TPL",
+      "name": "TEXAS PACIFIC LAND CORP",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "spring",
+      "base": 4,
+      "days": 8,
+      "stage": "active",
+      "close": 415.93,
+      "threeMonth": -0.1,
+      "adr": 4.07,
+      "tightness": 39,
+      "dollarVol": "169.8M",
+      "vs200": 10,
+      "line": 6.75,
+      "alert": "shakeout+MB",
+      "strong": true,
+      "weight": "2.77%",
+      "breakoutDate": "2026-06-29",
+      "springDate": "2026-06-22",
+      "burstDate": "2026-06-29",
+      "liquidityLevel": 354.08,
+      "ema21": 397.76,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 4,
+      "ticker": "GEHC",
+      "name": "GE HEALTHCARE TECHNOLOGIES INC",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "spring",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 61.66,
+      "threeMonth": -16.5,
+      "adr": 2.84,
+      "tightness": 73,
+      "dollarVol": "331.0M",
+      "vs200": -16,
+      "line": 7.77,
+      "alert": "shakeout+MB",
+      "strong": true,
+      "weight": "4.43%",
+      "springDate": "2026-06-18",
+      "burstDate": "2026-06-23",
+      "liquidityLevel": 60.67,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 5,
       "ticker": "TSLA",
-      "name": "Tesla, Inc.",
+      "name": "Tesla Inc.",
       "group": "Magnificent 7 #11 / ARK Innovation #20",
       "theme": "MAGS/ARKK",
       "status": "spring",
@@ -904,16 +2216,16 @@
       "line": 9.26,
       "alert": "shakeout+MB",
       "strong": true,
-      "weight": "🟡 同在: ARKK, LIT, VOO / 🟡 同在: MAGS, LIT, VOO",
+      "weight": "14.29% / 10.06%",
       "springDate": "2026-06-26",
       "burstDate": "2026-06-29",
       "liquidityLevel": 379.06,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 2,
+      "rank": 6,
       "ticker": "COIN",
-      "name": "Coinbase Global, Inc.",
+      "name": "COINBASE GLOBAL INC -CLASS A",
       "group": "ARK Innovation #20",
       "theme": "ARKK",
       "status": "spring",
@@ -929,7 +2241,7 @@
       "line": 9.28,
       "alert": "shakeout+MB",
       "strong": true,
-      "weight": "🟢 同在: WGMI",
+      "weight": "3.98%",
       "breakoutDate": "2026-07-01",
       "springDate": "2026-06-26",
       "burstDate": "2026-07-01",
@@ -938,9 +2250,9 @@
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 3,
+      "rank": 7,
       "ticker": "BPOP",
-      "name": "Popular, Inc.",
+      "name": "POPULAR INC",
       "group": "Regional Banking #5",
       "theme": "KRE",
       "status": "fakeout",
@@ -955,13 +2267,13 @@
       "vs200": 26,
       "line": 1.76,
       "strong": true,
-      "weight": "（区域银行，重叠度低）",
+      "weight": "1.37%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 4,
+      "rank": 8,
       "ticker": "CRM",
-      "name": "Salesforce, Inc.",
+      "name": "SALESFORCE INC",
       "group": "Software #17",
       "theme": "IGV",
       "status": "fakeout",
@@ -976,15 +2288,15 @@
       "vs200": -20,
       "line": 3.1,
       "strong": true,
-      "weight": "🟢 同在: AIQ, VOO",
+      "weight": "5.13%",
       "breakoutDate": "2026-06-26",
       "ema21": 165.32,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 5,
+      "rank": 9,
       "ticker": "PDD",
-      "name": "PDD Holdings (拼多多)",
+      "name": "PDD HOLDINGS INC",
       "group": "China Internet #15",
       "theme": "KWEB",
       "status": "fakeout",
@@ -999,15 +2311,36 @@
       "vs200": -21,
       "line": 4.31,
       "strong": true,
-      "weight": "🟢 同在: FXI",
+      "weight": "8.09%",
       "breakoutDate": "2026-06-26",
       "ema21": 82.78,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 6,
+      "rank": 10,
+      "ticker": "AIG",
+      "name": "AMERICAN INTERNATIONAL GROUP INC",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
+      "status": "fakeout",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 79,
+      "threeMonth": 2.2,
+      "adr": 2.19,
+      "tightness": 71,
+      "dollarVol": "319.5M",
+      "vs200": 3,
+      "line": 4.37,
+      "strong": true,
+      "weight": "4.36%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 11,
       "ticker": "MSFT",
-      "name": "Microsoft Corporation",
+      "name": "Microsoft Corp.",
       "group": "Magnificent 7 #11 / Software #17",
       "theme": "MAGS/IGV",
       "status": "fakeout",
@@ -1022,38 +2355,15 @@
       "vs200": -12,
       "line": 4.37,
       "strong": true,
-      "weight": "🔴 超级重叠: IGV, AIQ, VOO / 🔴 超级重叠: MAGS, AIQ, VOO",
+      "weight": "14.29% / 8.27%",
       "breakoutDate": "2026-06-26",
       "ema21": 386.81,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 7,
-      "ticker": "ADBE",
-      "name": "Adobe Inc.",
-      "group": "Software #17",
-      "theme": "IGV",
-      "status": "fakeout",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 220.78,
-      "threeMonth": -8.1,
-      "adr": 3.44,
-      "tightness": 49,
-      "dollarVol": "1.5B",
-      "vs200": -22,
-      "line": 5.12,
-      "strong": true,
-      "weight": "🟢 同在: VOO",
-      "breakoutDate": "2026-06-26",
-      "ema21": 218.9,
-      "lastDate": "2026-07-14"
-    },
-    {
-      "rank": 8,
+      "rank": 12,
       "ticker": "AMGN",
-      "name": "Amgen Inc.",
+      "name": "AMGEN INC",
       "group": "Biotechnology #6",
       "theme": "IBB",
       "status": "fakeout",
@@ -1068,38 +2378,151 @@
       "vs200": 6,
       "line": 5.63,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "7.80%",
       "breakoutDate": "2026-06-11",
       "ema21": 357.13,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 9,
-      "ticker": "HD",
-      "name": "The Home Depot, Inc.",
-      "group": "S&P Retail #12",
-      "theme": "XRT",
+      "rank": 13,
+      "ticker": "BDX",
+      "name": "BECTON DICKINSON",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
       "status": "fakeout",
       "base": 3,
-      "days": 6,
+      "days": 5,
       "stage": "active",
-      "close": 337.74,
-      "threeMonth": -0.3,
-      "adr": 2.42,
-      "tightness": 69,
-      "dollarVol": "1.7B",
-      "vs200": -3,
-      "line": 6.25,
+      "close": 150.65,
+      "threeMonth": -2.4,
+      "adr": 2.56,
+      "tightness": 66,
+      "dollarVol": "428.1M",
+      "vs200": -1,
+      "line": 5.87,
       "strong": true,
-      "weight": "🟢 同在: XHB, VOO",
-      "breakoutDate": "2026-06-24",
-      "ema21": 338.18,
+      "weight": "4.52%",
+      "breakoutDate": "2026-06-26",
+      "ema21": 150.99,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 10,
+      "rank": 14,
+      "ticker": "GILD",
+      "name": "GILEAD SCIENCES INC",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "fakeout",
+      "base": 3,
+      "days": 4,
+      "stage": "active",
+      "close": 130.04,
+      "threeMonth": -5.9,
+      "adr": 2.72,
+      "tightness": 70,
+      "dollarVol": "1.0B",
+      "vs200": 1,
+      "line": 5.89,
+      "strong": true,
+      "weight": "7.13%",
+      "breakoutDate": "2026-07-07",
+      "ema21": 129.58,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 15,
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "group": "Cybersecurity #3",
+      "theme": "CIBR",
+      "status": "fakeout",
+      "base": 3,
+      "days": 15,
+      "stage": "active",
+      "close": 389.11,
+      "threeMonth": 2.6,
+      "adr": 3.44,
+      "tightness": 63,
+      "dollarVol": "11.2B",
+      "vs200": 8,
+      "line": 6.56,
+      "strong": true,
+      "weight": "6.67%",
+      "breakoutDate": "2026-06-17",
+      "ema21": 387.4,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 16,
+      "ticker": "AMD",
+      "name": "ADVANCED MICRO DEVICES",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "fakeout",
+      "base": 4,
+      "days": 9,
+      "stage": "active",
+      "close": 548.13,
+      "threeMonth": 122.1,
+      "adr": 5.48,
+      "tightness": 54,
+      "dollarVol": "16.3B",
+      "vs200": 88,
+      "line": 6.68,
+      "strong": true,
+      "weight": "4.20%",
+      "breakoutDate": "2026-06-18",
+      "ema21": 527.84,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 17,
+      "ticker": "EW",
+      "name": "EDWARDS LIFESCIENCES CORP",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "fakeout",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 90.09,
+      "threeMonth": 15.3,
+      "adr": 2.47,
+      "tightness": 66,
+      "dollarVol": "419.9M",
+      "vs200": 8,
+      "line": 6.88,
+      "strong": true,
+      "weight": "4.64%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 18,
+      "ticker": "MRK",
+      "name": "Merck & Co Inc",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "fakeout",
+      "base": 3,
+      "days": 9,
+      "stage": "active",
+      "close": 120.78,
+      "threeMonth": 1.2,
+      "adr": 2.61,
+      "tightness": 68,
+      "dollarVol": "1.2B",
+      "vs200": 12,
+      "line": 7.87,
+      "strong": true,
+      "weight": "9.56%",
+      "breakoutDate": "2026-06-25",
+      "ema21": 123.09,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 19,
       "ticker": "LLY",
-      "name": "Eli Lilly and Company",
+      "name": "Eli Lilly & Co",
       "group": "Pharmaceutical #9",
       "theme": "PPH",
       "status": "fakeout",
@@ -1114,15 +2537,38 @@
       "vs200": 15,
       "line": 8.41,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "20.06%",
       "breakoutDate": "2026-06-26",
       "ema21": 1167.63,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 11,
+      "rank": 20,
+      "ticker": "AKAM",
+      "name": "Akamai Technologies, Inc.",
+      "group": "Cybersecurity #3",
+      "theme": "CIBR",
+      "status": "fakeout",
+      "base": 4,
+      "days": 18,
+      "stage": "active",
+      "close": 126.11,
+      "threeMonth": 32.8,
+      "adr": 4.72,
+      "tightness": 51,
+      "dollarVol": "733.9M",
+      "vs200": 23,
+      "line": 9.37,
+      "strong": true,
+      "weight": "2.93%",
+      "breakoutDate": "2026-07-08",
+      "ema21": 124.25,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 21,
       "ticker": "AMT",
-      "name": "American Tower Corp",
+      "name": "AMERICAN TOWER CORP",
       "group": "Real Estate #14",
       "theme": "XLRE",
       "status": "fakeout",
@@ -1137,40 +2583,17 @@
       "vs200": -5,
       "line": 11.37,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "5.34%",
       "breakoutDate": "2026-06-26",
       "ema21": 171.37,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 12,
-      "ticker": "DAL",
-      "name": "Delta Air Lines",
-      "group": "Airlines #18",
-      "theme": "JETS",
-      "status": "fakeout",
-      "base": 4,
-      "days": 7,
-      "stage": "active",
-      "close": 85.51,
-      "threeMonth": 28.2,
-      "adr": 3.06,
-      "tightness": 63,
-      "dollarVol": "643.1M",
-      "vs200": 25,
-      "line": 11.61,
-      "strong": true,
-      "weight": "🟢 同在: VOO",
-      "breakoutDate": "2026-06-24",
-      "ema21": 86.96,
-      "lastDate": "2026-07-14"
-    },
-    {
-      "rank": 13,
+      "rank": 22,
       "ticker": "VRTX",
-      "name": "Vertex Pharmaceuticals",
-      "group": "Biotechnology #6 / S&P Biotech #8",
-      "theme": "IBB/XBI",
+      "name": "VERTEX PHARMACEUTICALS INC",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
       "status": "fakeout",
       "base": 4,
       "days": 5,
@@ -1183,15 +2606,130 @@
       "vs200": 6,
       "line": 12.04,
       "strong": true,
-      "weight": "🟢 同在: XBI, VOO / 🟢 同在: IBB, VOO",
+      "weight": "7.83%",
       "breakoutDate": "2026-07-02",
       "ema21": 483.49,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 14,
+      "rank": 23,
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings, Inc. (Class A)",
+      "group": "Cybersecurity #3 / Software #17",
+      "theme": "CIBR/IGV",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 210.73,
+      "threeMonth": 109.6,
+      "adr": 5.19,
+      "tightness": 40,
+      "dollarVol": "2.2B",
+      "vs200": 64,
+      "line": 0.13,
+      "strong": true,
+      "weight": "7.98% / 7.01%",
+      "breakoutDate": "2026-06-29",
+      "ema21": 185.29,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 24,
+      "ticker": "KMX",
+      "name": "CARMAX INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 55.73,
+      "threeMonth": 13.5,
+      "adr": 4.25,
+      "tightness": 67,
+      "dollarVol": "156.9M",
+      "vs200": 30,
+      "line": 0.2,
+      "strong": true,
+      "weight": "1.53%",
+      "breakoutDate": "2026-06-11",
+      "ema21": 51.34,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 25,
+      "ticker": "FTNT",
+      "name": "Fortinet, Inc.",
+      "group": "Cybersecurity #3 / Software #17",
+      "theme": "CIBR/IGV",
+      "status": "bpr",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 166.83,
+      "threeMonth": 111.9,
+      "adr": 4.21,
+      "tightness": 60,
+      "dollarVol": "883.1M",
+      "vs200": 74,
+      "line": 0.26,
+      "strong": true,
+      "weight": "9.03% / 3.69%",
+      "breakoutDate": "2026-06-11",
+      "ema21": 153.63,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 26,
+      "ticker": "ETSY",
+      "name": "ETSY INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 83.06,
+      "threeMonth": 50.1,
+      "adr": 3.76,
+      "tightness": 64,
+      "dollarVol": "204.2M",
+      "vs200": 36,
+      "line": 0.36,
+      "strong": true,
+      "weight": "1.59%",
+      "breakoutDate": "2026-06-24",
+      "ema21": 76.04,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 27,
+      "ticker": "ATHM",
+      "name": "AUTOHOME INC-ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 20.86,
+      "threeMonth": 21.1,
+      "adr": 4,
+      "tightness": 52,
+      "dollarVol": "13.7M",
+      "vs200": 4,
+      "line": 0.62,
+      "strong": true,
+      "weight": "0.86%",
+      "breakoutDate": "2026-06-15",
+      "ema21": 18.86,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 28,
       "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
+      "name": "NVIDIA Corp.",
       "group": "Magnificent 7 #11",
       "theme": "MAGS",
       "status": "bpr",
@@ -1206,13 +2744,208 @@
       "vs200": 10,
       "line": 1.03,
       "strong": true,
-      "weight": "🔴 超级重叠: SMH, AIQ, QTUM, BOTZ, VOO",
+      "weight": "14.29%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 15,
+      "rank": 29,
+      "ticker": "CFR",
+      "name": "CULLEN/FROST BANKERS INC",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 157.38,
+      "threeMonth": 10.8,
+      "adr": 1.8,
+      "tightness": 81,
+      "dollarVol": "85.4M",
+      "vs200": 17,
+      "line": 1.33,
+      "strong": true,
+      "weight": "1.38%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 30,
+      "ticker": "RVLV",
+      "name": "REVOLVE GROUP INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 24.43,
+      "threeMonth": -2.5,
+      "adr": 4.28,
+      "tightness": 54,
+      "dollarVol": "24.3M",
+      "vs200": 1,
+      "line": 1.39,
+      "strong": true,
+      "weight": "1.61%",
+      "breakoutDate": "2026-06-18",
+      "ema21": 22.59,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 31,
+      "ticker": "ONB",
+      "name": "OLD NATIONAL BANCORP",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 5,
+      "stage": "active",
+      "close": 26.31,
+      "threeMonth": 12.1,
+      "adr": 1.97,
+      "tightness": 81,
+      "dollarVol": "90.0M",
+      "vs200": 15,
+      "line": 1.48,
+      "strong": true,
+      "weight": "1.37%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 32,
+      "ticker": "RF",
+      "name": "REGIONS FINANCIAL CORP",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 30.92,
+      "threeMonth": 12.2,
+      "adr": 2.15,
+      "tightness": 75,
+      "dollarVol": "309.0M",
+      "vs200": 15,
+      "line": 1.68,
+      "strong": true,
+      "weight": "1.38%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 33,
+      "ticker": "MTB",
+      "name": "M + T BANK CORP",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 241.85,
+      "threeMonth": 10.1,
+      "adr": 1.86,
+      "tightness": 77,
+      "dollarVol": "237.6M",
+      "vs200": 17,
+      "line": 1.91,
+      "strong": true,
+      "weight": "1.37%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 34,
+      "ticker": "GBCI",
+      "name": "GLACIER BANCORP INC",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 7,
+      "stage": "active",
+      "close": 51.79,
+      "threeMonth": 7.1,
+      "adr": 2.37,
+      "tightness": 77,
+      "dollarVol": "52.9M",
+      "vs200": 12,
+      "line": 1.93,
+      "strong": true,
+      "weight": "1.37%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 35,
+      "ticker": "PNFP",
+      "name": "PINNACLE FINANCIAL PARTNERS",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 8,
+      "stage": "active",
+      "close": 100.63,
+      "threeMonth": 8.9,
+      "adr": 2.48,
+      "tightness": 80,
+      "dollarVol": "116.9M",
+      "vs200": 8,
+      "line": 1.97,
+      "strong": true,
+      "weight": "1.36%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 36,
+      "ticker": "VTR",
+      "name": "VENTAS INC",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "bpr",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 92.4,
+      "threeMonth": 10.1,
+      "adr": 2.12,
+      "tightness": 65,
+      "dollarVol": "368.1M",
+      "vs200": 15,
+      "line": 2.38,
+      "strong": true,
+      "weight": "4.56%",
+      "breakoutDate": "2026-07-02",
+      "ema21": 89.04,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 37,
+      "ticker": "VG",
+      "name": "VENTURE GLOBAL INC CL A",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 13.23,
+      "threeMonth": 3.9,
+      "adr": 4.72,
+      "tightness": 30,
+      "dollarVol": "201.0M",
+      "vs200": 24,
+      "line": 2.42,
+      "strong": true,
+      "weight": "2.55%",
+      "breakoutDate": "2026-07-08",
+      "ema21": 12.01,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 38,
       "ticker": "META",
-      "name": "Meta Platforms, Inc.",
+      "name": "Meta Platforms Inc.",
       "group": "Magnificent 7 #11",
       "theme": "MAGS",
       "status": "bpr",
@@ -1227,13 +2960,34 @@
       "vs200": 3,
       "line": 2.54,
       "strong": true,
-      "weight": "🟡 同在: AIQ, VOO",
+      "weight": "14.29%",
       "breakoutDate": "2026-07-01",
       "ema21": 608.51,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 16,
+      "rank": 39,
+      "ticker": "ASB",
+      "name": "ASSOCIATED BANC CORP",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 7,
+      "stage": "active",
+      "close": 30.71,
+      "threeMonth": 11.2,
+      "adr": 2.02,
+      "tightness": 80,
+      "dollarVol": "58.3M",
+      "vs200": 15,
+      "line": 2.57,
+      "strong": true,
+      "weight": "1.36%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 40,
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "group": "Magnificent 7 #11",
@@ -1250,57 +3004,511 @@
       "vs200": 15,
       "line": 2.73,
       "strong": true,
-      "weight": "🟡 同在: AIQ, VOO",
+      "weight": "14.29%",
       "breakoutDate": "2026-07-02",
       "ema21": 304.27,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 17,
-      "ticker": "BABA",
-      "name": "Alibaba Group (阿里巴巴)",
-      "group": "China Internet #15 / HK Large Cap #19",
-      "theme": "KWEB/FXI",
+      "rank": 41,
+      "ticker": "ILMN",
+      "name": "ILLUMINA INC",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
       "status": "bpr",
       "base": 4,
-      "days": 2,
+      "days": 5,
       "stage": "active",
-      "close": 112.32,
-      "threeMonth": -11.5,
-      "adr": 2.67,
-      "tightness": 41,
-      "dollarVol": "1.6B",
-      "vs200": -22,
-      "line": 2.9,
+      "close": 191.2,
+      "threeMonth": 50.6,
+      "adr": 3.74,
+      "tightness": 46,
+      "dollarVol": "319.5M",
+      "vs200": 43,
+      "line": 2.86,
       "strong": true,
-      "weight": "🟢 同在: FXI / 🟢 同在: KWEB",
-      "breakoutDate": "2026-07-08",
-      "ema21": 107.58,
+      "weight": "2.24%",
+      "breakoutDate": "2026-06-24",
+      "ema21": 180.05,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 18,
-      "ticker": "UMBF",
-      "name": "UMB Financial Corp",
+      "rank": 42,
+      "ticker": "BRO",
+      "name": "BROWN + BROWN INC",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "bpr",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 68.5,
+      "threeMonth": 1.8,
+      "adr": 2.6,
+      "tightness": 54,
+      "dollarVol": "189.1M",
+      "vs200": -5,
+      "line": 2.91,
+      "strong": true,
+      "weight": "1.95%",
+      "breakoutDate": "2026-06-26",
+      "ema21": 65.1,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 43,
+      "ticker": "TAL",
+      "name": "TAL EDUCATION GROUP- ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 10.3,
+      "threeMonth": -8.7,
+      "adr": 3.14,
+      "tightness": 53,
+      "dollarVol": "35.4M",
+      "vs200": -6,
+      "line": 2.91,
+      "strong": true,
+      "weight": "2.98%",
+      "breakoutDate": "2026-07-01",
+      "ema21": 9.89,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 44,
+      "ticker": "DXCM",
+      "name": "DEXCOM INC",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "bpr",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 74.12,
+      "threeMonth": 17.4,
+      "adr": 3.22,
+      "tightness": 66,
+      "dollarVol": "412.8M",
+      "vs200": 10,
+      "line": 3.1,
+      "strong": true,
+      "weight": "4.39%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 45,
+      "ticker": "DLTR",
+      "name": "DOLLAR TREE INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 124.56,
+      "threeMonth": 22,
+      "adr": 3.59,
+      "tightness": 65,
+      "dollarVol": "423.1M",
+      "vs200": 12,
+      "line": 3.12,
+      "strong": true,
+      "weight": "1.55%",
+      "breakoutDate": "2026-06-18",
+      "ema21": 119.25,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 46,
+      "ticker": "CART",
+      "name": "MAPLEBEAR INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 3,
+      "days": 10,
+      "stage": "active",
+      "close": 47.71,
+      "threeMonth": 19.3,
+      "adr": 3.81,
+      "tightness": 59,
+      "dollarVol": "196.9M",
+      "vs200": 18,
+      "line": 3.14,
+      "strong": true,
+      "weight": "1.58%",
+      "breakoutDate": "2026-06-18",
+      "ema21": 46.16,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 47,
+      "ticker": "BZ",
+      "name": "KANZHUN LTD - ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "bpr",
+      "base": 3,
+      "days": 2,
+      "stage": "active",
+      "close": 14.23,
+      "threeMonth": 8,
+      "adr": 3.87,
+      "tightness": 58,
+      "dollarVol": "52.6M",
+      "vs200": -18,
+      "line": 3.3,
+      "strong": true,
+      "weight": "3.29%",
+      "breakoutDate": "2026-06-26",
+      "ema21": 13.73,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 48,
+      "ticker": "NVO",
+      "name": "Novo Nordisk A/S",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "bpr",
+      "base": 2,
+      "days": 7,
+      "stage": "active",
+      "close": 49.07,
+      "threeMonth": 29.2,
+      "adr": 2.3,
+      "tightness": 75,
+      "dollarVol": "610.0M",
+      "vs200": 6,
+      "line": 3.72,
+      "strong": true,
+      "weight": "5.55%",
+      "breakoutDate": "2026-06-23",
+      "ema21": 47.68,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 49,
+      "ticker": "PSA",
+      "name": "PUBLIC STORAGE",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 5,
+      "stage": "active",
+      "close": 318.93,
+      "threeMonth": 8.7,
+      "adr": 2,
+      "tightness": 85,
+      "dollarVol": "288.0M",
+      "vs200": 11,
+      "line": 3.72,
+      "strong": true,
+      "weight": "4.46%",
+      "breakoutDate": "2026-06-09",
+      "ema21": 319.62,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 50,
+      "ticker": "CFG",
+      "name": "CITIZENS FINANCIAL GROUP",
       "group": "Regional Banking #5",
       "theme": "KRE",
       "status": "bpr",
       "base": 2,
       "days": 5,
       "stage": "active",
-      "close": 142.61,
-      "threeMonth": 18.8,
-      "adr": 2.88,
-      "tightness": 73,
-      "dollarVol": "94.4M",
+      "close": 70.32,
+      "threeMonth": 9.4,
+      "adr": 2.17,
+      "tightness": 78,
+      "dollarVol": "296.7M",
       "vs200": 18,
-      "line": 3.01,
+      "line": 3.73,
       "strong": true,
-      "weight": "（区域银行，重叠度低）",
+      "weight": "1.37%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 19,
+      "rank": 51,
+      "ticker": "SPG",
+      "name": "SIMON PROPERTY GROUP INC",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 5,
+      "stage": "active",
+      "close": 221.28,
+      "threeMonth": 11.5,
+      "adr": 1.94,
+      "tightness": 79,
+      "dollarVol": "435.5M",
+      "vs200": 16,
+      "line": 3.76,
+      "strong": true,
+      "weight": "4.81%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 52,
+      "ticker": "UPBD",
+      "name": "UPBOUND GROUP INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 4,
+      "days": 2,
+      "stage": "active",
+      "close": 21.08,
+      "threeMonth": 15.9,
+      "adr": 4.65,
+      "tightness": 48,
+      "dollarVol": "17.5M",
+      "vs200": 13,
+      "line": 3.84,
+      "strong": true,
+      "weight": "1.58%",
+      "breakoutDate": "2026-06-18",
+      "ema21": 19.98,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 53,
+      "ticker": "BILL",
+      "name": "BILL HOLDINGS INC",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 41.37,
+      "threeMonth": 12.5,
+      "adr": 4.59,
+      "tightness": 25,
+      "dollarVol": "103.5M",
+      "vs200": -7,
+      "line": 3.94,
+      "strong": true,
+      "weight": "0.93%",
+      "breakoutDate": "2026-06-26",
+      "ema21": 38.2,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 54,
+      "ticker": "SHOP",
+      "name": "SHOPIFY INC - CLASS A",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "bpr",
+      "base": 4,
+      "days": 2,
+      "stage": "active",
+      "close": 125.68,
+      "threeMonth": 9.3,
+      "adr": 4.56,
+      "tightness": 46,
+      "dollarVol": "1.2B",
+      "vs200": -7,
+      "line": 4.03,
+      "strong": true,
+      "weight": "4.60%",
+      "breakoutDate": "2026-06-24",
+      "ema21": 117.94,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 55,
+      "ticker": "AUB",
+      "name": "ATLANTIC UNION BANKSHARES CO",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 3,
+      "days": 8,
+      "stage": "active",
+      "close": 41.82,
+      "threeMonth": 10.2,
+      "adr": 2.22,
+      "tightness": 72,
+      "dollarVol": "44.0M",
+      "vs200": 15,
+      "line": 4.3,
+      "strong": true,
+      "weight": "1.36%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 56,
+      "ticker": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "group": "Cybersecurity #3 / Software #17",
+      "theme": "CIBR/IGV",
+      "status": "bpr",
+      "base": 4,
+      "days": 6,
+      "stage": "active",
+      "close": 352.89,
+      "threeMonth": 117.1,
+      "adr": 4.92,
+      "tightness": 32,
+      "dollarVol": "2.3B",
+      "vs200": 71,
+      "line": 4.33,
+      "strong": true,
+      "weight": "9.10% / 9.81%",
+      "breakoutDate": "2026-06-29",
+      "ema21": 317.19,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 57,
+      "ticker": "RVMD",
+      "name": "REVOLUTION MEDICINES INC",
+      "group": "Biotechnology #6 / S&P Biotech #8",
+      "theme": "IBB/XBI",
+      "status": "bpr",
+      "base": 4,
+      "days": 3,
+      "stage": "active",
+      "close": 184.97,
+      "threeMonth": 35.7,
+      "adr": 3.83,
+      "tightness": 53,
+      "dollarVol": "476.4M",
+      "vs200": 74,
+      "line": 4.79,
+      "strong": true,
+      "weight": "2.74% / 1.21%",
+      "breakoutDate": "2026-06-25",
+      "ema21": 178.53,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 58,
+      "ticker": "NTRA",
+      "name": "NATERA INC",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "bpr",
+      "base": 4,
+      "days": 6,
+      "stage": "active",
+      "close": 272.66,
+      "threeMonth": 35,
+      "adr": 4.77,
+      "tightness": 35,
+      "dollarVol": "376.7M",
+      "vs200": 27,
+      "line": 5.64,
+      "strong": true,
+      "weight": "2.91%",
+      "breakoutDate": "2026-06-24",
+      "ema21": 259.42,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 59,
+      "ticker": "PGR",
+      "name": "PROGRESSIVE CORP",
+      "group": "S&P  Insurance #1 / U.S. Insurance #2",
+      "theme": "KIE/IAK",
+      "status": "bpr",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 226.58,
+      "threeMonth": 13.6,
+      "adr": 2.47,
+      "tightness": 64,
+      "dollarVol": "683.4M",
+      "vs200": 9,
+      "line": 5.65,
+      "strong": true,
+      "weight": "1.95% / 13.92%",
+      "breakoutDate": "2026-06-23",
+      "ema21": 221.66,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 60,
+      "ticker": "HOOD",
+      "name": "ROBINHOOD MARKETS INC - A",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "bpr",
+      "base": 4,
+      "days": 7,
+      "stage": "active",
+      "close": 113.45,
+      "threeMonth": 58.3,
+      "adr": 6.34,
+      "tightness": 33,
+      "dollarVol": "2.6B",
+      "vs200": 11,
+      "line": 5.82,
+      "strong": true,
+      "weight": "4.67%",
+      "breakoutDate": "2026-06-15",
+      "ema21": 105.22,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 61,
+      "ticker": "CCC",
+      "name": "CCC INTELLIGENT SOLUTIONS HO",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 6.07,
+      "threeMonth": 17,
+      "adr": 5.59,
+      "tightness": 1,
+      "dollarVol": "53.1M",
+      "vs200": -8,
+      "line": 5.86,
+      "strong": true,
+      "weight": "0.93%",
+      "breakoutDate": "2026-07-01",
+      "ema21": 5.31,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 62,
+      "ticker": "KMPR",
+      "name": "KEMPER CORP",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 28.64,
+      "threeMonth": -9.8,
+      "adr": 3.6,
+      "tightness": 49,
+      "dollarVol": "35.0M",
+      "vs200": -18,
+      "line": 5.87,
+      "strong": true,
+      "weight": "2.05%",
+      "breakoutDate": "2026-06-26",
+      "ema21": 27.87,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 63,
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
       "group": "Pharmaceutical #9",
@@ -1317,15 +3525,1078 @@
       "vs200": 15,
       "line": 6.14,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "4.45%",
       "breakoutDate": "2026-06-26",
       "ema21": 250.83,
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 20,
+      "rank": 64,
+      "ticker": "ABBV",
+      "name": "Abbvie Inc",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "bpr",
+      "base": 3,
+      "days": 7,
+      "stage": "active",
+      "close": 244.78,
+      "threeMonth": 19.5,
+      "adr": 2.64,
+      "tightness": 65,
+      "dollarVol": "1.6B",
+      "vs200": 11,
+      "line": 6.89,
+      "strong": true,
+      "weight": "4.54%",
+      "breakoutDate": "2026-06-22",
+      "ema21": 242.68,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 65,
+      "ticker": "RBLX",
+      "name": "ROBLOX CORP  CLASS A",
+      "group": "S&P Soft&Sevs #4 / ARK Innovation #20",
+      "theme": "XSW/ARKK",
+      "status": "bpr",
+      "base": 4,
+      "days": 8,
+      "stage": "active",
+      "close": 54.47,
+      "threeMonth": -5.5,
+      "adr": 5.82,
+      "tightness": 29,
+      "dollarVol": "574.4M",
+      "vs200": -28,
+      "line": 7.27,
+      "strong": true,
+      "weight": "0.93% / 3.37%",
+      "breakoutDate": "2026-06-16",
+      "ema21": 52.41,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 66,
+      "ticker": "CGON",
+      "name": "CG ONCOLOGY INC",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "bpr",
+      "base": 4,
+      "days": 9,
+      "stage": "active",
+      "close": 71.77,
+      "threeMonth": 6,
+      "adr": 5.43,
+      "tightness": 48,
+      "dollarVol": "71.0M",
+      "vs200": 31,
+      "line": 7.29,
+      "strong": true,
+      "weight": "1.25%",
+      "breakoutDate": "2026-06-22",
+      "ema21": 68.86,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 67,
+      "ticker": "TEM",
+      "name": "TEMPUS AI INC-CL A",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "bpr",
+      "base": 4,
+      "days": 8,
+      "stage": "active",
+      "close": 58.67,
+      "threeMonth": 27.6,
+      "adr": 7.11,
+      "tightness": 22,
+      "dollarVol": "346.0M",
+      "vs200": -6,
+      "line": 7.57,
+      "strong": true,
+      "weight": "5.43%",
+      "breakoutDate": "2026-06-15",
+      "ema21": 56,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 68,
+      "ticker": "SKWD",
+      "name": "SKYWARD SPECIALTY INSURANCE",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "bpr",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 58.36,
+      "threeMonth": 26.7,
+      "adr": 3.74,
+      "tightness": 45,
+      "dollarVol": "28.0M",
+      "vs200": 23,
+      "line": 8,
+      "strong": true,
+      "weight": "2.07%",
+      "breakoutDate": "2026-06-24",
+      "ema21": 56.59,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 69,
+      "ticker": "PRAX",
+      "name": "PRAXIS PRECISION MEDICINES I",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "bpr",
+      "base": 4,
+      "days": 10,
+      "stage": "active",
+      "close": 327.68,
+      "threeMonth": 3.4,
+      "adr": 6.33,
+      "tightness": 51,
+      "dollarVol": "161.4M",
+      "vs200": 22,
+      "line": 8.08,
+      "strong": true,
+      "weight": "1.24%",
+      "breakoutDate": "2026-06-18",
+      "ema21": 315.53,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 70,
+      "ticker": "SBH",
+      "name": "SALLY BEAUTY HOLDINGS INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 14.36,
+      "threeMonth": 1.6,
+      "adr": 4.32,
+      "tightness": 55,
+      "dollarVol": "21.5M",
+      "vs200": -2,
+      "line": 8.15,
+      "strong": true,
+      "weight": "1.52%",
+      "breakoutDate": "2026-06-18",
+      "ema21": 14.11,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 71,
+      "ticker": "PLMR",
+      "name": "PALOMAR HOLDINGS INC",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "bpr",
+      "base": 4,
+      "days": 4,
+      "stage": "active",
+      "close": 136.07,
+      "threeMonth": 6,
+      "adr": 3.93,
+      "tightness": 30,
+      "dollarVol": "37.2M",
+      "vs200": 11,
+      "line": 8.49,
+      "strong": true,
+      "weight": "2.09%",
+      "breakoutDate": "2026-06-26",
+      "ema21": 129.72,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 72,
+      "ticker": "NOW",
+      "name": "SERVICENOW INC",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "bpr",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 104.85,
+      "threeMonth": 17.7,
+      "adr": 4.83,
+      "tightness": 35,
+      "dollarVol": "2.9B",
+      "vs200": -19,
+      "line": 8.53,
+      "strong": true,
+      "weight": "4.24%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 73,
+      "ticker": "CPNG",
+      "name": "COUPANG INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 4,
+      "days": 17,
+      "stage": "active",
+      "close": 17.74,
+      "threeMonth": -12,
+      "adr": 4.68,
+      "tightness": 58,
+      "dollarVol": "425.1M",
+      "vs200": -20,
+      "line": 10.51,
+      "strong": true,
+      "weight": "1.60%",
+      "breakoutDate": "2026-06-09",
+      "ema21": 17.96,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 74,
+      "ticker": "ORKA",
+      "name": "ORUKA THERAPEUTICS INC",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "bpr",
+      "base": 4,
+      "days": 9,
+      "stage": "active",
+      "close": 87.47,
+      "threeMonth": 42.5,
+      "adr": 6.06,
+      "tightness": 44,
+      "dollarVol": "115.1M",
+      "vs200": 97,
+      "line": 11.79,
+      "strong": true,
+      "weight": "1.25%",
+      "breakoutDate": "2026-06-22",
+      "ema21": 82.18,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 75,
+      "ticker": "VKTX",
+      "name": "VIKING THERAPEUTICS INC",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "bpr",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 37.97,
+      "threeMonth": 8.5,
+      "adr": 6.28,
+      "tightness": 19,
+      "dollarVol": "80.7M",
+      "vs200": 14,
+      "line": 12.69,
+      "strong": true,
+      "weight": "1.30%",
+      "breakoutDate": "2026-06-22",
+      "ema21": 36.74,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 76,
+      "ticker": "TWST",
+      "name": "TWIST BIOSCIENCE CORP",
+      "group": "S&P Biotech #8 / ARK Innovation #20",
+      "theme": "XBI/ARKK",
+      "status": "bpr",
+      "base": 4,
+      "days": 7,
+      "stage": "active",
+      "close": 92.53,
+      "threeMonth": 83.7,
+      "adr": 6.89,
+      "tightness": 28,
+      "dollarVol": "141.3M",
+      "vs200": 90,
+      "line": 13.98,
+      "strong": true,
+      "weight": "1.26% / 3.18%",
+      "breakoutDate": "2026-06-15",
+      "ema21": 89.27,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 77,
+      "ticker": "LMND",
+      "name": "LEMONADE INC",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "bpr",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 70.14,
+      "threeMonth": 19.4,
+      "adr": 5.81,
+      "tightness": 0,
+      "dollarVol": "91.4M",
+      "vs200": 8,
+      "line": 15.81,
+      "strong": true,
+      "weight": "2.14%",
+      "breakoutDate": "2026-06-10",
+      "ema21": 66.13,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 78,
+      "ticker": "KYMR",
+      "name": "KYMERA THERAPEUTICS INC",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "bpr",
+      "base": 5,
+      "days": 12,
+      "stage": "active",
+      "close": 112.08,
+      "threeMonth": 26.6,
+      "adr": 6.51,
+      "tightness": 11,
+      "dollarVol": "83.0M",
+      "vs200": 42,
+      "line": 16.03,
+      "strong": true,
+      "weight": "1.33%",
+      "breakoutDate": "2026-06-22",
+      "ema21": 106.41,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 79,
+      "ticker": "PRCH",
+      "name": "PORCH GROUP INC",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "bpr",
+      "base": 5,
+      "days": 7,
+      "stage": "active",
+      "close": 13.75,
+      "threeMonth": 101.9,
+      "adr": 6.21,
+      "tightness": 4,
+      "dollarVol": "23.7M",
+      "vs200": 33,
+      "line": 20.8,
+      "strong": true,
+      "weight": "1.00%",
+      "breakoutDate": "2026-06-17",
+      "ema21": 13.51,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 80,
+      "ticker": "REAL",
+      "name": "REALREAL INC/THE",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "bpr",
+      "base": 5,
+      "days": 12,
+      "stage": "active",
+      "close": 10.88,
+      "threeMonth": 5,
+      "adr": 5.76,
+      "tightness": 17,
+      "dollarVol": "39.4M",
+      "vs200": -10,
+      "line": 21.83,
+      "strong": true,
+      "weight": "1.58%",
+      "breakoutDate": "2026-06-15",
+      "ema21": 11.07,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 81,
+      "ticker": "MRNA",
+      "name": "MODERNA INC",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "bpr",
+      "base": 5,
+      "days": 6,
+      "stage": "active",
+      "close": 67.44,
+      "threeMonth": 33.1,
+      "adr": 8.36,
+      "tightness": 0,
+      "dollarVol": "494.2M",
+      "vs200": 58,
+      "line": 26.93,
+      "strong": true,
+      "weight": "1.38%",
+      "breakoutDate": "2026-06-16",
+      "ema21": 66.71,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 82,
+      "ticker": "VLO",
+      "name": "VALERO ENERGY CORP",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 301.43,
+      "threeMonth": 25.1,
+      "adr": 3.42,
+      "tightness": 39,
+      "dollarVol": "785.6M",
+      "vs200": 45,
+      "line": 0,
+      "strong": true,
+      "weight": "2.91%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 83,
+      "ticker": "YY",
+      "name": "JOYY INC-ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "anticipation",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 41.55,
+      "threeMonth": 0,
+      "adr": 0,
+      "tightness": 100,
+      "dollarVol": "-",
+      "vs200": -1,
+      "line": 0,
+      "strong": true,
+      "weight": "1.26%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 84,
+      "ticker": "DK",
+      "name": "DELEK US HOLDINGS INC",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 60.95,
+      "threeMonth": 49.2,
+      "adr": 4.56,
+      "tightness": 11,
+      "dollarVol": "57.0M",
+      "vs200": 57,
+      "line": 0.03,
+      "strong": true,
+      "weight": "2.99%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 85,
+      "ticker": "DINO",
+      "name": "HF SINCLAIR CORP",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 83.11,
+      "threeMonth": 42.9,
+      "adr": 3.22,
+      "tightness": 35,
+      "dollarVol": "172.1M",
+      "vs200": 45,
+      "line": 0.04,
+      "strong": true,
+      "weight": "2.93%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 86,
+      "ticker": "QLYS",
+      "name": "QUALYS INC",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 164.12,
+      "threeMonth": 101.6,
+      "adr": 5.35,
+      "tightness": 8,
+      "dollarVol": "93.0M",
+      "vs200": 39,
+      "line": 0.05,
+      "strong": true,
+      "weight": "0.97%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 87,
+      "ticker": "MPC",
+      "name": "MARATHON PETROLEUM CORP",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 303.4,
+      "threeMonth": 35.2,
+      "adr": 2.83,
+      "tightness": 41,
+      "dollarVol": "618.8M",
+      "vs200": 43,
+      "line": 0.1,
+      "strong": true,
+      "weight": "2.86%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 88,
+      "ticker": "PSX",
+      "name": "PHILLIPS 66",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 201.45,
+      "threeMonth": 26.5,
+      "adr": 2.7,
+      "tightness": 50,
+      "dollarVol": "456.8M",
+      "vs200": 31,
+      "line": 0.1,
+      "strong": true,
+      "weight": "2.77%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 89,
+      "ticker": "FFIV",
+      "name": "F5, Inc.",
+      "group": "Cybersecurity #3",
+      "theme": "CIBR",
+      "status": "anticipation",
+      "base": 3,
+      "days": 2,
+      "stage": "active",
+      "close": 431.26,
+      "threeMonth": 44.7,
+      "adr": 3.15,
+      "tightness": 67,
+      "dollarVol": "253.4M",
+      "vs200": 41,
+      "line": 0.34,
+      "strong": true,
+      "weight": "3.37%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 90,
+      "ticker": "PARR",
+      "name": "PAR PACIFIC HOLDINGS INC",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 73.55,
+      "threeMonth": 11.8,
+      "adr": 4.38,
+      "tightness": 5,
+      "dollarVol": "62.5M",
+      "vs200": 52,
+      "line": 0.34,
+      "strong": true,
+      "weight": "3.12%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 91,
+      "ticker": "OKTA",
+      "name": "Okta, Inc.",
+      "group": "Cybersecurity #3",
+      "theme": "CIBR",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 154.62,
+      "threeMonth": 136.2,
+      "adr": 5.68,
+      "tightness": 25,
+      "dollarVol": "451.0M",
+      "vs200": 70,
+      "line": 0.6,
+      "strong": true,
+      "weight": "3.51%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 92,
+      "ticker": "TENB",
+      "name": "TENABLE HOLDINGS INC",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 42.65,
+      "threeMonth": 145,
+      "adr": 6.77,
+      "tightness": 0,
+      "dollarVol": "106.2M",
+      "vs200": 72,
+      "line": 0.93,
+      "strong": true,
+      "weight": "1.03%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 93,
+      "ticker": "NET",
+      "name": "Cloudflare, Inc. (Class A)",
+      "group": "Cybersecurity #3",
+      "theme": "CIBR",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 281.75,
+      "threeMonth": 53.1,
+      "adr": 5,
+      "tightness": 30,
+      "dollarVol": "984.6M",
+      "vs200": 34,
+      "line": 1.02,
+      "strong": true,
+      "weight": "4.32%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 94,
+      "ticker": "YMM",
+      "name": "FULL TRUCK ALLIANCE -SPN ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "anticipation",
+      "base": 3,
+      "days": 2,
+      "stage": "active",
+      "close": 8.64,
+      "threeMonth": 3.6,
+      "adr": 3.41,
+      "tightness": 56,
+      "dollarVol": "80.3M",
+      "vs200": -12,
+      "line": 1.16,
+      "strong": true,
+      "weight": "4.10%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 95,
+      "ticker": "AMPL",
+      "name": "AMPLITUDE INC CLASS A",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 9.69,
+      "threeMonth": 62.9,
+      "adr": 6.6,
+      "tightness": 4,
+      "dollarVol": "20.7M",
+      "vs200": 12,
+      "line": 1.2,
+      "strong": true,
+      "weight": "0.95%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 96,
+      "ticker": "MET",
+      "name": "METLIFE INC",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
+      "status": "anticipation",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 92.54,
+      "threeMonth": 23.7,
+      "adr": 2.25,
+      "tightness": 71,
+      "dollarVol": "305.5M",
+      "vs200": 18,
+      "line": 1.37,
+      "strong": true,
+      "weight": "4.43%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 97,
+      "ticker": "PR",
+      "name": "PERMIAN RESOURCES CORP CL A",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 19.59,
+      "threeMonth": -3.9,
+      "adr": 2.55,
+      "tightness": 72,
+      "dollarVol": "227.1M",
+      "vs200": 18,
+      "line": 1.38,
+      "strong": true,
+      "weight": "2.52%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 98,
+      "ticker": "NTSK",
+      "name": "NETSKOPE INC CL A",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 14.27,
+      "threeMonth": 57.7,
+      "adr": 7.04,
+      "tightness": 0,
+      "dollarVol": "64.1M",
+      "vs200": -3,
+      "line": 1.46,
+      "strong": true,
+      "weight": "1.06%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 99,
+      "ticker": "O",
+      "name": "REALTY INCOME CORP",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "anticipation",
+      "base": 2,
+      "days": 5,
+      "stage": "active",
+      "close": 63.77,
+      "threeMonth": 2,
+      "adr": 1.47,
+      "tightness": 82,
+      "dollarVol": "384.8M",
+      "vs200": 7,
+      "line": 1.52,
+      "strong": true,
+      "weight": "4.64%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 100,
+      "ticker": "AFL",
+      "name": "AFLAC INC",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
+      "status": "anticipation",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 122.05,
+      "threeMonth": 9.4,
+      "adr": 1.78,
+      "tightness": 83,
+      "dollarVol": "290.8M",
+      "vs200": 9,
+      "line": 1.6,
+      "strong": true,
+      "weight": "4.55%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 101,
+      "ticker": "EOG",
+      "name": "EOG RESOURCES INC",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "anticipation",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 138.01,
+      "threeMonth": 1.5,
+      "adr": 2.43,
+      "tightness": 73,
+      "dollarVol": "506.8M",
+      "vs200": 14,
+      "line": 1.79,
+      "strong": true,
+      "weight": "2.53%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 102,
+      "ticker": "PRU",
+      "name": "PRUDENTIAL FINANCIAL INC",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
+      "status": "anticipation",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 114.79,
+      "threeMonth": 18.1,
+      "adr": 1.91,
+      "tightness": 71,
+      "dollarVol": "202.6M",
+      "vs200": 12,
+      "line": 2.06,
+      "strong": true,
+      "weight": "4.27%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 103,
+      "ticker": "RGA",
+      "name": "REINSURANCE GROUP OF AMERICA",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "anticipation",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 234.04,
+      "threeMonth": 13.9,
+      "adr": 2.21,
+      "tightness": 61,
+      "dollarVol": "82.0M",
+      "vs200": 16,
+      "line": 2.08,
+      "strong": true,
+      "weight": "1.97%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 104,
+      "ticker": "ZS",
+      "name": "Zscaler, Inc.",
+      "group": "Cybersecurity #3",
+      "theme": "CIBR",
+      "status": "anticipation",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 152.09,
+      "threeMonth": 24,
+      "adr": 5.1,
+      "tightness": 39,
+      "dollarVol": "714.1M",
+      "vs200": -24,
+      "line": 2.15,
+      "strong": true,
+      "weight": "2.98%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 105,
+      "ticker": "HIG",
+      "name": "HARTFORD INSURANCE GROUP INC",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
+      "status": "anticipation",
+      "base": 2,
+      "days": 5,
+      "stage": "active",
+      "close": 138.15,
+      "threeMonth": -0.2,
+      "adr": 1.73,
+      "tightness": 75,
+      "dollarVol": "232.2M",
+      "vs200": 4,
+      "line": 2.28,
+      "strong": true,
+      "weight": "4.10%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 106,
+      "ticker": "VRNS",
+      "name": "VARONIS SYSTEMS INC",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 48.19,
+      "threeMonth": 119.3,
+      "adr": 6.37,
+      "tightness": 5,
+      "dollarVol": "80.1M",
+      "vs200": 42,
+      "line": 2.45,
+      "strong": true,
+      "weight": "0.97%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 107,
+      "ticker": "YEXT",
+      "name": "YEXT INC",
+      "group": "S&P Soft&Sevs #4",
+      "theme": "XSW",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 5.43,
+      "threeMonth": 59.2,
+      "adr": 4.75,
+      "tightness": 13,
+      "dollarVol": "5.8M",
+      "vs200": -11,
+      "line": 2.49,
+      "strong": true,
+      "weight": "0.96%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 108,
+      "ticker": "MCK",
+      "name": "Mckesson Corp",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "anticipation",
+      "base": 2,
+      "days": 4,
+      "stage": "active",
+      "close": 803.37,
+      "threeMonth": -7,
+      "adr": 2.55,
+      "tightness": 72,
+      "dollarVol": "949.0M",
+      "vs200": -3,
+      "line": 2.55,
+      "strong": true,
+      "weight": "4.46%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 109,
+      "ticker": "ALL",
+      "name": "ALLSTATE CORP",
+      "group": "S&P  Insurance #1 / U.S. Insurance #2",
+      "theme": "KIE/IAK",
+      "status": "anticipation",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 250.35,
+      "threeMonth": 17,
+      "adr": 2.16,
+      "tightness": 63,
+      "dollarVol": "405.1M",
+      "vs200": 20,
+      "line": 2.92,
+      "strong": true,
+      "weight": "1.95% / 6.70%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 110,
+      "ticker": "AJG",
+      "name": "ARTHUR J GALLAGHER + CO",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "anticipation",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 253.83,
+      "threeMonth": 14.5,
+      "adr": 2.69,
+      "tightness": 46,
+      "dollarVol": "411.7M",
+      "vs200": 7,
+      "line": 2.93,
+      "strong": true,
+      "weight": "2.01%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 111,
+      "ticker": "ERAS",
+      "name": "ERASCA INC",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "anticipation",
+      "base": 4,
+      "days": 3,
+      "stage": "active",
+      "close": 19.5,
+      "threeMonth": 19.6,
+      "adr": 7.06,
+      "tightness": 19,
+      "dollarVol": "75.6M",
+      "vs200": 99,
+      "line": 2.95,
+      "strong": true,
+      "weight": "1.27%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 112,
+      "ticker": "RYAN",
+      "name": "RYAN SPECIALTY HOLDINGS INC",
+      "group": "S&P  Insurance #1",
+      "theme": "KIE",
+      "status": "anticipation",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 41.18,
+      "threeMonth": 15.4,
+      "adr": 3.93,
+      "tightness": 40,
+      "dollarVol": "93.5M",
+      "vs200": -6,
+      "line": 3.14,
+      "strong": true,
+      "weight": "2.04%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 113,
       "ticker": "REGN",
-      "name": "Regeneron Pharmaceuticals",
+      "name": "REGENERON PHARMACEUTICALS INC",
       "group": "Biotechnology #6",
       "theme": "IBB",
       "status": "anticipation",
@@ -1340,34 +4611,76 @@
       "vs200": -6,
       "line": 3.32,
       "strong": true,
-      "weight": "🟢 同在: XBI, VOO",
+      "weight": "5.23%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 21,
-      "ticker": "TCEHY",
-      "name": "Tencent (腾讯控股)",
-      "group": "China Internet #15 / HK Large Cap #19",
-      "theme": "KWEB/FXI",
+      "rank": 114,
+      "ticker": "ACGL",
+      "name": "ARCH CAPITAL GROUP LTD",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
       "status": "anticipation",
       "base": 3,
-      "days": 4,
+      "days": 5,
       "stage": "active",
-      "close": 58.34,
-      "threeMonth": -7.2,
-      "adr": 1.55,
-      "tightness": 61,
-      "dollarVol": "253.7M",
-      "vs200": -16,
-      "line": 4.51,
+      "close": 101.53,
+      "threeMonth": 4.6,
+      "adr": 1.97,
+      "tightness": 65,
+      "dollarVol": "219.2M",
+      "vs200": 8,
+      "line": 3.51,
       "strong": true,
-      "weight": "🟢 同在: FXI / 🟢 同在: KWEB",
+      "weight": "3.80%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 22,
+      "rank": 115,
+      "ticker": "TRV",
+      "name": "TRAVELERS COMPANIES INC",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
+      "status": "anticipation",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 336.83,
+      "threeMonth": 12.3,
+      "adr": 2.14,
+      "tightness": 67,
+      "dollarVol": "528.6M",
+      "vs200": 15,
+      "line": 3.72,
+      "strong": true,
+      "weight": "7.39%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 116,
+      "ticker": "BMY",
+      "name": "Bristol-Myers Squibb Co",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "anticipation",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 56.95,
+      "threeMonth": -0.8,
+      "adr": 2.49,
+      "tightness": 74,
+      "dollarVol": "682.8M",
+      "vs200": 7,
+      "line": 4.37,
+      "strong": true,
+      "weight": "4.63%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 117,
       "ticker": "PLD",
-      "name": "Prologis, Inc.",
+      "name": "PROLOGIS INC",
       "group": "Real Estate #14",
       "theme": "XLRE",
       "status": "anticipation",
@@ -1382,57 +4695,36 @@
       "vs200": 8,
       "line": 4.63,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "8.96%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 23,
-      "ticker": "XOM",
-      "name": "Exxon Mobil Corp",
-      "group": "Oil & Gas Exploration #7",
-      "theme": "XOP",
-      "status": "pool",
-      "base": 2,
-      "days": 1,
-      "stage": "watch",
-      "close": 145.09,
-      "threeMonth": -4.3,
-      "adr": 1.83,
-      "tightness": 79,
-      "dollarVol": "2.5B",
-      "vs200": 7,
-      "line": 0.63,
+      "rank": 118,
+      "ticker": "CB",
+      "name": "CHUBB",
+      "group": "U.S. Insurance #2",
+      "theme": "IAK",
+      "status": "anticipation",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 346.22,
+      "threeMonth": 5.2,
+      "adr": 2.12,
+      "tightness": 69,
+      "dollarVol": "547.6M",
+      "vs200": 11,
+      "line": 5.51,
       "strong": true,
-      "weight": "🟢 同在: OIH, VOO",
+      "weight": "13.00%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 24,
-      "ticker": "CVX",
-      "name": "Chevron Corp",
-      "group": "Oil & Gas Exploration #7",
-      "theme": "XOP",
-      "status": "pool",
-      "base": 2,
-      "days": 1,
-      "stage": "watch",
-      "close": 181.76,
-      "threeMonth": -4.4,
-      "adr": 1.72,
-      "tightness": 71,
-      "dollarVol": "1.7B",
-      "vs200": 6,
-      "line": 0.88,
-      "strong": true,
-      "weight": "🟢 同在: VOO",
-      "lastDate": "2026-07-14"
-    },
-    {
-      "rank": 25,
+      "rank": 119,
       "ticker": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "group": "Magnificent 7 #11 / S&P Retail #12",
-      "theme": "MAGS/XRT",
+      "name": "Amazon.com Inc.",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
       "status": "pool",
       "base": 2,
       "days": 2,
@@ -1445,11 +4737,74 @@
       "vs200": 6,
       "line": 1.43,
       "strong": true,
-      "weight": "🟡 同在: XRT, VOO / 🟡 同在: MAGS, VOO",
+      "weight": "14.29%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 26,
+      "rank": 120,
+      "ticker": "WB",
+      "name": "WEIBO CORP-SPON ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "pool",
+      "base": 2,
+      "days": 1,
+      "stage": "watch",
+      "close": 7.66,
+      "threeMonth": -7.9,
+      "adr": 1.85,
+      "tightness": 74,
+      "dollarVol": "10.2M",
+      "vs200": -16,
+      "line": 1.83,
+      "strong": true,
+      "weight": "0.45%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 121,
+      "ticker": "VIPS",
+      "name": "VIPSHOP HOLDINGS LTD - ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "pool",
+      "base": 3,
+      "days": 2,
+      "stage": "watch",
+      "close": 13.86,
+      "threeMonth": -6.5,
+      "adr": 2.62,
+      "tightness": 68,
+      "dollarVol": "37.2M",
+      "vs200": -15,
+      "line": 2.63,
+      "strong": true,
+      "weight": "2.39%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 122,
+      "ticker": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "group": "Cybersecurity #3",
+      "theme": "CIBR",
+      "status": "pool",
+      "base": 3,
+      "days": 13,
+      "stage": "watch",
+      "close": 117.09,
+      "threeMonth": 42.7,
+      "adr": 2.83,
+      "tightness": 73,
+      "dollarVol": "3.1B",
+      "vs200": 36,
+      "line": 4.56,
+      "strong": true,
+      "weight": "7.68%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 123,
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
       "group": "Magnificent 7 #11",
@@ -1466,13 +4821,118 @@
       "vs200": 12,
       "line": 4.59,
       "strong": true,
-      "weight": "🟡 同在: AIQ, VOO",
+      "weight": "14.29%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 27,
+      "rank": 124,
+      "ticker": "GSK",
+      "name": "Gsk Plc",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "pool",
+      "base": 3,
+      "days": 5,
+      "stage": "watch",
+      "close": 51.25,
+      "threeMonth": -12.3,
+      "adr": 1.87,
+      "tightness": 82,
+      "dollarVol": "187.0M",
+      "vs200": 2,
+      "line": 5.93,
+      "strong": true,
+      "weight": "4.44%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 125,
+      "ticker": "IDXX",
+      "name": "IDEXX LABORATORIES INC",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "pool",
+      "base": 3,
+      "days": 5,
+      "stage": "watch",
+      "close": 540.68,
+      "threeMonth": -5.8,
+      "adr": 3.07,
+      "tightness": 70,
+      "dollarVol": "374.6M",
+      "vs200": -13,
+      "line": 6.75,
+      "strong": true,
+      "weight": "4.40%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 126,
+      "ticker": "NVS",
+      "name": "Novartis Ag",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "pool",
+      "base": 3,
+      "days": 7,
+      "stage": "watch",
+      "close": 150.36,
+      "threeMonth": -2.7,
+      "adr": 1.5,
+      "tightness": 81,
+      "dollarVol": "269.9M",
+      "vs200": 6,
+      "line": 6.79,
+      "strong": true,
+      "weight": "10.47%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 127,
+      "ticker": "TME",
+      "name": "TENCENT MUSIC ENTERTAINM-ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "pool",
+      "base": 3,
+      "days": 19,
+      "stage": "watch",
+      "close": 8.78,
+      "threeMonth": -6.9,
+      "adr": 2.91,
+      "tightness": 65,
+      "dollarVol": "94.8M",
+      "vs200": -39,
+      "line": 6.83,
+      "strong": true,
+      "weight": "3.31%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 128,
+      "ticker": "CDNS",
+      "name": "CADENCE DESIGN SYSTEMS INC",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "pool",
+      "base": 3,
+      "days": 17,
+      "stage": "watch",
+      "close": 376.8,
+      "threeMonth": 30.7,
+      "adr": 3.42,
+      "tightness": 76,
+      "dollarVol": "872.0M",
+      "vs200": 15,
+      "line": 7.05,
+      "strong": true,
+      "weight": "3.85%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 129,
       "ticker": "SYK",
-      "name": "Stryker Corporation",
+      "name": "STRYKER CORP",
       "group": "U.S. Medical Devices #10",
       "theme": "IHI",
       "status": "pool",
@@ -1487,13 +4947,13 @@
       "vs200": -10,
       "line": 8.06,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "11.79%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 28,
+      "rank": 130,
       "ticker": "MDT",
-      "name": "Medtronic plc",
+      "name": "MEDTRONIC PLC",
       "group": "U.S. Medical Devices #10",
       "theme": "IHI",
       "status": "pool",
@@ -1508,34 +4968,202 @@
       "vs200": -11,
       "line": 8.44,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "4.53%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 29,
-      "ticker": "UAL",
-      "name": "United Airlines",
-      "group": "Airlines #18",
-      "theme": "JETS",
+      "rank": 131,
+      "ticker": "PFE",
+      "name": "Pfizer Inc",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "pool",
+      "base": 3,
+      "days": 19,
+      "stage": "watch",
+      "close": 24.25,
+      "threeMonth": -9.8,
+      "adr": 2.11,
+      "tightness": 81,
+      "dollarVol": "1.1B",
+      "vs200": -4,
+      "line": 8.95,
+      "strong": true,
+      "weight": "4.61%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 132,
+      "ticker": "CBRE",
+      "name": "CBRE GROUP INC   A",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
       "status": "pool",
       "base": 4,
-      "days": 9,
+      "days": 5,
       "stage": "watch",
-      "close": 120.35,
-      "threeMonth": 26.4,
-      "adr": 3.7,
-      "tightness": 49,
-      "dollarVol": "631.4M",
-      "vs200": 16,
-      "line": 15.31,
+      "close": 133.13,
+      "threeMonth": -8.8,
+      "adr": 2.74,
+      "tightness": 68,
+      "dollarVol": "306.5M",
+      "vs200": -11,
+      "line": 9.28,
       "strong": true,
-      "weight": "🟢 同在: VOO",
+      "weight": "4.12%",
       "lastDate": "2026-07-14"
     },
     {
-      "rank": 30,
+      "rank": 133,
+      "ticker": "IRM",
+      "name": "IRON MOUNTAIN INC",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "pool",
+      "base": 4,
+      "days": 13,
+      "stage": "watch",
+      "close": 122.66,
+      "threeMonth": 10.4,
+      "adr": 3.26,
+      "tightness": 54,
+      "dollarVol": "210.2M",
+      "vs200": 18,
+      "line": 9.8,
+      "strong": true,
+      "weight": "3.71%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 134,
+      "ticker": "EQIX",
+      "name": "EQUINIX INC",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "pool",
+      "base": 4,
+      "days": 14,
+      "stage": "watch",
+      "close": 1023.54,
+      "threeMonth": -2.7,
+      "adr": 2.66,
+      "tightness": 64,
+      "dollarVol": "626.8M",
+      "vs200": 13,
+      "line": 9.81,
+      "strong": true,
+      "weight": "6.93%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 135,
+      "ticker": "ABT",
+      "name": "ABBOTT LABORATORIES",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "pool",
+      "base": 4,
+      "days": 5,
+      "stage": "watch",
+      "close": 88.96,
+      "threeMonth": -11.1,
+      "adr": 2.52,
+      "tightness": 70,
+      "dollarVol": "1.2B",
+      "vs200": -19,
+      "line": 10.32,
+      "strong": true,
+      "weight": "16.53%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 136,
+      "ticker": "ARGX",
+      "name": "ARGENX SE ADR",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "pool",
+      "base": 4,
+      "days": 7,
+      "stage": "watch",
+      "close": 859.43,
+      "threeMonth": 6.2,
+      "adr": 3.23,
+      "tightness": 62,
+      "dollarVol": "303.1M",
+      "vs200": 4,
+      "line": 10.95,
+      "strong": true,
+      "weight": "3.56%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 137,
+      "ticker": "DLR",
+      "name": "DIGITAL REALTY TRUST INC",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "pool",
+      "base": 4,
+      "days": 13,
+      "stage": "watch",
+      "close": 173.11,
+      "threeMonth": -9.2,
+      "adr": 2.5,
+      "tightness": 60,
+      "dollarVol": "525.7M",
+      "vs200": 0,
+      "line": 13.82,
+      "strong": true,
+      "weight": "4.65%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 138,
+      "ticker": "BIIB",
+      "name": "BIOGEN INC",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "pool",
+      "base": 4,
+      "days": 10,
+      "stage": "watch",
+      "close": 191.95,
+      "threeMonth": 8.8,
+      "adr": 3.55,
+      "tightness": 56,
+      "dollarVol": "246.7M",
+      "vs200": 7,
+      "line": 14.47,
+      "strong": true,
+      "weight": "2.39%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 139,
+      "ticker": "RMD",
+      "name": "RESMED INC",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "pool",
+      "base": 4,
+      "days": 6,
+      "stage": "watch",
+      "close": 193.01,
+      "threeMonth": -15.9,
+      "adr": 2.79,
+      "tightness": 53,
+      "dollarVol": "328.2M",
+      "vs200": -18,
+      "line": 15.24,
+      "strong": true,
+      "weight": "4.29%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 140,
       "ticker": "ISRG",
-      "name": "Intuitive Surgical, Inc.",
+      "name": "INTUITIVE SURGICAL INC",
       "group": "U.S. Medical Devices #10",
       "theme": "IHI",
       "status": "pool",
@@ -1550,7 +5178,133 @@
       "vs200": -22,
       "line": 16.95,
       "strong": true,
-      "weight": "🟢 同在: BOTZ, VOO",
+      "weight": "14.86%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 141,
+      "ticker": "BBWI",
+      "name": "BATH + BODY WORKS INC",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "pool",
+      "base": 5,
+      "days": 10,
+      "stage": "watch",
+      "close": 20.04,
+      "threeMonth": 10.4,
+      "adr": 5.39,
+      "tightness": 34,
+      "dollarVol": "118.0M",
+      "vs200": -3,
+      "line": 18.39,
+      "strong": true,
+      "weight": "1.52%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 142,
+      "ticker": "CRSP",
+      "name": "CRISPR THERAPEUTICS AG",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "pool",
+      "base": 5,
+      "days": 6,
+      "stage": "watch",
+      "close": 50.46,
+      "threeMonth": -8,
+      "adr": 5.73,
+      "tightness": 22,
+      "dollarVol": "92.7M",
+      "vs200": -9,
+      "line": 25.74,
+      "strong": true,
+      "weight": "4.56%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 143,
+      "ticker": "APP",
+      "name": "APPLOVIN CORP CLASS A",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "pool",
+      "base": 5,
+      "days": 7,
+      "stage": "watch",
+      "close": 448.98,
+      "threeMonth": 7.6,
+      "adr": 6.61,
+      "tightness": 1,
+      "dollarVol": "2.8B",
+      "vs200": -16,
+      "line": 28.39,
+      "strong": true,
+      "weight": "3.99%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 144,
+      "ticker": "QFIN",
+      "name": "QFIN HOLDINGS INC-ADR",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "pool",
+      "base": 5,
+      "days": 8,
+      "stage": "watch",
+      "close": 12.27,
+      "threeMonth": -4.9,
+      "adr": 5.27,
+      "tightness": 0,
+      "dollarVol": "23.6M",
+      "vs200": -27,
+      "line": 34.84,
+      "strong": true,
+      "weight": "0.70%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 145,
+      "ticker": "ALNY",
+      "name": "ALNYLAM PHARMACEUTICALS INC",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "pool",
+      "base": 5,
+      "days": 3,
+      "stage": "watch",
+      "close": 281.26,
+      "threeMonth": -15.5,
+      "adr": 4.62,
+      "tightness": 0,
+      "dollarVol": "382.7M",
+      "vs200": -22,
+      "line": 35.11,
+      "strong": true,
+      "weight": "2.99%",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 146,
+      "ticker": "ORCL",
+      "name": "ORACLE CORP",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "pool",
+      "base": 5,
+      "days": 18,
+      "stage": "watch",
+      "close": 127.94,
+      "threeMonth": -17.5,
+      "adr": 4.86,
+      "tightness": 0,
+      "dollarVol": "5.2B",
+      "vs200": -34,
+      "line": 52.13,
+      "strong": true,
+      "weight": "5.49%",
       "lastDate": "2026-07-14"
     }
   ],
@@ -1581,7 +5335,7 @@
     },
     "XOP": {
       "lastDone": "165.850",
-      "timestamp": "2026-07-14T19:59:58.000Z"
+      "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "XBI": {
       "lastDone": "155.450",
@@ -1637,120 +5391,588 @@
     }
   },
   "stockQuotes": {
-    "UMBF": {
-      "lastDone": "142.610",
+    "LMND": {
+      "lastDone": "70.140",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PLMR": {
+      "lastDone": "136.070",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "SKWD": {
+      "lastDone": "58.360",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "KMPR": {
+      "lastDone": "28.640",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "RYAN": {
+      "lastDone": "41.180",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AJG": {
+      "lastDone": "253.830",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "RGA": {
+      "lastDone": "234.040",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BRO": {
+      "lastDone": "68.500",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PGR": {
+      "lastDone": "226.580",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ALL": {
+      "lastDone": "250.350",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CB": {
+      "lastDone": "346.220",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TRV": {
+      "lastDone": "336.830",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AFL": {
+      "lastDone": "122.050",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MET": {
+      "lastDone": "92.540",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AIG": {
+      "lastDone": "79.000",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PRU": {
+      "lastDone": "114.790",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "HIG": {
+      "lastDone": "138.150",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ACGL": {
+      "lastDone": "101.530",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PANW": {
+      "lastDone": "352.890",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "FTNT": {
+      "lastDone": "166.830",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CRWD": {
+      "lastDone": "210.730",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CSCO": {
+      "lastDone": "117.090",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AVGO": {
+      "lastDone": "389.110",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "NET": {
+      "lastDone": "281.750",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "OKTA": {
+      "lastDone": "154.620",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "FFIV": {
+      "lastDone": "431.260",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ZS": {
+      "lastDone": "152.090",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AKAM": {
+      "lastDone": "126.110",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "NTSK": {
+      "lastDone": "14.270",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TENB": {
+      "lastDone": "42.650",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PRCH": {
+      "lastDone": "13.750",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VRNS": {
+      "lastDone": "48.190",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "QLYS": {
+      "lastDone": "164.120",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "YEXT": {
+      "lastDone": "5.430",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AMPL": {
+      "lastDone": "9.690",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "RBLX": {
+      "lastDone": "54.470",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CCC": {
+      "lastDone": "6.070",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BILL": {
+      "lastDone": "41.370",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CFR": {
+      "lastDone": "157.380",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "RF": {
+      "lastDone": "30.920",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MTB": {
+      "lastDone": "241.850",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CFG": {
+      "lastDone": "70.320",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "GBCI": {
+      "lastDone": "51.790",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "BPOP": {
       "lastDone": "169.000",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "VRTX": {
-      "lastDone": "476.310",
+    "ONB": {
+      "lastDone": "26.310",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "REGN": {
-      "lastDone": "656.120",
+    "PNFP": {
+      "lastDone": "100.630",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ASB": {
+      "lastDone": "30.710",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AUB": {
+      "lastDone": "41.820",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VRTX": {
+      "lastDone": "476.310",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "AMGN": {
       "lastDone": "355.250",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "XOM": {
-      "lastDone": "145.090",
+    "GILD": {
+      "lastDone": "130.040",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "CVX": {
-      "lastDone": "181.760",
+    "REGN": {
+      "lastDone": "656.120",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ARGX": {
+      "lastDone": "859.430",
+      "timestamp": "2026-07-14T20:00:01.000Z"
+    },
+    "ALNY": {
+      "lastDone": "281.260",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "NTRA": {
+      "lastDone": "272.660",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "RVMD": {
+      "lastDone": "184.970",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BIIB": {
+      "lastDone": "191.950",
+      "timestamp": "2026-07-14T20:00:01.000Z"
+    },
+    "ILMN": {
+      "lastDone": "191.200",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PARR": {
+      "lastDone": "73.550",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "DK": {
+      "lastDone": "60.950",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "DINO": {
+      "lastDone": "83.110",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VLO": {
+      "lastDone": "301.430",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MPC": {
+      "lastDone": "303.400",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PSX": {
+      "lastDone": "201.450",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TPL": {
+      "lastDone": "415.930",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VG": {
+      "lastDone": "13.230",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "EOG": {
+      "lastDone": "138.010",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PR": {
+      "lastDone": "19.590",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MRNA": {
+      "lastDone": "67.440",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "KYMR": {
+      "lastDone": "112.080",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VKTX": {
+      "lastDone": "37.970",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ERAS": {
+      "lastDone": "19.500",
+      "timestamp": "2026-07-14T20:00:01.000Z"
+    },
+    "TWST": {
+      "lastDone": "92.530",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ORKA": {
+      "lastDone": "87.470",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CGON": {
+      "lastDone": "71.770",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PRAX": {
+      "lastDone": "327.680",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "DNTH": {
+      "lastDone": "101.280",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "LLY": {
       "lastDone": "1152.540",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
+    "NVS": {
+      "lastDone": "150.360",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MRK": {
+      "lastDone": "120.780",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "NVO": {
+      "lastDone": "49.070",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BMY": {
+      "lastDone": "56.950",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PFE": {
+      "lastDone": "24.250",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ABBV": {
+      "lastDone": "244.780",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MCK": {
+      "lastDone": "803.370",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
     "JNJ": {
       "lastDone": "253.850",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "SYK": {
-      "lastDone": "311.070",
+    "GSK": {
+      "lastDone": "51.250",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "MDT": {
-      "lastDone": "79.300",
+    "ABT": {
+      "lastDone": "88.960",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "ISRG": {
       "lastDone": "379.500",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "NVDA": {
-      "lastDone": "211.800",
+    "SYK": {
+      "lastDone": "311.070",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "MSFT": {
-      "lastDone": "384.930",
+    "EW": {
+      "lastDone": "90.090",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "AAPL": {
-      "lastDone": "314.860",
+    "MDT": {
+      "lastDone": "79.300",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "AMZN": {
-      "lastDone": "247.490",
+    "BDX": {
+      "lastDone": "150.650",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "TSLA": {
-      "lastDone": "396.180",
+    "GEHC": {
+      "lastDone": "61.660",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "META": {
-      "lastDone": "661.040",
+    "IDXX": {
+      "lastDone": "540.680",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "DXCM": {
+      "lastDone": "74.120",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "RMD": {
+      "lastDone": "193.010",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "GOOGL": {
       "lastDone": "359.510",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "HD": {
-      "lastDone": "337.740",
+    "AMZN": {
+      "lastDone": "247.490",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AAPL": {
+      "lastDone": "314.860",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "META": {
+      "lastDone": "661.040",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MSFT": {
+      "lastDone": "384.930",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "NVDA": {
+      "lastDone": "211.800",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TSLA": {
+      "lastDone": "396.180",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "RVLV": {
+      "lastDone": "24.430",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CPNG": {
+      "lastDone": "17.740",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ETSY": {
+      "lastDone": "83.060",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CART": {
+      "lastDone": "47.710",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "REAL": {
+      "lastDone": "10.880",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "UPBD": {
+      "lastDone": "21.080",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "DLTR": {
+      "lastDone": "124.560",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "KMX": {
+      "lastDone": "55.730",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BBWI": {
+      "lastDone": "20.040",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "SBH": {
+      "lastDone": "14.360",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "PLD": {
       "lastDone": "142.490",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
+    "EQIX": {
+      "lastDone": "1023.540",
+      "timestamp": "2026-07-14T20:00:01.000Z"
+    },
     "AMT": {
       "lastDone": "168.830",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "TCEHY": {
-      "lastDone": "58.340",
+    "SPG": {
+      "lastDone": "221.280",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "BABA": {
-      "lastDone": "112.320",
+    "DLR": {
+      "lastDone": "173.110",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "O": {
+      "lastDone": "63.770",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VTR": {
+      "lastDone": "92.400",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PSA": {
+      "lastDone": "318.930",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CBRE": {
+      "lastDone": "133.130",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "IRM": {
+      "lastDone": "122.660",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "PDD": {
       "lastDone": "83.910",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
+    "YMM": {
+      "lastDone": "8.640",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TME": {
+      "lastDone": "8.780",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BZ": {
+      "lastDone": "14.230",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TAL": {
+      "lastDone": "10.300",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VIPS": {
+      "lastDone": "13.860",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "YY": {
+      "lastDone": "41.550",
+      "timestamp": "2026-07-14T13:20:00.000Z"
+    },
+    "ATHM": {
+      "lastDone": "20.860",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "QFIN": {
+      "lastDone": "12.270",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "WB": {
+      "lastDone": "7.660",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PLTR": {
+      "lastDone": "133.720",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ORCL": {
+      "lastDone": "127.940",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
     "CRM": {
       "lastDone": "167.560",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "ADBE": {
-      "lastDone": "220.780",
+    "NOW": {
+      "lastDone": "104.850",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "DAL": {
-      "lastDone": "85.510",
+    "APP": {
+      "lastDone": "448.980",
+      "timestamp": "2026-07-14T20:00:01.000Z"
+    },
+    "CDNS": {
+      "lastDone": "376.800",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
-    "UAL": {
-      "lastDone": "120.350",
+    "TEM": {
+      "lastDone": "58.670",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "HOOD": {
+      "lastDone": "113.450",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "SHOP": {
+      "lastDone": "125.680",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CRSP": {
+      "lastDone": "50.460",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "SPCX": {
+      "lastDone": "136.080",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AMD": {
+      "lastDone": "548.130",
       "timestamp": "2026-07-14T20:00:00.000Z"
     },
     "COIN": {
