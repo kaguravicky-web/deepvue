@@ -1,0 +1,1885 @@
+{
+  "updatedAt": "2026-07-15T04:54:38.968Z",
+  "sectors": [
+    {
+      "sector": "S&P  Insurance",
+      "oneDay": "-1.52%",
+      "fiveDay": "-0.16%",
+      "oneMonth": "8.74%",
+      "status": "🟢 Strong Trend",
+      "atrExtension": "8.64",
+      "ticker": "KIE",
+      "price": "63.48"
+    },
+    {
+      "sector": "U.S. Insurance",
+      "oneDay": "-1.74%",
+      "fiveDay": "-0.57%",
+      "oneMonth": "7.66%",
+      "status": "🟢 Strong Trend",
+      "atrExtension": "7.33",
+      "ticker": "IAK",
+      "price": "145.36"
+    },
+    {
+      "sector": "Cybersecurity",
+      "oneDay": "3.15%",
+      "fiveDay": "3.35%",
+      "oneMonth": "9.81%",
+      "status": "🟢 Strong Trend",
+      "atrExtension": "14.12",
+      "ticker": "CIBR",
+      "price": "94.73"
+    },
+    {
+      "sector": "S&P Soft&Sevs",
+      "oneDay": "-0.17%",
+      "fiveDay": "1.30%",
+      "oneMonth": "6.33%",
+      "status": "🟢 Strong Trend",
+      "atrExtension": "7.35",
+      "ticker": "XSW",
+      "price": "178.32"
+    },
+    {
+      "sector": "Regional Banking",
+      "oneDay": "-0.16%",
+      "fiveDay": "2.26%",
+      "oneMonth": "3.83%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "5.32",
+      "ticker": "KRE",
+      "price": "75"
+    },
+    {
+      "sector": "Biotechnology",
+      "oneDay": "-0.46%",
+      "fiveDay": "-3.91%",
+      "oneMonth": "9.58%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "7.59",
+      "ticker": "IBB",
+      "price": "188.67"
+    },
+    {
+      "sector": "Oil & Gas Exploration",
+      "oneDay": "0.40%",
+      "fiveDay": "2.38%",
+      "oneMonth": "4.73%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "0.31",
+      "ticker": "XOP",
+      "price": "165.85"
+    },
+    {
+      "sector": "S&P Biotech",
+      "oneDay": "0.07%",
+      "fiveDay": "-4.61%",
+      "oneMonth": "13.97%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "11.10",
+      "ticker": "XBI",
+      "price": "155.45"
+    },
+    {
+      "sector": "Pharmaceutical",
+      "oneDay": "-1.84%",
+      "fiveDay": "-3.22%",
+      "oneMonth": "1.35%",
+      "status": "⚪ Mixed",
+      "atrExtension": "2.09",
+      "ticker": "PPH",
+      "price": "106.78"
+    },
+    {
+      "sector": "U.S. Medical Devices",
+      "oneDay": "-4.13%",
+      "fiveDay": "-3.98%",
+      "oneMonth": "-0.87%",
+      "status": "🔴 Weak",
+      "atrExtension": "-1.50",
+      "ticker": "IHI",
+      "price": "49.22"
+    },
+    {
+      "sector": "Magnificent 7",
+      "oneDay": "0.67%",
+      "fiveDay": "2.51%",
+      "oneMonth": "1.23%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "0.51",
+      "ticker": "MAGS",
+      "price": "67.44"
+    },
+    {
+      "sector": "S&P Retail",
+      "oneDay": "0.35%",
+      "fiveDay": "2.07%",
+      "oneMonth": "0.39%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "3.53",
+      "ticker": "XRT",
+      "price": "87.78"
+    },
+    {
+      "sector": "S&P 500",
+      "oneDay": "0.38%",
+      "fiveDay": "0.85%",
+      "oneMonth": "-0.39%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "1.49",
+      "ticker": "VOO",
+      "price": "691.1"
+    },
+    {
+      "sector": "Real Estate",
+      "oneDay": "-0.49%",
+      "fiveDay": "0.75%",
+      "oneMonth": "-1.13%",
+      "status": "⚪ Mixed",
+      "atrExtension": "0.31",
+      "ticker": "XLRE",
+      "price": "44.48"
+    },
+    {
+      "sector": "China Internet",
+      "oneDay": "-0.19%",
+      "fiveDay": "-0.87%",
+      "oneMonth": "-1.65%",
+      "status": "⚪ Mixed",
+      "atrExtension": "-2.89",
+      "ticker": "KWEB",
+      "price": "26.18"
+    },
+    {
+      "sector": "493",
+      "oneDay": "0.23%",
+      "fiveDay": "0.63%",
+      "oneMonth": "-0.19%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "2.75",
+      "ticker": "XMAG",
+      "price": "25.66"
+    },
+    {
+      "sector": "Software",
+      "oneDay": "1.00%",
+      "fiveDay": "1.24%",
+      "oneMonth": "1.03%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "1.94",
+      "ticker": "IGV",
+      "price": "93.63"
+    },
+    {
+      "sector": "Airlines",
+      "oneDay": "-1.19%",
+      "fiveDay": "-2.96%",
+      "oneMonth": "1.28%",
+      "status": "⚪ Mixed",
+      "atrExtension": "6.68",
+      "ticker": "JETS",
+      "price": "30.85"
+    },
+    {
+      "sector": "HK Large Cap",
+      "oneDay": "0.99%",
+      "fiveDay": "0.99%",
+      "oneMonth": "-3.82%",
+      "status": "⚪ Mixed",
+      "atrExtension": "-3.27",
+      "ticker": "FXI",
+      "price": "33.77"
+    },
+    {
+      "sector": "ARK Innovation",
+      "oneDay": "-0.79%",
+      "fiveDay": "0.11%",
+      "oneMonth": "-0.11%",
+      "status": "🟢 Uptrend",
+      "atrExtension": "2.54",
+      "ticker": "ARKK",
+      "price": "8.74"
+    }
+  ],
+  "components": [
+    {
+      "themeTicker": "KRE",
+      "ticker": "UMBF",
+      "name": "UMB Financial Corp",
+      "weight": "（区域银行，重叠度低）"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "BPOP",
+      "name": "Popular, Inc.",
+      "weight": "（区域银行，重叠度低）"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "weight": "🟢 同在: XBI, VOO"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "REGN",
+      "name": "Regeneron Pharmaceuticals",
+      "weight": "🟢 同在: XBI, VOO"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "AMGN",
+      "name": "Amgen Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "XOM",
+      "name": "Exxon Mobil Corp",
+      "weight": "🟢 同在: OIH, VOO"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "CVX",
+      "name": "Chevron Corp",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "weight": "🟢 同在: IBB, VOO"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "SYK",
+      "name": "Stryker Corporation",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "MDT",
+      "name": "Medtronic plc",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "weight": "🟢 同在: BOTZ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "weight": "🔴 超级重叠: SMH, AIQ, QTUM, BOTZ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "weight": "🔴 超级重叠: IGV, AIQ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "weight": "🟡 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "weight": "🟡 同在: XRT, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "weight": "🟡 同在: ARKK, LIT, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "weight": "🟡 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "weight": "🟡 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "weight": "🟡 同在: MAGS, VOO"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "HD",
+      "name": "The Home Depot, Inc.",
+      "weight": "🟢 同在: XHB, VOO"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "PLD",
+      "name": "Prologis, Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "AMT",
+      "name": "American Tower Corp",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "TCEHY",
+      "name": "Tencent (腾讯控股)",
+      "weight": "🟢 同在: FXI"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "BABA",
+      "name": "Alibaba Group (阿里巴巴)",
+      "weight": "🟢 同在: FXI"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "PDD",
+      "name": "PDD Holdings (拼多多)",
+      "weight": "🟢 同在: FXI"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "weight": "🔴 超级重叠: MAGS, AIQ, VOO"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "weight": "🟢 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "JETS",
+      "ticker": "DAL",
+      "name": "Delta Air Lines",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "JETS",
+      "ticker": "UAL",
+      "name": "United Airlines",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "FXI",
+      "ticker": "TCEHY",
+      "name": "Tencent (腾讯控股)",
+      "weight": "🟢 同在: KWEB"
+    },
+    {
+      "themeTicker": "FXI",
+      "ticker": "BABA",
+      "name": "Alibaba Group (阿里巴巴)",
+      "weight": "🟢 同在: KWEB"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "weight": "🟡 同在: MAGS, LIT, VOO"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "weight": "🟢 同在: WGMI"
+    },
+    {
+      "themeTicker": "IYZ",
+      "ticker": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "ITA",
+      "ticker": "LMT",
+      "name": "Lockheed Martin Corp",
+      "weight": "🟡 同在: XAR, UFO, VOO"
+    },
+    {
+      "themeTicker": "ITA",
+      "ticker": "RTX",
+      "name": "RTX Corporation",
+      "weight": "🟢 同在: XAR, VOO"
+    },
+    {
+      "themeTicker": "ITA",
+      "ticker": "BA",
+      "name": "The Boeing Company",
+      "weight": "🟢 同在: XAR, VOO"
+    },
+    {
+      "themeTicker": "SMH",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "weight": "🔴 超级重叠: MAGS, AIQ, QTUM, BOTZ, VOO"
+    },
+    {
+      "themeTicker": "SMH",
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor",
+      "weight": "🟢 同在: AIQ"
+    },
+    {
+      "themeTicker": "SMH",
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "SMH",
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices",
+      "weight": "🟢 同在: AIQ, QTUM, VOO"
+    },
+    {
+      "themeTicker": "XHB",
+      "ticker": "LEN",
+      "name": "Lennar Corporation",
+      "weight": "🟢 同在: ITB, VOO"
+    },
+    {
+      "themeTicker": "XHB",
+      "ticker": "DHI",
+      "name": "D.R. Horton, Inc.",
+      "weight": "🟢 同在: ITB, VOO"
+    },
+    {
+      "themeTicker": "XHB",
+      "ticker": "HD",
+      "name": "The Home Depot, Inc.",
+      "weight": "🟢 同在: XRT, VOO"
+    },
+    {
+      "themeTicker": "OIH",
+      "ticker": "SLB",
+      "name": "Schlumberger N.V.",
+      "weight": "🟢 同在: XOP, VOO"
+    },
+    {
+      "themeTicker": "OIH",
+      "ticker": "HAL",
+      "name": "Halliburton Company",
+      "weight": "🟢 同在: XOP, VOO"
+    },
+    {
+      "themeTicker": "ITB",
+      "ticker": "DHI",
+      "name": "D.R. Horton, Inc.",
+      "weight": "🟢 同在: XHB, VOO"
+    },
+    {
+      "themeTicker": "ITB",
+      "ticker": "LEN",
+      "name": "Lennar Corporation",
+      "weight": "🟢 同在: XHB, VOO"
+    },
+    {
+      "themeTicker": "PAVE",
+      "ticker": "CAT",
+      "name": "Caterpillar Inc.",
+      "weight": "🟢 同在: AIRR, VOO"
+    },
+    {
+      "themeTicker": "PAVE",
+      "ticker": "PWR",
+      "name": "Quanta Services, Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "IBIT",
+      "ticker": "BTC",
+      "name": "Bitcoin (现货比特币)",
+      "weight": "⚠️ 无股票成分，计价为美元 (USD)"
+    },
+    {
+      "themeTicker": "AIQ",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "weight": "🔴 超级重叠: MAGS, SMH, QTUM, BOTZ"
+    },
+    {
+      "themeTicker": "AIQ",
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "weight": "🔴 超级重叠: MAGS, IGV, VOO"
+    },
+    {
+      "themeTicker": "AIQ",
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "weight": "🟡 同在: MAGS, VOO"
+    },
+    {
+      "themeTicker": "SLX",
+      "ticker": "NUE",
+      "name": "Nucor Corporation",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "QTUM",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "weight": "🔴 超级重叠: MAGS, SMH, AIQ, BOTZ"
+    },
+    {
+      "themeTicker": "QTUM",
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices",
+      "weight": "🟢 同在: SMH, AIQ, VOO"
+    },
+    {
+      "themeTicker": "COPX",
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "BOTZ",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "weight": "🔴 超级重叠: MAGS, SMH, AIQ, QTUM"
+    },
+    {
+      "themeTicker": "BOTZ",
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "weight": "🟢 同在: IHI, VOO"
+    },
+    {
+      "themeTicker": "AIRR",
+      "ticker": "CAT",
+      "name": "Caterpillar Inc.",
+      "weight": "🟢 同在: PAVE, VOO"
+    },
+    {
+      "themeTicker": "AIRR",
+      "ticker": "DE",
+      "name": "Deere & Company",
+      "weight": "🟢 同在: PAVE, VOO"
+    },
+    {
+      "themeTicker": "XAR",
+      "ticker": "LMT",
+      "name": "Lockheed Martin Corp",
+      "weight": "🟡 同在: ITA, UFO, VOO"
+    },
+    {
+      "themeTicker": "XAR",
+      "ticker": "RTX",
+      "name": "RTX Corporation",
+      "weight": "🟢 同在: ITA, VOO"
+    },
+    {
+      "themeTicker": "WGMI",
+      "ticker": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "weight": "🟢 同在: ARKK"
+    },
+    {
+      "themeTicker": "WGMI",
+      "ticker": "MSTR",
+      "name": "MicroStrategy Inc.",
+      "weight": "（比特币概念股）"
+    },
+    {
+      "themeTicker": "GLD",
+      "ticker": "GOLD",
+      "name": "Physical Gold (现货黄金)",
+      "weight": "⚠️ 实体贵金属，无股票成分"
+    },
+    {
+      "themeTicker": "SLV",
+      "ticker": "SILVER",
+      "name": "Physical Silver (现货白银)",
+      "weight": "⚠️ 实体贵金属，无股票成分"
+    },
+    {
+      "themeTicker": "UFO",
+      "ticker": "LMT",
+      "name": "Lockheed Martin Corp",
+      "weight": "🟡 同在: ITA, XAR, VOO"
+    },
+    {
+      "themeTicker": "TAN",
+      "ticker": "FSLR",
+      "name": "First Solar, Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "URA",
+      "ticker": "CCJ",
+      "name": "Cameco Corporation",
+      "weight": "（铀矿石企业，重叠度低）"
+    },
+    {
+      "themeTicker": "LIT",
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "weight": "🟡 同在: MAGS, ARKK, VOO"
+    },
+    {
+      "themeTicker": "LIT",
+      "ticker": "BYD",
+      "name": "BYD Company (比亚迪)",
+      "weight": "🟢 同在: ASHR"
+    },
+    {
+      "themeTicker": "REMX",
+      "ticker": "LYSCF",
+      "name": "Lynas Rare Earths",
+      "weight": "（稀土矿业，重叠度低）"
+    }
+  ],
+  "activeComponents": [
+    {
+      "themeTicker": "KRE",
+      "ticker": "UMBF",
+      "name": "UMB Financial Corp",
+      "weight": "（区域银行，重叠度低）"
+    },
+    {
+      "themeTicker": "KRE",
+      "ticker": "BPOP",
+      "name": "Popular, Inc.",
+      "weight": "（区域银行，重叠度低）"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "weight": "🟢 同在: XBI, VOO"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "REGN",
+      "name": "Regeneron Pharmaceuticals",
+      "weight": "🟢 同在: XBI, VOO"
+    },
+    {
+      "themeTicker": "IBB",
+      "ticker": "AMGN",
+      "name": "Amgen Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "XOM",
+      "name": "Exxon Mobil Corp",
+      "weight": "🟢 同在: OIH, VOO"
+    },
+    {
+      "themeTicker": "XOP",
+      "ticker": "CVX",
+      "name": "Chevron Corp",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "XBI",
+      "ticker": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "weight": "🟢 同在: IBB, VOO"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "PPH",
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "SYK",
+      "name": "Stryker Corporation",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "MDT",
+      "name": "Medtronic plc",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "IHI",
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "weight": "🟢 同在: BOTZ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "weight": "🔴 超级重叠: SMH, AIQ, QTUM, BOTZ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "weight": "🔴 超级重叠: IGV, AIQ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "weight": "🟡 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "weight": "🟡 同在: XRT, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "weight": "🟡 同在: ARKK, LIT, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "weight": "🟡 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "MAGS",
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "weight": "🟡 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "weight": "🟡 同在: MAGS, VOO"
+    },
+    {
+      "themeTicker": "XRT",
+      "ticker": "HD",
+      "name": "The Home Depot, Inc.",
+      "weight": "🟢 同在: XHB, VOO"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "PLD",
+      "name": "Prologis, Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "XLRE",
+      "ticker": "AMT",
+      "name": "American Tower Corp",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "TCEHY",
+      "name": "Tencent (腾讯控股)",
+      "weight": "🟢 同在: FXI"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "BABA",
+      "name": "Alibaba Group (阿里巴巴)",
+      "weight": "🟢 同在: FXI"
+    },
+    {
+      "themeTicker": "KWEB",
+      "ticker": "PDD",
+      "name": "PDD Holdings (拼多多)",
+      "weight": "🟢 同在: FXI"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "weight": "🔴 超级重叠: MAGS, AIQ, VOO"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "weight": "🟢 同在: AIQ, VOO"
+    },
+    {
+      "themeTicker": "IGV",
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "JETS",
+      "ticker": "DAL",
+      "name": "Delta Air Lines",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "JETS",
+      "ticker": "UAL",
+      "name": "United Airlines",
+      "weight": "🟢 同在: VOO"
+    },
+    {
+      "themeTicker": "FXI",
+      "ticker": "TCEHY",
+      "name": "Tencent (腾讯控股)",
+      "weight": "🟢 同在: KWEB"
+    },
+    {
+      "themeTicker": "FXI",
+      "ticker": "BABA",
+      "name": "Alibaba Group (阿里巴巴)",
+      "weight": "🟢 同在: KWEB"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "weight": "🟡 同在: MAGS, LIT, VOO"
+    },
+    {
+      "themeTicker": "ARKK",
+      "ticker": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "weight": "🟢 同在: WGMI"
+    }
+  ],
+  "candidates": [
+    {
+      "rank": 1,
+      "ticker": "BPOP",
+      "name": "Popular, Inc.",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "fakeout",
+      "base": 2,
+      "days": 1,
+      "stage": "active",
+      "close": 169,
+      "threeMonth": 16,
+      "adr": 1.92,
+      "tightness": 83,
+      "dollarVol": "81.9M",
+      "vs200": 26,
+      "line": 1.76,
+      "strong": true,
+      "weight": "（区域银行，重叠度低）",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 2,
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "fakeout",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 167.56,
+      "threeMonth": -2.8,
+      "adr": 3.51,
+      "tightness": 60,
+      "dollarVol": "2.6B",
+      "vs200": -20,
+      "line": 3.1,
+      "strong": true,
+      "weight": "🟢 同在: AIQ, VOO",
+      "breakoutDate": "2026-06-26",
+      "ema21": 165.32,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 3,
+      "ticker": "PDD",
+      "name": "PDD Holdings (拼多多)",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "fakeout",
+      "base": 4,
+      "days": 2,
+      "stage": "active",
+      "close": 83.91,
+      "threeMonth": -16.8,
+      "adr": 2.94,
+      "tightness": 48,
+      "dollarVol": "820.2M",
+      "vs200": -21,
+      "line": 4.31,
+      "strong": true,
+      "weight": "🟢 同在: FXI",
+      "breakoutDate": "2026-06-26",
+      "ema21": 82.78,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 4,
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "fakeout",
+      "base": 3,
+      "days": 19,
+      "stage": "active",
+      "close": 384.93,
+      "threeMonth": 0.4,
+      "adr": 2.88,
+      "tightness": 66,
+      "dollarVol": "16.1B",
+      "vs200": -12,
+      "line": 4.37,
+      "strong": true,
+      "weight": "🔴 超级重叠: IGV, AIQ, VOO",
+      "breakoutDate": "2026-06-26",
+      "ema21": 386.81,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 5,
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "fakeout",
+      "base": 3,
+      "days": 19,
+      "stage": "active",
+      "close": 384.93,
+      "threeMonth": 0.4,
+      "adr": 2.88,
+      "tightness": 66,
+      "dollarVol": "16.1B",
+      "vs200": -12,
+      "line": 4.37,
+      "strong": true,
+      "weight": "🔴 超级重叠: MAGS, AIQ, VOO",
+      "breakoutDate": "2026-06-26",
+      "ema21": 386.81,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 6,
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "group": "Software #17",
+      "theme": "IGV",
+      "status": "fakeout",
+      "base": 4,
+      "days": 1,
+      "stage": "active",
+      "close": 220.78,
+      "threeMonth": -8.1,
+      "adr": 3.44,
+      "tightness": 49,
+      "dollarVol": "1.5B",
+      "vs200": -22,
+      "line": 5.12,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "breakoutDate": "2026-06-26",
+      "ema21": 218.9,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 7,
+      "ticker": "AMGN",
+      "name": "Amgen Inc.",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "fakeout",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 355.25,
+      "threeMonth": 2.3,
+      "adr": 2.22,
+      "tightness": 77,
+      "dollarVol": "949.3M",
+      "vs200": 6,
+      "line": 5.63,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "breakoutDate": "2026-06-11",
+      "ema21": 357.13,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 8,
+      "ticker": "HD",
+      "name": "The Home Depot, Inc.",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "fakeout",
+      "base": 3,
+      "days": 6,
+      "stage": "active",
+      "close": 337.74,
+      "threeMonth": -0.3,
+      "adr": 2.42,
+      "tightness": 69,
+      "dollarVol": "1.7B",
+      "vs200": -3,
+      "line": 6.25,
+      "strong": true,
+      "weight": "🟢 同在: XHB, VOO",
+      "breakoutDate": "2026-06-24",
+      "ema21": 338.18,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 9,
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "fakeout",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 1152.54,
+      "threeMonth": 24.2,
+      "adr": 3.05,
+      "tightness": 59,
+      "dollarVol": "3.5B",
+      "vs200": 15,
+      "line": 8.41,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "breakoutDate": "2026-06-26",
+      "ema21": 1167.63,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 10,
+      "ticker": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "fakeout",
+      "base": 4,
+      "days": 15,
+      "stage": "active",
+      "close": 161.5,
+      "threeMonth": -7.5,
+      "adr": 5.65,
+      "tightness": 41,
+      "dollarVol": "1.5B",
+      "vs200": -28,
+      "line": 9.28,
+      "strong": true,
+      "weight": "🟢 同在: WGMI",
+      "breakoutDate": "2026-07-01",
+      "ema21": 161.04,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 11,
+      "ticker": "AMT",
+      "name": "American Tower Corp",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "fakeout",
+      "base": 4,
+      "days": 19,
+      "stage": "active",
+      "close": 168.83,
+      "threeMonth": -4.9,
+      "adr": 2.7,
+      "tightness": 66,
+      "dollarVol": "580.2M",
+      "vs200": -5,
+      "line": 11.37,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "breakoutDate": "2026-06-26",
+      "ema21": 171.37,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 12,
+      "ticker": "DAL",
+      "name": "Delta Air Lines",
+      "group": "Airlines #18",
+      "theme": "JETS",
+      "status": "fakeout",
+      "base": 4,
+      "days": 7,
+      "stage": "active",
+      "close": 85.51,
+      "threeMonth": 28.2,
+      "adr": 3.06,
+      "tightness": 63,
+      "dollarVol": "643.1M",
+      "vs200": 25,
+      "line": 11.61,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "breakoutDate": "2026-06-24",
+      "ema21": 86.96,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 13,
+      "ticker": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "fakeout",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 476.31,
+      "threeMonth": 8.2,
+      "adr": 3.09,
+      "tightness": 59,
+      "dollarVol": "740.5M",
+      "vs200": 6,
+      "line": 12.04,
+      "strong": true,
+      "weight": "🟢 同在: XBI, VOO",
+      "breakoutDate": "2026-07-02",
+      "ema21": 483.49,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 14,
+      "ticker": "VRTX",
+      "name": "Vertex Pharmaceuticals",
+      "group": "S&P Biotech #8",
+      "theme": "XBI",
+      "status": "fakeout",
+      "base": 4,
+      "days": 5,
+      "stage": "active",
+      "close": 476.31,
+      "threeMonth": 8.2,
+      "adr": 3.09,
+      "tightness": 59,
+      "dollarVol": "740.5M",
+      "vs200": 6,
+      "line": 12.04,
+      "strong": true,
+      "weight": "🟢 同在: IBB, VOO",
+      "breakoutDate": "2026-07-02",
+      "ema21": 483.49,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 15,
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "bpr",
+      "base": 3,
+      "days": 15,
+      "stage": "active",
+      "close": 211.8,
+      "threeMonth": 12,
+      "adr": 3.11,
+      "tightness": 70,
+      "dollarVol": "33.4B",
+      "vs200": 10,
+      "line": 1.03,
+      "strong": true,
+      "weight": "🔴 超级重叠: SMH, AIQ, QTUM, BOTZ, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 16,
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "bpr",
+      "base": 4,
+      "days": 2,
+      "stage": "active",
+      "close": 661.04,
+      "threeMonth": 4.3,
+      "adr": 3.52,
+      "tightness": 42,
+      "dollarVol": "11.1B",
+      "vs200": 3,
+      "line": 2.54,
+      "strong": true,
+      "weight": "🟡 同在: AIQ, VOO",
+      "breakoutDate": "2026-07-01",
+      "ema21": 608.51,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 17,
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "bpr",
+      "base": 3,
+      "days": 1,
+      "stage": "active",
+      "close": 314.86,
+      "threeMonth": 21.6,
+      "adr": 2.66,
+      "tightness": 56,
+      "dollarVol": "16.7B",
+      "vs200": 15,
+      "line": 2.73,
+      "strong": true,
+      "weight": "🟡 同在: AIQ, VOO",
+      "breakoutDate": "2026-07-02",
+      "ema21": 304.27,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 18,
+      "ticker": "BABA",
+      "name": "Alibaba Group (阿里巴巴)",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "bpr",
+      "base": 4,
+      "days": 2,
+      "stage": "active",
+      "close": 112.32,
+      "threeMonth": -11.5,
+      "adr": 2.67,
+      "tightness": 41,
+      "dollarVol": "1.6B",
+      "vs200": -22,
+      "line": 2.9,
+      "strong": true,
+      "weight": "🟢 同在: FXI",
+      "breakoutDate": "2026-07-08",
+      "ema21": 107.58,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 19,
+      "ticker": "BABA",
+      "name": "Alibaba Group (阿里巴巴)",
+      "group": "HK Large Cap #19",
+      "theme": "FXI",
+      "status": "bpr",
+      "base": 4,
+      "days": 2,
+      "stage": "active",
+      "close": 112.32,
+      "threeMonth": -11.5,
+      "adr": 2.67,
+      "tightness": 41,
+      "dollarVol": "1.6B",
+      "vs200": -22,
+      "line": 2.9,
+      "strong": true,
+      "weight": "🟢 同在: KWEB",
+      "breakoutDate": "2026-07-08",
+      "ema21": 107.58,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 20,
+      "ticker": "UMBF",
+      "name": "UMB Financial Corp",
+      "group": "Regional Banking #5",
+      "theme": "KRE",
+      "status": "bpr",
+      "base": 2,
+      "days": 5,
+      "stage": "active",
+      "close": 142.61,
+      "threeMonth": 18.8,
+      "adr": 2.88,
+      "tightness": 73,
+      "dollarVol": "94.4M",
+      "vs200": 18,
+      "line": 3.01,
+      "strong": true,
+      "weight": "（区域银行，重叠度低）",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 21,
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "group": "Pharmaceutical #9",
+      "theme": "PPH",
+      "status": "bpr",
+      "base": 3,
+      "days": 5,
+      "stage": "active",
+      "close": 253.85,
+      "threeMonth": 7.3,
+      "adr": 2.2,
+      "tightness": 61,
+      "dollarVol": "1.9B",
+      "vs200": 15,
+      "line": 6.14,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "breakoutDate": "2026-06-26",
+      "ema21": 250.83,
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 22,
+      "ticker": "REGN",
+      "name": "Regeneron Pharmaceuticals",
+      "group": "Biotechnology #6",
+      "theme": "IBB",
+      "status": "anticipation",
+      "base": 2,
+      "days": 5,
+      "stage": "active",
+      "close": 656.12,
+      "threeMonth": -12,
+      "adr": 2.23,
+      "tightness": 70,
+      "dollarVol": "670.4M",
+      "vs200": -6,
+      "line": 3.32,
+      "strong": true,
+      "weight": "🟢 同在: XBI, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 23,
+      "ticker": "TCEHY",
+      "name": "Tencent (腾讯控股)",
+      "group": "China Internet #15",
+      "theme": "KWEB",
+      "status": "anticipation",
+      "base": 3,
+      "days": 4,
+      "stage": "active",
+      "close": 58.34,
+      "threeMonth": -7.2,
+      "adr": 1.55,
+      "tightness": 61,
+      "dollarVol": "253.7M",
+      "vs200": -16,
+      "line": 4.51,
+      "strong": true,
+      "weight": "🟢 同在: FXI",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 24,
+      "ticker": "TCEHY",
+      "name": "Tencent (腾讯控股)",
+      "group": "HK Large Cap #19",
+      "theme": "FXI",
+      "status": "anticipation",
+      "base": 3,
+      "days": 4,
+      "stage": "active",
+      "close": 58.34,
+      "threeMonth": -7.2,
+      "adr": 1.55,
+      "tightness": 61,
+      "dollarVol": "253.7M",
+      "vs200": -16,
+      "line": 4.51,
+      "strong": true,
+      "weight": "🟢 同在: KWEB",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 25,
+      "ticker": "PLD",
+      "name": "Prologis, Inc.",
+      "group": "Real Estate #14",
+      "theme": "XLRE",
+      "status": "anticipation",
+      "base": 3,
+      "days": 19,
+      "stage": "active",
+      "close": 142.49,
+      "threeMonth": 4.6,
+      "adr": 2.31,
+      "tightness": 78,
+      "dollarVol": "513.6M",
+      "vs200": 8,
+      "line": 4.63,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 26,
+      "ticker": "XOM",
+      "name": "Exxon Mobil Corp",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "pool",
+      "base": 2,
+      "days": 1,
+      "stage": "watch",
+      "close": 145.09,
+      "threeMonth": -4.3,
+      "adr": 1.83,
+      "tightness": 79,
+      "dollarVol": "2.5B",
+      "vs200": 7,
+      "line": 0.63,
+      "strong": true,
+      "weight": "🟢 同在: OIH, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 27,
+      "ticker": "CVX",
+      "name": "Chevron Corp",
+      "group": "Oil & Gas Exploration #7",
+      "theme": "XOP",
+      "status": "pool",
+      "base": 2,
+      "days": 1,
+      "stage": "watch",
+      "close": 181.76,
+      "threeMonth": -4.4,
+      "adr": 1.72,
+      "tightness": 71,
+      "dollarVol": "1.7B",
+      "vs200": 6,
+      "line": 0.88,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 28,
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "pool",
+      "base": 2,
+      "days": 2,
+      "stage": "watch",
+      "close": 247.49,
+      "threeMonth": 3.2,
+      "adr": 2.98,
+      "tightness": 71,
+      "dollarVol": "12.3B",
+      "vs200": 6,
+      "line": 1.43,
+      "strong": true,
+      "weight": "🟡 同在: XRT, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 29,
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "group": "S&P Retail #12",
+      "theme": "XRT",
+      "status": "pool",
+      "base": 2,
+      "days": 2,
+      "stage": "watch",
+      "close": 247.49,
+      "threeMonth": 3.2,
+      "adr": 2.98,
+      "tightness": 71,
+      "dollarVol": "12.3B",
+      "vs200": 6,
+      "line": 1.43,
+      "strong": true,
+      "weight": "🟡 同在: MAGS, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 30,
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "pool",
+      "base": 3,
+      "days": 18,
+      "stage": "watch",
+      "close": 359.51,
+      "threeMonth": 12,
+      "adr": 2.76,
+      "tightness": 67,
+      "dollarVol": "11.8B",
+      "vs200": 12,
+      "line": 4.59,
+      "strong": true,
+      "weight": "🟡 同在: AIQ, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 31,
+      "ticker": "SYK",
+      "name": "Stryker Corporation",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "pool",
+      "base": 3,
+      "days": 1,
+      "stage": "watch",
+      "close": 311.07,
+      "threeMonth": -10.2,
+      "adr": 3.02,
+      "tightness": 70,
+      "dollarVol": "895.0M",
+      "vs200": -10,
+      "line": 8.06,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 32,
+      "ticker": "MDT",
+      "name": "Medtronic plc",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "pool",
+      "base": 3,
+      "days": 5,
+      "stage": "watch",
+      "close": 79.3,
+      "threeMonth": -9.1,
+      "adr": 2.45,
+      "tightness": 72,
+      "dollarVol": "824.7M",
+      "vs200": -11,
+      "line": 8.44,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 33,
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "group": "Magnificent 7 #11",
+      "theme": "MAGS",
+      "status": "pool",
+      "base": 4,
+      "days": 8,
+      "stage": "watch",
+      "close": 396.18,
+      "threeMonth": 12.4,
+      "adr": 4.22,
+      "tightness": 55,
+      "dollarVol": "19.9B",
+      "vs200": -5,
+      "line": 9.26,
+      "strong": true,
+      "weight": "🟡 同在: ARKK, LIT, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 34,
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "group": "ARK Innovation #20",
+      "theme": "ARKK",
+      "status": "pool",
+      "base": 4,
+      "days": 8,
+      "stage": "watch",
+      "close": 396.18,
+      "threeMonth": 12.4,
+      "adr": 4.22,
+      "tightness": 55,
+      "dollarVol": "19.9B",
+      "vs200": -5,
+      "line": 9.26,
+      "strong": true,
+      "weight": "🟡 同在: MAGS, LIT, VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 35,
+      "ticker": "UAL",
+      "name": "United Airlines",
+      "group": "Airlines #18",
+      "theme": "JETS",
+      "status": "pool",
+      "base": 4,
+      "days": 9,
+      "stage": "watch",
+      "close": 120.35,
+      "threeMonth": 26.4,
+      "adr": 3.7,
+      "tightness": 49,
+      "dollarVol": "631.4M",
+      "vs200": 16,
+      "line": 15.31,
+      "strong": true,
+      "weight": "🟢 同在: VOO",
+      "lastDate": "2026-07-14"
+    },
+    {
+      "rank": 36,
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "group": "U.S. Medical Devices #10",
+      "theme": "IHI",
+      "status": "pool",
+      "base": 5,
+      "days": 5,
+      "stage": "watch",
+      "close": 379.5,
+      "threeMonth": -17.3,
+      "adr": 2.99,
+      "tightness": 52,
+      "dollarVol": "1.1B",
+      "vs200": -22,
+      "line": 16.95,
+      "strong": true,
+      "weight": "🟢 同在: BOTZ, VOO",
+      "lastDate": "2026-07-14"
+    }
+  ],
+  "quotes": {
+    "KIE": {
+      "lastDone": "63.480",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "IAK": {
+      "lastDone": "145.360",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CIBR": {
+      "lastDone": "94.730",
+      "timestamp": "2026-07-14T20:00:01.000Z"
+    },
+    "XSW": {
+      "lastDone": "178.320",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "KRE": {
+      "lastDone": "75.000",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "IBB": {
+      "lastDone": "188.670",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "XOP": {
+      "lastDone": "165.850",
+      "timestamp": "2026-07-14T19:59:58.000Z"
+    },
+    "XBI": {
+      "lastDone": "155.450",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PPH": {
+      "lastDone": "106.780",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "IHI": {
+      "lastDone": "49.220",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MAGS": {
+      "lastDone": "67.440",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "XRT": {
+      "lastDone": "87.780",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VOO": {
+      "lastDone": "691.100",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "XLRE": {
+      "lastDone": "44.480",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "KWEB": {
+      "lastDone": "26.180",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "XMAG": {
+      "lastDone": "25.679",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "IGV": {
+      "lastDone": "93.630",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "JETS": {
+      "lastDone": "30.850",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "FXI": {
+      "lastDone": "33.770",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ARKK": {
+      "lastDone": "79.520",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    }
+  },
+  "stockQuotes": {
+    "UMBF": {
+      "lastDone": "142.610",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BPOP": {
+      "lastDone": "169.000",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "VRTX": {
+      "lastDone": "476.310",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "REGN": {
+      "lastDone": "656.120",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AMGN": {
+      "lastDone": "355.250",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "XOM": {
+      "lastDone": "145.090",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CVX": {
+      "lastDone": "181.760",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "LLY": {
+      "lastDone": "1152.540",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "JNJ": {
+      "lastDone": "253.850",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "SYK": {
+      "lastDone": "311.070",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MDT": {
+      "lastDone": "79.300",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ISRG": {
+      "lastDone": "379.500",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "NVDA": {
+      "lastDone": "211.800",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "MSFT": {
+      "lastDone": "384.930",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AAPL": {
+      "lastDone": "314.860",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AMZN": {
+      "lastDone": "247.490",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TSLA": {
+      "lastDone": "396.180",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "META": {
+      "lastDone": "661.040",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "GOOGL": {
+      "lastDone": "359.510",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "HD": {
+      "lastDone": "337.740",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PLD": {
+      "lastDone": "142.490",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "AMT": {
+      "lastDone": "168.830",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "TCEHY": {
+      "lastDone": "58.340",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "BABA": {
+      "lastDone": "112.320",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "PDD": {
+      "lastDone": "83.910",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "CRM": {
+      "lastDone": "167.560",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "ADBE": {
+      "lastDone": "220.780",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "DAL": {
+      "lastDone": "85.510",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "UAL": {
+      "lastDone": "120.350",
+      "timestamp": "2026-07-14T20:00:00.000Z"
+    },
+    "COIN": {
+      "lastDone": "161.500",
+      "timestamp": "2026-07-14T20:00:01.000Z"
+    }
+  }
+}
