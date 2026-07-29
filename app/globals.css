@@ -724,7 +724,7 @@ tbody tr:hover,
 .cluster-toolbar input, .cluster-toolbar select { height: 34px; border: 1px solid #dedfd9; border-radius: 7px; background: white; color: #4d545e; padding: 0 10px; }
 .cluster-toolbar input { min-width: 240px; margin-right: auto; }
 .cluster-toolbar label { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; font-weight: 760; }
-.cluster-layout { display: grid; grid-template-columns: minmax(0, 1fr) 292px; min-height: 510px; }
+.cluster-layout { display: grid; grid-template-columns: 1fr; min-width: 0; min-height: 510px; }
 .cluster-table-wrap, .stock-table-wrap { overflow: auto; }
 .cluster-table { min-width: 1160px; }
 .cluster-table tbody tr { cursor: pointer; }
@@ -741,7 +741,7 @@ tbody tr:hover,
 .ticker-list a { border-radius: 5px; background: #f0f3ff; padding: 4px 6px; }
 .ticker-list a:hover, .stock-ticker:hover { text-decoration: underline; }
 .muted { color: #b3b8bf; }
-.cluster-detail { border-left: 1px solid var(--line); background: #fbfbf8; padding: 16px; }
+.cluster-detail { border-top: 1px solid var(--line); background: #fbfbf8; padding: 16px; }
 .detail-head { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
 .detail-head > div:first-child { display: grid; justify-items: center; }
 .detail-head span { color: var(--muted); font-size: 9px; font-weight: 900; letter-spacing: .08em; }
@@ -757,6 +757,9 @@ tbody tr:hover,
 .ladder h3 { margin: 0 0 8px; font-size: 13px; }
 .ladder > div { display: grid; grid-template-columns: 82px 1fr; align-items: start; min-height: 34px; border-top: 1px solid #e8e9e4; padding: 8px 0; }
 .ladder > div > span { color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.cluster-detail { display: grid; grid-template-columns: minmax(240px, 320px) minmax(360px, 1fr) minmax(320px, 1fr); gap: 18px; align-items: start; }
+.cluster-detail .detail-head { height: 100%; align-content: start; }
+.cluster-detail .rule-list, .cluster-detail .ladder { margin-top: 0; }
 .method-note { margin: 0; border-top: 1px solid var(--line); background: #fbfbf8; color: var(--muted); padding: 10px 16px; font-size: 11px; line-height: 1.5; }
 .definition-notes { border-top: 1px solid var(--line); background: #fbfbf8; padding: 16px; }
 .definition-notes h2 { margin: 0; font-size: 15px; }
@@ -777,6 +780,9 @@ tbody tr:hover,
   .workspace { min-height: calc(100vh - 16px); }
   .cluster-layout { grid-template-columns: 1fr; }
   .cluster-detail { border-top: 1px solid var(--line); border-left: 0; }
+  .cluster-detail { display: block; }
+  .cluster-detail .rule-list { margin-top: 12px; }
+  .cluster-detail .ladder { margin-top: 18px; }
   .summary-strip { grid-template-columns: repeat(5, minmax(88px, 1fr)); overflow-x: auto; }
   .summary-strip > div { min-width: 100px; padding: 12px; }
   .definition-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
