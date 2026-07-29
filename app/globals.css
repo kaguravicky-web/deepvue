@@ -758,6 +758,15 @@ tbody tr:hover,
 .ladder > div { display: grid; grid-template-columns: 82px 1fr; align-items: start; min-height: 34px; border-top: 1px solid #e8e9e4; padding: 8px 0; }
 .ladder > div > span { color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; }
 .method-note { margin: 0; border-top: 1px solid var(--line); background: #fbfbf8; color: var(--muted); padding: 10px 16px; font-size: 11px; line-height: 1.5; }
+.definition-notes { border-top: 1px solid var(--line); background: #fbfbf8; padding: 16px; }
+.definition-notes h2 { margin: 0; font-size: 15px; }
+.definition-intro { margin: 5px 0 14px; color: var(--muted); font-size: 12px; }
+.definition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.definition-grid article { border: 1px solid var(--line); border-radius: 7px; background: #fff; padding: 11px; }
+.definition-grid b { color: #424a55; font-size: 12px; }
+.definition-grid p { margin: 5px 0 0; color: #747c87; font-size: 11px; line-height: 1.55; }
+.definition-grid code { color: var(--blue); font-size: 10px; }
+.definition-notes .method-note { margin: 14px -16px -16px; }
 .stock-table-wrap table { min-width: 1020px; }
 .state-pill { display: inline-flex; border-radius: 999px; padding: 5px 8px; font-size: 11px; font-weight: 820; }
 .state-pill.setup { background: #e8edff; color: var(--blue); } .state-pill.breakout { background: #def2e9; color: var(--green); } .state-pill.holding { background: #dff5f8; color: #278a9b; } .state-pill.fakeout { background: #f8dff0; color: var(--pink); } .state-pill.watch { background: #eceee9; color: #66707a; }
@@ -770,6 +779,7 @@ tbody tr:hover,
   .cluster-detail { border-top: 1px solid var(--line); border-left: 0; }
   .summary-strip { grid-template-columns: repeat(5, minmax(88px, 1fr)); overflow-x: auto; }
   .summary-strip > div { min-width: 100px; padding: 12px; }
+  .definition-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 620px) {
@@ -782,4 +792,5 @@ tbody tr:hover,
   .cluster-toolbar select { flex: 1; min-width: 0; }
   .cluster-table-wrap, .stock-table-wrap { width: 100%; max-width: calc(100vw - 18px); }
   .cluster-detail { padding: 14px; }
+  .definition-grid { grid-template-columns: 1fr; }
 }
