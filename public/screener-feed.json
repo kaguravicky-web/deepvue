@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-29T05:40:05.917Z",
+  "updatedAt": "2026-07-29T05:49:37.243Z",
   "sectors": [
     {
       "sector": "S&P Insurance",
@@ -5025,33 +5025,6 @@
     },
     {
       "rank": 5,
-      "ticker": "HZO",
-      "name": "MARINEMAX INC",
-      "group": "S&P Retail #5",
-      "theme": "XRT",
-      "status": "spring",
-      "base": 4,
-      "days": 19,
-      "stage": "active",
-      "close": 35.48,
-      "threeMonth": 18.3,
-      "adr": 4.32,
-      "tightness": 51,
-      "dollarVol": "10.9M",
-      "vs200": 23,
-      "line": 4.16,
-      "alert": "shakeout+MB",
-      "strong": true,
-      "weight": "1.42%",
-      "breakoutDate": "2026-07-24",
-      "springDate": "2026-07-23",
-      "burstDate": "2026-07-24",
-      "liquidityLevel": 32.59,
-      "ema21": 34.81,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 6,
       "ticker": "CNMD",
       "name": "CONMED CORP",
       "group": "U.S. Medical Devices #9",
@@ -5076,7 +5049,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "ticker": "BA",
       "name": "BOEING",
       "group": "Defense & Aerospace #7",
@@ -5101,7 +5074,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "ticker": "ALKT",
       "name": "ALKAMI TECHNOLOGY INC",
       "group": "S&P Soft&Sevs #10",
@@ -5128,34 +5101,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 9,
-      "ticker": "ROOT",
-      "name": "ROOT INC CLASS A",
-      "group": "U.S. Insurance #2",
-      "theme": "IAK",
-      "status": "spring",
-      "base": 4,
-      "days": 14,
-      "stage": "active",
-      "close": 61.4,
-      "threeMonth": 9.8,
-      "adr": 5.07,
-      "tightness": 45,
-      "dollarVol": "14.1M",
-      "vs200": -3,
-      "line": 9.92,
-      "alert": "shakeout+MB",
-      "strong": true,
-      "weight": "0.11%",
-      "breakoutDate": "2026-06-26",
-      "springDate": "2026-06-18",
-      "burstDate": "2026-06-26",
-      "liquidityLevel": 51,
-      "ema21": 59.21,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 10,
+      "rank": 8,
       "ticker": "KRMN",
       "name": "KARMAN HOLDINGS INC",
       "group": "Defense & Aerospace #7",
@@ -5182,7 +5128,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 11,
+      "rank": 9,
       "ticker": "FTAI",
       "name": "FTAI AVIATION LTD",
       "group": "Defense & Aerospace #7",
@@ -5207,7 +5153,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 12,
+      "rank": 10,
       "ticker": "DRS",
       "name": "LEONARDO DRS INC",
       "group": "Defense & Aerospace #7",
@@ -5230,7 +5176,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 13,
+      "rank": 11,
       "ticker": "PSA",
       "name": "PUBLIC STORAGE",
       "group": "Real Estate #6",
@@ -5251,7 +5197,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 14,
+      "rank": 12,
       "ticker": "AGO",
       "name": "ASSURED GUARANTY LTD",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -5272,30 +5218,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 15,
-      "ticker": "VREX",
-      "name": "VAREX IMAGING CORP",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "fakeout",
-      "base": 3,
-      "days": 1,
-      "stage": "active",
-      "close": 11.13,
-      "threeMonth": -12.4,
-      "adr": 4.62,
-      "tightness": 66,
-      "dollarVol": "4.4M",
-      "vs200": -4,
-      "line": 2.16,
-      "strong": true,
-      "weight": "0.07%",
-      "breakoutDate": "2026-06-30",
-      "ema21": 10.73,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 16,
+      "rank": 13,
       "ticker": "VVV",
       "name": "VALVOLINE INC",
       "group": "S&P Retail #5",
@@ -5316,7 +5239,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 17,
+      "rank": 14,
       "ticker": "BSX",
       "name": "BOSTON SCIENTIFIC CORP",
       "group": "U.S. Medical Devices #9",
@@ -5339,7 +5262,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 18,
+      "rank": 15,
       "ticker": "ORLY",
       "name": "O REILLY AUTOMOTIVE INC",
       "group": "S&P Retail #5",
@@ -5362,7 +5285,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 19,
+      "rank": 16,
       "ticker": "NOC",
       "name": "NORTHROP GRUMMAN CORP",
       "group": "Defense & Aerospace #7",
@@ -5385,7 +5308,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 20,
+      "rank": 17,
       "ticker": "HWM",
       "name": "HOWMET AEROSPACE INC",
       "group": "Defense & Aerospace #7",
@@ -5406,7 +5329,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 21,
+      "rank": 18,
       "ticker": "REG",
       "name": "REGENCY CENTERS CORP",
       "group": "Real Estate #6",
@@ -5427,7 +5350,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 22,
+      "rank": 19,
       "ticker": "CSGP",
       "name": "COSTAR GROUP INC",
       "group": "Real Estate #6",
@@ -5450,7 +5373,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 23,
+      "rank": 20,
       "ticker": "BANC",
       "name": "BANC OF CALIFORNIA INC",
       "group": "Regional Banking #8",
@@ -5473,7 +5396,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 24,
+      "rank": 21,
       "ticker": "CORT",
       "name": "Corcept Therapeutics Inc",
       "group": "Pharmaceutical #4",
@@ -5494,7 +5417,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 25,
+      "rank": 22,
       "ticker": "RF",
       "name": "REGIONS FINANCIAL CORP",
       "group": "Regional Banking #8",
@@ -5517,7 +5440,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 26,
+      "rank": 23,
       "ticker": "GSK",
       "name": "Gsk Plc",
       "group": "Pharmaceutical #4",
@@ -5538,7 +5461,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 27,
+      "rank": 24,
       "ticker": "AMT",
       "name": "AMERICAN TOWER CORP",
       "group": "Real Estate #6",
@@ -5561,7 +5484,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 28,
+      "rank": 25,
       "ticker": "AIR",
       "name": "AAR CORP",
       "group": "Defense & Aerospace #7",
@@ -5584,7 +5507,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 29,
+      "rank": 26,
       "ticker": "RMD",
       "name": "RESMED INC",
       "group": "U.S. Medical Devices #9",
@@ -5607,7 +5530,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 30,
+      "rank": 27,
       "ticker": "EQIX",
       "name": "EQUINIX INC",
       "group": "Real Estate #6",
@@ -5630,7 +5553,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 31,
+      "rank": 28,
       "ticker": "GTLB",
       "name": "GITLAB INC CL A",
       "group": "S&P Soft&Sevs #10",
@@ -5653,7 +5576,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 32,
+      "rank": 29,
       "ticker": "GL",
       "name": "GLOBE LIFE INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -5674,7 +5597,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 33,
+      "rank": 30,
       "ticker": "BRZE",
       "name": "BRAZE INC A",
       "group": "S&P Soft&Sevs #10",
@@ -5697,7 +5620,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 34,
+      "rank": 31,
       "ticker": "COLB",
       "name": "COLUMBIA BANKING SYSTEM INC",
       "group": "Regional Banking #8",
@@ -5720,7 +5643,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 35,
+      "rank": 32,
       "ticker": "BOH",
       "name": "BANK OF HAWAII CORP",
       "group": "Regional Banking #8",
@@ -5741,7 +5664,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 36,
+      "rank": 33,
       "ticker": "PGR",
       "name": "PROGRESSIVE CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -5764,7 +5687,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 37,
+      "rank": 34,
       "ticker": "S",
       "name": "SENTINELONE INC  CLASS A",
       "group": "S&P Soft&Sevs #10",
@@ -5787,7 +5710,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 38,
+      "rank": 35,
       "ticker": "AZN",
       "name": "Astrazeneca Plc",
       "group": "Pharmaceutical #4",
@@ -5810,7 +5733,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 39,
+      "rank": 36,
       "ticker": "AXGN",
       "name": "AXOGEN INC",
       "group": "U.S. Medical Devices #9",
@@ -5833,28 +5756,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 40,
-      "ticker": "BBNX",
-      "name": "BETA BIONICS INC",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "fakeout",
-      "base": 4,
-      "days": 5,
-      "stage": "active",
-      "close": 15.8,
-      "threeMonth": 48.4,
-      "adr": 6.53,
-      "tightness": 52,
-      "dollarVol": "14.4M",
-      "vs200": -11,
-      "line": 15.19,
-      "strong": true,
-      "weight": "0.10%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 41,
+      "rank": 37,
       "ticker": "LOAR",
       "name": "LOAR HOLDINGS INC",
       "group": "Defense & Aerospace #7",
@@ -5877,7 +5779,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 42,
+      "rank": 38,
       "ticker": "WRBY",
       "name": "WARBY PARKER INC CLASS A",
       "group": "S&P Retail #5",
@@ -5900,7 +5802,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 43,
+      "rank": 39,
       "ticker": "KTOS",
       "name": "KRATOS DEFENSE AND SECURITY SOLUTI",
       "group": "Defense & Aerospace #7",
@@ -5923,7 +5825,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 44,
+      "rank": 40,
       "ticker": "NTSK",
       "name": "NETSKOPE INC CL A",
       "group": "S&P Soft&Sevs #10",
@@ -5946,7 +5848,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 45,
+      "rank": 41,
       "ticker": "AVAV",
       "name": "AEROVIRONMENT INC",
       "group": "Defense & Aerospace #7",
@@ -5969,7 +5871,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 46,
+      "rank": 42,
       "ticker": "BFLY",
       "name": "BUTTERFLY NETWORK INC CLASS A",
       "group": "U.S. Medical Devices #9",
@@ -5992,7 +5894,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 47,
+      "rank": 43,
       "ticker": "NVCR",
       "name": "NOVOCURE LTD",
       "group": "U.S. Medical Devices #9",
@@ -6015,7 +5917,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 48,
+      "rank": 44,
       "ticker": "ORI",
       "name": "OLD REPUBLIC INTL CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6036,7 +5938,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 49,
+      "rank": 45,
       "ticker": "AJG",
       "name": "ARTHUR J GALLAGHER + CO",
       "group": "S&P Insurance #1",
@@ -6059,7 +5961,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 50,
+      "rank": 46,
       "ticker": "ABG",
       "name": "ASBURY AUTOMOTIVE GROUP",
       "group": "S&P Retail #5",
@@ -6082,7 +5984,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 51,
+      "rank": 47,
       "ticker": "AFL",
       "name": "AFLAC INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6103,7 +6005,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 52,
+      "rank": 48,
       "ticker": "EYE",
       "name": "NATIONAL VISION HOLDINGS INC",
       "group": "S&P Retail #5",
@@ -6126,7 +6028,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 53,
+      "rank": 49,
       "ticker": "HOMB",
       "name": "HOME BANCSHARES INC",
       "group": "Regional Banking #8",
@@ -6149,7 +6051,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 54,
+      "rank": 50,
       "ticker": "UBSI",
       "name": "UNITED BANKSHARES INC",
       "group": "Regional Banking #8",
@@ -6170,7 +6072,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 55,
+      "rank": 51,
       "ticker": "ALL",
       "name": "ALLSTATE CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6191,7 +6093,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 56,
+      "rank": 52,
       "ticker": "GWRE",
       "name": "GUIDEWIRE SOFTWARE INC",
       "group": "S&P Soft&Sevs #10",
@@ -6212,7 +6114,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 57,
+      "rank": 53,
       "ticker": "MRSH",
       "name": "MARSH + MCLENNAN COS",
       "group": "S&P Insurance #1",
@@ -6235,7 +6137,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 58,
+      "rank": 54,
       "ticker": "NIC",
       "name": "NICOLET BANKSHARES INC",
       "group": "Regional Banking #8",
@@ -6256,7 +6158,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 59,
+      "rank": 55,
       "ticker": "MET",
       "name": "METLIFE INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6277,7 +6179,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 60,
+      "rank": 56,
       "ticker": "HIG",
       "name": "HARTFORD INSURANCE GROUP INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6298,7 +6200,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 61,
+      "rank": 57,
       "ticker": "EBC",
       "name": "EASTERN BANKSHARES INC",
       "group": "Regional Banking #8",
@@ -6319,7 +6221,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 62,
+      "rank": 58,
       "ticker": "AON",
       "name": "AON PLC CLASS A",
       "group": "S&P Insurance #1",
@@ -6342,7 +6244,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 63,
+      "rank": 59,
       "ticker": "FAF",
       "name": "FIRST AMERICAN FINANCIAL",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6363,7 +6265,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 64,
+      "rank": 60,
       "ticker": "FNF",
       "name": "FIDELITY NATIONAL FINANCIAL",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6384,30 +6286,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 65,
-      "ticker": "RVLV",
-      "name": "REVOLVE GROUP INC",
-      "group": "S&P Retail #5",
-      "theme": "XRT",
-      "status": "bpr",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 26.83,
-      "threeMonth": 1.9,
-      "adr": 3.83,
-      "tightness": 42,
-      "dollarVol": "19.8M",
-      "vs200": 11,
-      "line": 0.34,
-      "strong": true,
-      "weight": "1.61%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 24.37,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 66,
+      "rank": 61,
       "ticker": "AIZ",
       "name": "ASSURANT INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6428,7 +6307,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 67,
+      "rank": 62,
       "ticker": "ATRC",
       "name": "ATRICURE INC",
       "group": "U.S. Medical Devices #9",
@@ -6449,7 +6328,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 68,
+      "rank": 63,
       "ticker": "ULTA",
       "name": "ULTA BEAUTY INC",
       "group": "S&P Retail #5",
@@ -6472,7 +6351,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 69,
+      "rank": 64,
       "ticker": "WTW",
       "name": "WILLIS TOWERS WATSON PLC",
       "group": "S&P Insurance #1",
@@ -6493,7 +6372,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 70,
+      "rank": 65,
       "ticker": "HLN",
       "name": "Haleon Plc",
       "group": "Pharmaceutical #4",
@@ -6514,7 +6393,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 71,
+      "rank": 66,
       "ticker": "VTRS",
       "name": "Viatris Inc",
       "group": "Pharmaceutical #4",
@@ -6535,7 +6414,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 72,
+      "rank": 67,
       "ticker": "NVS",
       "name": "Novartis Ag",
       "group": "Pharmaceutical #4",
@@ -6556,28 +6435,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 73,
-      "ticker": "SAFT",
-      "name": "SAFETY INSURANCE GROUP INC",
-      "group": "U.S. Insurance #2",
-      "theme": "IAK",
-      "status": "bpr",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 103.03,
-      "threeMonth": 36.5,
-      "adr": 1.94,
-      "tightness": 11,
-      "dollarVol": "16.9M",
-      "vs200": 40,
-      "line": 0.46,
-      "strong": true,
-      "weight": "0.12%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 74,
+      "rank": 68,
       "ticker": "CB",
       "name": "CHUBB LTD",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6598,7 +6456,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 75,
+      "rank": 69,
       "ticker": "RNR",
       "name": "RENAISSANCERE HOLDINGS LTD",
       "group": "S&P Insurance #1",
@@ -6621,7 +6479,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 76,
+      "rank": 70,
       "ticker": "SPG",
       "name": "SIMON PROPERTY GROUP INC",
       "group": "Real Estate #6",
@@ -6642,7 +6500,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 77,
+      "rank": 71,
       "ticker": "THG",
       "name": "HANOVER INSURANCE GROUP INC/",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6663,7 +6521,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 78,
+      "rank": 72,
       "ticker": "MCK",
       "name": "Mckesson Corp",
       "group": "Pharmaceutical #4",
@@ -6684,7 +6542,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 79,
+      "rank": 73,
       "ticker": "LNC",
       "name": "LINCOLN NATIONAL CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6707,7 +6565,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 80,
+      "rank": 74,
       "ticker": "BPOP",
       "name": "POPULAR INC",
       "group": "Regional Banking #8",
@@ -6728,7 +6586,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 81,
+      "rank": 75,
       "ticker": "PRI",
       "name": "PRIMERICA INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6749,7 +6607,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 82,
+      "rank": 76,
       "ticker": "DOC",
       "name": "HEALTHPEAK PROPERTIES INC",
       "group": "Real Estate #6",
@@ -6770,7 +6628,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 83,
+      "rank": 77,
       "ticker": "GD",
       "name": "GENERAL DYNAMICS CORP",
       "group": "Defense & Aerospace #7",
@@ -6791,7 +6649,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 84,
+      "rank": 78,
       "ticker": "ACGL",
       "name": "ARCH CAPITAL GROUP LTD",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6812,7 +6670,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 85,
+      "rank": 79,
       "ticker": "EBAY",
       "name": "EBAY INC",
       "group": "S&P Retail #5",
@@ -6833,7 +6691,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 86,
+      "rank": 80,
       "ticker": "EG",
       "name": "EVEREST GROUP LTD",
       "group": "S&P Insurance #1",
@@ -6854,7 +6712,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 87,
+      "rank": 81,
       "ticker": "AXS",
       "name": "AXIS CAPITAL HOLDINGS LTD",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6877,7 +6735,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 88,
+      "rank": 82,
       "ticker": "WSFS",
       "name": "WSFS FINANCIAL CORP",
       "group": "Regional Banking #8",
@@ -6898,7 +6756,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 89,
+      "rank": 83,
       "ticker": "RYAN",
       "name": "RYAN SPECIALTY HOLDINGS INC",
       "group": "S&P Insurance #1",
@@ -6919,28 +6777,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 90,
-      "ticker": "SPNT",
-      "name": "SIRIUSPOINT LTD",
-      "group": "S&P Insurance #1",
-      "theme": "KIE",
-      "status": "bpr",
-      "base": 2,
-      "days": 1,
-      "stage": "active",
-      "close": 26.31,
-      "threeMonth": 12.3,
-      "adr": 2.49,
-      "tightness": 72,
-      "dollarVol": "19.0M",
-      "vs200": 22,
-      "line": 0.65,
-      "strong": true,
-      "weight": "1.84%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 91,
+      "rank": 84,
       "ticker": "BRO",
       "name": "BROWN + BROWN INC",
       "group": "S&P Insurance #1",
@@ -6963,7 +6800,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 92,
+      "rank": 85,
       "ticker": "PFG",
       "name": "PRINCIPAL FINANCIAL GROUP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -6984,7 +6821,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 93,
+      "rank": 86,
       "ticker": "CNA",
       "name": "CNA FINANCIAL CORP",
       "group": "U.S. Insurance #2",
@@ -7005,7 +6842,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 94,
+      "rank": 87,
       "ticker": "EXR",
       "name": "EXTRA SPACE STORAGE INC",
       "group": "Real Estate #6",
@@ -7026,7 +6863,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 95,
+      "rank": 88,
       "ticker": "MKL",
       "name": "MARKEL GROUP INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -7047,7 +6884,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 96,
+      "rank": 89,
       "ticker": "SSB",
       "name": "SOUTHSTATE BANK CORP",
       "group": "Regional Banking #8",
@@ -7070,7 +6907,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 97,
+      "rank": 90,
       "ticker": "ETSY",
       "name": "ETSY INC",
       "group": "S&P Retail #5",
@@ -7093,7 +6930,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 98,
+      "rank": 91,
       "ticker": "WBS",
       "name": "WEBSTER FINANCIAL CORP",
       "group": "Regional Banking #8",
@@ -7114,30 +6951,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 99,
-      "ticker": "UVE",
-      "name": "UNIVERSAL INSURANCE HOLDINGS INC",
-      "group": "U.S. Insurance #2",
-      "theme": "IAK",
-      "status": "bpr",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 44.22,
-      "threeMonth": 9.6,
-      "adr": 3.51,
-      "tightness": 49,
-      "dollarVol": "8.4M",
-      "vs200": 28,
-      "line": 0.79,
-      "strong": true,
-      "weight": "0.13%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 40.46,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 100,
+      "rank": 92,
       "ticker": "FIVN",
       "name": "FIVE9 INC",
       "group": "S&P Soft&Sevs #10",
@@ -7158,7 +6972,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 101,
+      "rank": 93,
       "ticker": "BOKF",
       "name": "BOK FINANCIAL CORPORATION",
       "group": "Regional Banking #8",
@@ -7179,7 +6993,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 102,
+      "rank": 94,
       "ticker": "KMPR",
       "name": "KEMPER CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -7202,7 +7016,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 103,
+      "rank": 95,
       "ticker": "ACIW",
       "name": "ACI WORLDWIDE INC",
       "group": "S&P Soft&Sevs #10",
@@ -7225,7 +7039,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 104,
+      "rank": 96,
       "ticker": "SAH",
       "name": "SONIC AUTOMOTIVE INC CLASS A",
       "group": "S&P Retail #5",
@@ -7248,7 +7062,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 105,
+      "rank": 97,
       "ticker": "MTB",
       "name": "M + T BANK CORP",
       "group": "Regional Banking #8",
@@ -7271,7 +7085,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 106,
+      "rank": 98,
       "ticker": "RGA",
       "name": "REINSURANCE GROUP OF AMERICA",
       "group": "S&P Insurance #1",
@@ -7294,7 +7108,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 107,
+      "rank": 99,
       "ticker": "FRSH",
       "name": "FRESHWORKS INC CL A",
       "group": "S&P Soft&Sevs #10",
@@ -7317,7 +7131,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 108,
+      "rank": 100,
       "ticker": "NTNX",
       "name": "NUTANIX INC   A",
       "group": "S&P Soft&Sevs #10",
@@ -7338,7 +7152,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 109,
+      "rank": 101,
       "ticker": "CNO",
       "name": "CNO FINANCIAL GROUP INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -7359,7 +7173,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 110,
+      "rank": 102,
       "ticker": "FHN",
       "name": "FIRST HORIZON CORP",
       "group": "Regional Banking #8",
@@ -7380,7 +7194,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 111,
+      "rank": 103,
       "ticker": "BDX",
       "name": "BECTON DICKINSON",
       "group": "U.S. Medical Devices #9",
@@ -7403,7 +7217,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 112,
+      "rank": 104,
       "ticker": "TGT",
       "name": "TARGET CORP",
       "group": "S&P Retail #5",
@@ -7426,7 +7240,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 113,
+      "rank": 105,
       "ticker": "SPSC",
       "name": "SPS COMMERCE INC",
       "group": "S&P Soft&Sevs #10",
@@ -7449,7 +7263,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 114,
+      "rank": 106,
       "ticker": "ARE",
       "name": "ALEXANDRIA REAL ESTATE EQUIT",
       "group": "Real Estate #6",
@@ -7470,7 +7284,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 115,
+      "rank": 107,
       "ticker": "PNFP",
       "name": "PINNACLE FINANCIAL PARTNERS",
       "group": "Regional Banking #8",
@@ -7491,7 +7305,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 116,
+      "rank": 108,
       "ticker": "TAK",
       "name": "Takeda Pharmaceutical Co Ltd",
       "group": "Pharmaceutical #4",
@@ -7514,7 +7328,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 117,
+      "rank": 109,
       "ticker": "LHX",
       "name": "L3HARRIS TECHNOLOGIES INC",
       "group": "Defense & Aerospace #7",
@@ -7537,7 +7351,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 118,
+      "rank": 110,
       "ticker": "APPN",
       "name": "APPIAN CORP A",
       "group": "S&P Soft&Sevs #10",
@@ -7558,7 +7372,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 119,
+      "rank": 111,
       "ticker": "CBSH",
       "name": "COMMERCE BANCSHARES INC",
       "group": "Regional Banking #8",
@@ -7579,7 +7393,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 120,
+      "rank": 112,
       "ticker": "AUB",
       "name": "ATLANTIC UNION BANKSHARES CO",
       "group": "Regional Banking #8",
@@ -7600,7 +7414,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 121,
+      "rank": 113,
       "ticker": "RTX",
       "name": "RTX CORP",
       "group": "Defense & Aerospace #7",
@@ -7621,7 +7435,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 122,
+      "rank": 114,
       "ticker": "HUBS",
       "name": "HUBSPOT INC",
       "group": "S&P Soft&Sevs #10",
@@ -7642,7 +7456,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 123,
+      "rank": 115,
       "ticker": "L",
       "name": "LOEWS CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -7663,7 +7477,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 124,
+      "rank": 116,
       "ticker": "RNST",
       "name": "RENASANT CORP",
       "group": "Regional Banking #8",
@@ -7684,7 +7498,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 125,
+      "rank": 117,
       "ticker": "ABBV",
       "name": "Abbvie Inc",
       "group": "Pharmaceutical #4",
@@ -7707,7 +7521,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 126,
+      "rank": 118,
       "ticker": "M",
       "name": "MACY S INC",
       "group": "S&P Retail #5",
@@ -7728,7 +7542,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 127,
+      "rank": 119,
       "ticker": "AFG",
       "name": "AMERICAN FINANCIAL GROUP INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -7749,7 +7563,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 128,
+      "rank": 120,
       "ticker": "BAX",
       "name": "BAXTER INTERNATIONAL INC",
       "group": "U.S. Medical Devices #9",
@@ -7770,7 +7584,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 129,
+      "rank": 121,
       "ticker": "ITGR",
       "name": "INTEGER HOLDINGS CORP",
       "group": "U.S. Medical Devices #9",
@@ -7793,7 +7607,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 130,
+      "rank": 122,
       "ticker": "INDB",
       "name": "INDEPENDENT BANK CORP/MA",
       "group": "Regional Banking #8",
@@ -7814,7 +7628,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 131,
+      "rank": 123,
       "ticker": "NVO",
       "name": "Novo Nordisk A/S",
       "group": "Pharmaceutical #4",
@@ -7835,7 +7649,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 132,
+      "rank": 124,
       "ticker": "ONB",
       "name": "OLD NATIONAL BANCORP",
       "group": "Regional Banking #8",
@@ -7858,7 +7672,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 133,
+      "rank": 125,
       "ticker": "HEI",
       "name": "HEICO CORP",
       "group": "Defense & Aerospace #7",
@@ -7879,7 +7693,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 134,
+      "rank": 126,
       "ticker": "WRB",
       "name": "WR BERKLEY CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -7900,7 +7714,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 135,
+      "rank": 127,
       "ticker": "SYK",
       "name": "STRYKER CORP",
       "group": "U.S. Medical Devices #9",
@@ -7923,30 +7737,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 136,
-      "ticker": "SIBN",
-      "name": "SI BONE INC",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "bpr",
-      "base": 3,
-      "days": 1,
-      "stage": "active",
-      "close": 17.93,
-      "threeMonth": 36.3,
-      "adr": 4.12,
-      "tightness": 69,
-      "dollarVol": "9.1M",
-      "vs200": 12,
-      "line": 1.73,
-      "strong": true,
-      "weight": "0.10%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 16.92,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 137,
+      "rank": 128,
       "ticker": "SIG",
       "name": "SIGNET JEWELERS LTD",
       "group": "S&P Retail #5",
@@ -7969,7 +7760,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 138,
+      "rank": 129,
       "ticker": "SKWD",
       "name": "SKYWARD SPECIALTY INSURANCE",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -7992,7 +7783,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 139,
+      "rank": 130,
       "ticker": "ZBH",
       "name": "ZIMMER BIOMET HOLDINGS INC",
       "group": "U.S. Medical Devices #9",
@@ -8015,7 +7806,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 140,
+      "rank": 131,
       "ticker": "ANF",
       "name": "ABERCROMBIE + FITCH CO CL A",
       "group": "S&P Retail #5",
@@ -8036,7 +7827,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 141,
+      "rank": 132,
       "ticker": "NCNO",
       "name": "NCINO INC",
       "group": "S&P Soft&Sevs #10",
@@ -8059,7 +7850,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 142,
+      "rank": 133,
       "ticker": "PB",
       "name": "PROSPERITY BANCSHARES INC",
       "group": "Regional Banking #8",
@@ -8080,7 +7871,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 143,
+      "rank": 134,
       "ticker": "AIG",
       "name": "AMERICAN INTERNATIONAL GROUP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -8101,7 +7892,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 144,
+      "rank": 135,
       "ticker": "BXP",
       "name": "BXP INC",
       "group": "Real Estate #6",
@@ -8122,7 +7913,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 145,
+      "rank": 136,
       "ticker": "WTM",
       "name": "WHITE MOUNTAINS INSURANCE GP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -8145,7 +7936,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 146,
+      "rank": 137,
       "ticker": "LMT",
       "name": "LOCKHEED MARTIN CORP",
       "group": "Defense & Aerospace #7",
@@ -8166,7 +7957,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 147,
+      "rank": 138,
       "ticker": "SBH",
       "name": "SALLY BEAUTY HOLDINGS INC",
       "group": "S&P Retail #5",
@@ -8189,7 +7980,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 148,
+      "rank": 139,
       "ticker": "FULT",
       "name": "FULTON FINANCIAL CORP",
       "group": "Regional Banking #8",
@@ -8210,7 +8001,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 149,
+      "rank": 140,
       "ticker": "PRGS",
       "name": "PROGRESS SOFTWARE CORP",
       "group": "S&P Soft&Sevs #10",
@@ -8233,7 +8024,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 150,
+      "rank": 141,
       "ticker": "INVH",
       "name": "INVITATION HOMES INC",
       "group": "Real Estate #6",
@@ -8254,7 +8045,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 151,
+      "rank": 142,
       "ticker": "BILL",
       "name": "BILL HOLDINGS INC",
       "group": "S&P Soft&Sevs #10",
@@ -8277,7 +8068,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 152,
+      "rank": 143,
       "ticker": "LLY",
       "name": "Eli Lilly & Co",
       "group": "Pharmaceutical #4",
@@ -8300,7 +8091,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 153,
+      "rank": 144,
       "ticker": "FNB",
       "name": "FNB CORP",
       "group": "Regional Banking #8",
@@ -8321,7 +8112,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 154,
+      "rank": 145,
       "ticker": "CFG",
       "name": "CITIZENS FINANCIAL GROUP",
       "group": "Regional Banking #8",
@@ -8344,7 +8135,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 155,
+      "rank": 146,
       "ticker": "ALRM",
       "name": "ALARM.COM HOLDINGS INC",
       "group": "S&P Soft&Sevs #10",
@@ -8367,7 +8158,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 156,
+      "rank": 147,
       "ticker": "MDT",
       "name": "MEDTRONIC PLC",
       "group": "U.S. Medical Devices #9",
@@ -8388,7 +8179,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 157,
+      "rank": 148,
       "ticker": "MRK",
       "name": "Merck & Co Inc",
       "group": "Pharmaceutical #4",
@@ -8411,7 +8202,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 158,
+      "rank": 149,
       "ticker": "ASB",
       "name": "ASSOCIATED BANC CORP",
       "group": "Regional Banking #8",
@@ -8432,7 +8223,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 159,
+      "rank": 150,
       "ticker": "CVBF",
       "name": "CVB FINANCIAL CORP",
       "group": "Regional Banking #8",
@@ -8455,51 +8246,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 160,
-      "ticker": "YEXT",
-      "name": "YEXT INC",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 5.63,
-      "threeMonth": 45.9,
-      "adr": 4.45,
-      "tightness": 49,
-      "dollarVol": "6.1M",
-      "vs200": -6,
-      "line": 2.49,
-      "strong": true,
-      "weight": "0.96%",
-      "breakoutDate": "2026-07-14",
-      "ema21": 5.06,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 161,
-      "ticker": "CDRE",
-      "name": "CADRE HOLDINGS INC",
-      "group": "Defense & Aerospace #7",
-      "theme": "ITA",
-      "status": "bpr",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 33.4,
-      "threeMonth": 14,
-      "adr": 4.18,
-      "tightness": 49,
-      "dollarVol": "10.8M",
-      "vs200": -8,
-      "line": 2.49,
-      "strong": true,
-      "weight": "0.06%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 162,
+      "rank": 151,
       "ticker": "INTA",
       "name": "INTAPP INC",
       "group": "S&P Soft&Sevs #10",
@@ -8520,7 +8267,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 163,
+      "rank": 152,
       "ticker": "QTWO",
       "name": "Q2 HOLDINGS INC",
       "group": "S&P Soft&Sevs #10",
@@ -8543,30 +8290,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 164,
-      "ticker": "OFIX",
-      "name": "ORTHOFIX MEDICAL INC",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "bpr",
-      "base": 3,
-      "days": 1,
-      "stage": "active",
-      "close": 12.26,
-      "threeMonth": -0.5,
-      "adr": 5.1,
-      "tightness": 58,
-      "dollarVol": "4.5M",
-      "vs200": -6,
-      "line": 2.61,
-      "strong": true,
-      "weight": "0.07%",
-      "breakoutDate": "2026-07-06",
-      "ema21": 11.17,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 165,
+      "rank": 153,
       "ticker": "KNSL",
       "name": "KINSALE CAPITAL GROUP INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -8589,7 +8313,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 166,
+      "rank": 154,
       "ticker": "RLI",
       "name": "RLI CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -8612,7 +8336,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 167,
+      "rank": 155,
       "ticker": "SARO",
       "name": "STANDARDAERO",
       "group": "Defense & Aerospace #7",
@@ -8633,7 +8357,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 168,
+      "rank": 156,
       "ticker": "INSP",
       "name": "INSPIRE MEDICAL SYSTEMS INC",
       "group": "U.S. Medical Devices #9",
@@ -8656,7 +8380,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 169,
+      "rank": 157,
       "ticker": "ESS",
       "name": "ESSEX PROPERTY TRUST INC",
       "group": "Real Estate #6",
@@ -8679,7 +8403,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 170,
+      "rank": 158,
       "ticker": "AX",
       "name": "AXOS FINANCIAL INC",
       "group": "Regional Banking #8",
@@ -8702,7 +8426,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 171,
+      "rank": 159,
       "ticker": "TBBK",
       "name": "BANCORP INC/THE",
       "group": "Regional Banking #8",
@@ -8725,7 +8449,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 172,
+      "rank": 160,
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
       "group": "Pharmaceutical #4",
@@ -8748,7 +8472,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 173,
+      "rank": 161,
       "ticker": "PLMR",
       "name": "PALOMAR HOLDINGS INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -8771,7 +8495,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 174,
+      "rank": 162,
       "ticker": "HWC",
       "name": "HANCOCK WHITNEY CORP",
       "group": "Regional Banking #8",
@@ -8792,30 +8516,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 175,
-      "ticker": "UFCS",
-      "name": "UNITED FIRE GROUP INC",
-      "group": "U.S. Insurance #2",
-      "theme": "IAK",
-      "status": "bpr",
-      "base": 2,
-      "days": 17,
-      "stage": "active",
-      "close": 52.76,
-      "threeMonth": 31,
-      "adr": 3.12,
-      "tightness": 73,
-      "dollarVol": "7.7M",
-      "vs200": 33,
-      "line": 3.15,
-      "strong": true,
-      "weight": "0.14%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 50.9,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 176,
+      "rank": 163,
       "ticker": "MCY",
       "name": "MERCURY GENERAL CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -8836,7 +8537,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 177,
+      "rank": 164,
       "ticker": "OZK",
       "name": "BANK OZK",
       "group": "Regional Banking #8",
@@ -8857,30 +8558,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 178,
-      "ticker": "AORT",
-      "name": "ARTIVION INC",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "bpr",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 27.01,
-      "threeMonth": -27.1,
-      "adr": 4.02,
-      "tightness": 48,
-      "dollarVol": "16.7M",
-      "vs200": -25,
-      "line": 3.26,
-      "strong": true,
-      "weight": "0.15%",
-      "breakoutDate": "2026-06-25",
-      "ema21": 24.62,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 179,
+      "rank": 165,
       "ticker": "ELAN",
       "name": "Elanco Animal Health Inc",
       "group": "Pharmaceutical #4",
@@ -8901,7 +8579,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 180,
+      "rank": 166,
       "ticker": "VTR",
       "name": "VENTAS INC",
       "group": "Real Estate #6",
@@ -8924,7 +8602,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 181,
+      "rank": 167,
       "ticker": "ZS",
       "name": "ZSCALER INC",
       "group": "S&P Soft&Sevs #10",
@@ -8945,7 +8623,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 182,
+      "rank": 168,
       "ticker": "DG",
       "name": "DOLLAR GENERAL CORP",
       "group": "S&P Retail #5",
@@ -8968,30 +8646,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 183,
-      "ticker": "IART",
-      "name": "INTEGRA LIFESCIENCES HOLDINGS CORP",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "bpr",
-      "base": 4,
-      "days": 1,
-      "stage": "active",
-      "close": 19.76,
-      "threeMonth": 84.8,
-      "adr": 4.47,
-      "tightness": 51,
-      "dollarVol": "16.6M",
-      "vs200": 49,
-      "line": 3.69,
-      "strong": true,
-      "weight": "0.19%",
-      "breakoutDate": "2026-07-16",
-      "ema21": 18.7,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 184,
+      "rank": 169,
       "ticker": "FFIN",
       "name": "FIRST FINL BANKSHARES INC",
       "group": "Regional Banking #8",
@@ -9014,7 +8669,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 185,
+      "rank": 170,
       "ticker": "LMAT",
       "name": "LEMAITRE VASCULAR INC",
       "group": "U.S. Medical Devices #9",
@@ -9037,7 +8692,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 186,
+      "rank": 171,
       "ticker": "U",
       "name": "UNITY SOFTWARE INC",
       "group": "S&P Soft&Sevs #10",
@@ -9058,7 +8713,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 187,
+      "rank": 172,
       "ticker": "HCI",
       "name": "HCI GROUP INC",
       "group": "U.S. Insurance #2",
@@ -9081,7 +8736,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 188,
+      "rank": 173,
       "ticker": "LIVN",
       "name": "LIVANOVA PLC",
       "group": "U.S. Medical Devices #9",
@@ -9102,7 +8757,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 189,
+      "rank": 174,
       "ticker": "TDG",
       "name": "TRANSDIGM GROUP INC",
       "group": "Defense & Aerospace #7",
@@ -9123,7 +8778,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 190,
+      "rank": 175,
       "ticker": "CPT",
       "name": "CAMDEN PROPERTY TRUST",
       "group": "Real Estate #6",
@@ -9144,7 +8799,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 191,
+      "rank": 176,
       "ticker": "UCB",
       "name": "UNITED COMMUNITY BANKS/GA",
       "group": "Regional Banking #8",
@@ -9165,7 +8820,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 192,
+      "rank": 177,
       "ticker": "PLD",
       "name": "PROLOGIS INC",
       "group": "Real Estate #6",
@@ -9188,7 +8843,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 193,
+      "rank": 178,
       "ticker": "AVPT",
       "name": "AVEPOINT INC",
       "group": "S&P Soft&Sevs #10",
@@ -9211,7 +8866,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 194,
+      "rank": 179,
       "ticker": "PSMT",
       "name": "PRICESMART INC",
       "group": "S&P Retail #5",
@@ -9234,7 +8889,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 195,
+      "rank": 180,
       "ticker": "WWD",
       "name": "WOODWARD INC",
       "group": "Defense & Aerospace #7",
@@ -9255,7 +8910,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 196,
+      "rank": 181,
       "ticker": "AGYS",
       "name": "AGILYSYS INC",
       "group": "S&P Soft&Sevs #10",
@@ -9278,30 +8933,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 197,
-      "ticker": "RDVT",
-      "name": "RED VIOLET INC",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 4,
-      "days": 10,
-      "stage": "active",
-      "close": 66.46,
-      "threeMonth": 77.5,
-      "adr": 4.26,
-      "tightness": 54,
-      "dollarVol": "10.6M",
-      "vs200": 33,
-      "line": 4.8,
-      "strong": true,
-      "weight": "0.79%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 63.5,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 198,
+      "rank": 182,
       "ticker": "LIF",
       "name": "LIFE360 INC",
       "group": "S&P Soft&Sevs #10",
@@ -9324,30 +8956,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 199,
-      "ticker": "SPT",
-      "name": "SPROUT SOCIAL INC   CLASS A",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 4,
-      "days": 9,
-      "stage": "active",
-      "close": 8.69,
-      "threeMonth": 44.6,
-      "adr": 5.72,
-      "tightness": 41,
-      "dollarVol": "9.3M",
-      "vs200": 5,
-      "line": 4.95,
-      "strong": true,
-      "weight": "0.85%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 8.01,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 200,
+      "rank": 183,
       "ticker": "CCC",
       "name": "CCC INTELLIGENT SOLUTIONS HO",
       "group": "S&P Soft&Sevs #10",
@@ -9370,7 +8979,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 201,
+      "rank": 184,
       "ticker": "DLTR",
       "name": "DOLLAR TREE INC",
       "group": "S&P Retail #5",
@@ -9393,7 +9002,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 202,
+      "rank": 185,
       "ticker": "GE",
       "name": "GE AEROSPACE",
       "group": "Defense & Aerospace #7",
@@ -9414,7 +9023,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 203,
+      "rank": 186,
       "ticker": "IOT",
       "name": "SAMSARA INC CL A",
       "group": "S&P Soft&Sevs #10",
@@ -9435,7 +9044,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 204,
+      "rank": 187,
       "ticker": "MAA",
       "name": "MID AMERICA APARTMENT COMM",
       "group": "Real Estate #6",
@@ -9456,7 +9065,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 205,
+      "rank": 188,
       "ticker": "TTAN",
       "name": "SERVICETITAN INC A",
       "group": "S&P Soft&Sevs #10",
@@ -9479,7 +9088,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 206,
+      "rank": 189,
       "ticker": "OSCR",
       "name": "OSCAR HEALTH INC   CLASS A",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -9500,7 +9109,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 207,
+      "rank": 190,
       "ticker": "MUSA",
       "name": "MURPHY USA INC",
       "group": "S&P Retail #5",
@@ -9523,7 +9132,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 208,
+      "rank": 191,
       "ticker": "IRM",
       "name": "IRON MOUNTAIN INC",
       "group": "Real Estate #6",
@@ -9544,7 +9153,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 209,
+      "rank": 192,
       "ticker": "DXCM",
       "name": "DEXCOM INC",
       "group": "U.S. Medical Devices #9",
@@ -9565,74 +9174,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 210,
-      "ticker": "HMN",
-      "name": "HORACE MANN EDUCATORS CORP",
-      "group": "U.S. Insurance #2",
-      "theme": "IAK",
-      "status": "bpr",
-      "base": 3,
-      "days": 15,
-      "stage": "active",
-      "close": 52.5,
-      "threeMonth": 15.5,
-      "adr": 2.31,
-      "tightness": 79,
-      "dollarVol": "13.9M",
-      "vs200": 16,
-      "line": 5.83,
-      "strong": true,
-      "weight": "0.19%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 211,
-      "ticker": "ANGO",
-      "name": "ANGIODYNAMICS INC",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "bpr",
-      "base": 4,
-      "days": 8,
-      "stage": "active",
-      "close": 14.34,
-      "threeMonth": 29.3,
-      "adr": 4.51,
-      "tightness": 44,
-      "dollarVol": "5.5M",
-      "vs200": 22,
-      "line": 5.96,
-      "strong": true,
-      "weight": "0.08%",
-      "breakoutDate": "2026-06-24",
-      "ema21": 13.42,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 212,
-      "ticker": "STC",
-      "name": "STEWART INFO SERVICES CORP",
-      "group": "U.S. Insurance #2",
-      "theme": "IAK",
-      "status": "bpr",
-      "base": 3,
-      "days": 7,
-      "stage": "active",
-      "close": 69.5,
-      "threeMonth": -2.5,
-      "adr": 3.19,
-      "tightness": 56,
-      "dollarVol": "15.6M",
-      "vs200": 3,
-      "line": 6.09,
-      "strong": true,
-      "weight": "0.24%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 68.18,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 213,
+      "rank": 193,
       "ticker": "ATEC",
       "name": "ALPHATEC HOLDNGS INC",
       "group": "U.S. Medical Devices #9",
@@ -9655,7 +9197,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 214,
+      "rank": 194,
       "ticker": "CINF",
       "name": "CINCINNATI FINANCIAL CORP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -9676,7 +9218,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 215,
+      "rank": 195,
       "ticker": "GKOS",
       "name": "GLAUKOS CORP",
       "group": "U.S. Medical Devices #9",
@@ -9699,30 +9241,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 216,
-      "ticker": "UPBD",
-      "name": "UPBOUND GROUP INC",
-      "group": "S&P Retail #5",
-      "theme": "XRT",
-      "status": "bpr",
-      "base": 4,
-      "days": 7,
-      "stage": "active",
-      "close": 21.59,
-      "threeMonth": 15,
-      "adr": 4.19,
-      "tightness": 50,
-      "dollarVol": "18.6M",
-      "vs200": 16,
-      "line": 6.99,
-      "strong": true,
-      "weight": "1.58%",
-      "breakoutDate": "2026-06-24",
-      "ema21": 20.87,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 217,
+      "rank": 196,
       "ticker": "TTWO",
       "name": "TAKE TWO INTERACTIVE SOFTWRE",
       "group": "S&P Soft&Sevs #10",
@@ -9743,7 +9262,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 218,
+      "rank": 197,
       "ticker": "DLR",
       "name": "DIGITAL REALTY TRUST INC",
       "group": "Real Estate #6",
@@ -9766,30 +9285,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 219,
-      "ticker": "VYX",
-      "name": "NCR VOYIX CORP",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 3,
-      "days": 15,
-      "stage": "active",
-      "close": 8.6,
-      "threeMonth": 23,
-      "adr": 5.04,
-      "tightness": 57,
-      "dollarVol": "17.8M",
-      "vs200": -2,
-      "line": 8.02,
-      "strong": true,
-      "weight": "0.82%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 7.99,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 220,
+      "rank": 198,
       "ticker": "ERIE",
       "name": "ERIE INDEMNITY COMPANY CL A",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -9812,30 +9308,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 221,
-      "ticker": "PD",
-      "name": "PAGERDUTY INC",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 4,
-      "days": 10,
-      "stage": "active",
-      "close": 10.31,
-      "threeMonth": 53,
-      "adr": 5.74,
-      "tightness": 25,
-      "dollarVol": "18.8M",
-      "vs200": 2,
-      "line": 9.51,
-      "strong": true,
-      "weight": "0.87%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 9.71,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 222,
+      "rank": 199,
       "ticker": "BETA",
       "name": "BETA TECHNOLOGIES INC CLASS A",
       "group": "Defense & Aerospace #7",
@@ -9858,7 +9331,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 223,
+      "rank": 200,
       "ticker": "FG",
       "name": "FG ANNUITIES AND LIFE INC",
       "group": "U.S. Insurance #2",
@@ -9879,7 +9352,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 224,
+      "rank": 201,
       "ticker": "DDOG",
       "name": "DATADOG INC   CLASS A",
       "group": "S&P Soft&Sevs #10",
@@ -9902,7 +9375,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 225,
+      "rank": 202,
       "ticker": "DCO",
       "name": "DUCOMMUN INC",
       "group": "Defense & Aerospace #7",
@@ -9925,7 +9398,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 226,
+      "rank": 203,
       "ticker": "VRNS",
       "name": "VARONIS SYSTEMS INC",
       "group": "S&P Soft&Sevs #10",
@@ -9948,53 +9421,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 227,
-      "ticker": "WEAV",
-      "name": "WEAVE COMMUNICATIONS INC",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 4,
-      "days": 9,
-      "stage": "active",
-      "close": 6.89,
-      "threeMonth": 41.5,
-      "adr": 5.14,
-      "tightness": 30,
-      "dollarVol": "6.5M",
-      "vs200": 14,
-      "line": 11.18,
-      "strong": true,
-      "weight": "0.92%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 6.57,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 228,
-      "ticker": "PAR",
-      "name": "PAR TECHNOLOGY CORP/DEL",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 4,
-      "days": 17,
-      "stage": "active",
-      "close": 17.15,
-      "threeMonth": 22.1,
-      "adr": 5.17,
-      "tightness": 51,
-      "dollarVol": "18.5M",
-      "vs200": -27,
-      "line": 11.75,
-      "strong": true,
-      "weight": "0.90%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 16.34,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 229,
+      "rank": 204,
       "ticker": "QDEL",
       "name": "QUIDELORTHO CORP",
       "group": "U.S. Medical Devices #9",
@@ -10017,30 +9444,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 230,
-      "ticker": "AMPL",
-      "name": "AMPLITUDE INC CLASS A",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "bpr",
-      "base": 4,
-      "days": 5,
-      "stage": "active",
-      "close": 8.74,
-      "threeMonth": 24.3,
-      "adr": 7.06,
-      "tightness": 17,
-      "dollarVol": "19.6M",
-      "vs200": 2,
-      "line": 15.56,
-      "strong": true,
-      "weight": "0.95%",
-      "breakoutDate": "2026-06-26",
-      "ema21": 8.68,
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 231,
+      "rank": 205,
       "ticker": "AXON",
       "name": "AXON ENTERPRISE INC",
       "group": "Defense & Aerospace #7",
@@ -10063,7 +9467,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 232,
+      "rank": 206,
       "ticker": "FBP",
       "name": "FIRST BANCORP PUERTO RICO",
       "group": "Regional Banking #8",
@@ -10084,7 +9488,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 233,
+      "rank": 207,
       "ticker": "PAG",
       "name": "PENSKE AUTOMOTIVE GROUP INC",
       "group": "S&P Retail #5",
@@ -10105,7 +9509,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 234,
+      "rank": 208,
       "ticker": "HST",
       "name": "HOST HOTELS + RESORTS INC",
       "group": "Real Estate #6",
@@ -10126,7 +9530,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 235,
+      "rank": 209,
       "ticker": "HOLX",
       "name": "HOLOGIC INC",
       "group": "U.S. Medical Devices #9",
@@ -10147,7 +9551,7 @@
       "lastDate": "2026-04-06"
     },
     {
-      "rank": 236,
+      "rank": 210,
       "ticker": "STE",
       "name": "STERIS",
       "group": "U.S. Medical Devices #9",
@@ -10168,7 +9572,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 237,
+      "rank": 211,
       "ticker": "AN",
       "name": "AUTONATION INC",
       "group": "S&P Retail #5",
@@ -10189,7 +9593,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 238,
+      "rank": 212,
       "ticker": "SNY",
       "name": "Sanofi Sa/France",
       "group": "Pharmaceutical #4",
@@ -10210,7 +9614,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 239,
+      "rank": 213,
       "ticker": "COR",
       "name": "Cencora Inc",
       "group": "Pharmaceutical #4",
@@ -10231,7 +9635,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 240,
+      "rank": 214,
       "ticker": "TRV",
       "name": "TRAVELERS COS INC/THE",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -10252,7 +9656,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 241,
+      "rank": 215,
       "ticker": "CFR",
       "name": "CULLEN/FROST BANKERS INC",
       "group": "Regional Banking #8",
@@ -10273,7 +9677,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 242,
+      "rank": 216,
       "ticker": "BKE",
       "name": "BUCKLE INC/THE",
       "group": "S&P Retail #5",
@@ -10294,7 +9698,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 243,
+      "rank": 217,
       "ticker": "PEN",
       "name": "PENUMBRA INC",
       "group": "U.S. Medical Devices #9",
@@ -10315,7 +9719,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 244,
+      "rank": 218,
       "ticker": "PRU",
       "name": "PRUDENTIAL FINANCIAL INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -10336,7 +9740,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 245,
+      "rank": 219,
       "ticker": "OGN",
       "name": "Organon & Co",
       "group": "Pharmaceutical #4",
@@ -10357,7 +9761,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 246,
+      "rank": 220,
       "ticker": "HII",
       "name": "HUNTINGTON INGALLS INDUSTRIES INC",
       "group": "Defense & Aerospace #7",
@@ -10378,7 +9782,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 247,
+      "rank": 221,
       "ticker": "LAD",
       "name": "LITHIA MOTORS INC",
       "group": "S&P Retail #5",
@@ -10399,7 +9803,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 248,
+      "rank": 222,
       "ticker": "BURL",
       "name": "BURLINGTON STORES INC",
       "group": "S&P Retail #5",
@@ -10420,7 +9824,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 249,
+      "rank": 223,
       "ticker": "PFE",
       "name": "Pfizer Inc",
       "group": "Pharmaceutical #4",
@@ -10441,7 +9845,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 250,
+      "rank": 224,
       "ticker": "VVX",
       "name": "V2X INC",
       "group": "Defense & Aerospace #7",
@@ -10462,7 +9866,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 251,
+      "rank": 225,
       "ticker": "CBRE",
       "name": "CBRE GROUP INC   A",
       "group": "Real Estate #6",
@@ -10483,7 +9887,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 252,
+      "rank": 226,
       "ticker": "GNW",
       "name": "GENWORTH FINANCIAL INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -10504,7 +9908,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 253,
+      "rank": 227,
       "ticker": "BBY",
       "name": "BEST BUY CO INC",
       "group": "S&P Retail #5",
@@ -10525,7 +9929,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 254,
+      "rank": 228,
       "ticker": "KIM",
       "name": "KIMCO REALTY CORP",
       "group": "Real Estate #6",
@@ -10546,7 +9950,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 255,
+      "rank": 229,
       "ticker": "HXL",
       "name": "HEXCEL CORP",
       "group": "Defense & Aerospace #7",
@@ -10567,7 +9971,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 256,
+      "rank": 230,
       "ticker": "FIVE",
       "name": "FIVE BELOW",
       "group": "S&P Retail #5",
@@ -10588,7 +9992,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 257,
+      "rank": 231,
       "ticker": "BJ",
       "name": "BJ S WHOLESALE CLUB HOLDINGS",
       "group": "S&P Retail #5",
@@ -10609,7 +10013,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 258,
+      "rank": 232,
       "ticker": "FRT",
       "name": "FEDERAL REALTY INVS TRUST",
       "group": "Real Estate #6",
@@ -10630,7 +10034,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 259,
+      "rank": 233,
       "ticker": "JAZZ",
       "name": "Jazz Pharmaceuticals Plc",
       "group": "Pharmaceutical #4",
@@ -10651,7 +10055,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 260,
+      "rank": 234,
       "ticker": "WAL",
       "name": "WESTERN ALLIANCE BANCORP",
       "group": "Regional Banking #8",
@@ -10672,7 +10076,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 261,
+      "rank": 235,
       "ticker": "KSS",
       "name": "KOHLS CORP",
       "group": "S&P Retail #5",
@@ -10693,7 +10097,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 262,
+      "rank": 236,
       "ticker": "ABT",
       "name": "ABBOTT LABORATORIES",
       "group": "U.S. Medical Devices #9",
@@ -10714,7 +10118,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 263,
+      "rank": 237,
       "ticker": "VICI",
       "name": "VICI PROPERTIES INC",
       "group": "Real Estate #6",
@@ -10735,7 +10139,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 264,
+      "rank": 238,
       "ticker": "IDXX",
       "name": "IDEXX LABORATORIES INC",
       "group": "U.S. Medical Devices #9",
@@ -10756,7 +10160,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 265,
+      "rank": 239,
       "ticker": "BMY",
       "name": "Bristol-Myers Squibb Co",
       "group": "Pharmaceutical #4",
@@ -10777,7 +10181,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 266,
+      "rank": 240,
       "ticker": "WY",
       "name": "WEYERHAEUSER CO",
       "group": "Real Estate #6",
@@ -10798,7 +10202,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 267,
+      "rank": 241,
       "ticker": "O",
       "name": "REALTY INCOME CORP",
       "group": "Real Estate #6",
@@ -10819,7 +10223,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 268,
+      "rank": 242,
       "ticker": "TFC",
       "name": "TRUIST FINANCIAL CORP",
       "group": "Regional Banking #8",
@@ -10840,7 +10244,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 269,
+      "rank": 243,
       "ticker": "CUBI",
       "name": "CUSTOMERS BANCORP INC",
       "group": "Regional Banking #8",
@@ -10861,7 +10265,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 270,
+      "rank": 244,
       "ticker": "ZTS",
       "name": "Zoetis Inc",
       "group": "Pharmaceutical #4",
@@ -10882,7 +10286,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 271,
+      "rank": 245,
       "ticker": "REAL",
       "name": "REALREAL INC/THE",
       "group": "S&P Retail #5",
@@ -10903,7 +10307,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 272,
+      "rank": 246,
       "ticker": "TNDM",
       "name": "TANDEM DIABETES CARE INC",
       "group": "U.S. Medical Devices #9",
@@ -10924,7 +10328,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 273,
+      "rank": 247,
       "ticker": "URBN",
       "name": "URBAN OUTFITTERS INC",
       "group": "S&P Retail #5",
@@ -10945,7 +10349,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 274,
+      "rank": 248,
       "ticker": "TMDX",
       "name": "TRANSMEDICS GROUP INC",
       "group": "U.S. Medical Devices #9",
@@ -10966,7 +10370,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 275,
+      "rank": 249,
       "ticker": "GMED",
       "name": "GLOBUS MEDICAL INC CLASS A",
       "group": "U.S. Medical Devices #9",
@@ -10987,7 +10391,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 276,
+      "rank": 250,
       "ticker": "PODD",
       "name": "INSULET CORP",
       "group": "U.S. Medical Devices #9",
@@ -11008,7 +10412,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 277,
+      "rank": 251,
       "ticker": "NVST",
       "name": "ENVISTA HOLDINGS CORP",
       "group": "U.S. Medical Devices #9",
@@ -11029,7 +10433,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 278,
+      "rank": 252,
       "ticker": "TFX",
       "name": "TELEFLEX INC",
       "group": "U.S. Medical Devices #9",
@@ -11050,7 +10454,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 279,
+      "rank": 253,
       "ticker": "TSCO",
       "name": "TRACTOR SUPPLY COMPANY",
       "group": "S&P Retail #5",
@@ -11071,7 +10475,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 280,
+      "rank": 254,
       "ticker": "KMX",
       "name": "CARMAX INC",
       "group": "S&P Retail #5",
@@ -11092,7 +10496,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 281,
+      "rank": 255,
       "ticker": "AZO",
       "name": "AUTOZONE INC",
       "group": "S&P Retail #5",
@@ -11113,7 +10517,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 282,
+      "rank": 256,
       "ticker": "GME",
       "name": "GAMESTOP CORP CLASS A",
       "group": "S&P Retail #5",
@@ -11134,28 +10538,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 283,
-      "ticker": "IMKTA",
-      "name": "INGLES MARKETS INC CLASS A",
-      "group": "S&P Retail #5",
-      "theme": "XRT",
-      "status": "anticipation",
-      "base": 3,
-      "days": 7,
-      "stage": "active",
-      "close": 89.97,
-      "threeMonth": 0.1,
-      "adr": 2.7,
-      "tightness": 69,
-      "dollarVol": "12.7M",
-      "vs200": 10,
-      "line": 4.48,
-      "strong": true,
-      "weight": "1.31%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 284,
+      "rank": 257,
       "ticker": "IRTC",
       "name": "IRHYTHM HOLDINGS INC",
       "group": "U.S. Medical Devices #9",
@@ -11176,49 +10559,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 285,
-      "ticker": "RGR",
-      "name": "STURM RUGER INC",
-      "group": "Defense & Aerospace #7",
-      "theme": "ITA",
-      "status": "pool",
-      "base": 2,
-      "days": 1,
-      "stage": "watch",
-      "close": 38.34,
-      "threeMonth": -10.6,
-      "adr": 2,
-      "tightness": 87,
-      "dollarVol": "4.8M",
-      "vs200": 1,
-      "line": 3,
-      "strong": true,
-      "weight": "0.04%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 286,
-      "ticker": "NPK",
-      "name": "NATIONAL PRESTO INDUSTRIES INC",
-      "group": "Defense & Aerospace #7",
-      "theme": "ITA",
-      "status": "pool",
-      "base": 2,
-      "days": 17,
-      "stage": "watch",
-      "close": 123.35,
-      "threeMonth": -15.3,
-      "adr": 2.32,
-      "tightness": 83,
-      "dollarVol": "15.7M",
-      "vs200": 1,
-      "line": 3.57,
-      "strong": true,
-      "weight": "0.05%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 287,
+      "rank": 258,
       "ticker": "EWBC",
       "name": "EAST WEST BANCORP INC",
       "group": "Regional Banking #8",
@@ -11239,7 +10580,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 288,
+      "rank": 259,
       "ticker": "WTFC",
       "name": "WINTRUST FINANCIAL CORP",
       "group": "Regional Banking #8",
@@ -11260,7 +10601,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 289,
+      "rank": 260,
       "ticker": "AVB",
       "name": "AVALONBAY COMMUNITIES INC",
       "group": "Real Estate #6",
@@ -11281,7 +10622,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 290,
+      "rank": 261,
       "ticker": "UNM",
       "name": "UNUM",
       "group": "U.S. Insurance #2",
@@ -11302,7 +10643,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 291,
+      "rank": 262,
       "ticker": "BHF",
       "name": "BRIGHTHOUSE FINANCIAL INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -11323,7 +10664,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 292,
+      "rank": 263,
       "ticker": "VLY",
       "name": "VALLEY NATIONAL BANCORP",
       "group": "Regional Banking #8",
@@ -11344,7 +10685,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 293,
+      "rank": 264,
       "ticker": "EQR",
       "name": "EQUITY RESIDENTIAL",
       "group": "Real Estate #6",
@@ -11365,7 +10706,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 294,
+      "rank": 265,
       "ticker": "ZION",
       "name": "ZIONS BANCORP NA",
       "group": "Regional Banking #8",
@@ -11386,7 +10727,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 295,
+      "rank": 266,
       "ticker": "BOOT",
       "name": "BOOT BARN HOLDINGS INC",
       "group": "S&P Retail #5",
@@ -11407,7 +10748,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 296,
+      "rank": 267,
       "ticker": "ABCB",
       "name": "AMERIS BANCORP",
       "group": "Regional Banking #8",
@@ -11428,7 +10769,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 297,
+      "rank": 268,
       "ticker": "BKU",
       "name": "BANKUNITED INC",
       "group": "Regional Banking #8",
@@ -11449,7 +10790,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 298,
+      "rank": 269,
       "ticker": "SIGI",
       "name": "SELECTIVE INSURANCE GROUP",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -11470,7 +10811,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 299,
+      "rank": 270,
       "ticker": "FIBK",
       "name": "FIRST INTERSTATE BANCSYS A",
       "group": "Regional Banking #8",
@@ -11491,7 +10832,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 300,
+      "rank": 271,
       "ticker": "CCI",
       "name": "CROWN CASTLE INC",
       "group": "Real Estate #6",
@@ -11512,7 +10853,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 301,
+      "rank": 272,
       "ticker": "UDR",
       "name": "UDR INC",
       "group": "Real Estate #6",
@@ -11533,7 +10874,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 302,
+      "rank": 273,
       "ticker": "HBAN",
       "name": "HUNTINGTON BANCSHARES INC",
       "group": "Regional Banking #8",
@@ -11554,7 +10895,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 303,
+      "rank": 274,
       "ticker": "CART",
       "name": "MAPLEBEAR INC",
       "group": "S&P Retail #5",
@@ -11575,7 +10916,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 304,
+      "rank": 275,
       "ticker": "AXSM",
       "name": "Axsome Therapeutics Inc",
       "group": "Pharmaceutical #4",
@@ -11596,7 +10937,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 305,
+      "rank": 276,
       "ticker": "TXT",
       "name": "TEXTRON INC",
       "group": "Defense & Aerospace #7",
@@ -11617,28 +10958,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 306,
-      "ticker": "IRMD",
-      "name": "IRADIMED CORP",
-      "group": "U.S. Medical Devices #9",
-      "theme": "IHI",
-      "status": "pool",
-      "base": 3,
-      "days": 15,
-      "stage": "watch",
-      "close": 94.83,
-      "threeMonth": 6.7,
-      "adr": 3.47,
-      "tightness": 70,
-      "dollarVol": "13.2M",
-      "vs200": 2,
-      "line": 8.6,
-      "strong": true,
-      "weight": "0.12%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 307,
+      "rank": 277,
       "ticker": "FHB",
       "name": "FIRST HAWAIIAN INC",
       "group": "Regional Banking #8",
@@ -11659,28 +10979,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 308,
-      "ticker": "SWBI",
-      "name": "SMITH WESSON BRANDS INC",
-      "group": "Defense & Aerospace #7",
-      "theme": "ITA",
-      "status": "pool",
-      "base": 3,
-      "days": 11,
-      "stage": "watch",
-      "close": 14.68,
-      "threeMonth": -2.6,
-      "adr": 3.02,
-      "tightness": 70,
-      "dollarVol": "11.5M",
-      "vs200": 18,
-      "line": 8.89,
-      "strong": true,
-      "weight": "0.05%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 309,
+      "rank": 278,
       "ticker": "TCBI",
       "name": "TEXAS CAPITAL BANCSHARES INC",
       "group": "Regional Banking #8",
@@ -11701,7 +11000,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 310,
+      "rank": 279,
       "ticker": "ATI",
       "name": "ATI INC",
       "group": "Defense & Aerospace #7",
@@ -11722,7 +11021,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 311,
+      "rank": 280,
       "ticker": "SBAC",
       "name": "SBA COMMUNICATIONS CORP",
       "group": "Real Estate #6",
@@ -11743,7 +11042,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 312,
+      "rank": 281,
       "ticker": "CVNA",
       "name": "CARVANA CO",
       "group": "S&P Retail #5",
@@ -11764,7 +11063,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 313,
+      "rank": 282,
       "ticker": "GBCI",
       "name": "GLACIER BANCORP INC",
       "group": "Regional Banking #8",
@@ -11785,7 +11084,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 314,
+      "rank": 283,
       "ticker": "FLG",
       "name": "FLAGSTAR BANK NA",
       "group": "Regional Banking #8",
@@ -11806,7 +11105,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 315,
+      "rank": 284,
       "ticker": "CW",
       "name": "CURTISS WRIGHT CORP",
       "group": "Defense & Aerospace #7",
@@ -11827,28 +11126,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 316,
-      "ticker": "BHC",
-      "name": "Bausch Health Cos Inc",
-      "group": "Pharmaceutical #4",
-      "theme": "PPH",
-      "status": "pool",
-      "base": 4,
-      "days": 19,
-      "stage": "watch",
-      "close": 4.52,
-      "threeMonth": -19,
-      "adr": 3.31,
-      "tightness": 58,
-      "dollarVol": "11.5M",
-      "vs200": -23,
-      "line": 11.06,
-      "strong": true,
-      "weight": "0.10%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 317,
+      "rank": 285,
       "ticker": "OMCL",
       "name": "OMNICELL INC",
       "group": "U.S. Medical Devices #9",
@@ -11869,7 +11147,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 318,
+      "rank": 286,
       "ticker": "CRS",
       "name": "CARPENTER TECHNOLOGY CORP",
       "group": "Defense & Aerospace #7",
@@ -11890,7 +11168,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 319,
+      "rank": 287,
       "ticker": "AMZN",
       "name": "AMAZON.COM INC",
       "group": "S&P Retail #5",
@@ -11911,7 +11189,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 320,
+      "rank": 288,
       "ticker": "DKS",
       "name": "DICK S SPORTING GOODS INC",
       "group": "S&P Retail #5",
@@ -11932,7 +11210,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 321,
+      "rank": 289,
       "ticker": "TEVA",
       "name": "Teva Pharmaceutical Industries Ltd",
       "group": "Pharmaceutical #4",
@@ -11953,7 +11231,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 322,
+      "rank": 290,
       "ticker": "PRGO",
       "name": "Perrigo Co Plc",
       "group": "Pharmaceutical #4",
@@ -11974,7 +11252,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 323,
+      "rank": 291,
       "ticker": "FTNT",
       "name": "FORTINET INC",
       "group": "S&P Soft&Sevs #10",
@@ -11995,7 +11273,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 324,
+      "rank": 292,
       "ticker": "BBWI",
       "name": "BATH + BODY WORKS INC",
       "group": "S&P Retail #5",
@@ -12016,7 +11294,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 325,
+      "rank": 293,
       "ticker": "EW",
       "name": "EDWARDS LIFESCIENCES CORP",
       "group": "U.S. Medical Devices #9",
@@ -12037,7 +11315,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 326,
+      "rank": 294,
       "ticker": "PANW",
       "name": "PALO ALTO NETWORKS INC",
       "group": "S&P Soft&Sevs #10",
@@ -12058,7 +11336,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 327,
+      "rank": 295,
       "ticker": "GO",
       "name": "GROCERY OUTLET HOLDING CORP",
       "group": "S&P Retail #5",
@@ -12079,7 +11357,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 328,
+      "rank": 296,
       "ticker": "ACHR",
       "name": "ARCHER AVIATION INC CLASS A",
       "group": "Defense & Aerospace #7",
@@ -12100,7 +11378,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 329,
+      "rank": 297,
       "ticker": "BWXT",
       "name": "BWX TECHNOLOGIES INC",
       "group": "Defense & Aerospace #7",
@@ -12121,7 +11399,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 330,
+      "rank": 298,
       "ticker": "RBLX",
       "name": "ROBLOX CORP  CLASS A",
       "group": "S&P Soft&Sevs #10",
@@ -12142,7 +11420,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 331,
+      "rank": 299,
       "ticker": "CRWD",
       "name": "CROWDSTRIKE HOLDINGS INC   A",
       "group": "S&P Soft&Sevs #10",
@@ -12163,7 +11441,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 332,
+      "rank": 300,
       "ticker": "VSEC",
       "name": "VSE CORP",
       "group": "Defense & Aerospace #7",
@@ -12184,28 +11462,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 333,
-      "ticker": "TDUP",
-      "name": "THREDUP INC   CLASS A",
-      "group": "S&P Retail #5",
-      "theme": "XRT",
-      "status": "pool",
-      "base": 5,
-      "days": 16,
-      "stage": "watch",
-      "close": 5.89,
-      "threeMonth": 39.9,
-      "adr": 5.4,
-      "tightness": 36,
-      "dollarVol": "10.1M",
-      "vs200": 2,
-      "line": 21.73,
-      "strong": true,
-      "weight": "1.32%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 334,
+      "rank": 301,
       "ticker": "ISRG",
       "name": "INTUITIVE SURGICAL INC",
       "group": "U.S. Medical Devices #9",
@@ -12226,7 +11483,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 335,
+      "rank": 302,
       "ticker": "ATEN",
       "name": "A10 NETWORKS INC",
       "group": "S&P Soft&Sevs #10",
@@ -12247,7 +11504,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 336,
+      "rank": 303,
       "ticker": "QLYS",
       "name": "QUALYS INC",
       "group": "S&P Soft&Sevs #10",
@@ -12268,28 +11525,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 337,
-      "ticker": "WINA",
-      "name": "WINMARK CORP",
-      "group": "S&P Retail #5",
-      "theme": "XRT",
-      "status": "pool",
-      "base": 5,
-      "days": 18,
-      "stage": "watch",
-      "close": 346.51,
-      "threeMonth": -9.8,
-      "adr": 4.08,
-      "tightness": 36,
-      "dollarVol": "17.8M",
-      "vs200": -16,
-      "line": 24.09,
-      "strong": true,
-      "weight": "1.34%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 338,
+      "rank": 304,
       "ticker": "SPCE",
       "name": "VIRGIN GALACTIC HOLDINGS INC SHS C",
       "group": "Defense & Aerospace #7",
@@ -12310,28 +11546,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 339,
-      "ticker": "MITK",
-      "name": "MITEK SYSTEMS INC",
-      "group": "S&P Soft&Sevs #10",
-      "theme": "XSW",
-      "status": "pool",
-      "base": 5,
-      "days": 18,
-      "stage": "watch",
-      "close": 16.78,
-      "threeMonth": 19.2,
-      "adr": 5.22,
-      "tightness": 31,
-      "dollarVol": "17.8M",
-      "vs200": 28,
-      "line": 25.45,
-      "strong": true,
-      "weight": "0.85%",
-      "lastDate": "2026-07-28"
-    },
-    {
-      "rank": 340,
+      "rank": 305,
       "ticker": "ATRO",
       "name": "ASTRONICS CORP",
       "group": "Defense & Aerospace #7",
@@ -12352,7 +11567,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 341,
+      "rank": 306,
       "ticker": "CPNG",
       "name": "COUPANG INC",
       "group": "S&P Retail #5",
@@ -12373,7 +11588,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 342,
+      "rank": 307,
       "ticker": "RBRK",
       "name": "RUBRIK INC A",
       "group": "S&P Soft&Sevs #10",
@@ -12394,7 +11609,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 343,
+      "rank": 308,
       "ticker": "CVLT",
       "name": "COMMVAULT SYSTEMS INC",
       "group": "S&P Soft&Sevs #10",
@@ -12415,7 +11630,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 344,
+      "rank": 309,
       "ticker": "MRCY",
       "name": "MERCURY SYSTEMS INC",
       "group": "Defense & Aerospace #7",
@@ -12436,7 +11651,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 345,
+      "rank": 310,
       "ticker": "LMND",
       "name": "LEMONADE INC",
       "group": "S&P Insurance #1 / U.S. Insurance #2",
@@ -12457,7 +11672,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 346,
+      "rank": 311,
       "ticker": "PRCH",
       "name": "PORCH GROUP INC",
       "group": "S&P Soft&Sevs #10",
@@ -12478,7 +11693,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 347,
+      "rank": 312,
       "ticker": "ACI",
       "name": "ALBERTSONS COS INC   CLASS A",
       "group": "S&P Retail #5",
@@ -12499,7 +11714,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 348,
+      "rank": 313,
       "ticker": "PRCT",
       "name": "PROCEPT BIOROBOTICS CORP",
       "group": "U.S. Medical Devices #9",
@@ -12520,7 +11735,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 349,
+      "rank": 314,
       "ticker": "TENB",
       "name": "TENABLE HOLDINGS INC",
       "group": "S&P Soft&Sevs #10",
@@ -12541,7 +11756,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 350,
+      "rank": 315,
       "ticker": "VOYG",
       "name": "VOYAGER TECHNOLOGIES INC CLASS A",
       "group": "Defense & Aerospace #7",
@@ -12562,7 +11777,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 351,
+      "rank": 316,
       "ticker": "RDW",
       "name": "REDWIRE CORP",
       "group": "Defense & Aerospace #7",
@@ -12583,7 +11798,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 352,
+      "rank": 317,
       "ticker": "YSS",
       "name": "YORK SPACE SYSTEMS INC",
       "group": "Defense & Aerospace #7",
@@ -12604,7 +11819,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 353,
+      "rank": 318,
       "ticker": "RCAT",
       "name": "RED CAT HOLDINGS INC",
       "group": "Defense & Aerospace #7",
@@ -12625,7 +11840,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 354,
+      "rank": 319,
       "ticker": "FLY",
       "name": "FIREFLY AEROSPACE INC",
       "group": "Defense & Aerospace #7",
@@ -12646,7 +11861,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 355,
+      "rank": 320,
       "ticker": "RKLB",
       "name": "ROCKET LAB CORP",
       "group": "Defense & Aerospace #7",
@@ -12667,7 +11882,7 @@
       "lastDate": "2026-07-28"
     },
     {
-      "rank": 356,
+      "rank": 321,
       "ticker": "LUNR",
       "name": "INTUITIVE MACHINES INC CLASS A",
       "group": "Defense & Aerospace #7",

@@ -229,7 +229,7 @@ function pickStatus({ springBurst, breakoutPullback, close, sma20, sma50, high20
   return "pool";
 }
 
-function analyzeCandles(component, sectorLabel, candles) {
+function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume) {
   const bars = candles.map((bar) => ({
     open: toNumber(bar.open),
     high: toNumber(bar.high),
@@ -268,6 +268,7 @@ function analyzeCandles(component, sectorLabel, candles) {
   const range15 = Math.max(...recent15.map((bar) => bar.high)) - Math.min(...recent15.map((bar) => bar.low));
   const tightness = Math.max(0, Math.min(100, 100 - ((range15 / last.close) * 280)));
   const avgDollar50 = average(recent50.map((bar) => bar.turnover || (bar.close * bar.volume)));
+  if (avgDollar50 < minAverageDollarVolume) return null;
   const springBurst = findSpringBurst(bars);
   const breakoutPullback = findBreakoutPullback(bars, closes, ema21Series);
   const status = pickStatus({ springBurst, breakoutPullback, close: last.close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr });
@@ -305,7 +306,7 @@ function analyzeCandles(component, sectorLabel, candles) {
   };
 }
 
-async function scanCandidates(ctx, sectors, components) {
+async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) {
   const sectorByTicker = new Map(sectors.map((sector, index) => [sector.ticker, `${sector.sector} #${index + 1}`]));
   const mergedComponents = Array.from(components.reduce((map, component) => {
     const existing = map.get(component.ticker);
@@ -329,7 +330,7 @@ async function scanCandidates(ctx, sectors, components) {
   for (const component of mergedComponents) {
     try {
       const candles = await ctx.candlesticks(`${component.ticker}.US`, 14, 260, 1, 0);
-      const analyzed = analyzeCandles(component, component.group, candles);
+      const analyzed = analyzeCandles(component, component.group, candles, minAverageDollarVolume);
       if (analyzed) candidates.push(analyzed);
     } catch (error) {
       console.warn(`skip ${component.ticker}: ${error.message}`);
@@ -356,12 +357,13 @@ const sectors = parseSectors(await sheetResponse.text()).slice(0, topSectorCount
 const strongThemeTickers = new Set(sectors.map((row) => row.ticker));
 const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_XLSX || String.raw`D:\交易为生\deepvue\ETF_holdings_full_37_etfs_corrected.xlsx`;
 const maxHoldingsPerEtf = Number(process.env.MAX_HOLDINGS_PER_ETF ?? 50);
+const minAverageDollarVolume = Number(process.env.MIN_AVERAGE_DOLLAR_VOLUME ?? 20_000_000);
 const components = parseLocalComponentsFromWorkbook(localHoldingsPath, strongThemeTickers, maxHoldingsPerEtf);
 const activeComponents = components;
 const ctx = QuoteContext.new(Config.fromApikeyEnv());
 const quotes = await quoteSymbols(ctx, sectors.map((row) => row.ticker));
 const stockQuotes = await quoteSymbols(ctx, activeComponents.map((row) => row.ticker));
-const candidates = await scanCandidates(ctx, sectors, activeComponents);
+const candidates = await scanCandidates(ctx, sectors, activeComponents, minAverageDollarVolume);
 
 const feed = {
   updatedAt: new Date().toISOString(),
@@ -377,4 +379,4 @@ mkdirSync("work", { recursive: true });
 mkdirSync("public", { recursive: true });
 writeFileSync(join("work", "screener-feed.json"), JSON.stringify(feed, null, 2));
 writeFileSync(join("public", "screener-feed.json"), JSON.stringify(feed, null, 2));
-console.log(`synced sectors=${sectors.length} components=${components.length} activeComponents=${activeComponents.length} candidates=${candidates.length} quotes=${Object.keys(quotes).length} stockQuotes=${Object.keys(stockQuotes).length}`);
+console.log(`synced sectors=${sectors.length} components=${components.length} activeComponents=${activeComponents.length} candidates=${candidates.length} minAverageDollarVolume=${minAverageDollarVolume} quotes=${Object.keys(quotes).length} stockQuotes=${Object.keys(stockQuotes).length}`);
