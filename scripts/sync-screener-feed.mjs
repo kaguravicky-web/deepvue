@@ -229,6 +229,16 @@ function pickStatus({ springBurst, breakoutPullback, close, sma20, sma50, high20
   return "pool";
 }
 
+function breakoutSignalAt(bars, index) {
+  if (index < 50) return null;
+  const bar = bars[index];
+  const pivot = Math.max(...bars.slice(index - 20, index).map((item) => item.high));
+  const averageVolume50 = average(bars.slice(index - 50, index).map((item) => item.volume));
+  const volumeRatio = averageVolume50 ? bar.volume / averageVolume50 : 0;
+  const closePosition = (bar.close - bar.low) / Math.max(bar.high - bar.low, 0.01);
+  return { valid: bar.close > pivot && volumeRatio >= 1.5 && closePosition >= 0.6, pivot, volumeRatio, closePosition, date: bar.date };
+}
+
 function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume) {
   const bars = candles.map((bar) => ({
     open: toNumber(bar.open),
@@ -266,12 +276,23 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
   const vs200 = sma200 ? ((last.close / sma200) - 1) * 100 : null;
   const line = high20 ? Math.max(0, ((high20 - last.close) / last.close) * 100) : 0;
   const range15 = Math.max(...recent15.map((bar) => bar.high)) - Math.min(...recent15.map((bar) => bar.low));
-  const tightness = Math.max(0, Math.min(100, 100 - ((range15 / last.close) * 280)));
+  const range15Pct = (range15 / last.close) * 100;
+  const tightness = Math.max(0, Math.min(100, 100 - (range15Pct * 2.8)));
   const avgDollar50 = average(recent50.map((bar) => bar.turnover || (bar.close * bar.volume)));
   if (avgDollar50 < minAverageDollarVolume) return null;
   const springBurst = findSpringBurst(bars);
-  const breakoutPullback = findBreakoutPullback(bars, closes, ema21Series);
-  const status = pickStatus({ springBurst, breakoutPullback, close: last.close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr });
+  const todayBreakout = breakoutSignalAt(bars, bars.length - 1);
+  let recentBreakout = null;
+  for (let index = Math.max(50, bars.length - 10); index < bars.length - 1; index += 1) {
+    const signal = breakoutSignalAt(bars, index);
+    if (signal?.valid) recentBreakout = signal;
+  }
+  const pivot = todayBreakout?.pivot ?? recentBreakout?.pivot ?? Math.max(...bars.slice(-21, -1).map((bar) => bar.high));
+  const distanceToPivot = ((pivot - last.close) / last.close) * 100;
+  const failedBreakout = (last.high > pivot && last.close < pivot) || (recentBreakout && last.close < recentBreakout.pivot);
+  const holding = recentBreakout && last.close >= recentBreakout.pivot && last.close >= ema21Series.at(-1) * 0.98;
+  const setup = last.close > sma20 && last.close > sma50 && distanceToPivot >= 0 && distanceToPivot <= 5 && range15Pct <= 12 && threeMonth > 8;
+  const status = failedBreakout ? "fakeout" : todayBreakout?.valid ? "breakout" : holding ? "holding" : setup ? "anticipation" : "pool";
   const daysSinceHigh20 = Math.max(1, recent20.length - 1 - recent20.findLastIndex((bar) => bar.high === high20));
   const base = line < 4 && tightness > 70 ? 2 : line < 9 && tightness > 55 ? 3 : line < 16 ? 4 : 5;
   const ob = last.volume > average(bars.slice(-50, -1).map((bar) => bar.volume)) * 1.6 && last.close > last.open;
@@ -293,15 +314,19 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
     tightness: Math.round(tightness),
     dollarVol: formatDollarVolume(avgDollar50),
     vs200: vs200 === null ? null : Math.round(vs200),
-    line: Number(line.toFixed(2)),
-    alert: springBurst ? "shakeout+MB" : wedge && ob ? "wedge+OB" : undefined,
+    line: Number(Math.max(0, distanceToPivot).toFixed(2)),
+    range15Pct: Number(range15Pct.toFixed(2)),
+    relativeVolume: Number((todayBreakout?.volumeRatio ?? (last.volume / average(bars.slice(-51, -1).map((bar) => bar.volume)))).toFixed(2)),
+    closePosition: Number(((todayBreakout?.closePosition ?? ((last.close - last.low) / Math.max(last.high - last.low, 0.01))) * 100).toFixed(0)),
+    pivot: Number(pivot.toFixed(2)),
+    alert: springBurst ? "Spring" : wedge && ob ? "wedge+OB" : undefined,
     strong: true,
     weight: component.weight,
-    breakoutDate: breakoutPullback?.breakoutDate,
+    breakoutDate: todayBreakout?.valid ? todayBreakout.date : recentBreakout?.date,
     springDate: springBurst?.springDate,
     burstDate: springBurst?.burstDate,
     liquidityLevel: springBurst?.liquidityLevel ? Number(springBurst.liquidityLevel.toFixed(2)) : undefined,
-    ema21: breakoutPullback?.ema21 ? Number(breakoutPullback.ema21.toFixed(2)) : undefined,
+    ema21: Number(ema21Series.at(-1).toFixed(2)),
     lastDate: last.date,
   };
 }
@@ -337,7 +362,7 @@ async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) 
     }
   }
   candidates.sort((a, b) => {
-    const statusWeight = { spring: 0, fakeout: 1, bpr: 2, anticipation: 3, pool: 4 };
+    const statusWeight = { breakout: 0, holding: 1, fakeout: 2, anticipation: 3, pool: 4, spring: 5, bpr: 5 };
     return statusWeight[a.status] - statusWeight[b.status] || a.line - b.line || b.threeMonth - a.threeMonth;
   });
   return candidates.map((candidate, index) => ({ ...candidate, rank: index + 1 }));
