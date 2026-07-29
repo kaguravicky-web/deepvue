@@ -4,10 +4,14 @@ import { Config, QuoteContext } from "longport";
 import XLSX from "xlsx";
 
 function loadLocalEnv() {
-  const text = readFileSync(".env.local", "utf8");
-  for (const line of text.split(/\r?\n/)) {
-    const match = line.match(/^([^=#]+)=(.*)$/);
-    if (match) process.env[match[1]] = match[2];
+  try {
+    const text = readFileSync(".env.local", "utf8");
+    for (const line of text.split(/\r?\n/)) {
+      const match = line.match(/^([^=#]+)=(.*)$/);
+      if (match && !process.env[match[1]]) process.env[match[1]] = match[2];
+    }
+  } catch {
+    // Hosted or managed environments can provide credentials directly.
   }
 }
 
@@ -43,16 +47,16 @@ function parseCsv(text) {
 }
 
 function parseSectors(csv) {
-  return parseCsv(csv).slice(1).map((row) => ({
-    sector: row[0] ?? "",
-    oneDay: row[1] ?? "",
-    fiveDay: row[3] ?? "",
-    oneMonth: row[5] ?? "",
-    status: row[15] ?? "",
-    atrExtension: row[16] ?? "",
-    ticker: row[17] ?? "",
-    price: row[18] ?? "",
-  })).filter((row) => row.sector && row.ticker);
+  const rows = parseCsv(csv);
+  const headerIndex = rows.findIndex((row) => String(row[0]).trim().toLowerCase() === "sector");
+  return rows.slice(headerIndex + 1).map((row) => {
+    if (row[17]) {
+      return { sector: row[0] ?? "", oneDay: row[1] ?? "", fiveDay: row[3] ?? "", oneMonth: row[5] ?? "", status: row[15] ?? "", atrExtension: row[16] ?? "", ticker: row[17] ?? "", price: row[18] ?? "" };
+    }
+    const label = String(row[0] ?? "").trim();
+    const embeddedTicker = label.match(/^(.*?)\s*\(([A-Z][A-Z0-9.-]*)\)$/);
+    return { sector: embeddedTicker?.[1]?.trim() ?? label, oneDay: row[2] ?? "", fiveDay: "", oneMonth: row[4] ?? "", status: row[14] ?? "", atrExtension: "", ticker: embeddedTicker?.[2] ?? "", price: row[1] ?? "" };
+  }).filter((row) => row.sector && row.ticker);
 }
 
 function parseComponents(csv) {
@@ -347,10 +351,11 @@ if (!sheetResponse.ok) {
   throw new Error(`Google Sheet read failed: ${sheetResponse.status}`);
 }
 
-const sectors = parseSectors(await sheetResponse.text()).slice(0, 20);
+const topSectorCount = Number(process.env.TOP_SECTOR_COUNT ?? 10);
+const sectors = parseSectors(await sheetResponse.text()).slice(0, topSectorCount);
 const strongThemeTickers = new Set(sectors.map((row) => row.ticker));
 const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_XLSX || String.raw`D:\交易为生\deepvue\ETF_holdings_full_37_etfs_corrected.xlsx`;
-const maxHoldingsPerEtf = Number(process.env.MAX_HOLDINGS_PER_ETF ?? 10);
+const maxHoldingsPerEtf = Number(process.env.MAX_HOLDINGS_PER_ETF ?? 50);
 const components = parseLocalComponentsFromWorkbook(localHoldingsPath, strongThemeTickers, maxHoldingsPerEtf);
 const activeComponents = components;
 const ctx = QuoteContext.new(Config.fromApikeyEnv());

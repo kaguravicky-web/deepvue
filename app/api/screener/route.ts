@@ -61,16 +61,15 @@ function parseCsv(text: string) {
 
 function parseSectors(csv: string): SectorRow[] {
   const rows = parseCsv(csv);
-  return rows.slice(1).map((row) => ({
-    sector: row[0] ?? "",
-    oneDay: row[1] ?? "",
-    fiveDay: row[3] ?? "",
-    oneMonth: row[5] ?? "",
-    status: row[15] ?? "",
-    atrExtension: row[16] ?? "",
-    ticker: row[17] ?? "",
-    price: row[18] ?? "",
-  })).filter((row) => row.sector && row.ticker);
+  const headerIndex = rows.findIndex((row) => String(row[0]).trim().toLowerCase() === "sector");
+  return rows.slice(headerIndex + 1).map((row) => {
+    if (row[17]) {
+      return { sector: row[0] ?? "", oneDay: row[1] ?? "", fiveDay: row[3] ?? "", oneMonth: row[5] ?? "", status: row[15] ?? "", atrExtension: row[16] ?? "", ticker: row[17] ?? "", price: row[18] ?? "" };
+    }
+    const label = String(row[0] ?? "").trim();
+    const embeddedTicker = label.match(/^(.*?)\s*\(([A-Z][A-Z0-9.-]*)\)$/);
+    return { sector: embeddedTicker?.[1]?.trim() ?? label, oneDay: row[2] ?? "", fiveDay: "", oneMonth: row[4] ?? "", status: row[14] ?? "", atrExtension: "", ticker: embeddedTicker?.[2] ?? "", price: row[1] ?? "" };
+  }).filter((row) => row.sector && row.ticker);
 }
 
 export async function GET() {
@@ -95,7 +94,8 @@ export async function GET() {
     return NextResponse.json({ error: "Could not read the Google Sheet." }, { status: 502 });
   }
 
-  const sectors = parseSectors(await sheetResponse.text()).slice(0, 20);
+  const topSectorCount = Number(process.env.TOP_SECTOR_COUNT ?? 10);
+  const sectors = parseSectors(await sheetResponse.text()).slice(0, topSectorCount);
   return NextResponse.json({
     updatedAt: new Date().toISOString(),
     sectors,
