@@ -1,6 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { Config, QuoteContext } from "longport";
+import { Config, QuoteContext, ScreenerContext } from "longport";
 import XLSX from "xlsx";
 
 function loadLocalEnv() {
@@ -68,13 +68,12 @@ function parseComponents(csv) {
   })).filter((row) => row.themeTicker && /^[A-Z][A-Z0-9.-]*$/.test(row.ticker));
 }
 
-function parseLocalComponentsFromWorkbook(path, allowedThemes, maxPerTheme) {
+function parseLocalComponentsFromWorkbook(path) {
   const workbook = XLSX.readFile(path, { cellDates: false });
   const worksheet = workbook.Sheets.All_Holdings ?? workbook.Sheets[workbook.SheetNames[0]];
   if (!worksheet) throw new Error(`No worksheet found in ${path}`);
 
   const rows = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
-  const counts = new Map();
   const components = [];
 
   for (const row of rows) {
@@ -85,18 +84,85 @@ function parseLocalComponentsFromWorkbook(path, allowedThemes, maxPerTheme) {
     const weightNumber = Number(rawWeight);
     const weight = Number.isFinite(weightNumber) ? `${weightNumber.toFixed(2)}%` : String(rawWeight ?? "").trim();
 
-    if (!allowedThemes.has(themeTicker)) continue;
     if (!/^[A-Z][A-Z0-9.-]*$/.test(ticker)) continue;
     if (ticker.includes("CASH") || ticker.includes("USD")) continue;
-
-    const currentCount = counts.get(themeTicker) ?? 0;
-    if (maxPerTheme > 0 && currentCount >= maxPerTheme) continue;
-
     components.push({ themeTicker, ticker, name, weight });
-    counts.set(themeTicker, currentCount + 1);
   }
 
   return components;
+}
+
+function isTradableStock(item) {
+  const ticker = String(item.counterId ?? item.counter_id ?? "").split("/").at(-1)?.toUpperCase() ?? "";
+  const name = String(item.name ?? "");
+  if (!/^[A-Z][A-Z0-9.-]*$/.test(ticker)) return false;
+  if (/\.(WT|WS|RT|U)$/.test(ticker) || /-(WT|WS|RT|U)$/.test(ticker)) return false;
+  return !/\b(ETF|ETN|WARRANTS?|RIGHTS?|UNITS?|PREFERRED|BOND|NOTES?)\b/i.test(name);
+}
+
+async function fetchLiquidUniverse(ctx, currentDollarVolumeFloor) {
+  const pageSize = 200;
+  const condition = [{ key: "balance", min: String(Math.round(currentDollarVolumeFloor / 1000)), max: "", techValues: "" }];
+  const stocks = [];
+  let page = 1;
+  let total = Infinity;
+  while ((page - 1) * pageSize < total) {
+    let response;
+    for (let attempt = 1; attempt <= 4; attempt += 1) {
+      try {
+        response = await ctx.screenerSearch("US", null, condition, [], page, pageSize);
+        break;
+      } catch (error) {
+        if (attempt === 4) throw error;
+        await new Promise((resolve) => setTimeout(resolve, attempt * 2500));
+      }
+    }
+    const payload = typeof response.data === "string" ? JSON.parse(response.data) : (response.data ?? response);
+    total = Number(payload.total ?? payload.totalCount ?? payload.total_count ?? 0);
+    const items = payload.items ?? [];
+    stocks.push(...items.filter(isTradableStock).map((item) => ({ ticker: String(item.counterId ?? item.counter_id).split("/").at(-1).toUpperCase(), name: String(item.name ?? "").trim() })));
+    if (!items.length) break;
+    page += 1;
+    await new Promise((resolve) => setTimeout(resolve, 900));
+  }
+  return Array.from(new Map(stocks.map((stock) => [stock.ticker, stock])).values());
+}
+
+function consolidateOverlappingThemes(sectors, holdings, overlapThreshold = 0.7) {
+  const activeTickers = new Set(sectors.map((sector) => sector.ticker));
+  const sets = new Map([...activeTickers].map((ticker) => [ticker, new Set()]));
+  for (const row of holdings) if (sets.has(row.themeTicker)) sets.get(row.themeTicker).add(row.ticker);
+  const parent = new Map([...activeTickers].map((ticker) => [ticker, ticker]));
+  const find = (ticker) => parent.get(ticker) === ticker ? ticker : (parent.set(ticker, find(parent.get(ticker))), parent.get(ticker));
+  const union = (a, b) => { const rootA = find(a); const rootB = find(b); if (rootA !== rootB) parent.set(rootB, rootA); };
+  const tickers = [...activeTickers];
+  for (let i = 0; i < tickers.length; i += 1) for (let j = i + 1; j < tickers.length; j += 1) {
+    const a = sets.get(tickers[i]); const b = sets.get(tickers[j]);
+    const intersection = [...a].filter((ticker) => b.has(ticker)).length;
+    if (intersection / Math.max(1, Math.min(a.size, b.size)) >= overlapThreshold) union(tickers[i], tickers[j]);
+  }
+  const clusters = new Map();
+  for (const ticker of tickers) { const root = find(ticker); if (!clusters.has(root)) clusters.set(root, []); clusters.get(root).push(ticker); }
+  const result = new Map();
+  for (const members of clusters.values()) {
+    const names = members.map((ticker) => sectors.find((sector) => sector.ticker === ticker)?.sector ?? ticker);
+    const cluster = { theme: members.join("+"), group: names.join(" + ") };
+    for (const ticker of members) result.set(ticker, cluster);
+  }
+  return result;
+}
+
+function mapUniverseToThemes(universe, sectors, holdings) {
+  const activeTickers = new Set(sectors.map((sector) => sector.ticker));
+  const themeClusters = consolidateOverlappingThemes(sectors, holdings);
+  const byStock = new Map();
+  for (const row of holdings) { if (!byStock.has(row.ticker)) byStock.set(row.ticker, []); byStock.get(row.ticker).push(row); }
+  return universe.map((stock) => {
+    const rows = byStock.get(stock.ticker) ?? [];
+    const activeRows = rows.filter((row) => activeTickers.has(row.themeTicker));
+    const clusters = Array.from(new Map(activeRows.map((row) => { const cluster = themeClusters.get(row.themeTicker); return [cluster.theme, cluster]; })).values());
+    return { ...stock, themeTicker: clusters.map((cluster) => cluster.theme).join("+") || "UNMAPPED", group: clusters.map((cluster) => cluster.group).join(" + ") || "No active Strong/Uptrend theme", weight: activeRows.map((row) => row.weight).filter(Boolean).join(" / "), etfTags: [...new Set(rows.map((row) => row.themeTicker))], strong: activeRows.length > 0 };
+  });
 }
 
 async function quoteSymbols(ctx, tickers) {
@@ -320,7 +386,8 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
     closePosition: Number(((todayBreakout?.closePosition ?? ((last.close - last.low) / Math.max(last.high - last.low, 0.01))) * 100).toFixed(0)),
     pivot: Number(pivot.toFixed(2)),
     alert: springBurst ? "Spring" : wedge && ob ? "wedge+OB" : undefined,
-    strong: true,
+    strong: component.strong,
+    etfTags: component.etfTags,
     weight: component.weight,
     breakoutDate: todayBreakout?.valid ? todayBreakout.date : recentBreakout?.date,
     springDate: springBurst?.springDate,
@@ -332,34 +399,21 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
 }
 
 async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) {
-  const sectorByTicker = new Map(sectors.map((sector, index) => [sector.ticker, `${sector.sector} #${index + 1}`]));
-  const mergedComponents = Array.from(components.reduce((map, component) => {
-    const existing = map.get(component.ticker);
-    if (!existing) {
-      map.set(component.ticker, { ...component, themes: [component.themeTicker], names: [sectorByTicker.get(component.themeTicker) ?? component.themeTicker], weights: [component.weight].filter(Boolean) });
-      return map;
-    }
-    if (!existing.themes.includes(component.themeTicker)) existing.themes.push(component.themeTicker);
-    const sectorName = sectorByTicker.get(component.themeTicker) ?? component.themeTicker;
-    if (!existing.names.includes(sectorName)) existing.names.push(sectorName);
-    if (component.weight) existing.weights.push(component.weight);
-    return map;
-  }, new Map()).values()).map((component) => ({
-    ...component,
-    themeTicker: component.themes.join("/"),
-    group: component.names.join(" / "),
-    weight: component.weights.join(" / "),
-  }));
-
   const candidates = [];
-  for (const component of mergedComponents) {
-    try {
-      const candles = await ctx.candlesticks(`${component.ticker}.US`, 14, 260, 1, 0);
-      const analyzed = analyzeCandles(component, component.group, candles, minAverageDollarVolume);
-      if (analyzed) candidates.push(analyzed);
-    } catch (error) {
-      console.warn(`skip ${component.ticker}: ${error.message}`);
-    }
+  const concurrency = Number(process.env.CANDLE_SCAN_CONCURRENCY ?? 5);
+  for (let index = 0; index < components.length; index += concurrency) {
+    const batch = components.slice(index, index + concurrency);
+    const results = await Promise.all(batch.map(async (component) => {
+      try {
+        const candles = await ctx.candlesticks(`${component.ticker}.US`, 14, 260, 1, 0);
+        return analyzeCandles(component, component.group, candles, minAverageDollarVolume);
+      } catch (error) {
+        console.warn(`skip ${component.ticker}: ${error.message}`);
+        return null;
+      }
+    }));
+    candidates.push(...results.filter(Boolean));
+    if (index && index % 250 === 0) console.log(`scanned ${index}/${components.length}, passed ${candidates.length}`);
   }
   candidates.sort((a, b) => {
     const statusWeight = { breakout: 0, holding: 1, fakeout: 2, anticipation: 3, pool: 4, spring: 5, bpr: 5 };
@@ -371,23 +425,24 @@ async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) 
 loadLocalEnv();
 process.env.LONGPORT_PRINT_QUOTE_PACKAGES = "false";
 
-const sheetUrl = `https://docs.google.com/spreadsheets/d/${process.env.GOOGLE_SHEET_ID}/export?format=csv&gid=${process.env.GOOGLE_SHEET_GID}`;
+const sheetId = process.env.GOOGLE_SHEET_ID || "1zXbIfknybtivC5hgkqthyhqwK9OjYCKVadvJTPZrHqE";
+const sheetGid = process.env.GOOGLE_SHEET_GID || "1076580676";
+const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${sheetGid}`;
 const sheetResponse = await fetch(sheetUrl);
 if (!sheetResponse.ok) {
   throw new Error(`Google Sheet read failed: ${sheetResponse.status}`);
 }
 
-const topSectorCount = Number(process.env.TOP_SECTOR_COUNT ?? 10);
-const sectors = parseSectors(await sheetResponse.text()).slice(0, topSectorCount);
-const strongThemeTickers = new Set(sectors.map((row) => row.ticker));
+const sectors = parseSectors(await sheetResponse.text()).filter((row) => /Strong Trend|Uptrend/i.test(row.status));
 const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_XLSX || String.raw`D:\交易为生\deepvue\ETF_holdings_full_37_etfs_corrected.xlsx`;
-const maxHoldingsPerEtf = Number(process.env.MAX_HOLDINGS_PER_ETF ?? 50);
 const minAverageDollarVolume = Number(process.env.MIN_AVERAGE_DOLLAR_VOLUME ?? 20_000_000);
-const components = parseLocalComponentsFromWorkbook(localHoldingsPath, strongThemeTickers, maxHoldingsPerEtf);
-const activeComponents = components;
+const universePrefilterDollarVolume = Number(process.env.UNIVERSE_PREFILTER_DOLLAR_VOLUME ?? 5_000_000);
+const components = parseLocalComponentsFromWorkbook(localHoldingsPath);
 const ctx = QuoteContext.new(Config.fromApikeyEnv());
+const screenerCtx = ScreenerContext.new(Config.fromApikeyEnv());
+const universe = await fetchLiquidUniverse(screenerCtx, universePrefilterDollarVolume);
+const activeComponents = mapUniverseToThemes(universe, sectors, components);
 const quotes = await quoteSymbols(ctx, sectors.map((row) => row.ticker));
-const stockQuotes = await quoteSymbols(ctx, activeComponents.map((row) => row.ticker));
 const candidates = await scanCandidates(ctx, sectors, activeComponents, minAverageDollarVolume);
 
 const feed = {
@@ -397,11 +452,12 @@ const feed = {
   activeComponents,
   candidates,
   quotes,
-  stockQuotes,
+  universeCount: universe.length,
+  stockQuotes: {},
 };
 
 mkdirSync("work", { recursive: true });
 mkdirSync("public", { recursive: true });
 writeFileSync(join("work", "screener-feed.json"), JSON.stringify(feed, null, 2));
 writeFileSync(join("public", "screener-feed.json"), JSON.stringify(feed, null, 2));
-console.log(`synced sectors=${sectors.length} components=${components.length} activeComponents=${activeComponents.length} candidates=${candidates.length} minAverageDollarVolume=${minAverageDollarVolume} quotes=${Object.keys(quotes).length} stockQuotes=${Object.keys(stockQuotes).length}`);
+console.log(`synced sectors=${sectors.length} holdings=${components.length} universe=${universe.length} candidates=${candidates.length} activeMapped=${candidates.filter((item) => item.strong).length} minAverageDollarVolume=${minAverageDollarVolume}`);

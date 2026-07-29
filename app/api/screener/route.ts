@@ -94,8 +94,7 @@ export async function GET() {
     return NextResponse.json({ error: "Could not read the Google Sheet." }, { status: 502 });
   }
 
-  const topSectorCount = Number(process.env.TOP_SECTOR_COUNT ?? 10);
-  const sectors = parseSectors(await sheetResponse.text()).slice(0, topSectorCount);
+  const sectors = parseSectors(await sheetResponse.text()).filter((row) => /Strong Trend|Uptrend/i.test(row.status));
   return NextResponse.json({
     updatedAt: new Date().toISOString(),
     sectors,

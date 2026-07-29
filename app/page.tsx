@@ -103,7 +103,7 @@ export default function Home() {
   const clusters = useMemo<Cluster[]>(() => {
     const sectorByTicker = new Map((feed?.sectors ?? []).map((sector, index) => [sector.ticker, { ...sector, rank: sector.rank ?? index + 1 }]));
     const buckets = new Map<string, { label: string; theme: string; group: string; industry: string; rank: number | null; all: EnrichedCandidate[] }>();
-    for (const item of tightnessFiltered) for (const part of splitCandidate(item)) {
+    for (const item of tightnessFiltered.filter((candidate) => candidate.strong)) for (const part of splitCandidate(item)) {
       const label = groupBy === "industry" ? part.industry : part.group;
       const key = `${groupBy}:${label}`;
       const bucket = buckets.get(key) ?? { label, theme: part.theme, group: part.group, industry: part.industry, rank: extractRank(part.group), all: [] };
