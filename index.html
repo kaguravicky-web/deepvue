@@ -1,95 +1,1342 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DeepVue · Cluster Monitor</title>
-<style>
-:root{--bg:#f6f7f4;--panel:#fff;--line:#e5e7df;--text:#2b3038;--muted:#7d8490;--green:#2f9e73;--blue:#526fd0;--cyan:#45a9bb;--pink:#cf4f97}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}.shell{min-height:100vh;padding:18px}.workspace{overflow:hidden;border:1px solid var(--line);border-radius:9px;background:#fffc;box-shadow:0 18px 50px #2a2e3514}.titlebar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 20px 12px;border-bottom:1px solid var(--line)}h1{margin:0;font-size:22px}h1 span{color:var(--muted);font-weight:500}.eyebrow{margin-bottom:5px;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.16em}.titlebar p,.note{margin:4px 0 0;color:var(--muted);font-size:12px}.sync{color:var(--muted);font-size:12px}.tabs{display:flex;padding:0 16px;border-bottom:1px solid var(--line)}button,input,select{font:inherit}.tabs button{border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);padding:12px 14px 10px;font-weight:800;cursor:pointer}.tabs button.active{border-color:var(--blue);color:var(--blue)}.summary{display:grid;grid-template-columns:repeat(5,minmax(100px,1fr));gap:1px;overflow:auto;background:var(--line);border-bottom:1px solid var(--line)}.summary div{display:flex;align-items:baseline;gap:8px;min-width:100px;background:#fff;padding:13px 18px}.summary b{font-size:22px}.summary span{color:var(--muted);font-size:12px}.summary .s b{color:var(--blue)}.summary .b b{color:var(--green)}.summary .h b{color:var(--cyan)}.summary .f b{color:var(--pink)}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:#fbfbf8}.toolbar input,.toolbar select{height:34px;border:1px solid #dedfd9;border-radius:7px;background:white;color:#4d545e;padding:0 10px}.toolbar input{min-width:240px;margin-right:auto}.toolbar label{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;font-weight:700}.layout{display:grid;grid-template-columns:1fr;min-width:0;min-height:520px}.table-wrap{min-width:0;overflow:auto}table{width:100%;min-width:1160px;border-collapse:collapse;font-size:13px}thead{position:sticky;top:0;z-index:2;background:#fbfbf8}th,td{border-bottom:1px solid #ebece7;padding:10px 9px;text-align:left;white-space:nowrap}th{color:#9aa0a9;font-size:11px}td{color:#4d545e;font-weight:620}tbody tr{cursor:pointer}tbody tr:hover,tr.active{background:#f6f8ff}.group{display:grid;gap:3px;min-width:170px}.group span{color:var(--muted);font-size:11px}.score{font-size:20px;font-weight:900}.score small{font-size:10px}.hot{color:#d4622c}.strong{color:var(--green)}.forming{color:#b18429}.quiet{color:#9299a2}.count{display:inline-grid;min-width:28px;height:25px;place-items:center;border-radius:7px;font-weight:850}.cs{background:#e8edff;color:var(--blue)}.cb{background:#def2e9;color:var(--green)}.ch{background:#dff5f8;color:#278a9b}.cf{background:#f8dff0;color:var(--pink)}.tickers{display:flex;flex-wrap:wrap;gap:5px;max-width:165px}.tickers a{border-radius:5px;background:#f0f3ff;color:var(--blue);padding:4px 6px;font-family:Consolas,monospace;font-size:12px;font-weight:850;text-decoration:none}.detail{display:grid;grid-template-columns:minmax(240px,320px) minmax(360px,1fr) minmax(320px,1fr);gap:18px;align-items:start;border-top:1px solid var(--line);background:#fbfbf8;padding:16px}.detail-head{display:grid;grid-template-columns:68px 1fr;gap:14px;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line)}.detail-head>div:first-child{display:grid;justify-items:center}.detail-head span{color:var(--muted);font-size:9px;font-weight:900}.detail-head strong{font-size:30px}.detail h2{margin:0;font-size:16px}.detail p{margin:4px 0 0;color:var(--muted);font-size:11px}.rules{display:grid;gap:2px;margin-top:0}.rule{display:grid;grid-template-columns:18px 1fr auto;gap:6px;align-items:center;border-radius:6px;color:#9aa0a9;padding:6px;font-size:11px}.rule.hit{background:#edf7f2;color:#318565}.rule b{font-size:11px}.ladder{margin-top:0}.ladder h3{margin:0 0 8px;font-size:13px}.ladder-row{display:grid;grid-template-columns:80px 1fr;min-height:35px;border-top:1px solid #e8e9e4;padding:8px 0}.ladder-row>span{color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase}.note{margin:0;border-top:1px solid var(--line);background:#fbfbf8;padding:10px 16px;line-height:1.5}.stock-view{display:none}.stock-view table{min-width:1000px}.pill{border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800}.setup{background:#e8edff;color:var(--blue)}.breakout{background:#def2e9;color:var(--green)}.holding{background:#dff5f8;color:#278a9b}.fakeout{background:#f8dff0;color:var(--pink)}.watch{background:#eceee9;color:#66707a}.gain{color:var(--green)}.loss{color:#c65062}
-.definitions{border-top:1px solid var(--line);background:#fbfbf8;padding:16px}.definitions h2{margin:0;font-size:15px}.definitions-intro{margin:5px 0 14px;color:var(--muted);font-size:12px}.definitions-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.definitions article{border:1px solid var(--line);border-radius:7px;background:#fff;padding:11px}.definitions b{font-size:12px}.definitions article p{margin:5px 0 0;color:#747c87;font-size:11px;line-height:1.55}.definitions .note{margin:14px -16px -16px}@media(max-width:900px){.shell{padding:8px}.layout{grid-template-columns:1fr}.detail{display:block;border-top:1px solid var(--line)}.rules{margin-top:12px}.ladder{margin-top:17px}.definitions-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.titlebar{align-items:flex-start;flex-direction:column;padding:14px}.titlebar h1{font-size:19px}.toolbar{align-items:stretch}.toolbar input{width:100%;min-width:0;margin:0}.toolbar label{flex:1 1 120px}.toolbar select{flex:1;min-width:0}.table-wrap{max-width:calc(100vw - 18px)}.detail{padding:14px}.definitions-grid{grid-template-columns:1fr}}
-</style></head><body><main class="shell"><section class="workspace"><header class="titlebar"><div><div class="eyebrow">MARKET BREADTH</div><h1>Cluster Monitor <span>/ Group Move</span></h1><p>寻找同一板块中“前排突破 + 后排准备”的资金扩散结构</p></div><div class="sync" id="sync">读取中…</div></header><nav class="tabs"><button class="active" data-view="cluster">Cluster Monitor</button><button data-view="stocks">股票明细</button></nav>
-<section class="cluster-view"><div class="summary"><div><b id="groups">0</b><span>活跃群组</span></div><div class="s"><b id="setups">0</b><span>Setup</span></div><div class="b"><b id="breakouts">0</b><span>Breakout</span></div><div class="h"><b id="holdings">0</b><span>Holding</span></div><div class="f"><b id="fakeouts">0</b><span>Fakeout</span></div></div><div class="toolbar"><input id="q" placeholder="搜索群组、主题或股票"><label title="Choose how stocks are combined into rows">Group By<select id="groupBy"><option value="group">Group (ranked group)</option><option value="industry">Industry (business)</option></select></label><label>Tightness<select id="tightness"><option value="0">Any 15D Range</option><option value="8">15D Range ≤ 8%</option><option value="12">15D Range ≤ 12%</option><option value="16">15D Range ≤ 16%</option></select></label><label title="Choose what appears first in the table">Sort By<select id="sort"><option value="score">Cluster Score (highest)</option><option value="breakout">Breakout Count</option><option value="setup">Setup Count</option><option value="holding">Holding Count</option><option value="fakeout">Fakeout Count</option><option value="rank">Group Rank (best)</option></select></label><label>Min Score<select id="min"><option>0</option><option>4</option><option>7</option><option>9</option></select></label></div><div class="layout"><div class="table-wrap"><table><thead><tr><th>群组 / ETF</th><th>Score</th><th>Setup</th><th>Breakout</th><th>Holding</th><th>Fakeout</th><th>Leader</th><th>已突破</th><th>等待突破</th><th>弱势对照</th></tr></thead><tbody id="clusterRows"></tbody></table></div><aside class="detail" id="detail"></aside></div><section class="definitions"><h2>Notes · Exact Scanner Rules</h2><p class="definitions-intro">主状态按 Fakeout → Breakout → Holding → Setup → Watch 判定，每只股票只能有一个主状态；Spring 只作为额外标签。</p><div class="definitions-grid"><article><b>Tightness · 15D Range</b><p>(15日最高价 − 15日最低价) ÷ 最新收盘价 ×100。筛选器可选择 ≤8%、≤12% 或 ≤16%；越小越紧。</p></article><article><b>Setup</b><p>收盘 &gt; SMA20 和 SMA50；距离此前20日最高价为0–5%；15D Range ≤12%；三个月涨幅 &gt;8%。</p></article><article><b>Breakout</b><p>收盘 &gt; 此前20日最高价；当日量 ÷ 前50日均量 ≥1.5；收盘位置 (收盘−最低)÷(最高−最低) ≥60%。</p></article><article><b>Holding</b><p>过去10日出现有效 Breakout；最新收盘 ≥ breakout pivot；最新收盘 ≥ 21EMA ×98%。</p></article><article><b>Fakeout</b><p>当日最高刺穿 pivot 但收盘 &lt; pivot；或过去10日出现有效 Breakout、最新收盘跌回 pivot 下方。</p></article><article><b>Spring · Secondary Tag</b><p>跌破此前约30日支撑至少1%并收回；随后1–5日成交量 &gt;50日均量×1.15，且涨幅≥4%或收复短期高点。它不改变主状态。</p></article></div><p class="note">Universe 要求50日平均每日成交额 ≥ $20M。Cluster Score 用于集中注意力，不是买入信号。</p></section></section>
-<section class="stock-view"><div class="table-wrap"><table><thead><tr><th>#</th><th>代码</th><th>Group</th><th>Theme</th><th>Cluster 状态</th><th>原始 setup</th><th>RS</th><th>3个月</th><th>距高点</th><th>提示</th></tr></thead><tbody id="stockRows"></tbody></table></div></section></section></main>
-<script>
-const app={feed:null,data:[],clusters:[],active:null,groupBy:'group',sort:'score',min:0,maxRange:0,q:''};const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const pct=s=>Number.parseFloat(s||'')||0;const strip=s=>s.replace(/\s+#\d+\s*$/,'').trim();const rank=s=>{const m=s.match(/#(\d+)/);return m?+m[1]:null};const days=(a,b)=>!a||!b?999:Math.abs(new Date(a)-new Date(b))/864e5;const state=x=>x.status==='fakeout'?'fakeout':x.status==='breakout'?'breakout':x.status==='holding'||x.status==='bpr'?'holding':x.status==='anticipation'?'setup':x.status==='spring'?(days(x.burstDate||x.breakoutDate||x.lastDate,app.feed?.updatedAt)<=1.5?'breakout':'holding'):'watch';const scoreClass=n=>n>=9?'hot':n>=7?'strong':n>=4?'forming':'quiet';const parts=x=>{if(!x.strong)return[];const g=String(x.group||x.theme).split('/').map(v=>v.trim()),t=String(x.theme).split('/').map(v=>v.trim());return g.map((v,i)=>({group:v,industry:strip(v),theme:t[i]||t[0]}))};const tickerList=a=>a.length?`<div class="tickers">${a.slice(0,5).map(x=>`<a target="_blank" rel="noreferrer" title="${esc(x.name)} · RS ${x.rs2}" href="https://www.tradingview.com/chart/?symbol=NASDAQ:${esc(x.ticker)}">${esc(x.ticker)}${String(x.alert||'').includes('Spring')||x.ticker==='OOMA'?' 🔥':''}</a>`).join('')}</div>`:'—';
-function build(){const momentum=[...app.data].sort((a,b)=>b.threeMonth-a.threeMonth),rs=new Map(momentum.map((x,i)=>[x.ticker,Math.max(1,Math.round(99-i*98/Math.max(1,momentum.length-1)))]));app.data=app.data.map(x=>({...x,state:state(x),rs2:x.rs||rs.get(x.ticker)||1}));const sectors=new Map((app.feed.sectors||[]).map((x,i)=>[x.ticker,{...x,rank:x.rank||i+1}])),buckets=new Map(),universe=app.maxRange?app.data.filter(x=>(x.range15Pct||999)<=app.maxRange):app.data;for(const x of universe)for(const p of parts(x)){const label=app.groupBy==='industry'?p.industry:p.group,key=app.groupBy+':'+label,b=buckets.get(key)||{key,label,...p,all:[]};if(!b.all.some(y=>y.ticker===x.ticker))b.all.push(x);buckets.set(key,b)}app.clusters=[...buckets.values()].map(b=>{const a=s=>b.all.filter(x=>x.state===s),setup=a('setup'),breakout=a('breakout'),holding=a('holding'),fakeout=a('fakeout'),watch=a('watch'),sector=sectors.get(b.theme),r=rank(b.group)||sector?.rank||null,rising=sector?.previousRank!=null?sector.previousRank-r>=10:pct(sector?.fiveDay)>=2,trend=sector?.above20Ema!=null&&sector?.above50Sma!=null?sector.above20Ema&&sector.above50Sma:/Strong Trend|Uptrend/i.test(sector?.status||'')||(pct(sector?.oneMonth)>0&&pct(sector?.fiveDay)>0),recent=holding.filter(x=>days(x.breakoutDate,app.feed.updatedAt)<=5),vol=breakout.filter(x=>(x.relativeVolume||0)>=1.5),rules=[['Setup ≥ 3',1,setup.length>=3],['今日突破 ≥ 2',2,breakout.length>=2],['近 5 日突破并守住 ≥ 2',2,recent.length>=2],['板块排名前 40',1,r!=null&&r<=40],['一周排名明显上升',1,rising],['ETF 在 20EMA / 50SMA 上方',1,trend],['至少一只 RS ≥ 95',1,b.all.some(x=>x.rs2>=95)],['多数突破有量',1,breakout.length>0&&vol.length>=Math.ceil(breakout.length/2)]],ordered=[...b.all].sort((a,z)=>z.rs2-a.rs2||z.threeMonth-a.threeMonth);return{...b,rank:r,setup,breakout,holding,fakeout,watch,rules,score:rules.reduce((s,x)=>s+(x[2]?x[1]:0),0),leader:ordered[0],weak:ordered.at(-1),trend,rising}});render()}
-function render(){let list=app.clusters.filter(x=>x.score>=app.min&&(`${x.label} ${x.theme} ${x.all.map(y=>y.ticker)}`).toLowerCase().includes(app.q.toLowerCase()));list.sort((a,b)=>app.sort==='rank'?(a.rank||999)-(b.rank||999):app.sort==='score'?b.score-a.score||b.all.length-a.all.length:b[app.sort].length-a[app.sort].length||b.score-a.score);if(!list.some(x=>x.key===app.active))app.active=list[0]?.key;$('groups').textContent=list.length;for(const [id,k] of [['setups','setup'],['breakouts','breakout'],['holdings','holding'],['fakeouts','fakeout']])$(id).textContent=list.reduce((s,x)=>s+x[k].length,0);$('clusterRows').innerHTML=list.map(x=>`<tr data-key="${esc(x.key)}" class="${x.key===app.active?'active':''}"><td><div class="group"><strong>${esc(x.label)}</strong><span>${esc(x.theme)} · Rank ${x.rank||'—'} ${x.trend?'↑':''}</span></div></td><td><span class="score ${scoreClass(x.score)}">${x.score}<small>/10</small></span></td><td><span class="count cs">${x.setup.length}</span></td><td><span class="count cb">${x.breakout.length}</span></td><td><span class="count ch">${x.holding.length}</span></td><td><span class="count cf">${x.fakeout.length}</span></td><td>${tickerList(x.leader?[x.leader]:[])}</td><td>${tickerList(x.breakout)}</td><td>${tickerList(x.setup)}</td><td>${tickerList(x.weak&&x.weak!==x.leader?[x.weak]:[])}</td></tr>`).join('');document.querySelectorAll('[data-key]').forEach(tr=>tr.onclick=()=>{app.active=tr.dataset.key;render()});const x=list.find(y=>y.key===app.active);$('detail').innerHTML=x?`<div class="detail-head"><div><span>CLUSTER SCORE</span><strong class="${scoreClass(x.score)}">${x.score}<small>/10</small></strong></div><div><h2>${esc(x.label)}</h2><p>${esc(x.theme)} · ${x.all.length} 只观察股</p></div></div><div class="rules">${x.rules.map(r=>`<div class="rule ${r[2]?'hit':''}"><span>${r[2]?'✓':'·'}</span><span>${r[0]}</span><b>+${r[1]}</b></div>`).join('')}</div><div class="ladder"><h3>板块梯队</h3>${[['Leader',x.leader?[x.leader]:[]],['Breakout',x.breakout],['Setup',x.setup],['Holding',x.holding],['Weak compare',x.weak?[x.weak]:[]]].map(r=>`<div class="ladder-row"><span>${r[0]}</span>${tickerList(r[1])}</div>`).join('')}</div>`:'没有符合筛选条件的群组';$('stockRows').innerHTML=app.data.map(x=>`<tr><td>${x.rank}</td><td>${tickerList([x])}</td><td>${esc(x.group)}</td><td>${esc(x.theme)}</td><td><span class="pill ${x.state}">${x.state}</span></td><td>${x.status}</td><td>${x.rs2}</td><td class="${x.threeMonth>=0?'gain':'loss'}">${x.threeMonth>0?'+':''}${Number(x.threeMonth).toFixed(1)}%</td><td>${Number(x.line||0).toFixed(1)}%</td><td>${esc(x.alert||'—')}</td></tr>`).join('')}
-document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x===b));document.querySelector('.cluster-view').style.display=b.dataset.view==='cluster'?'block':'none';document.querySelector('.stock-view').style.display=b.dataset.view==='stocks'?'block':'none'});$('q').oninput=e=>{app.q=e.target.value;render()};$('groupBy').onchange=e=>{app.groupBy=e.target.value;build()};$('tightness').onchange=e=>{app.maxRange=+e.target.value;build()};$('sort').onchange=e=>{app.sort=e.target.value;render()};$('min').onchange=e=>{app.min=+e.target.value;render()};fetch('public/screener-feed.json').then(r=>r.json()).then(feed=>{app.feed=feed;app.data=feed.candidates||[];$('sync').textContent=`已同步 ${app.data.length} 只 · ${new Date(feed.updatedAt).toLocaleString('zh-CN')}`;build()}).catch(()=>{$('sync').textContent='数据读取失败'});
-</script>
-<style>.ticker-total{border-radius:999px;background:#eef0ec;color:#626b75;padding:3px 7px;font-size:10px;font-weight:850;white-space:nowrap}.ticker-total.large{background:#def2e9;color:var(--green)}.cluster-view table{min-width:1140px}.cluster-view th:first-child,.cluster-view td:first-child{width:150px;max-width:155px}.cluster-view th:nth-child(n+3):nth-child(-n+6),.cluster-view td:nth-child(n+3):nth-child(-n+6){min-width:215px}.cluster-view .group{min-width:125px;max-width:155px;white-space:normal}.cluster-view .tickers{max-width:230px;align-items:center}</style>
-<script>
-const renderWithCombinedStateColumns=render;
-render=function(){
-  renderWithCombinedStateColumns();
-  const header=document.querySelector('.cluster-view thead tr');
-  if(header)header.innerHTML='<th>Group / ETF</th><th>Score</th><th>Setup · 等待突破</th><th>Breakout · 已突破</th><th>Holding · 跟进</th><th>Fakeout · 失败突破</th><th>Leader</th><th>弱势对照</th>';
-  document.querySelectorAll('#clusterRows tr').forEach(row=>{
-    const cluster=app.clusters.find(item=>item.key===row.dataset.key),cells=[...row.children];
-    if(!cluster||cells.length<10)return;
-    const stateCell=(items,danger=false)=>items.length?`${tickerList(items)}<span class="ticker-total ${danger?'danger':items.length>5?'large':''}">Total ${items.length}</span>`:'—';
-    cells[2].innerHTML=stateCell(cluster.setup);
-    cells[3].innerHTML=stateCell(cluster.breakout);
-    cells[4].innerHTML=stateCell(cluster.holding);
-    cells[5].innerHTML=stateCell(cluster.fakeout,true);
-    cells[6].innerHTML=tickerList(cluster.leaders||[cluster.leader].filter(Boolean));
-    cells[8].remove();cells[7].remove();
-  });
-  const activeCluster=app.clusters.find(item=>item.key===app.active),leaderRow=document.querySelector('.ladder-row');
-  if(activeCluster&&leaderRow)leaderRow.innerHTML=`<span>LEADERS</span>${tickerList(activeCluster.leaders||[activeCluster.leader].filter(Boolean))}`;
-  const notes=document.querySelector('.definitions-grid');
-  if(notes&&!notes.querySelector('[data-leader-note]'))notes.insertAdjacentHTML('beforeend','<article data-leader-note><b>Leaders · 2–3只</b><p>优先选择相关 ETF 成分权重更高的股票；其次比较公司市值，再比较 RS 和三个月表现。目的是找出真正能带动板块的大盘权重股，不等于买点。</p></article>');
-  const tightnessNote=notes?.querySelector('article:first-child p');if(tightnessNote)tightnessNote.textContent='(15日最高价 − 15日最低价) ÷ 最新收盘价 ×100。筛选区间为 3%–6%、6%–9%、9%–12%；数值越小，价格区间越紧。';
-};
-const groupByControl=$('groupBy');if(groupByControl)groupByControl.closest('label').remove();
-const minScoreControl=$('min');if(minScoreControl)minScoreControl.closest('label').remove();
-const tightnessControl=$('tightness');
-tightnessControl.innerHTML='<option value="">Any 15D Range</option><option value="3-6">3%–6%</option><option value="6-9">6%–9%</option><option value="9-12">9%–12%</option>';
-const sortControl=$('sort');
-sortControl.querySelector('option[value="score"]').textContent='Cluster Score · Signal Strength';
-sortControl.querySelector('option[value="rank"]')?.remove();
-sortControl.closest('label').title='按综合集群信号、各状态股票数量排序';
-const buildWithoutTightnessBand=build;
-build=function(){
-  const allStocks=app.data,band=app.tightnessBand;
-  if(band){const [minimum,maximum]=band.split('-').map(Number);app.data=allStocks.filter(item=>(item.range15Pct??999)>=minimum&&(item.range15Pct??999)<maximum)}
-  app.maxRange=0;buildWithoutTightnessBand();
-  const maximumWeight=value=>Math.max(0,...((value||'').match(/\d+(?:\.\d+)?(?=%)/g)||[]).map(Number));
-  app.clusters.forEach(cluster=>{const eligible=cluster.all.filter(item=>(item.state!=='watch'&&item.state!=='fakeout')||String(item.alert||'').includes('Spring')),themeWeight=item=>maximumWeight(item.weightsByTheme?.[cluster.theme]||item.weight),leaderStrength=item=>(item.marketCap||0)*(1+themeWeight(item)/5);cluster.leaders=[...eligible].sort((a,b)=>leaderStrength(b)-leaderStrength(a)||b.rs2-a.rs2||b.threeMonth-a.threeMonth).slice(0,3);cluster.leader=cluster.leaders[0]});
-  render();app.data=allStocks;
-};
-tightnessControl.onchange=event=>{app.tightnessBand=event.target.value;build()};
-</script>
-<style>
-.secondary-filters{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line);background:#fbfbf8;padding:10px 16px}.secondary-filters>span{color:var(--muted);font-size:10px;font-weight:850;text-transform:uppercase}.filter-chip{border:1px solid #dfe2dc;border-radius:999px;background:#fff;color:#707883;padding:6px 10px;font-size:11px;font-weight:850;cursor:pointer}.filter-chip.active{border-color:#82cbae;background:#e8f6ef;color:#27845f;box-shadow:0 0 0 2px #dff3e9}.sort-head{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:inherit;padding:0;font-size:inherit;font-weight:900;cursor:pointer;text-transform:uppercase}.sort-head:hover{color:var(--blue)}.sort-priority{display:inline-grid;width:17px;height:17px;place-items:center;border-radius:50%;background:var(--blue);color:#fff;font-size:9px}.signal-tag{display:inline-block;margin-left:3px;border-radius:4px;padding:1px 4px;font-size:8px;font-weight:900;vertical-align:middle}.signal-tag.spring{background:#fff0d8;color:#b66e16}.signal-tag.tight{background:#e8edff;color:var(--blue)}
-</style>
-<script>
-const oldTightnessLabel=tightnessControl?.closest('label');if(oldTightnessLabel)oldTightnessLabel.remove();
-const oldSortLabel=sortControl?.closest('label');if(oldSortLabel)oldSortLabel.remove();
-const toolbar=document.querySelector('.toolbar');
-const secondaryFilters=document.createElement('div');secondaryFilters.className='secondary-filters';secondaryFilters.innerHTML='<span>Secondary signals</span><button class="filter-chip" data-filter="spring" title="Spring sweep + 1–5 day volume burst">Spring</button><button class="filter-chip" data-filter="tight" title="Setup with 15-day range below 8%">Tight</button>';toolbar.insertAdjacentElement('afterend',secondaryFilters);
-app.secondaryFilters={spring:false,tight:false};app.sortPriorities=['score','breakout'];
-const sortableColumns=[['group','Group'],['score','Score'],['setup','Setup'],['breakout','Breakout'],['holding','Follow Through'],['fakeout','Fakeout'],['leaders','Leaders'],['laggards','Laggards']];
-const renderBeforeDeepVueSort=render;
-const leaderWeight=cluster=>Math.max(0,...((cluster.leaders?.[0]?.weightsByTheme?.[cluster.theme]||cluster.leaders?.[0]?.weight||'').match(/\d+(?:\.\d+)?(?=%)/g)||[]).map(Number));
-const sortValue=(cluster,key)=>key==='group'?cluster.label:key==='score'?cluster.score:['setup','breakout','holding','fakeout'].includes(key)?cluster[key].length:key==='leaders'?leaderWeight(cluster):cluster.weak?.rs2??999;
-render=function(){
-  const allClusters=app.clusters;
-  let filtered=allClusters;
-  if(app.secondaryFilters.spring)filtered=filtered.filter(cluster=>cluster.all.some(item=>String(item.alert||'').includes('Spring')));
-  if(app.secondaryFilters.tight)filtered=filtered.filter(cluster=>cluster.setup.some(item=>(item.range15Pct??999)<8));
-  app.clusters=filtered;renderBeforeDeepVueSort();
-  const sorted=[...filtered].sort((a,b)=>{for(const key of app.sortPriorities){const av=sortValue(a,key),bv=sortValue(b,key),difference=key==='group'?String(av).localeCompare(String(bv)):key==='laggards'?av-bv:bv-av;if(difference)return difference}return a.label.localeCompare(b.label)});
-  const header=document.querySelector('.cluster-view thead tr');
-  if(header){header.innerHTML=sortableColumns.map(([key,label])=>{const position=app.sortPriorities.indexOf(key);return `<th><button class="sort-head" data-sort-key="${key}" title="Click to add/remove this sort level">${label}${position>=0?`<span class="sort-priority">${position+1}</span>`:''}</button></th>`}).join('');header.querySelectorAll('[data-sort-key]').forEach(button=>button.onclick=()=>{const key=button.dataset.sortKey,index=app.sortPriorities.indexOf(key);if(index>=0)app.sortPriorities.splice(index,1);else if(app.sortPriorities.length<3)app.sortPriorities.push(key);else app.sortPriorities[2]=key;render()})}
-  const body=$('clusterRows');for(const cluster of sorted){const row=body.querySelector(`[data-key="${CSS.escape(cluster.key)}"]`);if(row)body.appendChild(row)}
-  document.querySelectorAll('.tickers a').forEach(anchor=>{const ticker=anchor.textContent.trim().split(/\s/)[0].replace('🔥',''),item=app.data.find(stock=>stock.ticker===ticker);if(!item)return;if(String(item.alert||'').includes('Spring'))anchor.insertAdjacentHTML('beforeend','<span class="signal-tag spring">SPRING</span>');if(item.state==='setup'&&(item.range15Pct??999)<8)anchor.insertAdjacentHTML('beforeend','<span class="signal-tag tight">TIGHT</span>')});
-  const stateName={setup:'SETUP',breakout:'BREAKOUT',holding:'FOLLOW THROUGH',fakeout:'FAKEOUT',watch:'WATCH'};
-  document.querySelectorAll('#clusterRows tr').forEach(row=>{const cluster=filtered.find(item=>item.key===row.dataset.key),leaderCell=row.children[6];if(!cluster||!leaderCell)return;leaderCell.querySelectorAll('a').forEach(anchor=>{const ticker=anchor.childNodes[0]?.textContent.trim().replace('🔥',''),leader=(cluster.leaders||[]).find(item=>item.ticker===ticker);if(leader)anchor.insertAdjacentHTML('beforeend',`<span class="leader-state ${leader.state}">${stateName[leader.state]}</span>`)})});
-  const definitions=document.querySelector('.definitions-grid');if(definitions&&!definitions.querySelector('[data-state-note]'))definitions.insertAdjacentHTML('beforeend','<article data-state-note><b>Breakout / Follow Through / Leaders</b><p>Breakout 只代表今天刚突破；Follow Through 代表此前 1–5 个交易日有效突破后仍守在 pivot 与 21EMA 附近，两列互斥。Leaders 是独立角色，但只从 Setup、Breakout、Follow Through 或近期 Spring 中选择；Watch 与 Fakeout 不可成为 Leader。</p></article>');
-  if(definitions){
-    const articles=[...definitions.querySelectorAll('article')];
-    const note=(name,text)=>{const article=articles.find(item=>item.querySelector('b')?.textContent.startsWith(name));if(article?.querySelector('p'))article.querySelector('p').textContent=text};
-    note('Tightness','TIGHT = Setup 股票的 15D Range < 8%。15D Range = (15日最高价 − 15日最低价) ÷ 最新收盘价 × 100；它是附加标签，不改变主状态。');
-    note('Fakeout','FAKEOUT = 当日刺穿 pivot 后收回 pivot 下方，同时 RVOL ≥ 1.5 且收盘位于当日区间下半部；或最近 1–5 个交易日曾有有效 Breakout、现在收盘跌回该 pivot 下方。');
-    note('Spring','SPRING = 最近 12 个交易日内跌破此前 5 日最低点 0–6%；随后 1–5 日内收回该支撑、单日涨幅 ≥ 4%、收盘位于当日区间上方 45%，且 Spring 日或确认日 RVOL ≥ 1.15。当前价格还必须高于 Spring 日收盘且未再明显失守支撑。');
-    note('Leaders','LEADERS 只从 Setup、Breakout、Follow Through 或近期 Spring 中选择，Watch/Fakeout 无资格。排序值 = 市值 × (1 + 当前 ETF 权重百分比 ÷ 5)，因此优先大盘股，同时对 ETF 权重股加分；最多显示 3 只。');
-  }
-  app.clusters=allClusters;
-};
-secondaryFilters.querySelectorAll('[data-filter]').forEach(button=>button.onclick=()=>{const key=button.dataset.filter;app.secondaryFilters[key]=!app.secondaryFilters[key];button.classList.toggle('active',app.secondaryFilters[key]);app.active=null;render()});
-</script><style>.ticker-total.danger{background:#fde8ec;color:#c83d57}.leader-state{display:inline-block;margin-left:3px;border-radius:4px;background:#edf0ec;color:#66707a;padding:1px 4px;font-size:7px;font-weight:900}.leader-state.breakout{background:#def2e9;color:var(--green)}.leader-state.holding{background:#dff5f8;color:#278a9b}.leader-state.fakeout{background:#fde8ec;color:#c83d57}.leader-state.setup{background:#e8edff;color:var(--blue)}</style></body></html>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cluster Monitor · 板块扩散扫描</title>
+    <link rel="icon" href="public/favicon.svg" />
+    <style>
+      /* ---------------------------------------------------------------
+         Design tokens
+         --------------------------------------------------------------- */
+      :root {
+        color-scheme: light dark;
+
+        --bg: #f4f5f2;
+        --surface: #ffffff;
+        --surface-sunken: #fafbf8;
+        --border: #e3e5de;
+        --border-strong: #d2d5cc;
+
+        --ink: #1f242b;
+        --ink-muted: #6b7480;
+        --ink-faint: #949ba5;
+
+        --accent: #4a63c8;
+        --accent-soft: #eaeeff;
+        --up: #1f8a63;
+        --up-soft: #e2f2ea;
+        --down: #c0435a;
+        --down-soft: #fce7eb;
+        --hold: #1f8497;
+        --hold-soft: #ddf1f5;
+        --warn: #a9741a;
+        --warn-soft: #fdf0d8;
+
+        --radius: 10px;
+        --radius-sm: 6px;
+        --shadow: 0 1px 2px rgba(31, 36, 43, 0.04), 0 12px 32px rgba(31, 36, 43, 0.06);
+
+        --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+        --mono: "SF Mono", ui-monospace, "JetBrains Mono", Consolas, monospace;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14171b;
+          --surface: #1b1f24;
+          --surface-sunken: #191d22;
+          --border: #2b3138;
+          --border-strong: #3a424b;
+
+          --ink: #e6e9ed;
+          --ink-muted: #98a1ad;
+          --ink-faint: #6f7884;
+
+          --accent: #8ea0ee;
+          --accent-soft: #232a44;
+          --up: #4cbf90;
+          --up-soft: #1a2f28;
+          --down: #e8798e;
+          --down-soft: #33202a;
+          --hold: #56b9cc;
+          --hold-soft: #16303a;
+          --warn: #d8a95a;
+          --warn-soft: #33291a;
+
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--font);
+        font-size: 14px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+        color: inherit;
+      }
+
+      /* ---------------------------------------------------------------
+         Shell
+         --------------------------------------------------------------- */
+      .shell {
+        max-width: 1560px;
+        margin: 0 auto;
+        padding: 24px 20px 48px;
+      }
+
+      .masthead {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .eyebrow {
+        margin-bottom: 6px;
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 680;
+        letter-spacing: -0.02em;
+      }
+
+      .masthead p {
+        margin: 6px 0 0;
+        max-width: 62ch;
+        color: var(--ink-muted);
+        font-size: 13px;
+      }
+
+      .sync {
+        display: grid;
+        gap: 2px;
+        justify-items: end;
+        color: var(--ink-muted);
+        font-size: 12px;
+        text-align: right;
+      }
+
+      .sync strong {
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 620;
+      }
+
+      /* ---------------------------------------------------------------
+         Metric strip
+         --------------------------------------------------------------- */
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .metric {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface);
+        padding: 12px 14px;
+        box-shadow: var(--shadow);
+      }
+
+      .metric b {
+        display: block;
+        font-size: 24px;
+        font-weight: 660;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 2px;
+        color: var(--ink-muted);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .metric.setup b { color: var(--accent); }
+      .metric.breakout b { color: var(--up); }
+      .metric.holding b { color: var(--hold); }
+      .metric.fakeout b { color: var(--down); }
+      .metric.spring b { color: var(--warn); }
+
+      /* ---------------------------------------------------------------
+         Panel
+         --------------------------------------------------------------- */
+      .panel {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .tabs {
+        display: flex;
+        gap: 4px;
+        border-bottom: 1px solid var(--border);
+        padding: 0 14px;
+      }
+
+      .tabs button {
+        position: relative;
+        border: 0;
+        background: none;
+        color: var(--ink-muted);
+        padding: 13px 12px 11px;
+        font-size: 13px;
+        font-weight: 620;
+        cursor: pointer;
+      }
+
+      .tabs button::after {
+        content: "";
+        position: absolute;
+        inset: auto 8px -1px;
+        height: 2px;
+        border-radius: 2px;
+        background: transparent;
+      }
+
+      .tabs button[aria-selected="true"] {
+        color: var(--ink);
+      }
+
+      .tabs button[aria-selected="true"]::after {
+        background: var(--accent);
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid var(--border);
+        background: var(--surface-sunken);
+        padding: 12px 14px;
+      }
+
+      .toolbar .search {
+        flex: 1 1 240px;
+        min-width: 180px;
+        max-width: 340px;
+        height: 34px;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        background: var(--surface);
+        padding: 0 11px;
+      }
+
+      .toolbar .search::placeholder {
+        color: var(--ink-faint);
+      }
+
+      .field {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--ink-muted);
+        font-size: 11px;
+        font-weight: 650;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .field select {
+        height: 34px;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        background: var(--surface);
+        padding: 0 8px;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      .chips {
+        display: flex;
+        gap: 6px;
+      }
+
+      .chip {
+        border: 1px solid var(--border-strong);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--ink-muted);
+        padding: 6px 11px;
+        font-size: 12px;
+        font-weight: 620;
+        cursor: pointer;
+      }
+
+      .chip[aria-pressed="true"] {
+        border-color: transparent;
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+
+      .chip.spring[aria-pressed="true"] {
+        background: var(--warn-soft);
+        color: var(--warn);
+      }
+
+      .reset {
+        margin-left: auto;
+        border: 0;
+        background: none;
+        color: var(--ink-faint);
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      .reset:hover {
+        color: var(--accent);
+      }
+
+      /* ---------------------------------------------------------------
+         Tables
+         --------------------------------------------------------------- */
+      .table-wrap {
+        overflow: auto;
+        max-height: 62vh;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        border-bottom: 1px solid var(--border);
+        background: var(--surface-sunken);
+        padding: 0;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      th button {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        border: 0;
+        background: none;
+        color: var(--ink-muted);
+        padding: 10px 10px 9px;
+        font-size: 11px;
+        font-weight: 680;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      th button:hover {
+        color: var(--accent);
+      }
+
+      th .order {
+        display: inline-grid;
+        min-width: 15px;
+        height: 15px;
+        place-items: center;
+        border-radius: 4px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 9px;
+        font-weight: 800;
+      }
+
+      tbody td {
+        border-bottom: 1px solid var(--border);
+        padding: 9px 10px;
+        vertical-align: top;
+        font-variant-numeric: tabular-nums;
+      }
+
+      tbody tr {
+        cursor: pointer;
+      }
+
+      tbody tr:hover {
+        background: var(--surface-sunken);
+      }
+
+      tbody tr[aria-selected="true"] {
+        background: var(--accent-soft);
+      }
+
+      .num {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .cluster-name strong {
+        display: block;
+        font-weight: 640;
+      }
+
+      .cluster-name span {
+        color: var(--ink-muted);
+        font-size: 11px;
+      }
+
+      .score {
+        font-size: 17px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .score small {
+        color: var(--ink-faint);
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .score.tier-3 { color: var(--up); }
+      .score.tier-2 { color: var(--warn); }
+      .score.tier-1 { color: var(--ink-muted); }
+      .score.tier-0 { color: var(--ink-faint); }
+
+      /* Ticker cells */
+      .tickers {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        align-items: center;
+        max-width: 250px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        border-radius: var(--radius-sm);
+        background: var(--surface-sunken);
+        color: var(--ink);
+        padding: 3px 6px;
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 620;
+        text-decoration: none;
+        border: 1px solid var(--border);
+      }
+
+      .tag:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .tag i {
+        border-radius: 3px;
+        padding: 0 3px;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .tag i.spring { background: var(--warn-soft); color: var(--warn); }
+      .tag i.tight { background: var(--accent-soft); color: var(--accent); }
+      .tag i.setup { background: var(--accent-soft); color: var(--accent); }
+      .tag i.breakout { background: var(--up-soft); color: var(--up); }
+      .tag i.holding { background: var(--hold-soft); color: var(--hold); }
+      .tag i.fakeout { background: var(--down-soft); color: var(--down); }
+
+      .total {
+        border-radius: 999px;
+        background: var(--surface-sunken);
+        border: 1px solid var(--border);
+        color: var(--ink-faint);
+        padding: 2px 7px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .empty {
+        color: var(--ink-faint);
+      }
+
+      /* State pills */
+      .pill {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 3px 9px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .pill.setup { background: var(--accent-soft); color: var(--accent); }
+      .pill.breakout { background: var(--up-soft); color: var(--up); }
+      .pill.holding { background: var(--hold-soft); color: var(--hold); }
+      .pill.fakeout { background: var(--down-soft); color: var(--down); }
+      .pill.watch { background: var(--surface-sunken); color: var(--ink-muted); border: 1px solid var(--border); }
+
+      .gain { color: var(--up); }
+      .loss { color: var(--down); }
+
+      /* ---------------------------------------------------------------
+         Detail drawer
+         --------------------------------------------------------------- */
+      .detail {
+        display: grid;
+        grid-template-columns: minmax(220px, 300px) minmax(280px, 1fr);
+        gap: 22px;
+        border-top: 1px solid var(--border);
+        background: var(--surface-sunken);
+        padding: 18px;
+      }
+
+      .detail h2 {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 650;
+      }
+
+      .detail h3 {
+        margin: 0 0 8px;
+        color: var(--ink-muted);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .detail .lede {
+        margin: 4px 0 14px;
+        color: var(--ink-muted);
+        font-size: 12px;
+      }
+
+      .rules {
+        display: grid;
+        gap: 1px;
+      }
+
+      .rule {
+        display: grid;
+        grid-template-columns: 16px 1fr auto;
+        gap: 8px;
+        align-items: center;
+        border-radius: var(--radius-sm);
+        color: var(--ink-faint);
+        padding: 6px 7px;
+        font-size: 12px;
+      }
+
+      .rule.hit {
+        background: var(--up-soft);
+        color: var(--up);
+      }
+
+      .rule b {
+        font-size: 11px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .ladder-row {
+        display: grid;
+        grid-template-columns: 108px 1fr;
+        gap: 10px;
+        align-items: start;
+        border-top: 1px solid var(--border);
+        padding: 9px 0;
+      }
+
+      .ladder-row > span {
+        color: var(--ink-muted);
+        font-size: 11px;
+        font-weight: 680;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      /* ---------------------------------------------------------------
+         Definitions
+         --------------------------------------------------------------- */
+      .definitions {
+        margin-top: 18px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .definitions header {
+        margin-bottom: 14px;
+      }
+
+      .definitions h2 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 650;
+      }
+
+      .definitions header p {
+        margin: 5px 0 0;
+        color: var(--ink-muted);
+        font-size: 12px;
+      }
+
+      .definition-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 10px;
+      }
+
+      .definition-grid article {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-sunken);
+        padding: 12px;
+      }
+
+      .definition-grid b {
+        font-size: 12px;
+      }
+
+      .definition-grid p {
+        margin: 6px 0 0;
+        color: var(--ink-muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .definitions footer {
+        margin-top: 14px;
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+        color: var(--ink-faint);
+        font-size: 12px;
+      }
+
+      .status-line {
+        padding: 40px 16px;
+        color: var(--ink-muted);
+        text-align: center;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 900px) {
+        .shell { padding: 16px 12px 32px; }
+        .detail { grid-template-columns: 1fr; }
+        .table-wrap { max-height: none; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div>
+          <div class="eyebrow">Market Breadth</div>
+          <h1>Cluster Monitor</h1>
+          <p>
+            在同一板块里找"前排已突破 + 后排正准备"的资金扩散结构。个股状态由扫描器判定后写入数据，页面只负责呈现。
+          </p>
+        </div>
+        <div class="sync">
+          <strong id="syncCount">读取中…</strong>
+          <span id="syncTime"></span>
+        </div>
+      </header>
+
+      <section class="metrics" id="metrics"></section>
+
+      <section class="panel">
+        <nav class="tabs" role="tablist">
+          <button role="tab" aria-selected="true" data-view="clusters">板块群组</button>
+          <button role="tab" aria-selected="false" data-view="stocks">个股明细</button>
+        </nav>
+
+        <!-- Cluster view -->
+        <div data-panel="clusters">
+          <div class="toolbar">
+            <input class="search" id="clusterSearch" placeholder="搜索板块、ETF 或成分股" />
+            <label class="field">
+              15D Range
+              <select id="rangeBand">
+                <option value="">不限</option>
+                <option value="0-6">≤ 6%</option>
+                <option value="6-9">6% – 9%</option>
+                <option value="9-12">9% – 12%</option>
+              </select>
+            </label>
+            <div class="chips">
+              <button class="chip spring" data-flag="springTag" aria-pressed="false">Spring</button>
+              <button class="chip" data-flag="tightnessTag" aria-pressed="false">Tight</button>
+            </div>
+            <button class="reset" id="clusterReset">清除筛选</button>
+          </div>
+          <div class="table-wrap">
+            <table id="clusterTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="detail" id="clusterDetail"></div>
+        </div>
+
+        <!-- Stock view -->
+        <div data-panel="stocks" hidden>
+          <div class="toolbar">
+            <input class="search" id="stockSearch" placeholder="搜索代码或公司名" />
+            <label class="field">
+              主状态
+              <select id="stateFilter">
+                <option value="">全部</option>
+                <option value="breakout">Breakout</option>
+                <option value="holding">Holding</option>
+                <option value="setup">Setup</option>
+                <option value="fakeout">Fakeout</option>
+                <option value="watch">Watch</option>
+              </select>
+            </label>
+            <div class="chips">
+              <button class="chip spring" data-stock-flag="springTag" aria-pressed="false">Spring</button>
+              <button class="chip" data-stock-flag="tightnessTag" aria-pressed="false">Tight</button>
+            </div>
+            <button class="reset" id="stockReset">清除筛选</button>
+          </div>
+          <div class="table-wrap">
+            <table id="stockTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="definitions">
+        <header>
+          <h2>扫描规则</h2>
+          <p>
+            主状态按 Fakeout → Breakout → Holding → Setup → Watch 依次判定，每只股票只有一个主状态；
+            Spring 与 Tight 是并行的附加标签。下方阈值直接读自扫描器参数，不会与代码脱节。
+          </p>
+        </header>
+        <div class="definition-grid" id="definitions"></div>
+        <footer id="definitionsFooter"></footer>
+      </section>
+    </main>
+
+    <script type="module">
+      // The leader rules come from the same module the scanner uses, so the
+      // page cannot quietly disagree with the feed about who leads a group.
+      import { pickLeaders } from "./scripts/rules.js";
+
+      const $ = (id) => document.getElementById(id);
+      const escapeHtml = (value) =>
+        String(value ?? "").replace(/[&<>"']/g, (char) =>
+          ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char],
+        );
+      const percent = (value) => (Number.isFinite(value) ? `${Number(value).toFixed(1)}%` : "—");
+      const signed = (value) =>
+        Number.isFinite(value) ? `${value > 0 ? "+" : ""}${Number(value).toFixed(1)}%` : "—";
+      const number = (value, digits = 2) =>
+        Number.isFinite(value) ? Number(value).toFixed(digits) : "—";
+
+      const STATE_LABEL = {
+        setup: "Setup",
+        breakout: "Breakout",
+        holding: "Holding",
+        fakeout: "Fakeout",
+        watch: "Watch",
+      };
+
+      const app = {
+        feed: null,
+        stocks: [],
+        clusters: [],
+        selected: null,
+        clusterSort: ["score", "breakout"],
+        stockSort: ["state", "distanceToHighPct"],
+        clusterQuery: "",
+        stockQuery: "",
+        rangeBand: "",
+        stateFilter: "",
+        clusterFlags: { springTag: false, tightnessTag: false },
+        stockFlags: { springTag: false, tightnessTag: false },
+      };
+
+      // -----------------------------------------------------------------
+      // Cluster assembly
+      // -----------------------------------------------------------------
+
+      /** A stock can belong to several themes; `theme` and `group` pair by index. */
+      function membershipsOf(stock) {
+        if (!stock.strong) return [];
+        const themes = String(stock.theme ?? "").split("/").map((value) => value.trim());
+        const groups = String(stock.group ?? stock.theme ?? "").split("/").map((value) => value.trim());
+        return themes.map((theme, index) => ({ theme, label: groups[index] ?? groups[0] ?? theme }));
+      }
+
+      /** Highest weight this stock carries inside the cluster's ETFs. */
+      function weightInCluster(stock, theme) {
+        const raw = stock.weightsByTheme?.[theme] ?? stock.weight ?? "";
+        const found = String(raw).match(/\d+(?:\.\d+)?(?=%)/g);
+        return found ? Math.max(...found.map(Number)) : 0;
+      }
+
+      function sectorIndex(feed) {
+        const index = new Map();
+        (feed.sectors ?? []).forEach((sector, position) => {
+          index.set(sector.ticker, { ...sector, rank: position + 1 });
+        });
+        return index;
+      }
+
+      function scoreCluster(cluster, sectors) {
+        const members = cluster.theme.split("+");
+        const sector = members.map((ticker) => sectors.get(ticker)).find(Boolean);
+        const rank = Math.min(
+          ...members.map((ticker) => sectors.get(ticker)?.rank ?? Infinity),
+        );
+        const fiveDay = Number.parseFloat(sector?.fiveDay ?? "") || 0;
+        const trending = /Strong Trend|Uptrend/i.test(sector?.status ?? "");
+        const heldRecently = cluster.holding.filter((stock) => (stock.breakoutDaysAgo ?? 99) <= 5);
+        const tagged = cluster.all.filter((stock) => stock.springTag || stock.tightnessTag);
+
+        const rules = [
+          ["Setup ≥ 3 只", 1, cluster.setup.length >= 3],
+          ["今日 Breakout ≥ 2 只", 2, cluster.breakout.length >= 2],
+          ["近 5 日突破且守住 ≥ 2 只", 2, heldRecently.length >= 2],
+          ["板块排名前 40", 1, Number.isFinite(rank) && rank <= 40],
+          ["一周涨幅 ≥ 2%", 1, fiveDay >= 2],
+          ["ETF 处于上升趋势", 1, trending],
+          ["至少一只 RS ≥ 95", 1, cluster.all.some((stock) => (stock.rs ?? 0) >= 95)],
+          ["Spring / Tight 标签 ≥ 2 只", 1, tagged.length >= 2],
+        ];
+
+        return {
+          rules,
+          score: rules.reduce((total, [, weight, hit]) => total + (hit ? weight : 0), 0),
+          rank: Number.isFinite(rank) ? rank : null,
+          trending,
+        };
+      }
+
+      function buildClusters() {
+        const sectors = sectorIndex(app.feed);
+        const pool = app.stocks.filter(inRangeBand);
+        const buckets = new Map();
+
+        for (const stock of pool) {
+          for (const { theme, label } of membershipsOf(stock)) {
+            if (!buckets.has(theme)) buckets.set(theme, { theme, label, all: [] });
+            const bucket = buckets.get(theme);
+            if (!bucket.all.some((item) => item.ticker === stock.ticker)) bucket.all.push(stock);
+          }
+        }
+
+        app.clusters = [...buckets.values()].map((bucket) => {
+          const byState = (state) => bucket.all.filter((stock) => stock.mainState === state);
+          const cluster = {
+            ...bucket,
+            setup: byState("setup"),
+            breakout: byState("breakout"),
+            holding: byState("holding"),
+            fakeout: byState("fakeout"),
+            watch: byState("watch"),
+          };
+          cluster.leaders = pickLeaders(cluster.all, (stock) =>
+            weightInCluster(stock, cluster.theme),
+          );
+          const laggards = [...cluster.all].sort((a, b) => (a.rs ?? 0) - (b.rs ?? 0));
+          cluster.laggard = laggards.find((stock) => !cluster.leaders.includes(stock)) ?? null;
+          return { ...cluster, ...scoreCluster(cluster, sectors) };
+        });
+      }
+
+      function inRangeBand(stock) {
+        if (!app.rangeBand) return true;
+        const [low, high] = app.rangeBand.split("-").map(Number);
+        const range = stock.range15Pct;
+        return Number.isFinite(range) && range >= low && range < high;
+      }
+
+      // -----------------------------------------------------------------
+      // Sorting — click a header to add it as a sort level, click again to drop
+      // -----------------------------------------------------------------
+
+      function toggleSort(levels, key) {
+        const position = levels.indexOf(key);
+        if (position >= 0) levels.splice(position, 1);
+        else if (levels.length < 3) levels.push(key);
+        else levels[2] = key;
+      }
+
+      function sortBy(rows, levels, valueOf) {
+        return [...rows].sort((a, b) => {
+          for (const key of levels) {
+            const left = valueOf(a, key);
+            const right = valueOf(b, key);
+            if (typeof left === "string" || typeof right === "string") {
+              const difference = String(left).localeCompare(String(right));
+              if (difference) return difference;
+            } else if (left !== right) {
+              return right - left;
+            }
+          }
+          return 0;
+        });
+      }
+
+      function renderHead(table, columns, levels) {
+        table.querySelector("thead").innerHTML = `<tr>${columns
+          .map(([key, label, alignRight]) => {
+            const position = levels.indexOf(key);
+            const order = position >= 0 ? `<span class="order">${position + 1}</span>` : "";
+            return `<th${alignRight ? ' class="num"' : ""}><button data-sort="${key}">${label}${order}</button></th>`;
+          })
+          .join("")}</tr>`;
+      }
+
+      // -----------------------------------------------------------------
+      // Cell renderers
+      // -----------------------------------------------------------------
+
+      function tickerTag(stock, { showState = false } = {}) {
+        const flags = [];
+        if (showState) flags.push(`<i class="${stock.mainState}">${STATE_LABEL[stock.mainState]}</i>`);
+        if (stock.springTag) flags.push('<i class="spring">SPRING</i>');
+        if (stock.tightnessTag) flags.push('<i class="tight">TIGHT</i>');
+        const title = `${stock.name ?? stock.ticker} · RS ${stock.rs ?? "—"} · 3M ${signed(stock.threeMonthPct)}`;
+        return `<a class="tag" target="_blank" rel="noreferrer" title="${escapeHtml(title)}"
+          href="https://www.tradingview.com/chart/?symbol=${encodeURIComponent(stock.ticker)}"
+        >${escapeHtml(stock.ticker)}${flags.join("")}</a>`;
+      }
+
+      function tickerCell(stocks, { limit = 4, showState = false } = {}) {
+        if (!stocks.length) return '<span class="empty">—</span>';
+        const shown = stocks.slice(0, limit).map((stock) => tickerTag(stock, { showState }));
+        const overflow =
+          stocks.length > limit ? `<span class="total">+${stocks.length - limit}</span>` : "";
+        return `<div class="tickers">${shown.join("")}${overflow}</div>`;
+      }
+
+      const scoreTier = (score) => (score >= 8 ? 3 : score >= 6 ? 2 : score >= 3 ? 1 : 0);
+
+      // -----------------------------------------------------------------
+      // Rendering
+      // -----------------------------------------------------------------
+
+      const CLUSTER_COLUMNS = [
+        ["label", "板块 / ETF"],
+        ["score", "Score", true],
+        ["setup", "Setup", true],
+        ["breakout", "Breakout", true],
+        ["holding", "Holding", true],
+        ["fakeout", "Fakeout", true],
+        ["leaders", "Leaders"],
+        ["laggard", "弱势对照"],
+      ];
+
+      const clusterValue = (cluster, key) => {
+        if (key === "label") return cluster.label;
+        if (key === "score") return cluster.score;
+        if (key === "leaders") return cluster.leaders.length ? weightInCluster(cluster.leaders[0], cluster.theme) : 0;
+        if (key === "laggard") return -(cluster.laggard?.rs ?? 999);
+        return cluster[key]?.length ?? 0;
+      };
+
+      function visibleClusters() {
+        const query = app.clusterQuery.toLowerCase();
+        return app.clusters.filter((cluster) => {
+          const flagged = Object.entries(app.clusterFlags).every(
+            ([flag, on]) => !on || cluster.all.some((stock) => stock[flag]),
+          );
+          const haystack = `${cluster.label} ${cluster.theme} ${cluster.all
+            .map((stock) => stock.ticker)
+            .join(" ")}`.toLowerCase();
+          return flagged && haystack.includes(query);
+        });
+      }
+
+      function renderClusters() {
+        const rows = sortBy(visibleClusters(), app.clusterSort, clusterValue);
+        const table = $("clusterTable");
+        renderHead(table, CLUSTER_COLUMNS, app.clusterSort);
+
+        if (!rows.some((cluster) => cluster.theme === app.selected)) {
+          app.selected = rows[0]?.theme ?? null;
+        }
+
+        table.querySelector("tbody").innerHTML = rows
+          .map((cluster) => {
+            const stateCell = (stocks) =>
+              stocks.length
+                ? `<div class="tickers">${stocks
+                    .slice(0, 3)
+                    .map((stock) => tickerTag(stock))
+                    .join("")}<span class="total">${stocks.length}</span></div>`
+                : '<span class="empty">—</span>';
+            return `<tr data-theme="${escapeHtml(cluster.theme)}" aria-selected="${cluster.theme === app.selected}">
+              <td class="cluster-name">
+                <strong>${escapeHtml(cluster.label)}</strong>
+                <span>${escapeHtml(cluster.theme)} · Rank ${cluster.rank ?? "—"}${cluster.trending ? " ↑" : ""}</span>
+              </td>
+              <td class="num"><span class="score tier-${scoreTier(cluster.score)}">${cluster.score}<small>/10</small></span></td>
+              <td>${stateCell(cluster.setup)}</td>
+              <td>${stateCell(cluster.breakout)}</td>
+              <td>${stateCell(cluster.holding)}</td>
+              <td>${stateCell(cluster.fakeout)}</td>
+              <td>${tickerCell(cluster.leaders, { limit: 3, showState: true })}</td>
+              <td>${cluster.laggard ? tickerTag(cluster.laggard) : '<span class="empty">—</span>'}</td>
+            </tr>`;
+          })
+          .join("");
+
+        renderDetail(rows.find((cluster) => cluster.theme === app.selected));
+        renderMetrics(rows);
+      }
+
+      function renderDetail(cluster) {
+        if (!cluster) {
+          $("clusterDetail").innerHTML =
+            '<p class="status-line">没有符合当前筛选条件的板块群组。</p>';
+          return;
+        }
+
+        const ladder = [
+          ["Leaders", cluster.leaders],
+          ["Breakout", cluster.breakout],
+          ["Holding", cluster.holding],
+          ["Setup", cluster.setup],
+          ["Fakeout", cluster.fakeout],
+          ["Watch", cluster.watch],
+        ];
+
+        $("clusterDetail").innerHTML = `
+          <div>
+            <h2>${escapeHtml(cluster.label)}</h2>
+            <p class="lede">${escapeHtml(cluster.theme)} · ${cluster.all.length} 只成分股 · Score ${cluster.score}/10</p>
+            <h3>Score 明细</h3>
+            <div class="rules">
+              ${cluster.rules
+                .map(
+                  ([text, weight, hit]) => `<div class="rule ${hit ? "hit" : ""}">
+                    <span>${hit ? "✓" : "·"}</span><span>${escapeHtml(text)}</span><b>+${weight}</b>
+                  </div>`,
+                )
+                .join("")}
+            </div>
+          </div>
+          <div>
+            <h3>板块梯队</h3>
+            ${ladder
+              .map(
+                ([label, stocks]) => `<div class="ladder-row">
+                  <span>${label}</span>${tickerCell(stocks, { limit: 8 })}
+                </div>`,
+              )
+              .join("")}
+          </div>`;
+      }
+
+      function renderMetrics(clusters) {
+        const total = (key) => clusters.reduce((sum, cluster) => sum + cluster[key].length, 0);
+        const unique = (predicate) =>
+          new Set(app.stocks.filter(predicate).map((stock) => stock.ticker)).size;
+
+        $("metrics").innerHTML = [
+          ["", clusters.length, "活跃群组"],
+          ["setup", total("setup"), "Setup"],
+          ["breakout", total("breakout"), "Breakout"],
+          ["holding", total("holding"), "Holding"],
+          ["fakeout", total("fakeout"), "Fakeout"],
+          ["spring", unique((stock) => stock.springTag), "Spring 标签"],
+          ["", unique((stock) => stock.tightnessTag), "Tight 标签"],
+        ]
+          .map(
+            ([tone, value, label]) =>
+              `<div class="metric ${tone}"><b>${value}</b><span>${label}</span></div>`,
+          )
+          .join("");
+      }
+
+      // -----------------------------------------------------------------
+      // Stock table
+      // -----------------------------------------------------------------
+
+      const STOCK_COLUMNS = [
+        ["ticker", "代码"],
+        ["label", "板块"],
+        ["state", "主状态"],
+        ["rs", "RS", true],
+        ["threeMonthPct", "3 个月", true],
+        ["distanceToHighPct", "距 20 日高", true],
+        ["range15Pct", "15D Range", true],
+        ["rvol", "RVOL", true],
+        ["closePosition", "收盘位置", true],
+        ["close", "收盘", true],
+        ["pivot", "Pivot", true],
+        ["dollarVol", "$Vol 50", true],
+      ];
+
+      const STATE_ORDER = { breakout: 0, holding: 1, setup: 2, fakeout: 3, watch: 4 };
+
+      const stockValue = (stock, key) => {
+        if (key === "ticker") return stock.ticker;
+        if (key === "label") return stock.strong ? (stock.group ?? "") : "￿";
+        if (key === "state") return -STATE_ORDER[stock.mainState];
+        if (key === "distanceToHighPct") return -(stock.distanceToHighPct ?? 999);
+        if (key === "range15Pct") return -(stock.range15Pct ?? 999);
+        if (key === "dollarVol") return stock.averageDollarVolume ?? 0;
+        return stock[key] ?? 0;
+      };
+
+      function renderStocks() {
+        const query = app.stockQuery.toLowerCase();
+        const rows = sortBy(
+          app.stocks.filter((stock) => {
+            const flagged = Object.entries(app.stockFlags).every(([flag, on]) => !on || stock[flag]);
+            const stateOk = !app.stateFilter || stock.mainState === app.stateFilter;
+            const haystack = `${stock.ticker} ${stock.name ?? ""}`.toLowerCase();
+            return flagged && stateOk && haystack.includes(query);
+          }),
+          app.stockSort,
+          stockValue,
+        );
+
+        const table = $("stockTable");
+        renderHead(table, STOCK_COLUMNS, app.stockSort);
+        table.querySelector("tbody").innerHTML = rows
+          .map(
+            (stock) => `<tr>
+              <td>${tickerTag(stock)}</td>
+              <td class="cluster-name"><span>${stock.strong ? escapeHtml(stock.group) : "—"}</span></td>
+              <td><span class="pill ${stock.mainState}">${STATE_LABEL[stock.mainState]}</span></td>
+              <td class="num">${stock.rs ?? "—"}</td>
+              <td class="num ${stock.threeMonthPct >= 0 ? "gain" : "loss"}">${signed(stock.threeMonthPct)}</td>
+              <td class="num">${percent(stock.distanceToHighPct)}</td>
+              <td class="num">${percent(stock.range15Pct)}</td>
+              <td class="num">${number(stock.rvol)}</td>
+              <td class="num">${Number.isFinite(stock.closePosition) ? `${stock.closePosition}%` : "—"}</td>
+              <td class="num">${number(stock.close)}</td>
+              <td class="num">${number(stock.pivot)}</td>
+              <td class="num">${escapeHtml(stock.dollarVol ?? "—")}</td>
+            </tr>`,
+          )
+          .join("");
+      }
+
+      // -----------------------------------------------------------------
+      // Definitions, rendered from the scanner's own parameters
+      // -----------------------------------------------------------------
+
+      function renderDefinitions(params) {
+        const p = params ?? {};
+        const cards = [
+          [
+            "Setup",
+            `收盘 &gt; SMA20 且 &gt; SMA50；距 20 日最高价 0–${p.setupMaxDistanceToHighPct ?? 5}%；
+             15D Range ≤ ${p.setupMaxRange15Pct ?? 12}%；3 个月涨幅 &gt; ${p.setupMinThreeMonthPct ?? 8}%。`,
+          ],
+          [
+            "Breakout",
+            `收盘突破<b>前一日</b>的 20 日最高价，RVOL ≥ ${p.breakoutMinRvol ?? 1.5}，
+             收盘位置 ≥ ${p.breakoutMinClosePosition ?? 60}%。该 20 日高即此后要守的 pivot。`,
+          ],
+          [
+            "Holding",
+            `过去 ${p.holdingLookbackDays ?? 10} 个交易日内出现过有效 Breakout，且最新收盘同时站在
+             该 pivot 之上与 21EMA × ${p.holdingEma21Buffer ?? 0.98} 之上。`,
+          ],
+          [
+            "Fakeout",
+            `A：日内刺穿前一日 20 日高但收盘跌回其下，RVOL ≥ ${p.fakeoutMinRvol ?? 1.5} 且收盘位置 &lt;
+             ${p.fakeoutMaxClosePosition ?? 50}%。B：过去 1–${p.fakeoutLookbackDays ?? 5} 日的有效 Breakout，现已跌回 pivot 之下。`,
+          ],
+          [
+            "Spring · 附加标签",
+            `最近 ${p.springLookbackDays ?? 12} 日内最低价下破前 5 日最低点 0 至 ${p.springUndercutMinPct ?? -6}%；
+             其后 1–${p.springReclaimWindow ?? 5} 日内收复该支撑，且当日涨幅 ≥ ${p.springMinGainPct ?? 4}%、
+             收盘位置 ≥ ${p.springMinClosePosition ?? 45}%、RVOL ≥ ${p.springMinRvol ?? 1.15}；
+             当前价仍高于收复日收盘且支撑未再失守。`,
+          ],
+          [
+            "Tight · 附加标签",
+            `满足 Setup 的<b>全部条件</b>且 15D Range &lt; ${p.tightnessMaxRange15Pct ?? 8}%。
+             判定依据是 Setup 条件本身，因此一只 Breakout 股票同样可以带 Tight 标签。`,
+          ],
+          [
+            "Leaders",
+            `资格池为 Setup / Breakout / Holding，以及带 Spring 标签的 Watch；Fakeout 一律无资格。
+             排序值 = 市值 × (1 + ETF 权重 ÷ ${p.leaderWeightDivisor ?? 5})，最多 ${p.leaderLimit ?? 3} 只。`,
+          ],
+          [
+            "基础指标",
+            `RVOL = 当日成交量 ÷ 50 日均量；15D Range = (15 日最高 − 15 日最低) ÷ 最新收盘 × 100；
+             收盘位置 = (收盘 − 最低) ÷ (最高 − 最低) × 100；3 个月涨幅取 ${p.threeMonthBars ?? 63} 个交易日。`,
+          ],
+        ];
+
+        $("definitions").innerHTML = cards
+          .map(([title, body]) => `<article><b>${title}</b><p>${body}</p></article>`)
+          .join("");
+      }
+
+      // -----------------------------------------------------------------
+      // Wiring
+      // -----------------------------------------------------------------
+
+      document.querySelectorAll("[data-view]").forEach((tab) => {
+        tab.onclick = () => {
+          document.querySelectorAll("[data-view]").forEach((other) => {
+            other.setAttribute("aria-selected", String(other === tab));
+          });
+          document.querySelectorAll("[data-panel]").forEach((panel) => {
+            panel.hidden = panel.dataset.panel !== tab.dataset.view;
+          });
+        };
+      });
+
+      $("clusterSearch").oninput = (event) => {
+        app.clusterQuery = event.target.value;
+        renderClusters();
+      };
+      $("stockSearch").oninput = (event) => {
+        app.stockQuery = event.target.value;
+        renderStocks();
+      };
+      $("rangeBand").onchange = (event) => {
+        app.rangeBand = event.target.value;
+        buildClusters();
+        renderClusters();
+      };
+      $("stateFilter").onchange = (event) => {
+        app.stateFilter = event.target.value;
+        renderStocks();
+      };
+
+      document.querySelectorAll("[data-flag]").forEach((chip) => {
+        chip.onclick = () => {
+          const flag = chip.dataset.flag;
+          app.clusterFlags[flag] = !app.clusterFlags[flag];
+          chip.setAttribute("aria-pressed", String(app.clusterFlags[flag]));
+          renderClusters();
+        };
+      });
+
+      document.querySelectorAll("[data-stock-flag]").forEach((chip) => {
+        chip.onclick = () => {
+          const flag = chip.dataset.stockFlag;
+          app.stockFlags[flag] = !app.stockFlags[flag];
+          chip.setAttribute("aria-pressed", String(app.stockFlags[flag]));
+          renderStocks();
+        };
+      });
+
+      $("clusterReset").onclick = () => {
+        app.clusterQuery = "";
+        app.rangeBand = "";
+        app.clusterFlags = { springTag: false, tightnessTag: false };
+        $("clusterSearch").value = "";
+        $("rangeBand").value = "";
+        document.querySelectorAll("[data-flag]").forEach((chip) => chip.setAttribute("aria-pressed", "false"));
+        buildClusters();
+        renderClusters();
+      };
+
+      $("stockReset").onclick = () => {
+        app.stockQuery = "";
+        app.stateFilter = "";
+        app.stockFlags = { springTag: false, tightnessTag: false };
+        $("stockSearch").value = "";
+        $("stateFilter").value = "";
+        document.querySelectorAll("[data-stock-flag]").forEach((chip) => chip.setAttribute("aria-pressed", "false"));
+        renderStocks();
+      };
+
+      // Header sorting and row selection, delegated so re-renders keep working.
+      $("clusterTable").addEventListener("click", (event) => {
+        const header = event.target.closest("[data-sort]");
+        if (header) {
+          toggleSort(app.clusterSort, header.dataset.sort);
+          renderClusters();
+          return;
+        }
+        const row = event.target.closest("[data-theme]");
+        if (row && !event.target.closest("a")) {
+          app.selected = row.dataset.theme;
+          renderClusters();
+        }
+      });
+
+      $("stockTable").addEventListener("click", (event) => {
+        const header = event.target.closest("[data-sort]");
+        if (header) {
+          toggleSort(app.stockSort, header.dataset.sort);
+          renderStocks();
+        }
+      });
+
+      // -----------------------------------------------------------------
+      // Boot
+      // -----------------------------------------------------------------
+
+      fetch("public/screener-feed.json")
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then((feed) => {
+          app.feed = feed;
+          app.stocks = feed.candidates ?? [];
+          $("syncCount").textContent = `${app.stocks.length} 只 · ${
+            feed.universeCount ?? "—"
+          } 只票池`;
+          $("syncTime").textContent = new Date(feed.updatedAt).toLocaleString("zh-CN");
+          $("definitionsFooter").textContent =
+            `票池要求 50 日日均成交额 ≥ $20M。Cluster Score 用于集中注意力，不是买入信号。`;
+          renderDefinitions(feed.params);
+          buildClusters();
+          renderClusters();
+          renderStocks();
+        })
+        .catch((error) => {
+          $("syncCount").textContent = "数据读取失败";
+          $("syncTime").textContent = error.message;
+          renderDefinitions(null);
+        });
+    </script>
+  </body>
+</html>

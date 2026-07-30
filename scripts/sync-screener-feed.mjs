@@ -2,6 +2,8 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Config, QuoteContext, ScreenerContext } from "longport";
 
+import { PARAMS, classify } from "./rules.js";
+
 function loadLocalEnv() {
   try {
     const text = readFileSync(".env.local", "utf8");
@@ -11,6 +13,12 @@ function loadLocalEnv() {
     }
   } catch {
     // Hosted or managed environments can provide credentials directly.
+  }
+  // The SDK reads LONGPORT_*; older local setups only define LONGBRIDGE_*.
+  for (const name of ["APP_KEY", "APP_SECRET", "ACCESS_TOKEN"]) {
+    if (!process.env[`LONGPORT_${name}`] && process.env[`LONGBRIDGE_${name}`]) {
+      process.env[`LONGPORT_${name}`] = process.env[`LONGBRIDGE_${name}`];
+    }
   }
 }
 
@@ -56,15 +64,6 @@ function parseSectors(csv) {
     const embeddedTicker = label.match(/^(.*?)\s*\(([A-Z][A-Z0-9.-]*)\)$/);
     return { sector: embeddedTicker?.[1]?.trim() ?? label, oneDay: row[2] ?? "", fiveDay: "", oneMonth: row[4] ?? "", status: row[14] ?? "", atrExtension: "", ticker: embeddedTicker?.[2] ?? "", price: row[1] ?? "" };
   }).filter((row) => row.sector && row.ticker);
-}
-
-function parseComponents(csv) {
-  return parseCsv(csv).slice(1).map((row) => ({
-    themeTicker: (row[0] ?? "").trim().toUpperCase(),
-    ticker: (row[1] ?? "").trim().toUpperCase(),
-    name: (row[2] ?? "").trim(),
-    weight: (row[3] ?? "").trim(),
-  })).filter((row) => row.themeTicker && /^[A-Z][A-Z0-9.-]*$/.test(row.ticker));
 }
 
 function parseLocalComponentsFromCsv(path) {
@@ -201,16 +200,6 @@ function average(values) {
   return usable.reduce((sum, value) => sum + value, 0) / usable.length;
 }
 
-function emaSeries(values, period) {
-  if (!values.length) return [];
-  const k = 2 / (period + 1);
-  const series = [values[0]];
-  for (const value of values.slice(1)) {
-    series.push((value * k) + (series.at(-1) * (1 - k)));
-  }
-  return series;
-}
-
 function formatDollarVolume(value) {
   if (!Number.isFinite(value) || value <= 0) return "-";
   if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B`;
@@ -218,209 +207,94 @@ function formatDollarVolume(value) {
   return `${Math.round(value / 1_000)}K`;
 }
 
-function findBreakoutPullback(bars, closes, ema21Series) {
-  const start = Math.max(20, bars.length - 24);
-  for (let index = start; index < bars.length - 1; index += 1) {
-    const bar = bars[index];
-    const prior = bars.slice(Math.max(0, index - 12), index);
-    const priorHigh = Math.max(...prior.map((item) => item.high));
-    const priorVolume = average(bars.slice(Math.max(0, index - 50), index).map((item) => item.volume));
-    const dayChange = index > 0 ? ((bar.close / bars[index - 1].close) - 1) * 100 : 0;
-    const priceBreak = bar.close > priorHigh * 1.02 || dayChange >= 4;
-    const volumeBreak = priorVolume ? bar.volume > priorVolume * 1.15 : true;
-    if (!priceBreak || !volumeBreak) continue;
-
-    const after = bars.slice(index + 1);
-    if (!after.length) continue;
-    const touched21 = after.some((item, offset) => {
-      const ema21 = ema21Series[index + 1 + offset];
-      return ema21 && item.low <= ema21 * 1.04 && item.close >= ema21 * 0.97;
-    });
-    const last = bars.at(-1);
-    const lastEma21 = ema21Series.at(-1);
-    const stillConstructive = lastEma21 && last.close >= lastEma21 * 0.98 && last.close <= bar.high * 1.18;
-    if (touched21 && stillConstructive) {
-      return {
-        breakoutDate: bar.date,
-        breakoutClose: bar.close,
-        breakoutHigh: bar.high,
-        pivot: priorHigh,
-        ema21: lastEma21,
-      };
-    }
-  }
-  return null;
-}
-
-function findSpringBurst(bars) {
-  // A spring sweeps a nearby swing low, then reclaims it with real demand.
-  // The absolute 30-day low missed stair-step bases; a fixed 1% undercut
-  // missed marginal liquidity sweeps.
-  const start = Math.max(5, bars.length - 12);
-  let latestSpring = null;
-
-  for (let index = start; index < bars.length - 1; index += 1) {
-    const bar = bars[index];
-    const prior = bars.slice(index - 5, index);
-    if (prior.length < 5) continue;
-
-    const support = Math.min(...prior.map((item) => item.low));
-    const sweptSupport = bar.low <= support * 1.002 && bar.low >= support * 0.94;
-    if (!sweptSupport) continue;
-
-    const springDayAverageVolume = average(bars.slice(Math.max(0, index - 50), index).map((priorBar) => priorBar.volume));
-    const springDayVolumeBurst = springDayAverageVolume ? bar.volume >= springDayAverageVolume * 1.15 : true;
-
-    const followThrough = bars.slice(index + 1, Math.min(index + 6, bars.length));
-    const burst = followThrough.find((item, offset) => {
-      const previous = bars[index + offset];
-      const absoluteIndex = index + 1 + offset;
-      const averageVolume50 = average(bars.slice(Math.max(0, absoluteIndex - 50), absoluteIndex).map((priorBar) => priorBar.volume));
-      const range = Math.max(item.high - item.low, 0.01);
-      const closePosition = (item.close - item.low) / range;
-      const dayChange = previous ? ((item.close / previous.close) - 1) * 100 : 0;
-      const volumeBurst = springDayVolumeBurst || (averageVolume50 ? item.volume >= averageVolume50 * 1.15 : true);
-      return item.close > support && volumeBurst && closePosition >= 0.55 && dayChange >= 4;
-    });
-
-    const last = bars.at(-1);
-    const stillValid = burst && last.close > bar.close && last.close >= support * 0.97;
-    if (stillValid) {
-      latestSpring = {
-        springDate: bar.date,
-        burstDate: burst.date,
-        liquidityLevel: support,
-      };
-    }
-  }
-
-  return latestSpring;
-}
-
-function pickStatus({ springBurst, breakoutPullback, close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr }) {
-  if (springBurst) return "spring";
-  if (breakoutPullback) return close < breakoutPullback.pivot ? "fakeout" : "bpr";
-  const reclaimed20 = low5 < sma20 && close > sma20 && close > sma50 && threeMonth > 5;
-  const failedBreakout = high5 > priorHigh50 * 1.01 && close < priorHigh50 && close > sma50;
-  const nearPivot = close > sma20 && close > sma50 && high20 > 0 && line <= Math.max(adr * 1.8, 8) && threeMonth > 8;
-  if (failedBreakout) return "fakeout";
-  if (reclaimed20) return "bpr";
-  if (nearPivot) return "anticipation";
-  if (close > sma50 && close > sma20 && close > high50 * 0.82) return "anticipation";
-  return "pool";
-}
-
-function breakoutSignalAt(bars, index) {
-  if (index < 50) return null;
-  const bar = bars[index];
-  const pivot = Math.max(...bars.slice(index - 20, index).map((item) => item.high));
-  const averageVolume50 = average(bars.slice(index - 50, index).map((item) => item.volume));
-  const volumeRatio = averageVolume50 ? bar.volume / averageVolume50 : 0;
-  const closePosition = (bar.close - bar.low) / Math.max(bar.high - bar.low, 0.01);
-  return { valid: bar.close > pivot && volumeRatio >= 1.5 && closePosition >= 0.6, pivot, volumeRatio, closePosition, date: bar.date };
-}
-
+/**
+ * Turn one ticker's candles into a feed row.
+ *
+ * All state logic lives in scripts/rules.mjs — this function only shapes data
+ * for the page. Returns null when the ticker is too illiquid or too new.
+ */
 function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume) {
-  const bars = candles.map((bar) => ({
-    open: toNumber(bar.open),
-    high: toNumber(bar.high),
-    low: toNumber(bar.low),
-    close: toNumber(bar.close),
-    volume: Number(bar.volume ?? 0),
-    turnover: toNumber(bar.turnover),
-    date: bar.timestamp?.toISOString?.().slice(0, 10) ?? "",
-  })).filter((bar) => bar.close > 0 && bar.high > 0 && bar.low > 0);
+  const bars = candles
+    .map((candle) => ({
+      open: toNumber(candle.open),
+      high: toNumber(candle.high),
+      low: toNumber(candle.low),
+      close: toNumber(candle.close),
+      volume: Number(candle.volume ?? 0),
+      turnover: toNumber(candle.turnover),
+      date: candle.timestamp?.toISOString?.().slice(0, 10) ?? "",
+    }))
+    .filter((bar) => bar.close > 0 && bar.high > 0 && bar.low > 0);
 
   const last = bars.at(-1);
-  if (!last || bars.length < 80) return null;
+  if (!last) return null;
+
+  const averageDollarVolume = average(
+    bars.slice(-50).map((bar) => bar.turnover || bar.close * bar.volume),
+  );
+  if (averageDollarVolume < minAverageDollarVolume) return null;
+
+  const verdict = classify(bars);
+  if (!verdict) return null;
 
   const closes = bars.map((bar) => bar.close);
-  const ema21Series = emaSeries(closes, 21);
-  const highs = bars.map((bar) => bar.high);
-  const lows = bars.map((bar) => bar.low);
-  const recent5 = bars.slice(-5);
-  const recent15 = bars.slice(-15);
-  const recent20 = bars.slice(-20);
-  const recent50 = bars.slice(-50);
-  const prior50 = bars.slice(-60, -10);
-  const sma20 = average(closes.slice(-20));
-  const sma50 = average(closes.slice(-50));
-  const sma200 = average(closes.slice(-200));
-  const high20 = Math.max(...recent20.map((bar) => bar.high));
-  const high50 = Math.max(...recent50.map((bar) => bar.high));
-  const priorHigh50 = Math.max(...prior50.map((bar) => bar.high));
-  const low5 = Math.min(...recent5.map((bar) => bar.low));
-  const high5 = Math.max(...recent5.map((bar) => bar.high));
-  const close63 = closes.at(-64) ?? closes[0];
-  const threeMonth = close63 ? ((last.close / close63) - 1) * 100 : 0;
+  const sma200 = bars.length >= 200 ? average(closes.slice(-200)) : null;
   const adr = average(bars.slice(-20).map((bar) => ((bar.high - bar.low) / bar.close) * 100));
-  const vs200 = sma200 ? ((last.close / sma200) - 1) * 100 : null;
-  const line = high20 ? Math.max(0, ((high20 - last.close) / last.close) * 100) : 0;
-  const range15 = Math.max(...recent15.map((bar) => bar.high)) - Math.min(...recent15.map((bar) => bar.low));
-  const range15Pct = (range15 / last.close) * 100;
-  const tightness = Math.max(0, Math.min(100, 100 - (range15Pct * 2.8)));
-  const avgDollar50 = average(recent50.map((bar) => bar.turnover || (bar.close * bar.volume)));
-  if (avgDollar50 < minAverageDollarVolume) return null;
-  const springBurst = findSpringBurst(bars);
-  const todayBreakout = breakoutSignalAt(bars, bars.length - 1);
-  let recentBreakout = null;
-  for (let index = Math.max(50, bars.length - 5); index < bars.length - 1; index += 1) {
-    const signal = breakoutSignalAt(bars, index);
-    if (signal?.valid) recentBreakout = signal;
-  }
-  const pivot = todayBreakout?.pivot ?? recentBreakout?.pivot ?? Math.max(...bars.slice(-21, -1).map((bar) => bar.high));
-  const distanceToPivot = ((pivot - last.close) / last.close) * 100;
-  const currentVolumeRatio = last.volume / average(bars.slice(-51, -1).map((bar) => bar.volume));
-  const currentClosePosition = (last.close - last.low) / Math.max(last.high - last.low, 0.01);
-  const rejectedToday = !todayBreakout?.valid
-    && last.high > pivot
-    && last.close < pivot
-    && currentVolumeRatio >= 1.5
-    && currentClosePosition < 0.5;
-  const lostRecentBreakout = recentBreakout && last.close < recentBreakout.pivot;
-  const failedBreakout = rejectedToday || lostRecentBreakout;
-  const holding = recentBreakout && last.close >= recentBreakout.pivot && last.close >= ema21Series.at(-1) * 0.98;
-  const setup = last.close > sma20 && last.close > sma50 && distanceToPivot >= 0 && distanceToPivot <= 5 && range15Pct <= 12 && threeMonth > 8;
-  const status = failedBreakout ? "fakeout" : todayBreakout?.valid ? "breakout" : holding ? "holding" : setup ? "anticipation" : "pool";
-  const daysSinceHigh20 = Math.max(1, recent20.length - 1 - recent20.findLastIndex((bar) => bar.high === high20));
-  const base = line < 4 && tightness > 70 ? 2 : line < 9 && tightness > 55 ? 3 : line < 16 ? 4 : 5;
-  const ob = last.volume > average(bars.slice(-50, -1).map((bar) => bar.volume)) * 1.6 && last.close > last.open;
-  const wedge = recent5[0]?.high > recent5[1]?.high && recent5[1]?.high > recent5[2]?.high && recent5.at(-1)?.close > recent5.at(-2)?.close;
 
   return {
-    rank: 0,
     ticker: component.ticker,
     name: component.name || component.ticker,
     group: sectorLabel,
     theme: component.themeTicker,
-    status,
-    base,
-    days: daysSinceHigh20,
-    stage: status === "pool" ? "watch" : "active",
-    close: Number(last.close.toFixed(2)),
-    threeMonth: Number(threeMonth.toFixed(1)),
-    adr: Number(adr.toFixed(2)),
-    tightness: Math.round(tightness),
-    dollarVol: formatDollarVolume(avgDollar50),
-    vs200: vs200 === null ? null : Math.round(vs200),
-    line: Number(Math.max(0, distanceToPivot).toFixed(2)),
-    range15Pct: Number(range15Pct.toFixed(2)),
-    relativeVolume: Number((todayBreakout?.volumeRatio ?? (last.volume / average(bars.slice(-51, -1).map((bar) => bar.volume)))).toFixed(2)),
-    closePosition: Number(((todayBreakout?.closePosition ?? ((last.close - last.low) / Math.max(last.high - last.low, 0.01))) * 100).toFixed(0)),
-    pivot: Number(pivot.toFixed(2)),
-    alert: springBurst ? "Spring" : wedge && ob ? "wedge+OB" : undefined,
-    strong: component.strong,
-    etfTags: component.etfTags,
+
+    // Rule output — the page renders these, it does not re-derive them.
+    mainState: verdict.mainState,
+    springTag: verdict.springTag,
+    tightnessTag: verdict.tightnessTag,
+    setupCriteriaMet: verdict.setupCriteriaMet,
+    fakeoutReason: verdict.fakeoutReason,
+    breakoutDate: verdict.breakoutDate,
+    breakoutDaysAgo: verdict.breakoutDaysAgo,
+    spring: verdict.spring
+      ? {
+          springDate: verdict.spring.springDate,
+          reclaimDate: verdict.spring.reclaimDate,
+          support: round(verdict.spring.support),
+          undercutPct: round(verdict.spring.undercutPct),
+          daysSinceReclaim: verdict.spring.daysSinceReclaim,
+        }
+      : null,
+
+    // Metrics, all straight off the rule engine so the table and the state
+    // can never disagree.
+    close: round(verdict.close),
+    sma20: round(verdict.sma20),
+    sma50: round(verdict.sma50),
+    ema21: round(verdict.ema21),
+    pivot: round(verdict.pivot),
+    highest20: round(verdict.highest20),
+    rvol: round(verdict.rvol),
+    closePosition: Math.round(verdict.closePosition),
+    range15Pct: round(verdict.range15Pct),
+    threeMonthPct: round(verdict.threeMonthPct, 1),
+    distanceToHighPct: round(verdict.distanceToHighPct),
+
+    adr: round(adr),
+    vs200: sma200 ? Math.round((verdict.close / sma200 - 1) * 100) : null,
+    dollarVol: formatDollarVolume(averageDollarVolume),
+    averageDollarVolume: Math.round(averageDollarVolume),
+
+    marketCap: component.marketCap,
     weight: component.weight,
     weightsByTheme: component.weightsByTheme,
-    marketCap: component.marketCap,
-    breakoutDate: todayBreakout?.valid ? todayBreakout.date : recentBreakout?.date,
-    springDate: springBurst?.springDate,
-    burstDate: springBurst?.burstDate,
-    liquidityLevel: springBurst?.liquidityLevel ? Number(springBurst.liquidityLevel.toFixed(2)) : undefined,
-    ema21: Number(ema21Series.at(-1).toFixed(2)),
-    lastDate: last.date,
+    etfTags: component.etfTags,
+    strong: component.strong,
+    lastDate: verdict.date,
   };
+}
+
+function round(value, digits = 2) {
+  return value == null || !Number.isFinite(value) ? null : Number(value.toFixed(digits));
 }
 
 async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) {
@@ -440,11 +314,29 @@ async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) 
     candidates.push(...results.filter(Boolean));
     if (index && index % 250 === 0) console.log(`scanned ${index}/${components.length}, passed ${candidates.length}`);
   }
-  candidates.sort((a, b) => {
-    const statusWeight = { breakout: 0, holding: 1, fakeout: 2, anticipation: 3, pool: 4, spring: 5, bpr: 5 };
-    return statusWeight[a.status] - statusWeight[b.status] || a.line - b.line || b.threeMonth - a.threeMonth;
-  });
-  return candidates.map((candidate, index) => ({ ...candidate, rank: index + 1 }));
+  // Actionable first, then closest to its pivot, then strongest 3-month move.
+  const stateOrder = { breakout: 0, holding: 1, setup: 2, fakeout: 3, watch: 4 };
+  candidates.sort(
+    (a, b) =>
+      stateOrder[a.mainState] - stateOrder[b.mainState] ||
+      (a.distanceToHighPct ?? 999) - (b.distanceToHighPct ?? 999) ||
+      (b.threeMonthPct ?? -999) - (a.threeMonthPct ?? -999),
+  );
+
+  // Relative strength percentile over the scanned universe, 1-99.
+  const byMomentum = [...candidates].sort((a, b) => (b.threeMonthPct ?? -999) - (a.threeMonthPct ?? -999));
+  const rs = new Map(
+    byMomentum.map((candidate, index) => [
+      candidate.ticker,
+      Math.max(1, Math.round(99 - (index * 98) / Math.max(1, byMomentum.length - 1))),
+    ]),
+  );
+
+  return candidates.map((candidate, index) => ({
+    ...candidate,
+    rank: index + 1,
+    rs: rs.get(candidate.ticker),
+  }));
 }
 
 loadLocalEnv();
@@ -472,17 +364,22 @@ const candidates = await scanCandidates(ctx, sectors, activeComponents, minAvera
 
 const feed = {
   updatedAt: new Date().toISOString(),
+  // Published so the page can label its own thresholds instead of hardcoding
+  // numbers that drift away from the engine.
+  params: PARAMS,
   sectors,
-  components,
-  activeComponents,
   candidates,
   quotes,
   universeCount: universe.length,
-  stockQuotes: {},
 };
 
 mkdirSync("work", { recursive: true });
 mkdirSync("public", { recursive: true });
-writeFileSync(join("work", "screener-feed.json"), JSON.stringify(feed, null, 2));
-writeFileSync(join("public", "screener-feed.json"), JSON.stringify(feed, null, 2));
+// The working copy keeps the raw holdings for debugging; the published feed
+// carries only what the page renders.
+writeFileSync(
+  join("work", "screener-feed.json"),
+  JSON.stringify({ ...feed, components, activeComponents }, null, 2),
+);
+writeFileSync(join("public", "screener-feed.json"), JSON.stringify(feed));
 console.log(`synced sectors=${sectors.length} holdings=${components.length} universe=${universe.length} candidates=${candidates.length} activeMapped=${candidates.filter((item) => item.strong).length} minAverageDollarVolume=${minAverageDollarVolume}`);
