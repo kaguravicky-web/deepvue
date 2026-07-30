@@ -49,7 +49,7 @@ build=function(){
   if(band){const [minimum,maximum]=band.split('-').map(Number);app.data=allStocks.filter(item=>(item.range15Pct??999)>=minimum&&(item.range15Pct??999)<maximum)}
   app.maxRange=0;buildWithoutTightnessBand();
   const maximumWeight=value=>Math.max(0,...((value||'').match(/\d+(?:\.\d+)?(?=%)/g)||[]).map(Number));
-  app.clusters.forEach(cluster=>{cluster.leaders=[...cluster.all].sort((a,b)=>maximumWeight(b.weight)-maximumWeight(a.weight)||(b.marketCap||0)-(a.marketCap||0)||b.rs2-a.rs2||b.threeMonth-a.threeMonth).slice(0,3);cluster.leader=cluster.leaders[0]});
+  app.clusters.forEach(cluster=>{const eligible=cluster.all.filter(item=>(item.state!=='watch'&&item.state!=='fakeout')||String(item.alert||'').includes('Spring')),themeWeight=item=>maximumWeight(item.weightsByTheme?.[cluster.theme]||item.weight),leaderStrength=item=>(item.marketCap||0)*(1+themeWeight(item)/5);cluster.leaders=[...eligible].sort((a,b)=>leaderStrength(b)-leaderStrength(a)||b.rs2-a.rs2||b.threeMonth-a.threeMonth).slice(0,3);cluster.leader=cluster.leaders[0]});
   render();app.data=allStocks;
 };
 tightnessControl.onchange=event=>{app.tightnessBand=event.target.value;build()};
@@ -61,11 +61,11 @@ tightnessControl.onchange=event=>{app.tightnessBand=event.target.value;build()};
 const oldTightnessLabel=tightnessControl?.closest('label');if(oldTightnessLabel)oldTightnessLabel.remove();
 const oldSortLabel=sortControl?.closest('label');if(oldSortLabel)oldSortLabel.remove();
 const toolbar=document.querySelector('.toolbar');
-const secondaryFilters=document.createElement('div');secondaryFilters.className='secondary-filters';secondaryFilters.innerHTML='<span>Secondary signals</span><button class="filter-chip" data-filter="spring">Spring</button><button class="filter-chip" data-filter="tight">Tight Setup &lt;8%</button>';toolbar.insertAdjacentElement('afterend',secondaryFilters);
+const secondaryFilters=document.createElement('div');secondaryFilters.className='secondary-filters';secondaryFilters.innerHTML='<span>Secondary signals</span><button class="filter-chip" data-filter="spring" title="Spring sweep + 1–5 day volume burst">Spring</button><button class="filter-chip" data-filter="tight" title="Setup with 15-day range below 8%">Tight</button>';toolbar.insertAdjacentElement('afterend',secondaryFilters);
 app.secondaryFilters={spring:false,tight:false};app.sortPriorities=['score','breakout'];
 const sortableColumns=[['group','Group'],['score','Score'],['setup','Setup'],['breakout','Breakout'],['holding','Follow Through'],['fakeout','Fakeout'],['leaders','Leaders'],['laggards','Laggards']];
 const renderBeforeDeepVueSort=render;
-const leaderWeight=cluster=>Math.max(0,...((cluster.leaders?.[0]?.weight||'').match(/\d+(?:\.\d+)?(?=%)/g)||[]).map(Number));
+const leaderWeight=cluster=>Math.max(0,...((cluster.leaders?.[0]?.weightsByTheme?.[cluster.theme]||cluster.leaders?.[0]?.weight||'').match(/\d+(?:\.\d+)?(?=%)/g)||[]).map(Number));
 const sortValue=(cluster,key)=>key==='group'?cluster.label:key==='score'?cluster.score:['setup','breakout','holding','fakeout'].includes(key)?cluster[key].length:key==='leaders'?leaderWeight(cluster):cluster.weak?.rs2??999;
 render=function(){
   const allClusters=app.clusters;
@@ -79,8 +79,16 @@ render=function(){
   const body=$('clusterRows');for(const cluster of sorted){const row=body.querySelector(`[data-key="${CSS.escape(cluster.key)}"]`);if(row)body.appendChild(row)}
   document.querySelectorAll('.tickers a').forEach(anchor=>{const ticker=anchor.textContent.trim().split(/\s/)[0].replace('🔥',''),item=app.data.find(stock=>stock.ticker===ticker);if(!item)return;if(String(item.alert||'').includes('Spring'))anchor.insertAdjacentHTML('beforeend','<span class="signal-tag spring">SPRING</span>');if(item.state==='setup'&&(item.range15Pct??999)<8)anchor.insertAdjacentHTML('beforeend','<span class="signal-tag tight">TIGHT</span>')});
   const stateName={setup:'SETUP',breakout:'BREAKOUT',holding:'FOLLOW THROUGH',fakeout:'FAKEOUT',watch:'WATCH'};
-  document.querySelectorAll('#clusterRows tr').forEach(row=>{const cluster=filtered.find(item=>item.key===row.dataset.key),leaderCell=row.children[6];if(!cluster||!leaderCell)return;leaderCell.querySelectorAll('a').forEach(anchor=>{const ticker=anchor.childNodes[0]?.textContent.trim().replace('🔥',''),leader=cluster.leaders.find(item=>item.ticker===ticker);if(leader)anchor.insertAdjacentHTML('beforeend',`<span class="leader-state ${leader.state}">${stateName[leader.state]}</span>`)})});
-  const definitions=document.querySelector('.definitions-grid');if(definitions&&!definitions.querySelector('[data-state-note]'))definitions.insertAdjacentHTML('beforeend','<article data-state-note><b>Breakout / Follow Through / Leaders</b><p>Breakout 只代表今天刚突破；Follow Through 代表此前 1–10 日突破后仍守在 pivot 与 21EMA 附近。两列是互斥的时间阶段，不会重复。Leaders 是独立角色，可以处于 Setup、Breakout、Follow Through 或 Watch；Leader 标签旁会显示它当前所处阶段。</p></article>');
+  document.querySelectorAll('#clusterRows tr').forEach(row=>{const cluster=filtered.find(item=>item.key===row.dataset.key),leaderCell=row.children[6];if(!cluster||!leaderCell)return;leaderCell.querySelectorAll('a').forEach(anchor=>{const ticker=anchor.childNodes[0]?.textContent.trim().replace('🔥',''),leader=(cluster.leaders||[]).find(item=>item.ticker===ticker);if(leader)anchor.insertAdjacentHTML('beforeend',`<span class="leader-state ${leader.state}">${stateName[leader.state]}</span>`)})});
+  const definitions=document.querySelector('.definitions-grid');if(definitions&&!definitions.querySelector('[data-state-note]'))definitions.insertAdjacentHTML('beforeend','<article data-state-note><b>Breakout / Follow Through / Leaders</b><p>Breakout 只代表今天刚突破；Follow Through 代表此前 1–5 个交易日有效突破后仍守在 pivot 与 21EMA 附近，两列互斥。Leaders 是独立角色，但只从 Setup、Breakout、Follow Through 或近期 Spring 中选择；Watch 与 Fakeout 不可成为 Leader。</p></article>');
+  if(definitions){
+    const articles=[...definitions.querySelectorAll('article')];
+    const note=(name,text)=>{const article=articles.find(item=>item.querySelector('b')?.textContent.startsWith(name));if(article?.querySelector('p'))article.querySelector('p').textContent=text};
+    note('Tightness','TIGHT = Setup 股票的 15D Range < 8%。15D Range = (15日最高价 − 15日最低价) ÷ 最新收盘价 × 100；它是附加标签，不改变主状态。');
+    note('Fakeout','FAKEOUT = 当日刺穿 pivot 后收回 pivot 下方，同时 RVOL ≥ 1.5 且收盘位于当日区间下半部；或最近 1–5 个交易日曾有有效 Breakout、现在收盘跌回该 pivot 下方。');
+    note('Spring','SPRING = 最近 12 个交易日内跌破此前 5 日最低点 0–6%；随后 1–5 日内收回该支撑、单日涨幅 ≥ 4%、收盘位于当日区间上方 45%，且 Spring 日或确认日 RVOL ≥ 1.15。当前价格还必须高于 Spring 日收盘且未再明显失守支撑。');
+    note('Leaders','LEADERS 只从 Setup、Breakout、Follow Through 或近期 Spring 中选择，Watch/Fakeout 无资格。排序值 = 市值 × (1 + 当前 ETF 权重百分比 ÷ 5)，因此优先大盘股，同时对 ETF 权重股加分；最多显示 3 只。');
+  }
   app.clusters=allClusters;
 };
 secondaryFilters.querySelectorAll('[data-filter]').forEach(button=>button.onclick=()=>{const key=button.dataset.filter;app.secondaryFilters[key]=!app.secondaryFilters[key];button.classList.toggle('active',app.secondaryFilters[key]);app.active=null;render()});

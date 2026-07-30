@@ -165,7 +165,12 @@ function mapUniverseToThemes(universe, sectors, holdings) {
     const rows = byStock.get(stock.ticker) ?? [];
     const activeRows = rows.filter((row) => activeTickers.has(row.themeTicker));
     const clusters = Array.from(new Map(activeRows.map((row) => { const cluster = themeClusters.get(row.themeTicker); return [cluster.theme, cluster]; })).values());
-    return { ...stock, themeTicker: clusters.map((cluster) => cluster.theme).join("+") || "UNMAPPED", group: clusters.map((cluster) => cluster.group).join(" + ") || "No active Strong/Uptrend theme", weight: activeRows.map((row) => row.weight).filter(Boolean).join(" / "), etfTags: [...new Set(rows.map((row) => row.themeTicker))], strong: activeRows.length > 0 };
+    const weightsByTheme = Object.fromEntries(clusters.map((cluster) => {
+      const members = new Set(cluster.theme.split("+"));
+      const weights = activeRows.filter((row) => members.has(row.themeTicker)).map((row) => row.weight).filter(Boolean);
+      return [cluster.theme, weights.join(" / ")];
+    }));
+    return { ...stock, themeTicker: clusters.map((cluster) => cluster.theme).join("/") || "UNMAPPED", group: clusters.map((cluster) => cluster.group).join("/") || "No active Strong/Uptrend theme", weight: Object.values(weightsByTheme).filter(Boolean).join(" / "), weightsByTheme, etfTags: [...new Set(rows.map((row) => row.themeTicker))], strong: activeRows.length > 0 };
   });
 }
 
@@ -248,34 +253,40 @@ function findBreakoutPullback(bars, closes, ema21Series) {
 }
 
 function findSpringBurst(bars) {
-  const start = Math.max(30, bars.length - 28);
-  const avgVolume50 = average(bars.slice(-50).map((bar) => bar.volume));
+  // A spring sweeps a nearby swing low, then reclaims it with real demand.
+  // The absolute 30-day low missed stair-step bases; a fixed 1% undercut
+  // missed marginal liquidity sweeps.
+  const start = Math.max(5, bars.length - 12);
+  let latestSpring = null;
 
   for (let index = start; index < bars.length - 1; index += 1) {
     const bar = bars[index];
-    const prior = bars.slice(Math.max(0, index - 30), index - 2);
-    if (prior.length < 12) continue;
+    const prior = bars.slice(index - 5, index);
+    if (prior.length < 5) continue;
 
     const support = Math.min(...prior.map((item) => item.low));
-    const sweptSupport = bar.low < support * 0.99;
-    const reclaimedSupport = bar.close > support;
-    if (!sweptSupport || !reclaimedSupport) continue;
+    const sweptSupport = bar.low <= support * 1.002 && bar.low >= support * 0.94;
+    if (!sweptSupport) continue;
+
+    const springDayAverageVolume = average(bars.slice(Math.max(0, index - 50), index).map((priorBar) => priorBar.volume));
+    const springDayVolumeBurst = springDayAverageVolume ? bar.volume >= springDayAverageVolume * 1.15 : true;
 
     const followThrough = bars.slice(index + 1, Math.min(index + 6, bars.length));
     const burst = followThrough.find((item, offset) => {
       const previous = bars[index + offset];
+      const absoluteIndex = index + 1 + offset;
+      const averageVolume50 = average(bars.slice(Math.max(0, absoluteIndex - 50), absoluteIndex).map((priorBar) => priorBar.volume));
       const range = Math.max(item.high - item.low, 0.01);
       const closePosition = (item.close - item.low) / range;
       const dayChange = previous ? ((item.close / previous.close) - 1) * 100 : 0;
-      const reclaimedRange = item.close > Math.max(...bars.slice(Math.max(0, index - 10), index).map((priorBar) => priorBar.high));
-      const volumeBurst = avgVolume50 ? item.volume > avgVolume50 * 1.15 : true;
-      return volumeBurst && closePosition >= 0.6 && (dayChange >= 4 || reclaimedRange);
+      const volumeBurst = springDayVolumeBurst || (averageVolume50 ? item.volume >= averageVolume50 * 1.15 : true);
+      return item.close > support && volumeBurst && closePosition >= 0.55 && dayChange >= 4;
     });
 
     const last = bars.at(-1);
-    const stillValid = burst && last.close > support && last.close > bar.close;
+    const stillValid = burst && last.close > bar.close && last.close >= support * 0.97;
     if (stillValid) {
-      return {
+      latestSpring = {
         springDate: bar.date,
         burstDate: burst.date,
         liquidityLevel: support,
@@ -283,7 +294,7 @@ function findSpringBurst(bars) {
     }
   }
 
-  return null;
+  return latestSpring;
 }
 
 function pickStatus({ springBurst, breakoutPullback, close, sma20, sma50, high20, high50, priorHigh50, low5, high5, threeMonth, line, adr }) {
@@ -353,13 +364,21 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
   const springBurst = findSpringBurst(bars);
   const todayBreakout = breakoutSignalAt(bars, bars.length - 1);
   let recentBreakout = null;
-  for (let index = Math.max(50, bars.length - 10); index < bars.length - 1; index += 1) {
+  for (let index = Math.max(50, bars.length - 5); index < bars.length - 1; index += 1) {
     const signal = breakoutSignalAt(bars, index);
     if (signal?.valid) recentBreakout = signal;
   }
   const pivot = todayBreakout?.pivot ?? recentBreakout?.pivot ?? Math.max(...bars.slice(-21, -1).map((bar) => bar.high));
   const distanceToPivot = ((pivot - last.close) / last.close) * 100;
-  const failedBreakout = (last.high > pivot && last.close < pivot) || (recentBreakout && last.close < recentBreakout.pivot);
+  const currentVolumeRatio = last.volume / average(bars.slice(-51, -1).map((bar) => bar.volume));
+  const currentClosePosition = (last.close - last.low) / Math.max(last.high - last.low, 0.01);
+  const rejectedToday = !todayBreakout?.valid
+    && last.high > pivot
+    && last.close < pivot
+    && currentVolumeRatio >= 1.5
+    && currentClosePosition < 0.5;
+  const lostRecentBreakout = recentBreakout && last.close < recentBreakout.pivot;
+  const failedBreakout = rejectedToday || lostRecentBreakout;
   const holding = recentBreakout && last.close >= recentBreakout.pivot && last.close >= ema21Series.at(-1) * 0.98;
   const setup = last.close > sma20 && last.close > sma50 && distanceToPivot >= 0 && distanceToPivot <= 5 && range15Pct <= 12 && threeMonth > 8;
   const status = failedBreakout ? "fakeout" : todayBreakout?.valid ? "breakout" : holding ? "holding" : setup ? "anticipation" : "pool";
@@ -393,6 +412,7 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
     strong: component.strong,
     etfTags: component.etfTags,
     weight: component.weight,
+    weightsByTheme: component.weightsByTheme,
     marketCap: component.marketCap,
     breakoutDate: todayBreakout?.valid ? todayBreakout.date : recentBreakout?.date,
     springDate: springBurst?.springDate,

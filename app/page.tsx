@@ -11,7 +11,7 @@ type Candidate = {
   base: number; days: number; stage: string; close: number; threeMonth: number; adr: number;
   tightness: number; dollarVol: string; vs200: number | null; line: number; alert?: string;
   strong: boolean; breakoutDate?: string; burstDate?: string; lastDate?: string; ema21?: number;
-  rs?: number; relativeVolume?: number; volumeRatio?: number; range15Pct?: number; closePosition?: number; pivot?: number; weight?: string; marketCap?: number;
+  rs?: number; relativeVolume?: number; volumeRatio?: number; range15Pct?: number; closePosition?: number; pivot?: number; weight?: string; weightsByTheme?: Record<string, string>; marketCap?: number;
 };
 
 type Sector = {
@@ -43,6 +43,8 @@ const stateLabels: Record<ClusterState, string> = { setup: "Setup", breakout: "B
 
 function parsePercent(value?: string) { const n = Number.parseFloat(value ?? ""); return Number.isFinite(n) ? n : 0; }
 function maximumWeight(value?: string) { return Math.max(0, ...(value?.match(/\d+(?:\.\d+)?(?=%)/g) ?? []).map(Number)); }
+function themeWeight(item: Candidate, theme: string) { return maximumWeight(item.weightsByTheme?.[theme] ?? item.weight); }
+function leaderStrength(item: Candidate, theme: string) { return (item.marketCap ?? 0) * (1 + themeWeight(item, theme) / 5); }
 function stripRank(value: string) { return value.replace(/\s+#\d+\s*$/, "").trim(); }
 function extractRank(value: string) { const match = value.match(/#(\d+)/); return match ? Number(match[1]) : null; }
 function splitCandidate(item: Candidate) {
@@ -132,7 +134,8 @@ export default function Home() {
         { label: "至少一只 RS ≥ 95", points: 1, hit: bucket.all.some((item) => item.computedRs >= 95) },
         { label: "多数突破有量", points: 1, hit: majorityVolume },
       ];
-      const leaders = [...bucket.all].sort((a, b) => maximumWeight(b.weight) - maximumWeight(a.weight) || (b.marketCap ?? 0) - (a.marketCap ?? 0) || b.computedRs - a.computedRs || b.threeMonth - a.threeMonth).slice(0, 3);
+      const leaderCandidates = bucket.all.filter((item) => (item.clusterState !== "watch" && item.clusterState !== "fakeout") || item.alert?.includes("Spring"));
+      const leaders = leaderCandidates.sort((a, b) => leaderStrength(b, bucket.theme) - leaderStrength(a, bucket.theme) || b.computedRs - a.computedRs || b.threeMonth - a.threeMonth).slice(0, 3);
       const weak = [...bucket.all].sort((a, b) => a.computedRs - b.computedRs || a.threeMonth - b.threeMonth)[0];
       return { key, ...bucket, rank, setup, breakout, holding, fakeout, watch, score: rules.reduce((sum, rule) => sum + (rule.hit ? rule.points : 0), 0), rules, leaders, weak, etfTrend, rankRising };
     });
