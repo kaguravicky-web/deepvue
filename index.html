@@ -53,4 +53,32 @@ build=function(){
   render();app.data=allStocks;
 };
 tightnessControl.onchange=event=>{app.tightnessBand=event.target.value;build()};
+</script>
+<style>
+.secondary-filters{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line);background:#fbfbf8;padding:10px 16px}.secondary-filters>span{color:var(--muted);font-size:10px;font-weight:850;text-transform:uppercase}.filter-chip{border:1px solid #dfe2dc;border-radius:999px;background:#fff;color:#707883;padding:6px 10px;font-size:11px;font-weight:850;cursor:pointer}.filter-chip.active{border-color:#82cbae;background:#e8f6ef;color:#27845f;box-shadow:0 0 0 2px #dff3e9}.sort-head{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:inherit;padding:0;font-size:inherit;font-weight:900;cursor:pointer;text-transform:uppercase}.sort-head:hover{color:var(--blue)}.sort-priority{display:inline-grid;width:17px;height:17px;place-items:center;border-radius:50%;background:var(--blue);color:#fff;font-size:9px}.signal-tag{display:inline-block;margin-left:3px;border-radius:4px;padding:1px 4px;font-size:8px;font-weight:900;vertical-align:middle}.signal-tag.spring{background:#fff0d8;color:#b66e16}.signal-tag.tight{background:#e8edff;color:var(--blue)}
+</style>
+<script>
+const oldTightnessLabel=tightnessControl?.closest('label');if(oldTightnessLabel)oldTightnessLabel.remove();
+const oldSortLabel=sortControl?.closest('label');if(oldSortLabel)oldSortLabel.remove();
+const toolbar=document.querySelector('.toolbar');
+const secondaryFilters=document.createElement('div');secondaryFilters.className='secondary-filters';secondaryFilters.innerHTML='<span>Secondary signals</span><button class="filter-chip" data-filter="spring">Spring</button><button class="filter-chip" data-filter="tight">Tight Setup &lt;8%</button>';toolbar.insertAdjacentElement('afterend',secondaryFilters);
+app.secondaryFilters={spring:false,tight:false};app.sortPriorities=['score','breakout'];
+const sortableColumns=[['group','Group'],['score','Score'],['setup','Setup'],['breakout','Breakout'],['holding','Follow Through'],['fakeout','Fakeout'],['leaders','Leaders'],['laggards','Laggards']];
+const renderBeforeDeepVueSort=render;
+const leaderWeight=cluster=>Math.max(0,...((cluster.leaders?.[0]?.weight||'').match(/\d+(?:\.\d+)?(?=%)/g)||[]).map(Number));
+const sortValue=(cluster,key)=>key==='group'?cluster.label:key==='score'?cluster.score:['setup','breakout','holding','fakeout'].includes(key)?cluster[key].length:key==='leaders'?leaderWeight(cluster):cluster.weak?.rs2??999;
+render=function(){
+  const allClusters=app.clusters;
+  let filtered=allClusters;
+  if(app.secondaryFilters.spring)filtered=filtered.filter(cluster=>cluster.all.some(item=>String(item.alert||'').includes('Spring')));
+  if(app.secondaryFilters.tight)filtered=filtered.filter(cluster=>cluster.setup.some(item=>(item.range15Pct??999)<8));
+  app.clusters=filtered;renderBeforeDeepVueSort();
+  const sorted=[...filtered].sort((a,b)=>{for(const key of app.sortPriorities){const av=sortValue(a,key),bv=sortValue(b,key),difference=key==='group'?String(av).localeCompare(String(bv)):key==='laggards'?av-bv:bv-av;if(difference)return difference}return a.label.localeCompare(b.label)});
+  const header=document.querySelector('.cluster-view thead tr');
+  if(header){header.innerHTML=sortableColumns.map(([key,label])=>{const position=app.sortPriorities.indexOf(key);return `<th><button class="sort-head" data-sort-key="${key}" title="Click to add/remove this sort level">${label}${position>=0?`<span class="sort-priority">${position+1}</span>`:''}</button></th>`}).join('');header.querySelectorAll('[data-sort-key]').forEach(button=>button.onclick=()=>{const key=button.dataset.sortKey,index=app.sortPriorities.indexOf(key);if(index>=0)app.sortPriorities.splice(index,1);else if(app.sortPriorities.length<3)app.sortPriorities.push(key);else app.sortPriorities[2]=key;render()})}
+  const body=$('clusterRows');for(const cluster of sorted){const row=body.querySelector(`[data-key="${CSS.escape(cluster.key)}"]`);if(row)body.appendChild(row)}
+  document.querySelectorAll('.tickers a').forEach(anchor=>{const ticker=anchor.textContent.trim().split(/\s/)[0].replace('🔥',''),item=app.data.find(stock=>stock.ticker===ticker);if(!item)return;if(String(item.alert||'').includes('Spring'))anchor.insertAdjacentHTML('beforeend','<span class="signal-tag spring">SPRING</span>');if(item.state==='setup'&&(item.range15Pct??999)<8)anchor.insertAdjacentHTML('beforeend','<span class="signal-tag tight">TIGHT</span>')});
+  app.clusters=allClusters;
+};
+secondaryFilters.querySelectorAll('[data-filter]').forEach(button=>button.onclick=()=>{const key=button.dataset.filter;app.secondaryFilters[key]=!app.secondaryFilters[key];button.classList.toggle('active',app.secondaryFilters[key]);app.active=null;render()});
 </script></body></html>
