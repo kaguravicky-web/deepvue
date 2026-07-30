@@ -439,7 +439,7 @@ if (!sheetResponse.ok) {
 }
 
 const sectors = parseSectors(await sheetResponse.text()).filter((row) => /Strong Trend|Uptrend/i.test(row.status));
-const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_CSV || String.raw`D:\交易为生\deepvue\ETF_holdings_full_38_etfs.csv`;
+const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_CSV || String.raw`D:\交易为生\deepvue\ETF_holdings_clean_with_IGV.csv`;
 const minAverageDollarVolume = Number(process.env.MIN_AVERAGE_DOLLAR_VOLUME ?? 20_000_000);
 const universePrefilterDollarVolume = Number(process.env.UNIVERSE_PREFILTER_DOLLAR_VOLUME ?? 5_000_000);
 const components = parseLocalComponentsFromCsv(localHoldingsPath);
