@@ -739,6 +739,7 @@ tbody tr:hover,
 .ticker-list { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; max-width: 230px; }
 .ticker-total { border-radius: 999px; background: #eef0ec; color: #626b75; padding: 3px 7px; font-size: 10px; font-weight: 850; white-space: nowrap; }
 .ticker-total.large { background: #def2e9; color: var(--green); }
+.ticker-total.danger { background: #fde8ec; color: #c83d57; }
 .cluster-table th:first-child, .cluster-table td:first-child { width: 150px; max-width: 155px; }
 .cluster-table th:nth-child(n+3):nth-child(-n+6), .cluster-table td:nth-child(n+3):nth-child(-n+6) { min-width: 215px; }
 .ticker-list a, .stock-ticker { color: var(--blue); font-family: var(--font-geist-mono), Consolas, monospace; font-size: 12px; font-weight: 850; text-decoration: none; }

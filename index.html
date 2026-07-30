@@ -21,11 +21,11 @@ render=function(){
   document.querySelectorAll('#clusterRows tr').forEach(row=>{
     const cluster=app.clusters.find(item=>item.key===row.dataset.key),cells=[...row.children];
     if(!cluster||cells.length<10)return;
-    const stateCell=(items)=>items.length?`${tickerList(items)}<span class="ticker-total ${items.length>5?'large':''}">Total ${items.length}</span>`:'—';
+    const stateCell=(items,danger=false)=>items.length?`${tickerList(items)}<span class="ticker-total ${danger?'danger':items.length>5?'large':''}">Total ${items.length}</span>`:'—';
     cells[2].innerHTML=stateCell(cluster.setup);
     cells[3].innerHTML=stateCell(cluster.breakout);
     cells[4].innerHTML=stateCell(cluster.holding);
-    cells[5].innerHTML=stateCell(cluster.fakeout);
+    cells[5].innerHTML=stateCell(cluster.fakeout,true);
     cells[6].innerHTML=tickerList(cluster.leaders||[cluster.leader].filter(Boolean));
     cells[8].remove();cells[7].remove();
   });
@@ -78,7 +78,10 @@ render=function(){
   if(header){header.innerHTML=sortableColumns.map(([key,label])=>{const position=app.sortPriorities.indexOf(key);return `<th><button class="sort-head" data-sort-key="${key}" title="Click to add/remove this sort level">${label}${position>=0?`<span class="sort-priority">${position+1}</span>`:''}</button></th>`}).join('');header.querySelectorAll('[data-sort-key]').forEach(button=>button.onclick=()=>{const key=button.dataset.sortKey,index=app.sortPriorities.indexOf(key);if(index>=0)app.sortPriorities.splice(index,1);else if(app.sortPriorities.length<3)app.sortPriorities.push(key);else app.sortPriorities[2]=key;render()})}
   const body=$('clusterRows');for(const cluster of sorted){const row=body.querySelector(`[data-key="${CSS.escape(cluster.key)}"]`);if(row)body.appendChild(row)}
   document.querySelectorAll('.tickers a').forEach(anchor=>{const ticker=anchor.textContent.trim().split(/\s/)[0].replace('🔥',''),item=app.data.find(stock=>stock.ticker===ticker);if(!item)return;if(String(item.alert||'').includes('Spring'))anchor.insertAdjacentHTML('beforeend','<span class="signal-tag spring">SPRING</span>');if(item.state==='setup'&&(item.range15Pct??999)<8)anchor.insertAdjacentHTML('beforeend','<span class="signal-tag tight">TIGHT</span>')});
+  const stateName={setup:'SETUP',breakout:'BREAKOUT',holding:'FOLLOW THROUGH',fakeout:'FAKEOUT',watch:'WATCH'};
+  document.querySelectorAll('#clusterRows tr').forEach(row=>{const cluster=filtered.find(item=>item.key===row.dataset.key),leaderCell=row.children[6];if(!cluster||!leaderCell)return;leaderCell.querySelectorAll('a').forEach(anchor=>{const ticker=anchor.childNodes[0]?.textContent.trim().replace('🔥',''),leader=cluster.leaders.find(item=>item.ticker===ticker);if(leader)anchor.insertAdjacentHTML('beforeend',`<span class="leader-state ${leader.state}">${stateName[leader.state]}</span>`)})});
+  const definitions=document.querySelector('.definitions-grid');if(definitions&&!definitions.querySelector('[data-state-note]'))definitions.insertAdjacentHTML('beforeend','<article data-state-note><b>Breakout / Follow Through / Leaders</b><p>Breakout 只代表今天刚突破；Follow Through 代表此前 1–10 日突破后仍守在 pivot 与 21EMA 附近。两列是互斥的时间阶段，不会重复。Leaders 是独立角色，可以处于 Setup、Breakout、Follow Through 或 Watch；Leader 标签旁会显示它当前所处阶段。</p></article>');
   app.clusters=allClusters;
 };
 secondaryFilters.querySelectorAll('[data-filter]').forEach(button=>button.onclick=()=>{const key=button.dataset.filter;app.secondaryFilters[key]=!app.secondaryFilters[key];button.classList.toggle('active',app.secondaryFilters[key]);app.active=null;render()});
-</script></body></html>
+</script><style>.ticker-total.danger{background:#fde8ec;color:#c83d57}.leader-state{display:inline-block;margin-left:3px;border-radius:4px;background:#edf0ec;color:#66707a;padding:1px 4px;font-size:7px;font-weight:900}.leader-state.breakout{background:#def2e9;color:var(--green)}.leader-state.holding{background:#dff5f8;color:#278a9b}.leader-state.fakeout{background:#fde8ec;color:#c83d57}.leader-state.setup{background:#e8edff;color:var(--blue)}</style></body></html>

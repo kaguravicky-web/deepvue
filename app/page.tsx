@@ -67,9 +67,9 @@ function classify(item: Candidate, updatedAt: string): ClusterState {
 }
 function scoreColor(score: number) { return score >= 9 ? "hot" : score >= 7 ? "strong" : score >= 4 ? "forming" : "quiet"; }
 function tradingView(ticker: string) { return `https://www.tradingview.com/chart/?symbol=NASDAQ:${ticker}`; }
-function TickerList({ items, empty = "—", withTotal = false }: { items: EnrichedCandidate[]; empty?: string; withTotal?: boolean }) {
+function TickerList({ items, empty = "—", withTotal = false, danger = false }: { items: EnrichedCandidate[]; empty?: string; withTotal?: boolean; danger?: boolean }) {
   if (!items.length) return <span className="muted">{empty}</span>;
-  return <div className="ticker-list">{items.slice(0, 5).map((item) => <a key={item.ticker} href={tradingView(item.ticker)} target="_blank" rel="noreferrer" title={`${item.name} · RS ${item.computedRs}`}>{item.ticker}{(item.alert?.includes("🔥") || item.ticker === "OOMA") && <span aria-label="hot">🔥</span>}</a>)}{withTotal && <span className={`ticker-total ${items.length > 5 ? "large" : ""}`}>Total {items.length}</span>}</div>;
+  return <div className="ticker-list">{items.slice(0, 5).map((item) => <a key={item.ticker} href={tradingView(item.ticker)} target="_blank" rel="noreferrer" title={`${item.name} · RS ${item.computedRs}`}>{item.ticker}{(item.alert?.includes("🔥") || item.ticker === "OOMA") && <span aria-label="hot">🔥</span>}</a>)}{withTotal && <span className={`ticker-total ${danger ? "danger" : items.length > 5 ? "large" : ""}`}>Total {items.length}</span>}</div>;
 }
 
 export default function Home() {

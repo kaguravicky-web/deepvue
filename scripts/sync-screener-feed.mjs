@@ -1,7 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Config, QuoteContext, ScreenerContext } from "longport";
-import XLSX from "xlsx";
 
 function loadLocalEnv() {
   try {
@@ -68,19 +67,20 @@ function parseComponents(csv) {
   })).filter((row) => row.themeTicker && /^[A-Z][A-Z0-9.-]*$/.test(row.ticker));
 }
 
-function parseLocalComponentsFromWorkbook(path) {
-  const workbook = XLSX.readFile(path, { cellDates: false });
-  const worksheet = workbook.Sheets.All_Holdings ?? workbook.Sheets[workbook.SheetNames[0]];
-  if (!worksheet) throw new Error(`No worksheet found in ${path}`);
-
-  const rows = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
+function parseLocalComponentsFromCsv(path) {
+  const rows = parseCsv(readFileSync(path, "utf8"));
+  const headers = rows[0].map((value) => String(value ?? "").trim());
+  const positions = Object.fromEntries(headers.map((header, index) => [header, index]));
+  for (const required of ["ETF", "Holding Ticker", "Holding Name", "Weight (%)"]) {
+    if (!(required in positions)) throw new Error(`Missing ${required} column in ${path}`);
+  }
   const components = [];
 
-  for (const row of rows) {
-    const themeTicker = String(row.ETF ?? "").trim().toUpperCase();
-    const ticker = String(row["Holding Ticker"] ?? "").trim().toUpperCase();
-    const name = String(row["Holding Name"] ?? "").trim();
-    const rawWeight = row["Weight (%)"];
+  for (const row of rows.slice(1)) {
+    const themeTicker = String(row[positions.ETF] ?? "").trim().toUpperCase();
+    const ticker = String(row[positions["Holding Ticker"]] ?? "").trim().toUpperCase();
+    const name = String(row[positions["Holding Name"]] ?? "").trim();
+    const rawWeight = row[positions["Weight (%)"]];
     const weightNumber = Number(rawWeight);
     const weight = Number.isFinite(weightNumber) ? `${weightNumber.toFixed(2)}%` : String(rawWeight ?? "").trim();
 
@@ -439,10 +439,10 @@ if (!sheetResponse.ok) {
 }
 
 const sectors = parseSectors(await sheetResponse.text()).filter((row) => /Strong Trend|Uptrend/i.test(row.status));
-const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_XLSX || String.raw`D:\交易为生\deepvue\ETF_holdings_full_37_etfs_corrected.xlsx`;
+const localHoldingsPath = process.env.LOCAL_ETF_HOLDINGS_CSV || String.raw`D:\交易为生\deepvue\ETF_holdings_full_38_etfs.csv`;
 const minAverageDollarVolume = Number(process.env.MIN_AVERAGE_DOLLAR_VOLUME ?? 20_000_000);
 const universePrefilterDollarVolume = Number(process.env.UNIVERSE_PREFILTER_DOLLAR_VOLUME ?? 5_000_000);
-const components = parseLocalComponentsFromWorkbook(localHoldingsPath);
+const components = parseLocalComponentsFromCsv(localHoldingsPath);
 const ctx = QuoteContext.new(Config.fromApikeyEnv());
 const screenerCtx = ScreenerContext.new(Config.fromApikeyEnv());
 const universe = await fetchLiquidUniverse(screenerCtx, universePrefilterDollarVolume);
