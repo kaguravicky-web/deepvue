@@ -210,7 +210,7 @@ function formatDollarVolume(value) {
 /**
  * Turn one ticker's candles into a feed row.
  *
- * All state logic lives in scripts/rules.mjs — this function only shapes data
+ * All state logic lives in scripts/rules.js — this function only shapes data
  * for the page. Returns null when the ticker is too illiquid or too new.
  */
 function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume) {

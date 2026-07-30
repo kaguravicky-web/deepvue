@@ -1,4 +1,4 @@
-"""Proves scripts/rules_reference.py agrees with scripts/rules.mjs.
+"""Proves scripts/rules_reference.py agrees with scripts/rules.js.
 
 The JS module is the engine that builds the published feed; the Python module
 is the reference. If they ever drift, this fails.
@@ -79,7 +79,7 @@ def main() -> int:
                 )
 
     if failures:
-        print(f"FAIL — {len(failures)} mismatch(es) between rules.mjs and rules_reference.py")
+        print(f"FAIL — {len(failures)} mismatch(es) between rules.js and rules_reference.py")
         for line in failures:
             print(f"  {line}")
         return 1

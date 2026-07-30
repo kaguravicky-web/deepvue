@@ -1,7 +1,7 @@
 /**
  * Writes the JS rule fixtures to CSV plus their expected verdicts, so
  * tests/test_rules_parity.py can prove the pandas reference agrees with
- * scripts/rules.mjs bar for bar.
+ * scripts/rules.js bar for bar.
  *
  *   node tests/export-fixtures.mjs > tests/fixtures.json
  */

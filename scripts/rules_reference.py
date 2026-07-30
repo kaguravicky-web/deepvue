@@ -1,6 +1,6 @@
 """Pandas reference implementation of the scanner's state rules.
 
-This is the same specification as ``scripts/rules.mjs``, which is what actually
+This is the same specification as ``scripts/rules.js``, which is what actually
 produces the published feed. Keep the two in sync: the constants in ``PARAMS``
 below mirror the JS module one for one, and the EMA is seeded the same way
 (``adjust=False``) so both agree bar for bar.
@@ -61,7 +61,7 @@ def compute_metrics(frame: pd.DataFrame) -> pd.DataFrame:
 
     out["sma20"] = out["close"].rolling(20).mean()
     out["sma50"] = out["close"].rolling(50).mean()
-    # adjust=False seeds the EMA with the first close, matching rules.mjs.
+    # adjust=False seeds the EMA with the first close, matching rules.js.
     out["ema21"] = out["close"].ewm(span=21, adjust=False).mean()
 
     out["highest_20d"] = out["high"].rolling(20).max()
