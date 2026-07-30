@@ -120,7 +120,11 @@ async function fetchLiquidUniverse(ctx, currentDollarVolumeFloor) {
     const payload = typeof response.data === "string" ? JSON.parse(response.data) : (response.data ?? response);
     total = Number(payload.total ?? payload.totalCount ?? payload.total_count ?? 0);
     const items = payload.items ?? [];
-    stocks.push(...items.filter(isTradableStock).map((item) => ({ ticker: String(item.counterId ?? item.counter_id).split("/").at(-1).toUpperCase(), name: String(item.name ?? "").trim() })));
+    stocks.push(...items.filter(isTradableStock).map((item) => ({
+      ticker: String(item.counterId ?? item.counter_id).split("/").at(-1).toUpperCase(),
+      name: String(item.name ?? "").trim(),
+      marketCap: toNumber(item.indicators?.find((indicator) => indicator.key === "marketcap")?.value),
+    })));
     if (!items.length) break;
     page += 1;
     await new Promise((resolve) => setTimeout(resolve, 900));
@@ -389,6 +393,7 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
     strong: component.strong,
     etfTags: component.etfTags,
     weight: component.weight,
+    marketCap: component.marketCap,
     breakoutDate: todayBreakout?.valid ? todayBreakout.date : recentBreakout?.date,
     springDate: springBurst?.springDate,
     burstDate: springBurst?.burstDate,

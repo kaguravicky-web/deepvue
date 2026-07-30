@@ -26,10 +26,13 @@ render=function(){
     cells[3].innerHTML=stateCell(cluster.breakout);
     cells[4].innerHTML=stateCell(cluster.holding);
     cells[5].innerHTML=stateCell(cluster.fakeout);
+    cells[6].innerHTML=tickerList(cluster.leaders||[cluster.leader].filter(Boolean));
     cells[8].remove();cells[7].remove();
   });
+  const activeCluster=app.clusters.find(item=>item.key===app.active),leaderRow=document.querySelector('.ladder-row');
+  if(activeCluster&&leaderRow)leaderRow.innerHTML=`<span>LEADERS</span>${tickerList(activeCluster.leaders||[activeCluster.leader].filter(Boolean))}`;
   const notes=document.querySelector('.definitions-grid');
-  if(notes&&!notes.querySelector('[data-leader-note]'))notes.insertAdjacentHTML('beforeend','<article data-leader-note><b>Leader</b><p>同一群组中先按 RS 从高到低排序；RS 相同再按三个月涨幅从高到低排序，排名第一的股票就是 Leader。Leader 是相对强度代表，不等于买点。</p></article>');
+  if(notes&&!notes.querySelector('[data-leader-note]'))notes.insertAdjacentHTML('beforeend','<article data-leader-note><b>Leaders · 2–3只</b><p>优先选择相关 ETF 成分权重更高的股票；其次比较公司市值，再比较 RS 和三个月表现。目的是找出真正能带动板块的大盘权重股，不等于买点。</p></article>');
   const tightnessNote=notes?.querySelector('article:first-child p');if(tightnessNote)tightnessNote.textContent='(15日最高价 − 15日最低价) ÷ 最新收盘价 ×100。筛选区间为 3%–6%、6%–9%、9%–12%；数值越小，价格区间越紧。';
 };
 const groupByControl=$('groupBy');if(groupByControl)groupByControl.closest('label').remove();
@@ -38,13 +41,16 @@ const tightnessControl=$('tightness');
 tightnessControl.innerHTML='<option value="">Any 15D Range</option><option value="3-6">3%–6%</option><option value="6-9">6%–9%</option><option value="9-12">9%–12%</option>';
 const sortControl=$('sort');
 sortControl.querySelector('option[value="score"]').textContent='Cluster Score · Signal Strength';
-sortControl.querySelector('option[value="rank"]').textContent='Group Rank · Theme Trend';
-sortControl.closest('label').title='Cluster Score = 综合集群信号；Group Rank = 主题趋势排名';
+sortControl.querySelector('option[value="rank"]')?.remove();
+sortControl.closest('label').title='按综合集群信号、各状态股票数量排序';
 const buildWithoutTightnessBand=build;
 build=function(){
   const allStocks=app.data,band=app.tightnessBand;
   if(band){const [minimum,maximum]=band.split('-').map(Number);app.data=allStocks.filter(item=>(item.range15Pct??999)>=minimum&&(item.range15Pct??999)<maximum)}
-  app.maxRange=0;buildWithoutTightnessBand();app.data=allStocks;
+  app.maxRange=0;buildWithoutTightnessBand();
+  const maximumWeight=value=>Math.max(0,...((value||'').match(/\d+(?:\.\d+)?(?=%)/g)||[]).map(Number));
+  app.clusters.forEach(cluster=>{cluster.leaders=[...cluster.all].sort((a,b)=>maximumWeight(b.weight)-maximumWeight(a.weight)||(b.marketCap||0)-(a.marketCap||0)||b.rs2-a.rs2||b.threeMonth-a.threeMonth).slice(0,3);cluster.leader=cluster.leaders[0]});
+  render();app.data=allStocks;
 };
 tightnessControl.onchange=event=>{app.tightnessBand=event.target.value;build()};
 </script></body></html>
