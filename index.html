@@ -30,5 +30,21 @@ render=function(){
   });
   const notes=document.querySelector('.definitions-grid');
   if(notes&&!notes.querySelector('[data-leader-note]'))notes.insertAdjacentHTML('beforeend','<article data-leader-note><b>Leader</b><p>同一群组中先按 RS 从高到低排序；RS 相同再按三个月涨幅从高到低排序，排名第一的股票就是 Leader。Leader 是相对强度代表，不等于买点。</p></article>');
+  const tightnessNote=notes?.querySelector('article:first-child p');if(tightnessNote)tightnessNote.textContent='(15日最高价 − 15日最低价) ÷ 最新收盘价 ×100。筛选区间为 3%–6%、6%–9%、9%–12%；数值越小，价格区间越紧。';
 };
+const groupByControl=$('groupBy');if(groupByControl)groupByControl.closest('label').remove();
+const minScoreControl=$('min');if(minScoreControl)minScoreControl.closest('label').remove();
+const tightnessControl=$('tightness');
+tightnessControl.innerHTML='<option value="">Any 15D Range</option><option value="3-6">3%–6%</option><option value="6-9">6%–9%</option><option value="9-12">9%–12%</option>';
+const sortControl=$('sort');
+sortControl.querySelector('option[value="score"]').textContent='Cluster Score · Signal Strength';
+sortControl.querySelector('option[value="rank"]').textContent='Group Rank · Theme Trend';
+sortControl.closest('label').title='Cluster Score = 综合集群信号；Group Rank = 主题趋势排名';
+const buildWithoutTightnessBand=build;
+build=function(){
+  const allStocks=app.data,band=app.tightnessBand;
+  if(band){const [minimum,maximum]=band.split('-').map(Number);app.data=allStocks.filter(item=>(item.range15Pct??999)>=minimum&&(item.range15Pct??999)<maximum)}
+  app.maxRange=0;buildWithoutTightnessBand();app.data=allStocks;
+};
+tightnessControl.onchange=event=>{app.tightnessBand=event.target.value;build()};
 </script></body></html>

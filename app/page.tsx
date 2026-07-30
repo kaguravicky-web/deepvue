@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 
 type Status = "spring" | "anticipation" | "fakeout" | "bpr" | "breakout" | "holding" | "pool";
 type ClusterState = "setup" | "breakout" | "holding" | "fakeout" | "watch";
-type GroupBy = "group" | "industry";
 type SortBy = "score" | "setup" | "breakout" | "holding" | "fakeout" | "rank";
 
 type Candidate = {
@@ -76,11 +75,9 @@ export default function Home() {
   const [feed, setFeed] = useState<SectorFeed | null>(null);
   const [feedError, setFeedError] = useState("");
   const [view, setView] = useState<"cluster" | "stocks">("cluster");
-  const [groupBy, setGroupBy] = useState<GroupBy>("group");
   const [sortBy, setSortBy] = useState<SortBy>("score");
   const [query, setQuery] = useState("");
-  const [minScore, setMinScore] = useState(0);
-  const [maxRange15, setMaxRange15] = useState(0);
+  const [tightnessBand, setTightnessBand] = useState("");
   const [selectedCluster, setSelectedCluster] = useState<string | null>(null);
 
   useEffect(() => {
@@ -98,14 +95,18 @@ export default function Home() {
     const rs = new Map(byMomentum.map((item, index) => [item.ticker, Math.max(1, Math.round(99 - index * 98 / Math.max(1, byMomentum.length - 1)))]));
     return candidates.map((item) => ({ ...item, clusterState: classify(item, feed?.updatedAt ?? new Date().toISOString()), computedRs: item.rs ?? rs.get(item.ticker) ?? 1 }));
   }, [candidates, feed?.updatedAt]);
-  const tightnessFiltered = useMemo(() => maxRange15 ? enriched.filter((item) => (item.range15Pct ?? 999) <= maxRange15) : enriched, [enriched, maxRange15]);
+  const tightnessFiltered = useMemo(() => {
+    if (!tightnessBand) return enriched;
+    const [minimum, maximum] = tightnessBand.split("-").map(Number);
+    return enriched.filter((item) => (item.range15Pct ?? 999) >= minimum && (item.range15Pct ?? 999) < maximum);
+  }, [enriched, tightnessBand]);
 
   const clusters = useMemo<Cluster[]>(() => {
     const sectorByTicker = new Map((feed?.sectors ?? []).map((sector, index) => [sector.ticker, { ...sector, rank: sector.rank ?? index + 1 }]));
     const buckets = new Map<string, { label: string; theme: string; group: string; industry: string; rank: number | null; all: EnrichedCandidate[] }>();
     for (const item of tightnessFiltered.filter((candidate) => candidate.strong)) for (const part of splitCandidate(item)) {
-      const label = groupBy === "industry" ? part.industry : part.group;
-      const key = `${groupBy}:${label}`;
+      const label = part.group;
+      const key = `group:${label}`;
       const bucket = buckets.get(key) ?? { label, theme: part.theme, group: part.group, industry: part.industry, rank: extractRank(part.group), all: [] };
       if (!bucket.all.some((stock) => stock.ticker === item.ticker)) bucket.all.push(item);
       buckets.set(key, bucket);
@@ -133,13 +134,13 @@ export default function Home() {
       const ordered = [...bucket.all].sort((a, b) => b.computedRs - a.computedRs || b.threeMonth - a.threeMonth);
       return { key, ...bucket, rank, setup, breakout, holding, fakeout, watch, score: rules.reduce((sum, rule) => sum + (rule.hit ? rule.points : 0), 0), rules, leader: ordered[0], weak: ordered.at(-1), etfTrend, rankRising };
     });
-  }, [tightnessFiltered, feed?.sectors, feed?.updatedAt, groupBy]);
+  }, [tightnessFiltered, feed?.sectors, feed?.updatedAt]);
 
-  const visibleClusters = useMemo(() => clusters.filter((cluster) => cluster.score >= minScore && `${cluster.label} ${cluster.theme} ${cluster.all.map((item) => item.ticker).join(" ")}`.toLowerCase().includes(query.toLowerCase())).sort((a, b) => {
+  const visibleClusters = useMemo(() => clusters.filter((cluster) => `${cluster.label} ${cluster.theme} ${cluster.all.map((item) => item.ticker).join(" ")}`.toLowerCase().includes(query.toLowerCase())).sort((a, b) => {
     if (sortBy === "rank") return (a.rank ?? 999) - (b.rank ?? 999);
     if (sortBy === "score") return b.score - a.score || b.all.length - a.all.length;
     return b[sortBy].length - a[sortBy].length || b.score - a.score;
-  }), [clusters, minScore, query, sortBy]);
+  }), [clusters, query, sortBy]);
   const active = visibleClusters.find((cluster) => cluster.key === selectedCluster) ?? visibleClusters[0];
   const totals = visibleClusters.reduce((sum, cluster) => ({ setup: sum.setup + cluster.setup.length, breakout: sum.breakout + cluster.breakout.length, holding: sum.holding + cluster.holding.length, fakeout: sum.fakeout + cluster.fakeout.length }), { setup: 0, breakout: 0, holding: 0, fakeout: 0 });
 
@@ -148,7 +149,7 @@ export default function Home() {
     <nav className="view-tabs" aria-label="页面"><button className={view === "cluster" ? "selected" : ""} onClick={() => setView("cluster")}>Cluster Monitor</button><button className={view === "stocks" ? "selected" : ""} onClick={() => setView("stocks")}>股票明细</button></nav>
     {view === "cluster" ? <>
       <section className="summary-strip"><div><b>{visibleClusters.length}</b><span>活跃群组</span></div><div className="setup-stat"><b>{totals.setup}</b><span>Setup</span></div><div className="breakout-stat"><b>{totals.breakout}</b><span>Breakout</span></div><div className="holding-stat"><b>{totals.holding}</b><span>Holding</span></div><div className="fakeout-stat"><b>{totals.fakeout}</b><span>Fakeout</span></div></section>
-      <div className="cluster-toolbar"><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索群组、主题或股票" /><label title="Choose how stocks are combined into rows">Group By<select value={groupBy} onChange={(event) => setGroupBy(event.target.value as GroupBy)}><option value="group">Group (ranked group)</option><option value="industry">Industry (business)</option></select></label><label>Tightness<select value={maxRange15} onChange={(event) => setMaxRange15(Number(event.target.value))}><option value="0">Any 15D Range</option><option value="8">15D Range ≤ 8%</option><option value="12">15D Range ≤ 12%</option><option value="16">15D Range ≤ 16%</option></select></label><label title="Choose what appears first in the table">Sort By<select value={sortBy} onChange={(event) => setSortBy(event.target.value as SortBy)}><option value="score">Cluster Score (highest)</option><option value="breakout">Breakout Count</option><option value="setup">Setup Count</option><option value="holding">Holding Count</option><option value="fakeout">Fakeout Count</option><option value="rank">Group Rank (best)</option></select></label><label>Min Score<select value={minScore} onChange={(event) => setMinScore(Number(event.target.value))}>{[0,4,7,9].map((value) => <option key={value} value={value}>{value}+</option>)}</select></label></div>
+      <div className="cluster-toolbar"><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索群组、主题或股票" /><label>Tightness<select value={tightnessBand} onChange={(event) => setTightnessBand(event.target.value)}><option value="">Any 15D Range</option><option value="3-6">3%–6%</option><option value="6-9">6%–9%</option><option value="9-12">9%–12%</option></select></label><label title="Cluster Score = 综合集群信号；Group Rank = 主题趋势排名">Sort By<select value={sortBy} onChange={(event) => setSortBy(event.target.value as SortBy)}><option value="score">Cluster Score · Signal Strength</option><option value="breakout">Breakout Count</option><option value="setup">Setup Count</option><option value="holding">Holding Count</option><option value="fakeout">Fakeout Count</option><option value="rank">Group Rank · Theme Trend</option></select></label></div>
       <div className="cluster-layout"><div className="cluster-table-wrap"><table className="cluster-table"><thead><tr><th>Group / ETF</th><th>Score</th><th>Setup · 等待突破</th><th>Breakout · 已突破</th><th>Holding · 跟进</th><th>Fakeout · 失败突破</th><th>Leader</th><th>弱势对照</th></tr></thead><tbody>{visibleClusters.map((cluster) => <tr key={cluster.key} className={active?.key === cluster.key ? "active-row" : ""} onClick={() => setSelectedCluster(cluster.key)}><td><div className="group-cell"><strong>{cluster.label}</strong><span>{cluster.theme} · Rank {cluster.rank ?? "—"} {cluster.etfTrend && "↑"}</span></div></td><td><span className={`score ${scoreColor(cluster.score)}`}>{cluster.score}<small>/10</small></span></td><td><TickerList items={cluster.setup} withTotal /></td><td><TickerList items={cluster.breakout} withTotal /></td><td><TickerList items={cluster.holding} withTotal /></td><td><TickerList items={cluster.fakeout} withTotal /></td><td><TickerList items={cluster.leader ? [cluster.leader] : []} /></td><td><TickerList items={cluster.weak && cluster.weak !== cluster.leader ? [cluster.weak] : []} /></td></tr>)}</tbody></table></div>
         <aside className="cluster-detail">{active ? <><div className="detail-head"><div><span>CLUSTER SCORE</span><strong className={scoreColor(active.score)}>{active.score}<small>/10</small></strong></div><div><h2>{active.label}</h2><p>{active.theme} · {active.all.length} 只观察股</p></div></div><div className="rule-list">{active.rules.map((rule) => <div key={rule.label} className={rule.hit ? "hit" : ""}><span>{rule.hit ? "✓" : "·"}</span><p>{rule.label}</p><b>+{rule.points}</b></div>)}</div><div className="ladder"><h3>板块梯队</h3><div><span>Leader</span><TickerList items={active.leader ? [active.leader] : []} /></div><div><span>Breakout</span><TickerList items={active.breakout} /></div><div><span>Setup</span><TickerList items={active.setup} /></div><div><span>Holding</span><TickerList items={active.holding} /></div><div><span>Weak compare</span><TickerList items={active.weak ? [active.weak] : []} /></div></div></> : <p className="empty">没有符合筛选条件的群组</p>}</aside></div>
       <section className="definition-notes"><h2>Notes · Exact Scanner Rules</h2><p className="definition-intro">主状态按 Fakeout → Breakout → Holding → Setup → Watch 的顺序判定，每只股票只能有一个主状态；Spring 只作为额外标签。</p><div className="definition-grid"><article><b>Tightness · 15D Range</b><p><code>(15日最高价 − 15日最低价) ÷ 最新收盘价 × 100</code>。筛选器可选择 ≤8%、≤12% 或 ≤16%；数值越小，价格区间越紧。</p></article><article><b>Setup</b><p>收盘高于 SMA20 和 SMA50；距离此前20日最高价为 0–5%；15D Range ≤12%；三个月涨幅 &gt;8%；并且没有先命中 Breakout、Holding 或 Fakeout。</p></article><article><b>Breakout</b><p>最新收盘 &gt; 此前20个交易日最高价；当日成交量 ÷ 前50日平均成交量 ≥1.5；收盘位置 <code>(收盘−最低)÷(最高−最低)</code> ≥60%。</p></article><article><b>Holding</b><p>过去10个交易日内出现符合上述全部条件的 Breakout；最新收盘仍 ≥ breakout pivot；最新收盘同时 ≥ 21EMA ×98%。</p></article><article><b>Fakeout</b><p>当日最高价刺穿 pivot、但收盘 &lt; pivot；或者过去10日出现有效 Breakout，而最新收盘已经跌回该 breakout pivot 下方。</p></article><article><b>Spring · Secondary Tag</b><p>先跌破此前约30日支撑至少1%并收回；随后1–5日出现成交量 &gt;50日均量×1.15，且涨幅≥4%或收复短期高点。它不再改变主状态。</p></article></div><p className="method-note">Universe 仍要求50日平均每日成交额 ≥ $20M。Cluster Score 用于集中注意力，不是买入信号。</p></section>
