@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Config, QuoteContext, ScreenerContext } from "longport";
 
-import { PARAMS, classify } from "./rules.js";
+import { DEFAULT_PRESET, PARAMS, applyRsRating, classify } from "./rules.js";
 
 function loadLocalEnv() {
   try {
@@ -274,6 +274,8 @@ function analyzeCandles(component, sectorLabel, candles, minAverageDollarVolume)
     pivot: round(verdict.pivot),
     highest20: round(verdict.highest20),
     rvol: round(verdict.rvol),
+    rmv: round(verdict.rmv, 1),
+    volumeDryUp: round(verdict.volumeDryUp),
     closePosition: Math.round(verdict.closePosition),
     range15Pct: round(verdict.range15Pct),
     threeMonthPct: round(verdict.threeMonthPct, 1),
@@ -314,16 +316,9 @@ async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) 
     candidates.push(...results.filter(Boolean));
     if (index && index % 250 === 0) console.log(`scanned ${index}/${components.length}, passed ${candidates.length}`);
   }
-  // Actionable first, then closest to its pivot, then strongest 3-month move.
-  const stateOrder = { breakout: 0, holding: 1, setup: 2, fakeout: 3, watch: 4 };
-  candidates.sort(
-    (a, b) =>
-      stateOrder[a.mainState] - stateOrder[b.mainState] ||
-      (a.distanceToHighPct ?? 999) - (b.distanceToHighPct ?? 999) ||
-      (b.threeMonthPct ?? -999) - (a.threeMonthPct ?? -999),
-  );
-
-  // Relative strength percentile over the scanned universe, 1-99.
+  // Relative strength percentile over the scanned universe, 1-99. RS is a
+  // rank, so it can only be known once every ticker has been classified —
+  // that is why the Setup gate on it is applied here rather than in the rules.
   const byMomentum = [...candidates].sort((a, b) => (b.threeMonthPct ?? -999) - (a.threeMonthPct ?? -999));
   const rs = new Map(
     byMomentum.map((candidate, index) => [
@@ -332,11 +327,21 @@ async function scanCandidates(ctx, sectors, components, minAverageDollarVolume) 
     ]),
   );
 
-  return candidates.map((candidate, index) => ({
-    ...candidate,
-    rank: index + 1,
-    rs: rs.get(candidate.ticker),
-  }));
+  const rated = candidates.map((candidate) => {
+    const rsRating = rs.get(candidate.ticker);
+    return { ...applyRsRating(candidate, rsRating), rs: rsRating };
+  });
+
+  // Actionable first, then closest to its pivot, then strongest 3-month move.
+  const stateOrder = { breakout: 0, holding: 1, setup: 2, fakeout: 3, watch: 4 };
+  rated.sort(
+    (a, b) =>
+      stateOrder[a.mainState] - stateOrder[b.mainState] ||
+      (a.distanceToHighPct ?? 999) - (b.distanceToHighPct ?? 999) ||
+      (b.threeMonthPct ?? -999) - (a.threeMonthPct ?? -999),
+  );
+
+  return rated.map((candidate, index) => ({ ...candidate, rank: index + 1 }));
 }
 
 loadLocalEnv();
@@ -366,6 +371,7 @@ const feed = {
   updatedAt: new Date().toISOString(),
   // Published so the page can label its own thresholds instead of hardcoding
   // numbers that drift away from the engine.
+  preset: DEFAULT_PRESET,
   params: PARAMS,
   sectors,
   candidates,

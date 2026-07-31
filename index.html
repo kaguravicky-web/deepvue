@@ -675,6 +675,7 @@
         <div class="sync">
           <strong id="syncCount">读取中…</strong>
           <span id="syncTime"></span>
+          <span id="presetName"></span>
         </div>
       </header>
 
@@ -691,12 +692,13 @@
           <div class="toolbar">
             <input class="search" id="clusterSearch" placeholder="搜索板块、ETF 或成分股" />
             <label class="field">
-              15D Range
+              RMV 紧密度
               <select id="rangeBand">
                 <option value="">不限</option>
-                <option value="0-6">≤ 6%</option>
-                <option value="6-9">6% – 9%</option>
-                <option value="9-12">9% – 12%</option>
+                <option value="0-10">≤ 10 · 很紧</option>
+                <option value="10-15">10 – 15 · 收紧中</option>
+                <option value="15-40">15 – 40 · 一般</option>
+                <option value="40-101">&gt; 40 · 已放大</option>
               </select>
             </label>
             <div class="chips">
@@ -888,8 +890,8 @@
       function inRangeBand(stock) {
         if (!app.rangeBand) return true;
         const [low, high] = app.rangeBand.split("-").map(Number);
-        const range = stock.range15Pct;
-        return Number.isFinite(range) && range >= low && range < high;
+        const value = stock.rmv;
+        return Number.isFinite(value) && value >= low && value < high;
       }
 
       // -----------------------------------------------------------------
@@ -1103,7 +1105,8 @@
         ["rs", "RS", true],
         ["threeMonthPct", "3 个月", true],
         ["distanceToHighPct", "距 20 日高", true],
-        ["range15Pct", "15D Range", true],
+        ["rmv", "RMV", true],
+        ["volumeDryUp", "缩量", true],
         ["rvol", "RVOL", true],
         ["closePosition", "收盘位置", true],
         ["close", "收盘", true],
@@ -1118,7 +1121,8 @@
         if (key === "label") return stock.strong ? (stock.group ?? "") : "￿";
         if (key === "state") return -STATE_ORDER[stock.mainState];
         if (key === "distanceToHighPct") return -(stock.distanceToHighPct ?? 999);
-        if (key === "range15Pct") return -(stock.range15Pct ?? 999);
+        if (key === "rmv") return -(stock.rmv ?? 999);
+        if (key === "volumeDryUp") return -(stock.volumeDryUp ?? 999);
         if (key === "dollarVol") return stock.averageDollarVolume ?? 0;
         return stock[key] ?? 0;
       };
@@ -1147,7 +1151,8 @@
               <td class="num">${stock.rs ?? "—"}</td>
               <td class="num ${stock.threeMonthPct >= 0 ? "gain" : "loss"}">${signed(stock.threeMonthPct)}</td>
               <td class="num">${percent(stock.distanceToHighPct)}</td>
-              <td class="num">${percent(stock.range15Pct)}</td>
+              <td class="num">${Number.isFinite(stock.rmv) ? stock.rmv.toFixed(0) : "—"}</td>
+              <td class="num">${number(stock.volumeDryUp)}</td>
               <td class="num">${number(stock.rvol)}</td>
               <td class="num">${Number.isFinite(stock.closePosition) ? `${stock.closePosition}%` : "—"}</td>
               <td class="num">${number(stock.close)}</td>
@@ -1164,48 +1169,75 @@
 
       function renderDefinitions(params) {
         const p = params ?? {};
+        // Presets can express tightness either way, so describe whichever
+        // one is actually in force rather than hardcoding a sentence.
+        const tightSetup = p.setupMaxRmv != null
+          ? `RMV ≤ ${p.setupMaxRmv}`
+          : `15D Range ≤ ${p.setupMaxRange15Pct}%`;
+        const tightTag = p.tightnessMaxRmv != null
+          ? `RMV &lt; ${p.tightnessMaxRmv}`
+          : `15D Range &lt; ${p.tightnessMaxRange15Pct}%`;
+        const trend = p.setupRequireMaStack
+          ? "收盘 &gt; SMA20 &gt; SMA50（要求均线排列）"
+          : "收盘 &gt; SMA20 且 &gt; SMA50";
+        const dryUp = p.setupMaxVolumeDryUp != null
+          ? `10 日均量 ÷ 50 日均量 &lt; ${p.setupMaxVolumeDryUp}（基座缩量）；`
+          : "";
+        const rsGate = p.setupMinRsRating != null
+          ? `RS Rating ≥ ${p.setupMinRsRating}；`
+          : `3 个月涨幅 &gt; ${p.setupMinThreeMonthPct}%；`;
+
         const cards = [
           [
             "Setup",
-            `收盘 &gt; SMA20 且 &gt; SMA50；距 20 日最高价 0–${p.setupMaxDistanceToHighPct ?? 5}%；
-             15D Range ≤ ${p.setupMaxRange15Pct ?? 12}%；3 个月涨幅 &gt; ${p.setupMinThreeMonthPct ?? 8}%。`,
+            `${trend}；距 20 日最高价 0–${p.setupMaxDistanceToHighPct}%；${tightSetup}；
+             ${dryUp}${rsGate}以上条件须同时成立。`,
           ],
           [
             "Breakout",
-            `收盘突破<b>前一日</b>的 20 日最高价，RVOL ≥ ${p.breakoutMinRvol ?? 1.5}，
-             收盘位置 ≥ ${p.breakoutMinClosePosition ?? 60}%。该 20 日高即此后要守的 pivot。`,
+            `收盘突破<b>前一日</b>的 20 日最高价，RVOL ≥ ${p.breakoutMinRvol}，
+             收盘位置 ≥ ${p.breakoutMinClosePosition}%${
+               p.breakoutRequireVolumeAbovePriorDay ? "，且成交量高于前一日" : ""
+             }。该 20 日高即此后要守的 pivot。`,
           ],
           [
             "Holding",
-            `过去 ${p.holdingLookbackDays ?? 10} 个交易日内出现过有效 Breakout，且最新收盘同时站在
-             该 pivot 之上与 21EMA × ${p.holdingEma21Buffer ?? 0.98} 之上。`,
+            `过去 ${p.holdingLookbackDays} 个交易日内出现过有效 Breakout，且最新收盘同时站在
+             该 pivot 之上与 21EMA × ${p.holdingEma21Buffer} 之上。`,
           ],
           [
             "Fakeout",
-            `A：日内刺穿前一日 20 日高但收盘跌回其下，RVOL ≥ ${p.fakeoutMinRvol ?? 1.5} 且收盘位置 &lt;
-             ${p.fakeoutMaxClosePosition ?? 50}%。B：过去 1–${p.fakeoutLookbackDays ?? 5} 日的有效 Breakout，现已跌回 pivot 之下。`,
+            `A：日内刺穿前一日 20 日高但收盘跌回其下，RVOL ≥ ${p.fakeoutMinRvol} 且收盘位置 &lt;
+             ${p.fakeoutMaxClosePosition}%。B：过去 1–${p.fakeoutLookbackDays} 日的有效 Breakout，现已跌回 pivot 之下。`,
           ],
           [
             "Spring · 附加标签",
-            `最近 ${p.springLookbackDays ?? 12} 日内最低价下破前 5 日最低点 0 至 ${p.springUndercutMinPct ?? -6}%；
-             其后 1–${p.springReclaimWindow ?? 5} 日内收复该支撑，且当日涨幅 ≥ ${p.springMinGainPct ?? 4}%、
-             收盘位置 ≥ ${p.springMinClosePosition ?? 45}%、RVOL ≥ ${p.springMinRvol ?? 1.15}；
-             当前价仍高于收复日收盘且支撑未再失守。`,
+            `最近 ${p.springLookbackDays} 日内最低价下破前 5 日最低点 0 至 ${p.springUndercutMinPct}%；
+             其后 1–${p.springReclaimWindow} 日内收复该支撑，且收复当日涨幅 ≥ ${p.springMinGainPct}%、
+             收盘位置 ≥ ${p.springMinClosePosition}%、RVOL ≥ ${p.springMinRvol}${
+               p.springRequireVolumeAbovePriorDay ? "、成交量高于前一日" : ""
+             }；当前价仍高于收复日收盘且支撑未再失守。`,
           ],
           [
             "Tight · 附加标签",
-            `满足 Setup 的<b>全部条件</b>且 15D Range &lt; ${p.tightnessMaxRange15Pct ?? 8}%。
-             判定依据是 Setup 条件本身，因此一只 Breakout 股票同样可以带 Tight 标签。`,
+            `满足 Setup 的<b>全部条件</b>且 ${tightTag}。判定依据是 Setup 条件本身，
+             因此一只 Breakout 股票同样可以带 Tight 标签。`,
           ],
           [
             "Leaders",
             `资格池为 Setup / Breakout / Holding，以及带 Spring 标签的 Watch；Fakeout 一律无资格。
-             排序值 = 市值 × (1 + ETF 权重 ÷ ${p.leaderWeightDivisor ?? 5})，最多 ${p.leaderLimit ?? 3} 只。`,
+             排序值 = 市值 × (1 + ETF 权重 ÷ ${p.leaderWeightDivisor})，最多 ${p.leaderLimit} 只。`,
+          ],
+          [
+            "RMV · 紧密度",
+            `把 ${(p.rmvAtrPeriods ?? [5, 10, 15]).join(" / ")} 日的相对真实波幅取平均，再在最近
+             ${p.rmvLookback} 根 K 线内归一化到 0–100。0 最紧、100 最放大。用归一化而不是绝对振幅，
+             是为了让高波动股和低波动股用同一把尺子——绝对阈值会系统性漏掉前者、放进后者。`,
           ],
           [
             "基础指标",
-            `RVOL = 当日成交量 ÷ 50 日均量；15D Range = (15 日最高 − 15 日最低) ÷ 最新收盘 × 100；
-             收盘位置 = (收盘 − 最低) ÷ (最高 − 最低) × 100；3 个月涨幅取 ${p.threeMonthBars ?? 63} 个交易日。`,
+            `RVOL = 当日成交量 ÷ 50 日均量；收盘位置 = (收盘 − 最低) ÷ (最高 − 最低) × 100；
+             距 20 日高 = (20 日最高 − 收盘) ÷ 20 日最高 × 100；3 个月涨幅取 ${p.threeMonthBars} 个交易日。`,
           ],
         ];
 
@@ -1324,6 +1356,7 @@
           $("syncCount").textContent = `${app.stocks.length} 只 · ${
             feed.universeCount ?? "—"
           } 只票池`;
+          $("presetName").textContent = feed.preset ? `参数组 ${feed.preset}` : "";
           $("syncTime").textContent = new Date(feed.updatedAt).toLocaleString("zh-CN");
           $("definitionsFooter").textContent =
             `票池要求 50 日日均成交额 ≥ $20M。Cluster Score 用于集中注意力，不是买入信号。`;

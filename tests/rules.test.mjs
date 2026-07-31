@@ -2,13 +2,21 @@ import { strict as assert } from "node:assert";
 import { test } from "node:test";
 
 import {
-  PARAMS,
+  PRESETS,
+  applyRsRating,
   breakoutAt,
-  classify,
-  computeMetrics,
+  classify as classifyWith,
+  computeMetrics as computeMetricsWith,
   isLeaderEligible,
   pickLeaders,
 } from "../scripts/rules.js";
+
+// These fixtures encode the first written spec, so they run against that
+// preset. The Deepvue/Stockbee defaults get their own block at the bottom.
+const SPEC = PRESETS["spec-v1"];
+const PARAMS = SPEC;
+const classify = (bars, index) => classifyWith(bars, index ?? bars.length - 1, SPEC);
+const computeMetrics = (bars) => computeMetricsWith(bars, SPEC);
 
 // ---------------------------------------------------------------------------
 // Fixture helpers
@@ -478,4 +486,148 @@ test("Leaders are capped at three names", () => {
     stock(`T${index}`, "setup", (8 - index) * 1e11, 1),
   );
   assert.equal(pickLeaders(pool).length, 3);
+});
+
+// ---------------------------------------------------------------------------
+// Deepvue / Stockbee defaults
+//
+// The preset above is the earlier spec. Everything below runs against the
+// working default and pins the parts that differ from it.
+// ---------------------------------------------------------------------------
+
+const DV = PRESETS["deepvue-stockbee"];
+const classifyDv = (bars, index) => classifyWith(bars, index ?? bars.length - 1, DV);
+const metricsDv = (bars) => computeMetricsWith(bars, DV);
+
+/** Base uptrend whose last `days` bars trade on `ratio` of normal volume. */
+function dryingBase(days = 12, ratio = 0.5) {
+  const overrides = {};
+  for (let offset = 0; offset < days; offset += 1) {
+    overrides[-1 - offset] = { volume: BASE_VOLUME * ratio };
+  }
+  return baseBars(overrides);
+}
+
+test("RMV is normalised 0-100, not an absolute percentage", () => {
+  const metrics = metricsDv(baseBars());
+  const values = metrics.slice(-30).map((item) => item.rmv).filter((item) => item != null);
+  assert.ok(values.length > 0, "RMV should be defined once history is long enough");
+  assert.ok(values.every((value) => value >= 0 && value <= 100));
+});
+
+test("RMV spikes when one bar's range blows out", () => {
+  const quiet = metricsDv(baseBars()).at(-1).rmv;
+  assert.equal(quiet, 0, "a base with no range variation reads fully tight");
+  const shocked = metricsDv(baseBars({ "-1": { high: 130, low: 70 } })).at(-1).rmv;
+  assert.ok(shocked > quiet, `expected ${shocked} > ${quiet}`);
+  assert.equal(shocked, 100);
+});
+
+test("RMV rates a wide and a narrow stock on the same scale", () => {
+  // Same shape, 10x the price and 10x the range. An absolute range threshold
+  // separates these two; a normalised one must not. The jitter gives the
+  // window a real spread to normalise against.
+  const narrow = baseBars().map((item, index) => {
+    const width = 1 + (index % 7) * 0.004;
+    return { ...item, high: item.close * width, low: item.close * (2 - width) };
+  });
+  const wide = narrow.map((item) => ({
+    ...item,
+    open: item.open * 10,
+    high: item.high * 10,
+    low: item.low * 10,
+    close: item.close * 10,
+  }));
+  const a = metricsDv(narrow).at(-1).rmv;
+  const b = metricsDv(wide).at(-1).rmv;
+  assert.ok(Math.abs(a - b) < 1e-6, `${a} vs ${b}`);
+});
+
+test("volume dry-up compares the 10-day average against the 50-day", () => {
+  const flat = metricsDv(baseBars()).at(-1).volumeDryUp;
+  assert.ok(Math.abs(flat - 1) < 1e-9, "flat volume should read 1.0");
+  const drying = metricsDv(dryingBase(12, 0.5)).at(-1).volumeDryUp;
+  assert.ok(drying < 0.8, `expected dry-up below 0.8, got ${drying}`);
+});
+
+test("Setup now requires the base to dry up", () => {
+  // Identical price action; only the volume behaviour differs.
+  assert.equal(classifyDv(baseBars()).setupCriteriaMet, false);
+  assert.equal(classifyDv(dryingBase()).setupCriteriaMet, true);
+});
+
+test("Setup requires close > SMA20 > SMA50, not just above both", () => {
+  const metrics = metricsDv(dryingBase());
+  const tail = metrics.at(-1);
+  assert.ok(tail.close > tail.sma20 && tail.sma20 > tail.sma50);
+});
+
+test("Breakout needs a 70% close position, not 60%", () => {
+  const clean = dryingBase();
+  const pivot = metricsDv(clean)[last(clean) - 1].highest20;
+  const value = pivot + 2;
+  // Close two thirds of the way up the day: passes the old bar, fails this one.
+  const bars = dryingBase();
+  bars[last(bars)] = {
+    ...bars[last(bars)],
+    open: value - 3,
+    high: value + 1,
+    low: value - 2,
+    close: value,
+    volume: BASE_VOLUME * 3,
+  };
+  const signal = breakoutAt(metricsDv(bars), last(bars), DV);
+  assert.ok(signal.closePosition >= 60 && signal.closePosition < 70, `${signal.closePosition}`);
+  assert.equal(signal.valid, false);
+  assert.equal(breakoutAt(computeMetricsWith(bars, SPEC), last(bars), SPEC).valid, true);
+});
+
+test("Breakout also needs volume above the prior day (Stockbee)", () => {
+  const bars = dryingBase();
+  const pivot = metricsDv(bars)[last(bars) - 1].highest20;
+  const value = pivot + 2;
+  // 2x the 50-day average, but the day before was heavier still.
+  bars[last(bars) - 1] = { ...bars[last(bars) - 1], volume: BASE_VOLUME * 4 };
+  bars[last(bars)] = {
+    ...bars[last(bars)],
+    open: value - 0.5,
+    high: value + 0.1,
+    low: value - 0.6,
+    close: value,
+    volume: BASE_VOLUME * 2,
+  };
+  const metrics = metricsDv(bars);
+  const signal = breakoutAt(metrics, last(bars), DV);
+  assert.ok(metrics.at(-1).rvol >= 1.5);
+  assert.ok(metrics.at(-1).closePosition >= 70);
+  assert.equal(metrics.at(-1).volumeAbovePriorDay, false);
+  assert.equal(signal.valid, false);
+});
+
+test("Holding looks back 5 days, not 10", () => {
+  assert.equal(DV.holdingLookbackDays, 5);
+  assert.equal(SPEC.holdingLookbackDays, 10);
+});
+
+test("RS gate demotes Setup to Watch and clears the Tight tag", () => {
+  const verdict = classifyDv(dryingBase());
+  assert.equal(verdict.mainState, "setup");
+  const gated = applyRsRating(verdict, 40, DV);
+  assert.equal(gated.mainState, "watch");
+  assert.equal(gated.setupCriteriaMet, false);
+  assert.equal(gated.tightnessTag, false);
+  const kept = applyRsRating(verdict, 92, DV);
+  assert.equal(kept.mainState, "setup");
+});
+
+test("RS gate never touches Breakout, Holding or Fakeout", () => {
+  for (const state of ["breakout", "holding", "fakeout"]) {
+    const gated = applyRsRating({ mainState: state, setupCriteriaMet: true, tightnessTag: true }, 1, DV);
+    assert.equal(gated.mainState, state);
+  }
+});
+
+test("RS gate is inert when the preset does not set one", () => {
+  const verdict = { mainState: "setup", setupCriteriaMet: true, tightnessTag: true };
+  assert.deepEqual(applyRsRating(verdict, 1, SPEC), verdict);
 });

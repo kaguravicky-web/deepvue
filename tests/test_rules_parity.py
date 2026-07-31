@@ -3,7 +3,9 @@
 The JS module is the engine that builds the published feed; the Python module
 is the reference. If they ever drift, this fails.
 
-    node tests/export-fixtures.mjs > tests/fixtures.json
+Both parameter presets are checked, so a change that only shows up under one
+threshold set cannot slip through.
+
     python tests/test_rules_parity.py
 """
 
@@ -19,11 +21,13 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from rules_reference import classify_universe  # noqa: E402
+from rules_reference import PRESETS, classify_ticker  # noqa: E402
 
 FLOAT_FIELDS = [
     "close_position",
     "rvol",
+    "rmv",
+    "volume_dry_up",
     "range15_pct",
     "three_month_pct",
     "distance_to_high_pct",
@@ -46,49 +50,63 @@ def load_fixtures() -> dict:
     return json.loads(result.stdout)
 
 
+def compare(ticker: str, preset: str, expected: dict, actual: dict) -> list[str]:
+    failures = []
+    label = f"{preset}/{ticker}"
+
+    if actual["main_state"] != expected["main_state"]:
+        failures.append(
+            f"{label}.main_state: js={expected['main_state']} py={actual['main_state']}"
+        )
+    if actual["fakeout_reason"] != expected["fakeout_reason"]:
+        failures.append(
+            f"{label}.fakeout_reason: js={expected['fakeout_reason']} "
+            f"py={actual['fakeout_reason']}"
+        )
+    for field in BOOL_FIELDS:
+        if bool(actual[field]) != bool(expected[field]):
+            failures.append(f"{label}.{field}: js={expected[field]} py={actual[field]}")
+    for field in FLOAT_FIELDS:
+        left, right = expected[field], actual[field]
+        if left is None or right is None:
+            if left is not right:
+                failures.append(f"{label}.{field}: js={left!r} py={right!r}")
+            continue
+        if abs(float(right) - float(left)) > TOLERANCE:
+            failures.append(f"{label}.{field}: js={left!r} py={right!r}")
+    return failures
+
+
 def main() -> int:
     fixtures = load_fixtures()
     frame = pd.DataFrame(fixtures["rows"])
-    states = classify_universe(frame)
+    frames = {ticker: group for ticker, group in frame.groupby("ticker", sort=False)}
 
     failures = []
-    for ticker, expected in fixtures["expected"].items():
-        if ticker not in states.index:
-            failures.append(f"{ticker}: missing from the pandas output")
-            continue
-        actual = states.loc[ticker]
+    checked = 0
+    summary = []
 
-        if actual["main_state"] != expected["main_state"]:
-            failures.append(
-                f"{ticker}.main_state: js={expected['main_state']} py={actual['main_state']}"
-            )
-        if actual["fakeout_reason"] != expected["fakeout_reason"]:
-            failures.append(
-                f"{ticker}.fakeout_reason: js={expected['fakeout_reason']} "
-                f"py={actual['fakeout_reason']}"
-            )
-        for field in BOOL_FIELDS:
-            if bool(actual[field]) != bool(expected[field]):
-                failures.append(
-                    f"{ticker}.{field}: js={expected[field]} py={actual[field]}"
-                )
-        for field in FLOAT_FIELDS:
-            if abs(float(actual[field]) - float(expected[field])) > TOLERANCE:
-                failures.append(
-                    f"{ticker}.{field}: js={expected[field]!r} py={actual[field]!r}"
-                )
+    for preset, cases in fixtures["expected"].items():
+        params = PRESETS[preset]
+        for ticker, expected in cases.items():
+            actual = classify_ticker(frames[ticker], params)
+            if actual is None:
+                failures.append(f"{preset}/{ticker}: pandas returned no verdict")
+                continue
+            failures += compare(ticker, preset, expected, actual)
+            checked += 1
+            tags = [name for name in ("spring_tag", "tightness_tag") if expected[name]]
+            summary.append((preset, ticker, expected["main_state"], " ".join(tags)))
 
     if failures:
-        print(f"FAIL — {len(failures)} mismatch(es) between rules.js and rules_reference.py")
+        print(f"FAIL - {len(failures)} mismatch(es) between rules.js and rules_reference.py")
         for line in failures:
             print(f"  {line}")
         return 1
 
-    checked = len(fixtures["expected"])
-    print(f"OK — {checked} fixtures agree across both implementations")
-    for ticker, expected in fixtures["expected"].items():
-        tags = [name for name in ("spring_tag", "tightness_tag") if expected[name]]
-        print(f"  {ticker:<18} {expected['main_state']:<9} {' '.join(tags)}")
+    print(f"OK - {checked} fixture/preset combinations agree across both implementations")
+    for preset, ticker, state, tags in summary:
+        print(f"  {preset:<17} {ticker:<18} {state:<9} {tags}")
     return 0
 
 

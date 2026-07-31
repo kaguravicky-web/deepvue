@@ -5,7 +5,7 @@
  *
  *   node tests/export-fixtures.mjs > tests/fixtures.json
  */
-import { classify } from "../scripts/rules.js";
+import { PRESETS, classify } from "../scripts/rules.js";
 
 const BASE_LENGTH = 120;
 const BASE_VOLUME = 1_000_000;
@@ -29,7 +29,7 @@ function baseBars(overrides = {}) {
   return bars;
 }
 
-const priorPivot = (bars) => classify(bars).highest20;
+const priorPivot = (bars) => classify(bars, bars.length - 1, PRESETS["spec-v1"]).highest20;
 
 const breakoutTail = (value) => ({
   open: value - 1,
@@ -41,7 +41,7 @@ const breakoutTail = (value) => ({
 
 function withPriorBreakout(daysAgo, holdClose) {
   const clean = baseBars();
-  const pivot = classify(clean, clean.length - 1 - daysAgo).highest20;
+  const pivot = classify(clean, clean.length - 1 - daysAgo, PRESETS["spec-v1"]).highest20;
   const overrides = { [-1 - daysAgo]: breakoutTail(pivot + 3) };
   for (let offset = daysAgo - 1; offset >= 0; offset -= 1) {
     overrides[-1 - offset] = {
@@ -111,31 +111,53 @@ const cases = {
   SPRING: springBars(),
   SPRING_WEAK_GAIN: springBars({ gainPct: 2 }),
   SPRING_DEEP: springBars({ undercutPct: -9 }),
+  DRYING_BASE: (() => {
+    const overrides = {};
+    for (let offset = 0; offset < 12; offset += 1) overrides[-1 - offset] = { volume: BASE_VOLUME * 0.5 };
+    return baseBars(overrides);
+  })(),
+  JITTERY: baseBars().map((item, index) => {
+    const width = 1 + (index % 7) * 0.004;
+    return { ...item, high: item.close * width, low: item.close * (2 - width) };
+  }),
 };
 
 const rows = [];
-const expected = {};
-
 for (const [ticker, bars] of Object.entries(cases)) {
   for (const item of bars) {
     rows.push({ ticker, ...item, market_cap: 1e11, etf_weight: 2.5 });
   }
-  const verdict = classify(bars);
-  expected[ticker] = {
-    main_state: verdict.mainState,
-    spring_tag: verdict.springTag,
-    tightness_tag: verdict.tightnessTag,
-    setup_criteria_met: verdict.setupCriteriaMet,
-    fakeout_reason: verdict.fakeoutReason,
-    close_position: verdict.closePosition,
-    rvol: verdict.rvol,
-    range15_pct: verdict.range15Pct,
-    three_month_pct: verdict.threeMonthPct,
-    distance_to_high_pct: verdict.distanceToHighPct,
-    ema21: verdict.ema21,
-    sma20: verdict.sma20,
-    sma50: verdict.sma50,
-  };
+}
+
+// Expectations for every preset, so the parity check covers both parameter
+// sets rather than only the default.
+const expected = {};
+for (const [preset, params] of Object.entries(PRESETS)) {
+  expected[preset] = Object.fromEntries(
+    Object.entries(cases).map(([ticker, bars]) => {
+      const verdict = classify(bars, bars.length - 1, params);
+      return [
+        ticker,
+        {
+          main_state: verdict.mainState,
+          spring_tag: verdict.springTag,
+          tightness_tag: verdict.tightnessTag,
+          setup_criteria_met: verdict.setupCriteriaMet,
+          fakeout_reason: verdict.fakeoutReason,
+          close_position: verdict.closePosition,
+          rvol: verdict.rvol,
+          rmv: verdict.rmv,
+          volume_dry_up: verdict.volumeDryUp,
+          range15_pct: verdict.range15Pct,
+          three_month_pct: verdict.threeMonthPct,
+          distance_to_high_pct: verdict.distanceToHighPct,
+          ema21: verdict.ema21,
+          sma20: verdict.sma20,
+          sma50: verdict.sma50,
+        },
+      ];
+    }),
+  );
 }
 
 process.stdout.write(JSON.stringify({ rows, expected }, null, 2));
